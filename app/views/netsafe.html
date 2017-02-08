@@ -1,0 +1,37 @@
+
+<div id="nav">
+	<div class="nav-left">
+		<a ui-sref="index">NETSAFE</a>
+	</div>
+
+	<div class="nav-right">
+		<i class="fa fa-question-circle-o" aria-hidden="true"></i>  <!-- no functionality yet -->
+
+		<a ng-click="toggleSidebar()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+</div>
+
+<div id="sidebar" class="sidebar-nav">
+	<!--populate dis with da links-->
+	<ul>
+		<a ui-sref="netsafe.main"><li>Main Menu</li></a>
+		<a ui-sref="netsafe.cybercitizenship"><li>Cyber Citizenship</li></a>
+		<a ui-sref="netsafe.netiquette"><li>Netiquette</li></a>
+			<a ui-sref="netsafe.definition"><li class="sub">Definition of Netiquette</li></a>
+			<a ui-sref="netsafe.fundamental"><li class="sub">Fundamental Concepts on Netiquette</li></a>
+			<a ui-sref="netsafe.rules"><li class="sub">10 Core Rules of Netiquette</li></a>
+			<a ui-sref="netsafe.netivity"><li class="sub">Netiquette Activity</li></a>
+		<a ui-sref="netsafe.safety"><li>Online Personal Safety and Security</li></a>
+			<a ui-sref="netsafe.malware"><li class="sub">Malware</li></a>
+			<a ui-sref="netsafe.identity"><li class="sub">Identity Theft</li></a>
+			<a ui-sref="netsafe.spam"><li class="sub">Spam</li></a>
+			<a ui-sref="netsafe.phishing"><li class="sub">Phishing</li></a>
+			<a ui-sref="netsafe.pharming"><li class="sub">Pharming</li></a>
+			<a ui-sref="netsafe.rogue"><li class="sub">Rogue Security Software</li></a>
+			<a ui-sref="netsafe.activity"><li class="sub">Online Safety and Security Activity</li></a>
+	</ul>
+</div>
+
+<div ui-view></div>

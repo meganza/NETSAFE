@@ -1,0 +1,40 @@
+/* side bar */
+
+#sidebar {
+	width: 32%;
+	height: calc(100% - 35px);
+	position: absolute;
+	right: 0;
+	top: 35px;
+	background: #F1FBEE;
+	z-index: 1;
+	padding-top: 10px;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0px;
+}
+
+.sub {
+	padding-left: 20px;
+}
+
+.sidebar-nav a li {
+    text-indent: 20px;
+    line-height: 40px;
+    text-decoration: none;
+    color: #75b4ba;
+}
+
+.sidebar-nav a:hover {
+	text-decoration: none;
+}
+
+.sidebar-nav a:hover li{
+	background: #e3f2de;
+}
+
+.sidebar-nav li:hover {
+	text-decoration: none !important;
+}
