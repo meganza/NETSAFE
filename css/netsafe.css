@@ -14,6 +14,11 @@ a:hover {
 	color: #66aaaf;
 }
 
+h4 {
+	color: #dd953e;
+	font-weight: bold;
+}
+
 #nav {
 	background-color: #F1FBEE;
 	height: 35px;
