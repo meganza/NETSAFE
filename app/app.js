@@ -24,7 +24,7 @@ Netsafe.config(function($stateProvider) {
 	})
 	.state('netsafe.cybercitizenship', {
 		url: '/cybercitizenship',
-		//controller: 'cybercitizenshipController',
+		controller: 'cybercitizenshipController',
 		templateUrl: 'app/views/cybercitizenship.html'
 	})
 	.state('netsafe.netiquette', {
