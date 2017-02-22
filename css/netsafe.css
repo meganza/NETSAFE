@@ -94,3 +94,37 @@ button {
 .carousel {
 	text-align: center;
 }
+
+.help {
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 35px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.2);	
+}
+
+.help-modal {
+	background-color: #F1FBEE;
+	width: 65%;
+	border-radius: 10px;
+	margin: 15% auto;
+}
+
+.help-header {
+	background-color: #81BEC3;
+	color: #F1FBEE;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px; 
+	letter-spacing: .5px;
+	text-decoration: none;
+	line-height: 20px;
+	padding: 5 0 5 10px;
+}
+
+.help-content {
+	padding: 20px;
+}
