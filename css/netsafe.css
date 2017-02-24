@@ -32,7 +32,7 @@ h4 {
 .nav-left a{
 	color: #81BEC3;
 	font-weight: bold;
-	font-size: 19px; 
+	font-size: 19px;
 	text-decoration: none;
 }
 
@@ -54,7 +54,7 @@ h4 {
 	margin: 0 auto;
 }
 
-.container {	
+.container {
 	transform: translate(-50%, -50%);
 	position: absolute;
 	top: 50%;
@@ -80,7 +80,7 @@ h4 {
 button {
 	background: #ffe1a8;
 	padding: 7 40 7 40px;
-	width: 150px;
+	width: 190px;
 	color: #875315;
 	border: 1px solid #efd197;
 	letter-spacing: .5px;
@@ -93,7 +93,7 @@ button {
 	position: absolute;
 	right: 0;
 	bottom: 10;
-	left: 0;	
+	left: 0;
 }
 
 .carousel {
@@ -108,7 +108,7 @@ button {
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.2);	
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .help-modal {
@@ -123,7 +123,7 @@ button {
 	color: #F1FBEE;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 14px; 
+	font-size: 14px;
 	letter-spacing: .5px;
 	text-decoration: none;
 	line-height: 20px;
@@ -132,4 +132,41 @@ button {
 
 .help-content {
 	padding: 20px;
+}
+
+.tab {
+	width: auto;
+	float: left;
+	height: 40px;
+	padding: 10px;
+	margin: 2px 3px 0px 3px;
+	display: inline;
+	color: #875315;
+	background: #ffe1a8;
+	border: 1px solid #efd197;
+	border-bottom: 0;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.tab:hover {
+	background: #fdcd71;
+	cursor: pointer;
+}
+
+.tab.active {
+	background: #fdcd71;
+}
+
+.tab-content {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+.tab-content-container {
+	border-top: 1px solid #efd197;
+	float: left;
+	width: 100%;
+	padding: 5%;
 }

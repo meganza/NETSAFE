@@ -10,7 +10,5 @@ angular.module('Netsafe').controller('netsafeController', function($scope) {
 	$scope.clickHelp = function(){
 		$scope.clicked = !$scope.clicked;
 	}
-
-
 	$scope.toggleSidebar();
 });

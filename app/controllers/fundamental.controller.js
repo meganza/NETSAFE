@@ -1,18 +1,14 @@
 angular.module('Netsafe').controller('fundamentalController', function($scope) {
 	console.log('you are in fundamentalController');
 
-	$scope.ready = function(){
-		$('#conducting a').click(function(e){
-			e.preventDefault();
-			$(this).tab('show');
-		});
+	$scope.showTab = function(id){
+    $(".tab").removeClass("active");
+    $(".tab-content").hide();
+
+    $("#tab-"+ id).addClass("active");
+    $("#tab-content-" + id).show();
 	};
 
-	$scope.ready = function(){
-		$('#respecting a').click(function(e){
-			e.preventDefault();
-			$(this).tab('show');
-		});
-	};
+  $scope.showTab(1);
 
 });

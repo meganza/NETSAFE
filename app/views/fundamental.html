@@ -1,27 +1,29 @@
-<ul class="nav nav-pills">
-	<li class="active"><a data-toggle="pill" href="#conducting"> Conducting Yourself Online </a></li>
-	<li><a data-toggle="pill" href="#respecting"> Respecting Others Online </a></li>
-</ul>
+<br>
 
-
-<div class="tab-content">
-	<div id="conducting" class="tab-pane fade in active">
-		content for conducting yourself online
-		<button>Digital Tattoo</button>  <button>Internet Privacy</button>
-	</div>
-	<div id="respecting" class="tab-pane fade">
-		content for respecting others online
-	</div>
-
+<div id="tab-1" class="tab" ng-click="showTab(1)">
+  Conducting Yourself Online
 </div>
 
-<div class="center">
-	<div class="container">
-	</div>
+<div id="tab-2" class="tab" ng-click="showTab(2)">
+  Respecting Others Online
 </div>
 
 
+<div class="tab-content-container">
+	<div id="tab-content-1" class="tab-content">
+	  Conducting Yourself Online content
+	  <div id="footer">
+			<p>
+		  	<button>Digital Tattoo</button>
+		  	<button>Internet Privacy</button>
+	  	</p>
+	  </div>
+	</div>
 
+	<div id="tab-content-2" class="tab-content">
+	  Respecting Others Online content
+	</div>
+</div>
 
 <div class="help" ng-show="clicked">
 	<div class="help-modal">
