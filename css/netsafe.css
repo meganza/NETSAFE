@@ -14,11 +14,6 @@ a:hover {
 	color: #66aaaf;
 }
 
-h4 {
-	color: #dd953e;
-	font-weight: bold;
-}
-
 #nav {
 	background-color: #F1FBEE;
 	height: 35px;
@@ -169,4 +164,12 @@ button {
 	float: left;
 	width: 100%;
 	padding: 5%;
+}
+
+.header{
+	padding: 10 0 0 20px;
+	color: #dd953e;
+	font-weight: bolder;
+	font-size: 22px;
+	text-transform: uppercase;
 }
