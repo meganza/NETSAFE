@@ -181,9 +181,12 @@ button {
 }
 
 .rule-title{
+	margin: 0 auto;
+	width: 70%;
 	font-weight: bold;
 	font-size: 22px;
 	color: #568e92;
+	border-bottom: 1px solid #81BEC3;
 }
 
 .core-scenario {
