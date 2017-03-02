@@ -11,4 +11,5 @@ angular.module('Netsafe').controller('netsafeController', function($scope) {
 		$scope.clicked = !$scope.clicked;
 	}
 	$scope.toggleSidebar();
+
 });
