@@ -180,8 +180,10 @@ button {
 	text-transform: uppercase;
 }
 
-.core-slide{
-	/* padding: 100px; */
+.rule-title{
+	font-weight: bold;
+	font-size: 22px;
+	color: #568e92;
 }
 
 .core-scenario {
@@ -208,10 +210,12 @@ tr, th {
 .core-question {
 	font-weight: bold;
 	color: #568e92;
+	width: 25%;
 }
 
 .core-answer{
 	color: #609a9e;
+	width: 45%;
 }
 
 .hidden-answer{
@@ -221,6 +225,3 @@ tr, th {
 	font-weight: bold;
 	color: #568e92;
 }
-
-
-

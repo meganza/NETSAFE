@@ -6,7 +6,10 @@
 	<div class="container">
 		<div class="carousel">
 			<div>10 Core Rules of Netiquette</div>
-			<div class="core-slide">Rule 1
+			<div>
+        <div class="rule-title">
+          Rule 1: Remember the Human
+        </div>
         <div class="core-scenario">
           Bob needs to get the details for a project from his co-worker as soon as possible.
           He consistently messaged the his co-worker through e-mail regarding the similar
@@ -19,10 +22,10 @@
           <tr>
             <th class="core-question"> What is needed in the scenario? </th>
             <th class="core-answer">
-              <div class="hidden-answer" ng-click="answerClicked = !answerClicked">
+              <div class="hidden-answer" ng-hide="answer1Clicked" ng-click="answer1Clicked = !answer1Clicked">
                 [CLICK TO SEE ANSWER]
               </div>
-              <div ng-show="answerClicked">
+              <div ng-show="answer1Clicked" ng-click="answer1Clicked = true">
                 Get information as soon as possible
               </div>
             </th>
@@ -30,23 +33,50 @@
 
           <tr>
             <th class="core-question"> Who are involved in the scenario? </th>
-            <th class="core-answer"> Bob and his co-worker </th>
+            <th class="core-answer">
+              <div class="hidden-answer" ng-hide="answer2Clicked" ng-click="answer2Clicked = !answer2Clicked">
+                [CLICK TO SEE ANSWER]
+              </div>
+              <div ng-show="answer2Clicked" ng-click="answer2Clicked = true">
+                Bob and his co-worker
+              </div>
+            </th>
           </tr>
 
           <tr>
             <th class="core-question"> Who and what are affected by the scenario? </th>
-            <th class="core-answer"> co-worker </th>
+            <th class="core-answer">
+              <div class="hidden-answer" ng-hide="answer3Clicked" ng-click="answer3Clicked = !answer3Clicked">
+                [CLICK TO SEE ANSWER]
+              </div>
+              <div ng-show="answer3Clicked" ng-click="answer3Clicked = true">
+                co-worker
+              </div>
+            </th>
           </tr>
 
           <tr>
             <th class="core-question"> What tools are used in the scenario? </th>
-            <th class="core-answer"> E-mail and Facebook </th>
+            <th class="core-answer">
+              <div class="hidden-answer" ng-hide="answer4Clicked" ng-click="answer4Clicked = !answer4Clicked">
+                [CLICK TO SEE ANSWER]
+              </div>
+              <div ng-show="answer4Clicked" ng-click="answer4Clicked = true">
+                E-mail and Facebook
+              </div>
+            </th>
           </tr>
 
           <tr>
             <th class="core-question"> What are the actions of the people involved? </th>
-            <th class="core-answer"> Bob consistently messaged his co-worker with the same
-              content and started sending obscene messages to him.
+            <th class="core-answer">
+              <div class="hidden-answer" ng-hide="answer5Clicked" ng-click="answer5Clicked = !answer5Clicked">
+                [CLICK TO SEE ANSWER]
+              </div>
+              <div ng-show="answer5Clicked" ng-click="answer5Clicked = true">
+                Bob consistently messaged his co-worker with the same
+                content and started sending obscene messages to him.
+              </div>
             </th>
           </tr>
 

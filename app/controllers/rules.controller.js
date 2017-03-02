@@ -1,12 +1,10 @@
-angular.module('Netsafe').controller('rulesController', function($scope) {
+angular.module('Netsafe').controller('rulesController', function($scope, $timeout) {
 	console.log('you are in rulesController');
 
-  $scope.answerClicked = false;
-
-	$(document).ready(function(){
-  		$('.carousel').slick({
-  			dots: true,
-  		});
-	});
+  $timeout(function() {
+    $('.carousel').slick({
+      dots: true,
+    });
+  }, 1);
 
 });
