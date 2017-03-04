@@ -1,7 +1,5 @@
 var Netsafe = angular.module('Netsafe', ['ui.router'])
-var NW = require('nw')
 
-console.log(NW)
 Netsafe.config(function($stateProvider) {
 
 	$stateProvider
