@@ -2,14 +2,271 @@
 	Netiquette Activity
 </div>
 
-<div class="center">
-  <div class="container">
+<br>
 
-	Library of Scenarios students need to answer
-
-  </div>
+<div id="tab-1" class="tab" ng-click="showTab(1)">
+  Easy
 </div>
 
+<div id="tab-2" class="tab" ng-click="showTab(2)">
+  Medium
+</div>
+
+<div id="tab-3" class="tab" ng-click="showTab(3)">
+  Hard
+</div>
+
+<div class="tab-content-container">
+  <!-- Easy Difficulty Scenarios -->
+  <div id="tab-content-1" class="tab-content">
+    <div class="difficulty-header">
+      Easy Difficulty Scenarios
+    </div>
+    <div id="netivity-scenario-nav">
+      <p>
+        <button id="easy-scenario-1" class="button-num" ng-click="showEasyScenario(1)">1</button>
+        <button id="easy-scenario-2" class="button-num" ng-click="showEasyScenario(2)">2</button>
+        <button id="easy-scenario-3" class="button-num" ng-click="showEasyScenario(3)">3</button>
+        <button id="easy-scenario-4" class="button-num" ng-click="showEasyScenario(4)">4</button>
+        <button id="easy-scenario-5" class="button-num" ng-click="showEasyScenario(5)">5</button>
+        <button id="easy-scenario-6" class="button-num" ng-click="showEasyScenario(6)">6</button>
+        <button id="easy-scenario-7" class="button-num" ng-click="showEasyScenario(7)">7</button>
+        <button id="easy-scenario-8" class="button-num" ng-click="showEasyScenario(8)">8</button>
+        <button id="easy-scenario-9" class="button-num" ng-click="showEasyScenario(9)">9</button>
+        <button id="easy-scenario-10" class="button-num" ng-click="showEasyScenario(10)">10</button>
+      </p>
+    </div>
+
+    <br>
+
+    <div id="easy-scenario-content-1" class="scenario-content">
+      <div class="core-scenario">
+          #1 Thomas is a budding digital artist. He is proud of his works so he posts his
+          digital artworks on his facebook page. He received an email from some fellow
+          he has never met. This fellow tells Thomas that his works are trash and should
+          quit creating digital arts.
+      </div>
+      <table class="core-table">
+        <tr ng-repeat="scenario in easy1Scenarios">
+          <th class="core-question"> {{scenario.scenario}} </th>
+          <th class="core-answer">
+            <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
+              [CLICK TO SEE ANSWER]
+            </div>
+            <div ng-show="scenario.answered" ng-click="scenario.answered = !scenario.answered">
+              {{scenario.answer}}
+            </div>
+          </th>
+        </tr>
+      </table>
+    </div>
+
+    <div id="easy-scenario-content-2" class="scenario-content">
+      <div class="core-scenario">
+          #2 Thomas is a budding digital artist. He is proud of his works so he posts his
+          digital artworks on his facebook page. He received an email from some fellow
+          he has never met. This fellow tells Thomas that his works are trash and should
+          quit creating digital arts.
+      </div>
+      <table class="core-table">
+        <tr ng-repeat="scenario in easy2Scenarios">
+          <th class="core-question"> {{scenario.scenario}} </th>
+          <th class="core-answer">
+            <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
+              [CLICK TO SEE ANSWER]
+            </div>
+            <div ng-show="scenario.answered" ng-click="scenario.answered = !scenario.answered">
+              {{scenario.answer}}
+            </div>
+          </th>
+        </tr>
+      </table>
+    </div>
+
+    <div id="easy-scenario-content-3" class="scenario-content">
+      #3
+    </div>
+
+    <div id="easy-scenario-content-4" class="scenario-content">
+      #4
+    </div>
+
+    <div id="easy-scenario-content-5" class="scenario-content">
+      #5
+    </div>
+
+    <div id="easy-scenario-content-6" class="scenario-content">
+      #6
+    </div>
+
+    <div id="easy-scenario-content-7" class="scenario-content">
+      #7
+    </div>
+
+    <div id="easy-scenario-content-8" class="scenario-content">
+      #8
+    </div>
+
+    <div id="easy-scenario-content-9" class="scenario-content">
+      #9
+    </div>
+
+    <div id="easy-scenario-content-10" class="scenario-content">
+      #10
+    </div>
+
+  </div>
+
+  <!-- Med Difficulty Scenarios -->
+  <div id="tab-content-2" class="tab-content">
+    <div class="difficulty-header">
+      Medium Difficulty Scenarios
+    </div>
+    <div id="netivity-scenario-nav">
+      <p>
+        <button id="med-scenario-1" class="button-num" ng-click="showMedScenario(1)">1</button>
+        <button id="med-scenario-2" class="button-num" ng-click="showMedScenario(2)">2</button>
+        <button id="med-scenario-3" class="button-num" ng-click="showMedScenario(3)">3</button>
+        <button id="med-scenario-4" class="button-num" ng-click="showMedScenario(4)">4</button>
+        <button id="med-scenario-5" class="button-num" ng-click="showMedScenario(5)">5</button>
+        <button id="med-scenario-6" class="button-num" ng-click="showMedScenario(6)">6</button>
+        <button id="med-scenario-7" class="button-num" ng-click="showMedScenario(7)">7</button>
+        <button id="med-scenario-8" class="button-num" ng-click="showMedScenario(8)">8</button>
+        <button id="med-scenario-9" class="button-num" ng-click="showMedScenario(9)">9</button>
+        <button id="med-scenario-10" class="button-num" ng-click="showMedScenario(10)">10</button>
+      </p>
+    </div>
+
+    <br>
+
+    <div id="med-scenario-content-1" class="scenario-content">
+      <div class="core-scenario">
+          #1 - MEDIUM Thomas is a budding digital artist. He is proud of his works so he posts his
+          digital artworks on his facebook page. He received an email from some fellow
+          he has never met. This fellow tells Thomas that his works are trash and should
+          quit creating digital arts.
+      </div>
+      <table class="core-table">
+        <tr ng-repeat="scenario in med1Scenarios">
+          <th class="core-question"> {{scenario.scenario}} </th>
+          <th class="core-answer">
+            <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
+              [CLICK TO SEE ANSWER]
+            </div>
+            <div ng-show="scenario.answered" ng-click="scenario.answered = !scenario.answered">
+              {{scenario.answer}}
+            </div>
+          </th>
+        </tr>
+      </table>
+    </div>
+
+    <div id="med-scenario-content-2" class="scenario-content">
+      #2
+    </div>
+
+    <div id="med-scenario-content-3" class="scenario-content">
+      #3
+    </div>
+
+    <div id="med-scenario-content-4" class="scenario-content">
+      #4
+    </div>
+
+    <div id="med-scenario-content-5" class="scenario-content">
+      #5
+    </div>
+
+    <div id="med-scenario-content-6" class="scenario-content">
+      #6
+    </div>
+
+    <div id="med-scenario-content-7" class="scenario-content">
+      #7
+    </div>
+
+    <div id="med-scenario-content-8" class="scenario-content">
+      #8
+    </div>
+
+    <div id="med-scenario-content-9" class="scenario-content">
+      #9
+    </div>
+
+    <div id="med-scenario-content-10" class="scenario-content">
+      #10
+    </div>
+
+  </div>
+
+  <!-- Hard Difficulty Scenarios -->
+  <div id="tab-content-3" class="tab-content">
+    <div class="difficulty-header">
+      Hard Difficulty Scenarios
+    </div>
+    <div id="netivity-scenario-nav">
+      <p>
+        <button id="hard-scenario-1" class="button-num" ng-click="showHardScenario(1)">1</button>
+        <button id="hard-scenario-2" class="button-num" ng-click="showHardScenario(2)">2</button>
+        <button id="hard-scenario-3" class="button-num" ng-click="showHardScenario(3)">3</button>
+        <button id="hard-scenario-4" class="button-num" ng-click="showHardScenario(4)">4</button>
+        <button id="hard-scenario-5" class="button-num" ng-click="showHardScenario(5)">5</button>
+        <button id="hard-scenario-6" class="button-num" ng-click="showHardScenario(6)">6</button>
+        <button id="hard-scenario-7" class="button-num" ng-click="showHardScenario(7)">7</button>
+        <button id="hard-scenario-8" class="button-num" ng-click="showHardScenario(8)">8</button>
+        <button id="hard-scenario-9" class="button-num" ng-click="showHardScenario(9)">9</button>
+        <button id="hard-scenario-10" class="button-num" ng-click="showHardScenario(10)">10</button>
+      </p>
+    </div>
+
+    <br>
+
+    <div id="hard-scenario-content-1" class="scenario-content">
+      #1
+    </div>
+
+    <div id="hard-scenario-content-2" class="scenario-content">
+      #2
+    </div>
+
+    <div id="hard-scenario-content-3" class="scenario-content">
+      #3
+    </div>
+
+    <div id="hard-scenario-content-4" class="scenario-content">
+      #4
+    </div>
+
+    <div id="hard-scenario-content-5" class="scenario-content">
+      #5
+    </div>
+
+    <div id="hard-scenario-content-6" class="scenario-content">
+      #6
+    </div>
+
+    <div id="hard-scenario-content-7" class="scenario-content">
+      #7
+    </div>
+
+    <div id="hard-scenario-content-8" class="scenario-content">
+      #8
+    </div>
+
+    <div id="hard-scenario-content-9" class="scenario-content">
+      #9
+    </div>
+
+    <div id="hard-scenario-content-10" class="scenario-content">
+      #10
+    </div>
+
+  </div>
+
+
+
+
+</div>  <!-- tab-content div end -->
 
 
 <div class="help" ng-show="clicked">

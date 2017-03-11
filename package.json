@@ -2,9 +2,11 @@
   "name": "NETSAFE",
   "main": "index.html",
   "window": {
+    "title": "NETSAFE",
     "min_width":      1024,
     "min_height":     768,
     "resizable":  true,
-    "fullscreen": true
+    "fullscreen": true,
+    "icon": "/images/icon.png"
   }
 }

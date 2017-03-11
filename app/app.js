@@ -54,7 +54,7 @@ Netsafe.config(function($stateProvider) {
 	})
 	.state('netsafe.netivity', {
 		url: '/netiquette-activity',
-		//controller:
+		controller: 'netivityController',
 		templateUrl: 'app/views/netivity.html'
 	})
 	.state('netsafe.malware', {

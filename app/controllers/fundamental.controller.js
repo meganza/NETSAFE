@@ -10,5 +10,11 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
 	};
 
   $scope.showTab(1);
+  $(".CYO-video").hide();
+
+  $scope.showCYOVid = function(id){
+    $(".CYO-video").hide();
+    $("#CYO-video-" + id).show();
+  }
 
 });
