@@ -50,12 +50,17 @@
         <tr ng-repeat="scenario in easy1Scenarios">
           <th class="core-question"> {{scenario.scenario}} </th>
           <th class="core-answer">
-            <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
+            <label ng-repeat="answer in answers">
+              <input type="radio" ng-value="answer.answer for answer in scenario.answers" ng-model="answer1">
+                {{scenario.answer}}
+              </input>
+            </label>
+            <!-- <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
               [CLICK TO SEE ANSWER]
             </div>
             <div ng-show="scenario.answered" ng-click="scenario.answered = !scenario.answered">
               {{scenario.answer}}
-            </div>
+            </div> -->
           </th>
         </tr>
       </table>
@@ -72,12 +77,13 @@
         <tr ng-repeat="scenario in easy2Scenarios">
           <th class="core-question"> {{scenario.scenario}} </th>
           <th class="core-answer">
-            <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
+
+            <!-- <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
               [CLICK TO SEE ANSWER]
             </div>
             <div ng-show="scenario.answered" ng-click="scenario.answered = !scenario.answered">
               {{scenario.answer}}
-            </div>
+            </div> -->
           </th>
         </tr>
       </table>
