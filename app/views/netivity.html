@@ -1,23 +1,18 @@
 <div class="header">
-	Netiquette Activity
+  Netiquette Activity
 </div>
-
 <br>
-
 <div id="tab-1" class="tab" ng-click="showTab(1)">
   Easy
 </div>
-
 <div id="tab-2" class="tab" ng-click="showTab(2)">
   Medium
 </div>
-
 <div id="tab-3" class="tab" ng-click="showTab(3)">
   Hard
 </div>
-
 <div class="tab-content-container">
-  <!-- Easy Difficulty Scenarios -->
+<!-- Easy Difficulty Scenarios -->
   <div id="tab-content-1" class="tab-content">
     <div class="difficulty-header">
       Easy Difficulty Scenarios
@@ -36,82 +31,64 @@
         <button id="easy-scenario-10" class="button-num" ng-click="showEasyScenario(10)">10</button>
       </p>
     </div>
-
     <br>
-
     <div id="easy-scenario-content-1" class="scenario-content">
       <div class="core-scenario">
-          #1 Thomas is a budding digital artist. He is proud of his works so he posts his
+          Thomas is a budding digital artist. He is proud of his works so he posts his
           digital artworks on his facebook page. He received an email from some fellow
           he has never met. This fellow tells Thomas that his works are trash and should
           quit creating digital arts.
       </div>
       <table class="core-table">
-        <tr ng-repeat="scenario in easy1Scenarios">
+        <tr ng-repeat="scenario in easy1Scenarios track by $index">
+          {{scenario.scenario}}
           <th class="core-question"> {{scenario.scenario}} </th>
           <th class="core-answer">
-
-            <!-- Modal for answering  -->
+            {{answers[$index].answer}}
+          <!-- Modal for answering  -->
             <p class="answer-icon">
-              <a ng-click="clickAnswer()" style="text-decoration: none; cursor: pointer; color: #dd953e">
+              <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
                 <i class="fa fa-pencil"></i>
               </a>
             </p>
-
-            <div class="help" ng-show="openAnswer">
+            <div class="answer-modal help" id="answer-{{$index}}">
               <div class="help-modal">
                 <div class="help-header">
                   Question
-                  <a class="close" ng-click="clickAnswer()">
+                  <a class="close" ng-click="clickAnswer($index)">
                     <i class="fa fa-times"></i>
                   </a>
                 </div>
                 <div class="help-content">
                   <div class="modal-question">
-                  <!-- to fix: Only gets the first one in scenario.scenario! -->
                     {{scenario.scenario}}
                   </div>
 
-                  <!-- to fix: Radio buttons does not show -->
-                  <div class="modal-question-radio">
+                  <div class="modal-question-radio" ng-repeat="answer in scenario.answers">
                     <label>
-                      <input type="radio" name=""> test radio button </input>
-                    </label>
-                    <label ng-repeat="answer in answers">
-                      <input type="radio" ng-value="answer.answer for answer in scenario.answers" ng-model="answer1">
-                        {{scenario.answer}}
-                      </input>
+                      <input type="radio" ng-value="answer" ng-model="$parent.answers[$parent.$index]">
+                      {{answer.answer}}
                     </label>
                   </div>
-
-                  <a ng-click="clickAnswer()">
+                  <a ng-click="clickAnswer($index)">
                     <div class="submit-button">
                       Submit Answer
                     </div>
                   </a>
-
                 </div>
               </div>
             </div>
-
-
-            <!-- <label ng-repeat="answer in answers">
-              <input type="radio" ng-value="answer.answer for answer in scenario.answers" ng-model="answer1">
-                {{scenario.answer}}
-              </input>
-            </label> -->
-
-            <!-- <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
-              [CLICK TO SEE ANSWER]
-            </div>
-            <div ng-show="scenario.answered" ng-click="scenario.answered = !scenario.answered">
-              {{scenario.answer}}
-            </div> -->
-
           </th>
         </tr>
       </table>
+
+      <a ng-click="checkAnswer()">
+        <div class="check-button">
+          Check Answer
+        </div>
+      </a>
     </div>
+
 
     <div id="easy-scenario-content-2" class="scenario-content">
       <div class="core-scenario">
@@ -124,8 +101,7 @@
         <tr ng-repeat="scenario in easy2Scenarios">
           <th class="core-question"> {{scenario.scenario}} </th>
           <th class="core-answer">
-
-            <!-- <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
+<!-- <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
               [CLICK TO SEE ANSWER]
             </div>
             <div ng-show="scenario.answered" ng-click="scenario.answered = !scenario.answered">
@@ -135,42 +111,32 @@
         </tr>
       </table>
     </div>
-
     <div id="easy-scenario-content-3" class="scenario-content">
       #3
     </div>
-
     <div id="easy-scenario-content-4" class="scenario-content">
       #4
     </div>
-
     <div id="easy-scenario-content-5" class="scenario-content">
       #5
     </div>
-
     <div id="easy-scenario-content-6" class="scenario-content">
       #6
     </div>
-
     <div id="easy-scenario-content-7" class="scenario-content">
       #7
     </div>
-
     <div id="easy-scenario-content-8" class="scenario-content">
       #8
     </div>
-
     <div id="easy-scenario-content-9" class="scenario-content">
       #9
     </div>
-
     <div id="easy-scenario-content-10" class="scenario-content">
       #10
     </div>
-
   </div>
-
-  <!-- Med Difficulty Scenarios -->
+<!-- Med Difficulty Scenarios -->
   <div id="tab-content-2" class="tab-content">
     <div class="difficulty-header">
       Medium Difficulty Scenarios
@@ -189,9 +155,7 @@
         <button id="med-scenario-10" class="button-num" ng-click="showMedScenario(10)">10</button>
       </p>
     </div>
-
     <br>
-
     <div id="med-scenario-content-1" class="scenario-content">
       <div class="core-scenario">
           #1 - MEDIUM Thomas is a budding digital artist. He is proud of his works so he posts his
@@ -213,46 +177,35 @@
         </tr>
       </table>
     </div>
-
     <div id="med-scenario-content-2" class="scenario-content">
       #2
     </div>
-
     <div id="med-scenario-content-3" class="scenario-content">
       #3
     </div>
-
     <div id="med-scenario-content-4" class="scenario-content">
       #4
     </div>
-
     <div id="med-scenario-content-5" class="scenario-content">
       #5
     </div>
-
     <div id="med-scenario-content-6" class="scenario-content">
       #6
     </div>
-
     <div id="med-scenario-content-7" class="scenario-content">
       #7
     </div>
-
     <div id="med-scenario-content-8" class="scenario-content">
       #8
     </div>
-
     <div id="med-scenario-content-9" class="scenario-content">
       #9
     </div>
-
     <div id="med-scenario-content-10" class="scenario-content">
       #10
     </div>
-
   </div>
-
-  <!-- Hard Difficulty Scenarios -->
+<!-- Hard Difficulty Scenarios -->
   <div id="tab-content-3" class="tab-content">
     <div class="difficulty-header">
       Hard Difficulty Scenarios
@@ -271,67 +224,63 @@
         <button id="hard-scenario-10" class="button-num" ng-click="showHardScenario(10)">10</button>
       </p>
     </div>
-
     <br>
-
     <div id="hard-scenario-content-1" class="scenario-content">
       #1
     </div>
-
     <div id="hard-scenario-content-2" class="scenario-content">
       #2
     </div>
-
     <div id="hard-scenario-content-3" class="scenario-content">
       #3
     </div>
-
     <div id="hard-scenario-content-4" class="scenario-content">
       #4
     </div>
-
     <div id="hard-scenario-content-5" class="scenario-content">
       #5
     </div>
-
     <div id="hard-scenario-content-6" class="scenario-content">
       #6
     </div>
-
     <div id="hard-scenario-content-7" class="scenario-content">
       #7
     </div>
-
     <div id="hard-scenario-content-8" class="scenario-content">
       #8
     </div>
-
     <div id="hard-scenario-content-9" class="scenario-content">
       #9
     </div>
-
     <div id="hard-scenario-content-10" class="scenario-content">
       #10
     </div>
-
   </div>
-
-
-
-
 </div>  <!-- tab-content div end -->
-
-
 <div class="help" ng-show="clicked">
-	<div class="help-modal">
-		<div class="help-header">
-			Netiquette Activity
-			<a class="close" ng-click="clickHelp()">
+  <div class="help-modal">
+    <div class="help-header">
+      Netiquette Activity
+      <a class="close" ng-click="clickHelp()">
         <i class="fa fa-times"></i>
       </a>
-		</div>
-		<div class="help-content">
-			hello im help
-		</div>
-	</div>
+    </div>
+    <div class="help-content">
+      hello im help
+    </div>
+  </div>
+</div>
+
+<div class="checkCorrect alert alert-success activity-alert" role="alert">
+  <a class="close" onclick="$('.checkCorrect').hide()">
+    <i class="fa fa-times"></i>
+  </a>
+  <strong> Well done! </strong> All answers are correct!
+</div>
+
+<div class="checkWrong alert alert-danger activity-alert" role="alert">
+  <a class="close" onclick="$('.checkWrong').hide()">
+    <i class="fa fa-times"></i>
+  </a>
+  <strong> Try again! </strong> One or more answers are incorrect!
 </div>

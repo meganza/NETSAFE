@@ -282,3 +282,22 @@ label {
 	letter-spacing: .5px;
 	text-align: center;
 }
+
+.check-button {
+	padding: 3 0 3 0px;
+	background: #ffe1a8;
+	color: #875315;
+	border: 1px solid #efd197;
+	letter-spacing: .5px;
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.activity-alert {
+	width: 70%;
+	text-align: center;
+	position: absolute;
+	margin: 0 auto;
+}

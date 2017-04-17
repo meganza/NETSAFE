@@ -1,15 +1,34 @@
 angular.module('Netsafe').controller('netivityController', function($scope) {
   console.log('you are in netivity controller');
-
-  $scope.clickAnswer = function(){
-    $scope.openAnswer = !$scope.openAnswer;
+  $scope.clickAnswer = function(index){
+    $("#answer-" + index).toggle();
   }
+
+  $scope.correct = false;
+  $('.checkCorrect').hide();
+  $('.checkWrong').hide();
+
+  $scope.checkAnswer = function(){
+    for(var i = $scope.correctAnswers.length; i--;) {
+      if($scope.correctAnswers[i] == $scope.answers[i].id)
+        $scope.correct = true;
+      else {
+        i = 0;
+        $scope.correct = false;
+      }
+    }
+
+    if($scope.correct == true){
+      $('.checkCorrect').show();
+    } else if ($scope.correct == false){
+      $('.checkWrong').show();
+    }
+  };
 
   // Tabs for scenario difficulty
   $scope.showTab = function(id){
     $(".tab").removeClass("active");
     $(".tab-content").hide();
-
     $("#tab-"+ id).addClass("active");
     $("#tab-content-" + id).show();
   };
@@ -20,9 +39,9 @@ angular.module('Netsafe').controller('netivityController', function($scope) {
   $scope.showEasyScenario = function(id){
     $(".button-num").removeClass("active");
     $(".scenario-content").hide();
-
     $("#easy-scenario-"+ id).addClass("active");
     $("#easy-scenario-content-" + id).show();
+    $(".answer-modal").hide();
   };
 
   $scope.showEasyScenario(1);
@@ -31,9 +50,9 @@ angular.module('Netsafe').controller('netivityController', function($scope) {
   $scope.showMedScenario = function(id){
     $(".button-num").removeClass("active");
     $(".scenario-content").hide();
-
     $("#med-scenario-"+ id).addClass("active");
     $("#med-scenario-content-" + id).show();
+    $(".answer-modal").hide();
   };
 
   $scope.showMedScenario(1);
@@ -42,14 +61,17 @@ angular.module('Netsafe').controller('netivityController', function($scope) {
   $scope.showHardScenario = function(id){
     $(".button-num").removeClass("active");
     $(".scenario-content").hide();
-
     $("#hard-scenario-"+ id).addClass("active");
     $("#hard-scenario-content-" + id).show();
+    $(".answer-modal").hide();
   };
 
   $scope.showHardScenario(1);
 
+  $scope.answers = [0, 0, 0, 0, 0, 0, 0];
   // Scenario contents
+
+  $scope.correctAnswers = [1,3,3,4,1,2,4];
 
   $scope.easy1Scenarios = [
     {
@@ -179,10 +201,30 @@ angular.module('Netsafe').controller('netivityController', function($scope) {
           answer: "---"
         }
       ]
+    },
+    {
+      scenario: "Solution",
+      answers: [
+        {
+          id: 1,
+          answer: "--sdfasdfa-"
+        },
+        {
+          id: 2,
+          answer: "-asdfwerrr--"
+        },
+        {
+          id: 3,
+          answer: "-rrrrrrrr--"
+        },
+        {
+          id: 4,
+          answer: "--correct-"
+        }
+      ]
     }
   ];
-
-  $scope.easy2Scenarios = [
+$scope.easy2Scenarios = [
     {
       scenario: "2 What is needed in the scenario?",
       answer: "2 Posting digital artworks of Thomas",
@@ -216,8 +258,7 @@ angular.module('Netsafe').controller('netivityController', function($scope) {
       answered: false
     }
   ];
-
-  $scope.med1Scenarios = [
+$scope.med1Scenarios = [
     {
       scenario: "1 What is needed in the scenario?",
       answer: "med Posting digital artworks of Thomas",
@@ -251,7 +292,7 @@ angular.module('Netsafe').controller('netivityController', function($scope) {
       answered: false
     }
   ];
-
 });
+
 
 // if ($scope.answer1.id === 1) // this is the correct answer
