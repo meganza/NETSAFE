@@ -12,6 +12,8 @@ a {
 
 a:hover {
 	color: #66aaaf;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .close i{
@@ -260,8 +262,7 @@ tr, th {
 }
 
 .modal-question-radio {
-	padding-top: 10px;
-	padding-left: 10px;
+	padding: 10px;
 }
 
 label {
@@ -271,4 +272,13 @@ label {
 .answer-icon{
 	padding-right: 5px;
 	text-align: right;
+}
+
+.submit-button {
+	padding: 3 0 3 0px;
+	background: #ffe1a8;
+	color: #875315;
+	border: 1px solid #efd197;
+	letter-spacing: .5px;
+	text-align: center;
 }
