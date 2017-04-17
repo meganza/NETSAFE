@@ -50,17 +50,58 @@
         <tr ng-repeat="scenario in easy1Scenarios">
           <th class="core-question"> {{scenario.scenario}} </th>
           <th class="core-answer">
-            <label ng-repeat="answer in answers">
+
+            <!-- Modal for answering  -->
+            <p class="answer-icon">
+              <a ng-click="clickAnswer()" style="text-decoration: none; cursor: pointer; color: #dd953e">
+                <i class="fa fa-pencil"></i>
+              </a>
+            </p>
+
+            <div class="help" ng-show="openAnswer">
+              <div class="help-modal">
+                <div class="help-header">
+                  Question
+                  <a class="close" ng-click="clickAnswer()">
+                    <i class="fa fa-times"></i>
+                  </a>
+                </div>
+                <div class="help-content">
+                  <div class="modal-question">
+                  <!-- to fix: Only gets the first one in scenario.scenario! -->
+                    {{scenario.scenario}}
+                  </div>
+
+                  <!-- to fix: Radio buttons does not show -->
+                  <div class="modal-question-radio">
+                    <label>
+                      <input type="radio" name=""> test radio button </input>
+                    </label>
+                    <label ng-repeat="answer in answers">
+                      <input type="radio" ng-value="answer.answer for answer in scenario.answers" ng-model="answer1">
+                        {{scenario.answer}}
+                      </input>
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+            <!-- <label ng-repeat="answer in answers">
               <input type="radio" ng-value="answer.answer for answer in scenario.answers" ng-model="answer1">
                 {{scenario.answer}}
               </input>
-            </label>
+            </label> -->
+
             <!-- <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
               [CLICK TO SEE ANSWER]
             </div>
             <div ng-show="scenario.answered" ng-click="scenario.answered = !scenario.answered">
               {{scenario.answer}}
             </div> -->
+
           </th>
         </tr>
       </table>

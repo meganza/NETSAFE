@@ -133,6 +133,7 @@ button {
 
 .help-content {
 	padding: 20px;
+	color: #3b6669;
 }
 
 .tab {
@@ -252,4 +253,22 @@ tr, th {
 	padding-bottom: 5px;
 	text-transform: uppercase;
 	color: #619ca0;
+}
+
+.modal-question{
+	font-weight: bold;
+}
+
+.modal-question-radio {
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+label {
+	font-weight: normal;
+}
+
+.answer-icon{
+	padding-right: 5px;
+	text-align: right;
 }

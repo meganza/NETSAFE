@@ -1,6 +1,10 @@
 angular.module('Netsafe').controller('netivityController', function($scope) {
   console.log('you are in netivity controller');
 
+  $scope.clickAnswer = function(){
+    $scope.openAnswer = !$scope.openAnswer;
+  }
+
   // Tabs for scenario difficulty
   $scope.showTab = function(id){
     $(".tab").removeClass("active");
