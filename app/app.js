@@ -39,7 +39,7 @@ Netsafe.config(function($stateProvider) {
 	})
 	.state('netsafe.definition', {
 		url: '/definition',
-		//controller:
+		controller: 'definitionController',
 		templateUrl: 'app/views/definition.html'
 	})
 	.state('netsafe.fundamental', {

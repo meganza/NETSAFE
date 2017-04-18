@@ -3,6 +3,7 @@ body {
 	margin: 0;
 	background-color: #E0F2DA;
 	font-family: helvetica;
+	margin-bottom: 55px;
 }
 
 a {
@@ -53,7 +54,7 @@ a:hover {
 .center {
 	position: relative;
 	height: 90%;
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -90,13 +91,15 @@ button {
 }
 
 #footer {
-	bottom: 0px;
-	width: 100%;
-	text-align: center;
-	position: absolute;
-	right: 0;
+	bottom: 15px;
+/*	width: 100%;*/
+/*	text-align: center;*/
+	position: fixed;
+/*	right: 0;
 	bottom: 10;
-	left: 0;
+	left: 0;*/
+/*	margin: 0 auto;*/
+/*	height: 50px;*/
 }
 
 .carousel {
@@ -300,4 +303,13 @@ label {
 	text-align: center;
 	position: absolute;
 	margin: 0 auto;
+}
+
+video {
+	width: 100% !important;
+  height: auto !important;
+}
+
+.sub-topic {
+	margin-bottom: 20px;
 }
