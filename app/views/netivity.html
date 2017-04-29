@@ -20,432 +20,220 @@
     </div>
     <div id="netivity-scenario-nav">
       <p>
-        <button id="easy-scenario-1" class="button-num" ng-click="showEasyScenario(1)">1</button>
-        <button id="easy-scenario-2" class="button-num" ng-click="showEasyScenario(2)">2</button>
-        <button id="easy-scenario-3" class="button-num" ng-click="showEasyScenario(3)">3</button>
-        <button id="easy-scenario-4" class="button-num" ng-click="showEasyScenario(4)">4</button>
-        <button id="easy-scenario-5" class="button-num" ng-click="showEasyScenario(5)">5</button>
+        <button ng-repeat="scenario in easyScenarios track by $index"
+                ng-click="showEasyScenario($index)"
+                class="button-num">
+          {{$index}}
+        </button>
       </p>
     </div>
-    <br>
 
-<!-- #1 Easy Scenario - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <div id="easy-scenario-content-1" class="scenario-content">
-      <div class="core-scenario">
-          Sarah is online chatting with a 10-year-old boy. The boy sends Sarah a picture of
-          himself and he wants Sara to send him a picture of herself and her family. Sara
-          is thinking if she should send a picture or not. She decided to send a picture of
-          herself and her family to the boy.
-      </div>
-      <table class="core-table">
-        <tr ng-repeat="scenario in easy1Scenarios track by $index">
-          {{scenario.scenario}}
-          <th class="core-question"> {{scenario.scenario}} </th>
-          <th class="core-answer">
-            {{answers[$index].answer}}
-          <!-- Modal for answering  -->
-            <p class="answer-icon">
-              <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
-                <i class="fa fa-pencil"></i>
-              </a>
-            </p>
-            <div class="answer-modal help" id="answer-{{$index}}">
-              <div class="help-modal">
-                <div class="help-header">
-                  Question
-                  <a class="close" ng-click="clickAnswer($index)">
-                    <i class="fa fa-times"></i>
-                  </a>
-                </div>
-                <div class="help-content">
-                  <div class="modal-question">
-                    {{scenario.scenario}}
-                  </div>
-
-                  <div class="modal-question-radio" ng-repeat="answer in scenario.answers">
-                    <label>
-                      <input type="radio" ng-value="answer" ng-model="$parent.answers[$parent.$index]">
-                      {{answer.answer}}
-                    </label>
-                  </div>
-                  <a ng-click="clickAnswer($index)">
-                    <div class="submit-button">
-                      Submit Answer
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </th>
-        </tr>
-      </table>
-
-      <a ng-click="checkAnswer()">
-        <div class="check-button">
-          Check Answer
-        </div>
-      </a>
+  <div class="scenario-content"
+       ng-repeat="scenario in easyScenarios track by $index"
+       ng-show="$parent.currentScenario === $index">
+    <div class="core-scenario">
+      {{scenario.scenario}}
     </div>
 
-<!-- #2 Easy Scenario - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <div id="easy-scenario-content-2" class="scenario-content">
-      <div class="core-scenario">
-          While you were in Middle School, you wrote a blog post where you criticized
-          one of your teachers for being mean to you in class. You claim the teacher
-          was not fair in her grading and she insulted you in front of your classmates.
-          Further in the post, you ridicule the teacher’s age, race, and physical
-          appearance. Now, you are in university and you are applying for a highly
-          competitive internship. During the interview, the interviewer brings out a
-          copy of the blog post and questions you about it.
-      </div>
-      <table class="core-table">
-        <tr ng-repeat="scenario in easy2Scenarios track by $index">
-          {{scenario.scenario}}
-          <th class="core-question"> {{scenario.scenario}} </th>
-          <th class="core-answer">
-            {{answers[$index].answer}}
-          <!-- Modal for answering  -->
-            <p class="answer-icon">
-              <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
-                <i class="fa fa-pencil"></i>
-              </a>
-            </p>
-            <div class="answer-modal help" id="answer-{{$index}}">
-              <div class="help-modal">
-                <div class="help-header">
-                  Question
-                  <a class="close" ng-click="clickAnswer($index)">
-                    <i class="fa fa-times"></i>
-                  </a>
+    <table class="core-table">
+      <tr ng-repeat="question in questions track by $index">
+        <th class="core-question"> {{question}} </th>
+        <th class="core-answer">
+          <p class="answer-icon">
+            {{$parent.scenario.answers[$index][answers[$index]]}}
+            <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </p>
+          <div class="answer-modal help" id="answer-{{$index}}">
+            <div class="help-modal">
+              <div class="help-header">
+                Question
+                <a class="close" ng-click="clickAnswer($index)">
+                  <i class="fa fa-times"></i>
+                </a>
+              </div>
+              <div class="help-content">
+                <div class="modal-question">
+                  {{question}}
                 </div>
-                <div class="help-content">
-                  <div class="modal-question">
-                    {{scenario.scenario}}
-                  </div>
 
-                  <div class="modal-question-radio" ng-repeat="answer in scenario.answers">
-                    <label>
-                      <input type="radio" ng-value="answer" ng-model="$parent.answers[$parent.$index]">
-                      {{answer.answer}}
-                    </label>
-                  </div>
-                  <a ng-click="clickAnswer($index)">
-                    <div class="submit-button">
-                      Submit Answer
-                    </div>
-                  </a>
+                <div class="modal-question-radio" ng-repeat="answer in $parent.scenario.answers[$index] track by $index">
+                  <label>
+                    <input type="radio"
+                           ng-value="$index"
+                           ng-model="$parent.answers[$parent.$index]">
+                    {{answer}}
+                  </label>
                 </div>
+                <a ng-click="clickAnswer($index)">
+                  <div class="submit-button">
+                    Submit Answer
+                  </div>
+                </a>
               </div>
             </div>
-          </th>
-        </tr>
-      </table>
+          </div>
+        </th>
+      </tr>
+    </table>
 
-      <a ng-click="checkAnswer()">
-        <div class="check-button">
-          Check Answer
-        </div>
-      </a>
-    </div>
-
-<!-- #3 Easy Scenario - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <div id="easy-scenario-content-3" class="scenario-content">
-      <div class="core-scenario">
-          A good friend of yours comes to talk to you one day to tell you that one of
-          the older students has recorded a video of her practicing for the school play.
-          The older student edited the video to make your friend look immature and
-          unintelligent and has been showing it to all of his friends. Your friend tells
-          you that she is embarrassed and upset, but has not told anyone about this.
+    <a ng-click="checkAnswer()">
+      <div class="check-button">
+        Check Answer
       </div>
-      <table class="core-table">
-        <tr ng-repeat="scenario in easy3Scenarios track by $index">
-          {{scenario.scenario}}
-          <th class="core-question"> {{scenario.scenario}} </th>
-          <th class="core-answer">
-            {{answers[$index].answer}}
-          <!-- Modal for answering  -->
-            <p class="answer-icon">
-              <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
-                <i class="fa fa-pencil"></i>
-              </a>
-            </p>
-            <div class="answer-modal help" id="answer-{{$index}}">
-              <div class="help-modal">
-                <div class="help-header">
-                  Question
-                  <a class="close" ng-click="clickAnswer($index)">
-                    <i class="fa fa-times"></i>
-                  </a>
-                </div>
-                <div class="help-content">
-                  <div class="modal-question">
-                    {{scenario.scenario}}
-                  </div>
+    </a>
+  </div>
+  </div> <!-- Tab content closing tab -->
 
-                  <div class="modal-question-radio" ng-repeat="answer in scenario.answers">
-                    <label>
-                      <input type="radio" ng-value="answer" ng-model="$parent.answers[$parent.$index]">
-                      {{answer.answer}}
-                    </label>
-                  </div>
-                  <a ng-click="clickAnswer($index)">
-                    <div class="submit-button">
-                      Submit Answer
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </th>
-        </tr>
-      </table>
-
-      <a ng-click="checkAnswer()">
-        <div class="check-button">
-          Check Answer
-        </div>
-      </a>
-    </div>
-
-<!-- #4 Easy Scenario - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <div id="easy-scenario-content-4" class="scenario-content">
-      <div class="core-scenario">
-        Adam’s school provides email accounts to all students. Adam is afraid that he might
-        forget his password and writes it down in his notebook. One day during class he is
-        called to the counseling office. He leaves his books in class and goes to the
-        office. When he gets back, he sees his notebook open to the page with his password.
-      </div>
-      <table class="core-table">
-        <tr ng-repeat="scenario in easy4Scenarios track by $index">
-          {{scenario.scenario}}
-          <th class="core-question"> {{scenario.scenario}} </th>
-          <th class="core-answer">
-            {{answers[$index].answer}}
-          <!-- Modal for answering  -->
-            <p class="answer-icon">
-              <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
-                <i class="fa fa-pencil"></i>
-              </a>
-            </p>
-            <div class="answer-modal help" id="answer-{{$index}}">
-              <div class="help-modal">
-                <div class="help-header">
-                  Question
-                  <a class="close" ng-click="clickAnswer($index)">
-                    <i class="fa fa-times"></i>
-                  </a>
-                </div>
-                <div class="help-content">
-                  <div class="modal-question">
-                    {{scenario.scenario}}
-                  </div>
-
-                  <div class="modal-question-radio" ng-repeat="answer in scenario.answers">
-                    <label>
-                      <input type="radio" ng-value="answer" ng-model="$parent.answers[$parent.$index]">
-                      {{answer.answer}}
-                    </label>
-                  </div>
-                  <a ng-click="clickAnswer($index)">
-                    <div class="submit-button">
-                      Submit Answer
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </th>
-        </tr>
-      </table>
-
-      <a ng-click="checkAnswer()">
-        <div class="check-button">
-          Check Answer
-        </div>
-      </a>
-    </div>
-
-<!-- #5 Easy Scenario - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <div id="easy-scenario-content-5" class="scenario-content">
-      <div class="core-scenario">
-          Your class is discussing reasons for not sharing personal information. However,
-          Steve wants Jose, his best friend, to check out his Facebook page to see if he
-          has appropriate information. Steve gave Jose his user ID and password to access
-          his Facebook account so another person can okay his information.
-      </div>
-      <table class="core-table">
-        <tr ng-repeat="scenario in easy5Scenarios track by $index">
-          {{scenario.scenario}}
-          <th class="core-question"> {{scenario.scenario}} </th>
-          <th class="core-answer">
-            {{answers[$index].answer}}
-          <!-- Modal for answering  -->
-            <p class="answer-icon">
-              <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
-                <i class="fa fa-pencil"></i>
-              </a>
-            </p>
-            <div class="answer-modal help" id="answer-{{$index}}">
-              <div class="help-modal">
-                <div class="help-header">
-                  Question
-                  <a class="close" ng-click="clickAnswer($index)">
-                    <i class="fa fa-times"></i>
-                  </a>
-                </div>
-                <div class="help-content">
-                  <div class="modal-question">
-                    {{scenario.scenario}}
-                  </div>
-
-                  <div class="modal-question-radio" ng-repeat="answer in scenario.answers">
-                    <label>
-                      <input type="radio" ng-value="answer" ng-model="$parent.answers[$parent.$index]">
-                      {{answer.answer}}
-                    </label>
-                  </div>
-                  <a ng-click="clickAnswer($index)">
-                    <div class="submit-button">
-                      Submit Answer
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </th>
-        </tr>
-      </table>
-
-      <a ng-click="checkAnswer()">
-        <div class="check-button">
-          Check Answer
-        </div>
-      </a>
-    </div>
-
-  </div> <!-- Tab-content closing tag -->
-
-<!-- Med Difficulty Scenarios -->
+  <!-- Medium Difficulty Scenarios -->
   <div id="tab-content-2" class="tab-content">
     <div class="difficulty-header">
       Medium Difficulty Scenarios
     </div>
     <div id="netivity-scenario-nav">
       <p>
-        <button id="med-scenario-1" class="button-num" ng-click="showMedScenario(1)">1</button>
-        <button id="med-scenario-2" class="button-num" ng-click="showMedScenario(2)">2</button>
-        <button id="med-scenario-3" class="button-num" ng-click="showMedScenario(3)">3</button>
-        <button id="med-scenario-4" class="button-num" ng-click="showMedScenario(4)">4</button>
-        <button id="med-scenario-5" class="button-num" ng-click="showMedScenario(5)">5</button>
-        <button id="med-scenario-6" class="button-num" ng-click="showMedScenario(6)">6</button>
-        <button id="med-scenario-7" class="button-num" ng-click="showMedScenario(7)">7</button>
-        <button id="med-scenario-8" class="button-num" ng-click="showMedScenario(8)">8</button>
-        <button id="med-scenario-9" class="button-num" ng-click="showMedScenario(9)">9</button>
-        <button id="med-scenario-10" class="button-num" ng-click="showMedScenario(10)">10</button>
+        <button ng-repeat="scenario in easyScenarios track by $index"
+                ng-click="showMedScenario($index)"
+                class="button-num">
+          {{$index}}
+        </button>
       </p>
     </div>
-    <br>
-    <div id="med-scenario-content-1" class="scenario-content">
-      <div class="core-scenario">
-          #1 - MEDIUM Thomas is a budding digital artist. He is proud of his works so he posts his
-          digital artworks on his facebook page. He received an email from some fellow
-          he has never met. This fellow tells Thomas that his works are trash and should
-          quit creating digital arts.
+
+  <div class="scenario-content"
+       ng-repeat="scenario in medScenarios track by $index"
+       ng-show="$parent.currentScenario === $index">
+    <div class="core-scenario">
+      {{scenario.scenario}}
+    </div>
+
+    <table class="core-table">
+      <tr ng-repeat="question in questions track by $index">
+        <th class="core-question"> {{question}} </th>
+        <th class="core-answer">
+          <p class="answer-icon">
+            {{$parent.scenario.answers[$index][answers[$index]]}}
+            <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </p>
+          <div class="answer-modal help" id="answer-{{$index}}">
+            <div class="help-modal">
+              <div class="help-header">
+                Question
+                <a class="close" ng-click="clickAnswer($index)">
+                  <i class="fa fa-times"></i>
+                </a>
+              </div>
+              <div class="help-content">
+                <div class="modal-question">
+                  {{question}}
+                </div>
+
+                <div class="modal-question-radio" ng-repeat="answer in $parent.scenario.answers[$index] track by $index">
+                  <label>
+                    <input type="radio"
+                           ng-value="$index"
+                           ng-model="$parent.answers[$parent.$index]">
+                    {{answer}}
+                  </label>
+                </div>
+                <a ng-click="clickAnswer($index)">
+                  <div class="submit-button">
+                    Submit Answer
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </table>
+
+    <a ng-click="checkAnswer()">
+      <div class="check-button">
+        Check Answer
       </div>
-      <table class="core-table">
-        <tr ng-repeat="scenario in med1Scenarios">
-          <th class="core-question"> {{scenario.scenario}} </th>
-          <th class="core-answer">
-            <div class="hidden-answer" ng-hide="scenario.answered" ng-click="scenario.answered = !scenario.answered">
-              [CLICK TO SEE ANSWER]
-            </div>
-            <div ng-show="scenario.answered" ng-click="scenario.answered = !scenario.answered">
-              {{scenario.answer}}
-            </div>
-          </th>
-        </tr>
-      </table>
-    </div>
-    <div id="med-scenario-content-2" class="scenario-content">
-      #2
-    </div>
-    <div id="med-scenario-content-3" class="scenario-content">
-      #3
-    </div>
-    <div id="med-scenario-content-4" class="scenario-content">
-      #4
-    </div>
-    <div id="med-scenario-content-5" class="scenario-content">
-      #5
-    </div>
-    <div id="med-scenario-content-6" class="scenario-content">
-      #6
-    </div>
-    <div id="med-scenario-content-7" class="scenario-content">
-      #7
-    </div>
-    <div id="med-scenario-content-8" class="scenario-content">
-      #8
-    </div>
-    <div id="med-scenario-content-9" class="scenario-content">
-      #9
-    </div>
-    <div id="med-scenario-content-10" class="scenario-content">
-      #10
-    </div>
+    </a>
   </div>
-<!-- Hard Difficulty Scenarios -->
+  </div> <!-- Tab content closing tab -->
+
+  <!-- Hard Difficulty Scenarios -->
   <div id="tab-content-3" class="tab-content">
     <div class="difficulty-header">
       Hard Difficulty Scenarios
     </div>
     <div id="netivity-scenario-nav">
       <p>
-        <button id="hard-scenario-1" class="button-num" ng-click="showHardScenario(1)">1</button>
-        <button id="hard-scenario-2" class="button-num" ng-click="showHardScenario(2)">2</button>
-        <button id="hard-scenario-3" class="button-num" ng-click="showHardScenario(3)">3</button>
-        <button id="hard-scenario-4" class="button-num" ng-click="showHardScenario(4)">4</button>
-        <button id="hard-scenario-5" class="button-num" ng-click="showHardScenario(5)">5</button>
-        <button id="hard-scenario-6" class="button-num" ng-click="showHardScenario(6)">6</button>
-        <button id="hard-scenario-7" class="button-num" ng-click="showHardScenario(7)">7</button>
-        <button id="hard-scenario-8" class="button-num" ng-click="showHardScenario(8)">8</button>
-        <button id="hard-scenario-9" class="button-num" ng-click="showHardScenario(9)">9</button>
-        <button id="hard-scenario-10" class="button-num" ng-click="showHardScenario(10)">10</button>
+        <button ng-repeat="scenario in easyScenarios track by $index"
+                ng-click="showHardScenario($index)"
+                class="button-num">
+          {{$index}}
+        </button>
       </p>
     </div>
-    <br>
-    <div id="hard-scenario-content-1" class="scenario-content">
-      #1
+
+  <div class="scenario-content"
+       ng-repeat="scenario in hardScenarios track by $index"
+       ng-show="$parent.currentScenario === $index">
+    <div class="core-scenario">
+      {{scenario.scenario}}
     </div>
-    <div id="hard-scenario-content-2" class="scenario-content">
-      #2
-    </div>
-    <div id="hard-scenario-content-3" class="scenario-content">
-      #3
-    </div>
-    <div id="hard-scenario-content-4" class="scenario-content">
-      #4
-    </div>
-    <div id="hard-scenario-content-5" class="scenario-content">
-      #5
-    </div>
-    <div id="hard-scenario-content-6" class="scenario-content">
-      #6
-    </div>
-    <div id="hard-scenario-content-7" class="scenario-content">
-      #7
-    </div>
-    <div id="hard-scenario-content-8" class="scenario-content">
-      #8
-    </div>
-    <div id="hard-scenario-content-9" class="scenario-content">
-      #9
-    </div>
-    <div id="hard-scenario-content-10" class="scenario-content">
-      #10
-    </div>
+
+    <table class="core-table">
+      <tr ng-repeat="question in questions track by $index">
+        <th class="core-question"> {{question}} </th>
+        <th class="core-answer">
+          <p class="answer-icon">
+            {{$parent.scenario.answers[$index][answers[$index]]}}
+            <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </p>
+          <div class="answer-modal help" id="answer-{{$index}}">
+            <div class="help-modal">
+              <div class="help-header">
+                Question
+                <a class="close" ng-click="clickAnswer($index)">
+                  <i class="fa fa-times"></i>
+                </a>
+              </div>
+              <div class="help-content">
+                <div class="modal-question">
+                  {{question}}
+                </div>
+
+                <div class="modal-question-radio" ng-repeat="answer in $parent.scenario.answers[$index] track by $index">
+                  <label>
+                    <input type="radio"
+                           ng-value="$index"
+                           ng-model="$parent.answers[$parent.$index]">
+                    {{answer}}
+                  </label>
+                </div>
+                <a ng-click="clickAnswer($index)">
+                  <div class="submit-button">
+                    Submit Answer
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </table>
+
+    <a ng-click="checkAnswer()">
+      <div class="check-button">
+        Check Answer
+      </div>
+    </a>
   </div>
+  </div> <!-- Tab content closing tab -->
+
 </div>  <!-- tab-content div end -->
+
 <div class="help" ng-show="clicked">
   <div class="help-modal">
     <div class="help-header">
