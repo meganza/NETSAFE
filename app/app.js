@@ -1,4 +1,4 @@
-var Netsafe = angular.module('Netsafe', ['ui.router'])
+var Netsafe = angular.module('Netsafe', ['ui.router'], 'angular-p5')
 
 Netsafe.config(function($stateProvider) {
 
@@ -89,7 +89,7 @@ Netsafe.config(function($stateProvider) {
 	})
 	.state('netsafe.activity', {
 		url: '/safety-security-activity',
-		//controller:
+		controller: 'activityController',
 		templateUrl: 'app/views/activity.html'
 	})
 });

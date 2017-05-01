@@ -55,17 +55,61 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ]
     },
     {
-      scenario: "While you were in Middle School, you wrote a blog post where you criticized" +
-                "one of syour teachers for being mean to you in class. You claim the teacher" +
-                "was not fair in her grading and she insulted you in front of your classmates." +
-                "Further in the post, you ridicule the teacher’s age, race, and physical" +
-                "appearance. Now, you are in university and you are applying for a highly" +
-                "competitive internship. During the interview, the interviewer brings out a" +
+      scenario: "While you were in Middle School, you wrote a blog post where you criticized " +
+                "one of syour teachers for being mean to you in class. You claim the teacher " +
+                "was not fair in her grading and she insulted you in front of your classmates. " +
+                "Further in the post, you ridicule the teacher’s age, race, and physical " +
+                "appearance. Now, you are in university and you are applying for a highly " +
+                "competitive internship. During the interview, the interviewer brings out a " +
                 "copy of the blog post and questions you about it.",
 
-      answer: {
-
-      }
+      answers: [
+        [
+          "---",
+          "---",
+          "Apply for a highly competitive internship",
+          "---"
+        ],
+        [
+          "You, your teacher, and interviewer",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "---",
+          "---",
+          "---",
+          "You and the teachers"
+        ],
+        [
+          "---",
+          "---",
+          "---",
+          "blog"
+        ],
+        [
+          "You wrote a blog post criticizing one of your teachers in middle school. " +
+          "You ridicule the teacher’s age, race, and physical appearance. " +
+          "You are applying for a highly competitive internship in college. " +
+          "The interviewer brings out a copy of the blog post and questions you about it.",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "---",
+          "What do I look online (Digital tattoo) and Make yourself look good online",
+          "---",
+          "---"
+        ],
+        [
+          "---",
+          "---",
+          "---",
+          "correct"
+        ]
+      ]
     }
   ],
 
