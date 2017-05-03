@@ -22,7 +22,8 @@ angular.module('Netsafe').controller('netivityController',
   $scope.showTab(1);
 
   $scope.showEasyScenario = function(index) {
-
+    $(".button-num").removeClass("active");
+    $("#button-num-"+ index).addClass("active");
     $scope.currentScenario = index;
     $scope.answers = [null, null, null, null, null, null, null];
 

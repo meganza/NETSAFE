@@ -22,8 +22,9 @@
       <p>
         <button ng-repeat="scenario in easyScenarios track by $index"
                 ng-click="showEasyScenario($index)"
+                id="button-num-($index)"
                 class="button-num">
-          {{$index}}
+          {{$index+1}}
         </button>
       </p>
     </div>
@@ -96,7 +97,7 @@
         <button ng-repeat="scenario in easyScenarios track by $index"
                 ng-click="showMedScenario($index)"
                 class="button-num">
-          {{$index}}
+          {{$index+1}}
         </button>
       </p>
     </div>
@@ -169,7 +170,7 @@
         <button ng-repeat="scenario in easyScenarios track by $index"
                 ng-click="showHardScenario($index)"
                 class="button-num">
-          {{$index}}
+          {{$index+1}}
         </button>
       </p>
     </div>
