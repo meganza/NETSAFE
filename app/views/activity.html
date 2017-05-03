@@ -3,10 +3,52 @@
 </div>
 
 <div class="center">
-  <div class="container">
+  <div id="activity-container">
 
-	ONLINE SAFETY AND SECURITY ACTIVITY
-  <p5 sketch="mySketch"></p5>
+    <div id="canvas">
+      <img id="infected-file" src="/images/activity/infected-file.png">
+      <img id="malicious-programs" src="/images/activity/malicious-programs.png">
+
+      <img id="infected-disk-gif" src="/images/activity/infected-disk.gif">
+      <img id="infected-disk-png" src="/images/activity/infected-disk-drive.png">
+
+      <img id="desktop-popup" src="/images/activity/desktop-popup.gif">
+      <img id="os-error" src="/images/activity/os-error.gif">
+
+      <img id="win32-gif" src="/images/activity/win-32-error.gif">
+      <img id="win32-png" src="/images/activity/win-32.png">
+
+      <img id="browser-popup" src="/images/activity/browser-popup.gif">
+      <img id="suspicious-email" src="/images/activity/suspicious-email.gif">
+      <img id="not-responding" src="/images/activity/not-responding.gif">
+      <img id="reversed-text" src="/images/activity/reversed-text.gif">
+      <img id="locked-computer" src="/images/activity/locked-computer.png">
+      <img id="slow-computer" src="/images/activity/slow-computer.png">
+      <img id="computer-restart" src="/images/activity/computer-restart.gif">
+      <img id="blue-screen" src="/images/activity/blue-screen.gif">
+
+      <img id="desktop" src="/images/activity/desktop.png">
+    </div>
+
+    <div class="symptoms">
+      <div id="computer-crash-btn" class="symp-select" ng-click="showBlueScreen()">Computer crash</div>
+      <div id="computer-restart-btn" class="symp-select" ng-click="showComputerRestart()">Computer restart</div>
+      <div id="slow-computer-btn" class="symp-select" ng-click="showSlowComputer()">Slow performance</div>
+      <div id="locked-computer-btn" class="symp-select" ng-click="showLockedComputer()">Locked computer</div>
+      <div id="reversed-text-btn" class="symp-select" ng-click="showReversedText()">Reversed text</div>
+      <div id="not-responding-btn" class="symp-select" ng-click="showNotResponding()">Not responding</div>
+      <div id="suspicious-email-btn" class="symp-select" ng-click="showSuspiciousEmail()">Downloading email files</div>
+      <div id="browser-popup-btn" class="symp-select" ng-click="showBrowserPopup()">Browser pop-up</div>
+      <div id="win32-btn" class="symp-select" ng-click="showWin32Error()">Win32 Error</div>
+      <div id="desktop-popup-btn" class="symp-select" ng-click="showDesktopPopup()">Desktop pop-up</div>
+      <div id="os-error-btn" class="symp-select" ng-click="showOSError()">OS Errors</div>
+      <div id="infected-storage-btn" class="symp-select" ng-click="showInfectedStorage()">Infected storage</div>
+      <div id="infected-file-btn" class="symp-select" ng-click="showInfectedFiles()">Infected files</div>
+      <div id="malicious-programs-btn" class="symp-select" ng-click="showMaliciousPrograms()">Malicious programs</div>
+
+      <div class="bold-btn symp-select" ng-click="clearSymptom()">Clear all symptoms</div>
+      <div id="full-width-btn" class="bold-btn symp-select" ng-click="showAnswers()">View possible answers</div>
+    </div>
 
   </div>
 </div>

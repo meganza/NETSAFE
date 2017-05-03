@@ -3,8 +3,11 @@ angular.module('Netsafe').factory('mySketch', function(p5) {
     var x = 100;
     var y = 100;
 
+    var btn_kyubey;
+
     sketch.setup = function() {
       sketch.createCanvas(700, 410);
+      btn_kyubey.createButton('kyubey');
     };
 
     sketch.draw = function() {
