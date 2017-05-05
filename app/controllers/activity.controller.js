@@ -20,6 +20,10 @@ angular.module('Netsafe').controller('activityController', function($scope) {
   var tf_infected_file = false;
   var tf_malicious_programs = false;
 
+  var tf_browser_toolbars = false;
+  var tf_no_start_progams = false;
+  var tf_unknown_exe = false;
+
   $("#blue-screen").hide();
   $("#computer-restart").hide();
   $("#slow-computer").hide();
@@ -40,6 +44,10 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
   $("#infected-file").hide();
   $("#malicious-programs").hide();
+
+  $("#browser-toolbar").hide();
+  $("#no-start-programs").hide();
+  $("#unknown-exe").hide();
 
   $scope.showBlueScreen = function(){
     if(symptom_counter !== 5 && !tf_blue_screen){
@@ -297,6 +305,60 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     }
   }
 
+  $scope.showBrowserToolbar = function(){
+    if(symptom_counter !== 5 && !tf_browser_toolbars){
+      $("#browser-toolbar").show();
+      tf_browser_toolbars = true;
+      symptom_counter ++;
+      $("#browser-toolbar-btn").addClass("active");
+
+      console.log(symptom_counter);
+    } else if(tf_browser_toolbars){
+      $("#browser-toolbar").hide();
+      tf_browser_toolbars = false;
+      symptom_counter --;
+      $("#browser-toolbar-btn").removeClass("active");
+
+      console.log(symptom_counter);
+    }
+  }
+
+  $scope.showNoStartProgram = function(){
+    if(symptom_counter !== 5 && !tf_no_start_progams){
+      $("#no-start-programs").show();
+      tf_no_start_progams = true;
+      symptom_counter ++;
+      $("#no-start-programs-btn").addClass("active");
+
+      console.log(symptom_counter);
+    } else if(tf_no_start_progams){
+      $("#no-start-programs").hide();
+      tf_no_start_progams = false;
+      symptom_counter --;
+      $("#no-start-programs-btn").removeClass("active");
+
+      console.log(symptom_counter);
+    }
+  }
+
+  $scope.showUnknownExe = function(){
+    if(symptom_counter !== 5 && !tf_unknown_exe){
+      $("#unknown-exe").show();
+      tf_unknown_exe = true;
+      symptom_counter ++;
+      $("#unknown-exe-btn").addClass("active");
+
+      console.log(symptom_counter);
+    } else if(tf_unknown_exe){
+      $("#unknown-exe").hide();
+      tf_unknown_exe = false;
+      symptom_counter --;
+      $("#unknown-exe-btn").removeClass("active");
+
+      console.log(symptom_counter);
+    }
+  }
+
   $scope.clearSymptom = function(){
     symptom_counter = 0;
 
@@ -314,6 +376,9 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     tf_infected_disk = false;
     tf_infected_file = false;
     tf_malicious_programs = false;
+    tf_browser_toolbars = false;
+    tf_no_start_progams = false;
+    tf_unknown_exe = false;
 
     $("#blue-screen").hide();
     $("#computer-restart").hide();
@@ -336,6 +401,10 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     $("#infected-file").hide();
     $("#malicious-programs").hide();
 
+    $("#browser-toolbar").hide();
+    $("#no-start-programs").hide();
+    $("#unknown-exe").hide();
+
     $("#computer-crash-btn").removeClass("active");
     $("#computer-restart-btn").removeClass("active");
     $("#slow-computer-btn").removeClass("active");
@@ -350,6 +419,10 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     $("#infected-storage-btn").removeClass("active");
     $("#infected-file-btn").removeClass("active");
     $("#malicious-programs-btn").removeClass("active");
+
+    $("#browser-toolbar-btn").removeClass("active");
+    $("#no-start-programs-btn").removeClass("active");
+    $("#unknown-exe-btn").removeClass("active");
   }
 
   $scope.showAnswers = function(){
@@ -359,9 +432,9 @@ angular.module('Netsafe').controller('activityController', function($scope) {
       $scope.answer = "Virus and Trojan Horse";
     } else if (tf_browser_popup && tf_slow_computer && tf_malicious_programs){
       $scope.answer = "Spyware and Adware";
-    } else if (tf_slow_computer && tf_infected_file && tf_win32 && tf_malicious_programs && tf_computer_restart){
+    } else if (tf_slow_computer && tf_infected_file && tf_win32 && tf_malicious_programs && tf_computer_restart && tf_browser_toolbars){
       $scope.answer = "Worms and Virus";
-    } else if (tf_slow_computer && tf_browser_popup && tf_infected_file && tf_malicious_programs){
+    } else if (tf_slow_computer && tf_browser_popup && tf_infected_file && tf_blue_screen){
       $scope.answer = "Virus and Adware";
     } else if (tf_slow_computer && tf_malicious_programs && tf_reversed_text){
       $scope.answer = "Keylogger and Spyware";
@@ -369,9 +442,9 @@ angular.module('Netsafe').controller('activityController', function($scope) {
       $scope.answer = "Trojan Horse and Ransomware";
     } else if (tf_browser_popup && tf_malicious_programs && tf_computer_restart) {
       $scope.answer = "Trojan Horse and Adware";
-    } else if (tf_infected_disk && tf_infected_file && tf_os_error && tf_blue_screen) {
+    } else if (tf_infected_disk && tf_infected_file && tf_os_error && tf_blue_screen && tf_no_start_progams) {
       $scope.answer = "Trojan Horse, Virus and Worm";
-    } else if (tf_suspicious_email && tf_malicious_programs && tf_locked_computer) {
+    } else if (tf_suspicious_email && tf_malicious_programs && tf_locked_computer && tf_browser_toolbars) {
       $scope.answer = "Spyware, Trojan Horse, and Randsomware";
     } else if (tf_slow_computer && tf_reversed_text && tf_win32 && tf_desktop_popup && tf_blue_screen) {
       $scope.answer = "Keylogger, Worms and Virus";
@@ -390,7 +463,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
             if(tf_blue_screen){
               $scope.answer = "Possible malware may be Virus";
             } else {
-              $scope.answer = "Possible malware may be Virus Trojan Horse or Worms";
+              $scope.answer = "Possible malware may be Virus, Trojan Horse or Worms";
             }
           } else {
             $scope.answer = "Possible malware may be Virus, Trojan Horse, Spyware or Worms";
@@ -421,13 +494,13 @@ angular.module('Netsafe').controller('activityController', function($scope) {
         } else if (tf_slow_computer && tf_browser_popup) {
           $scope.answer = "Possible malware may be Adware";
         } else if (tf_slow_computer && tf_malicious_programs) {
-          if(tf_os_error){
+          if(tf_browser_toolbars){
             $scope.answer = "Possible malware may be Spyware";
           } else {
             $scope.answer = "Possible malware may be Spyware or Trojan Horse";
           }
 
-        } else if (tf_slow_computer && tf_reversed_text) {
+        } else if (tf_slow_computer && (tf_reversed_text || tf_unknown_exe)) {
           $scope.answer = "Possible malware may be Keylogger";
         } else if (tf_suspicious_email && tf_locked_computer) {
           $scope.answer = "Possible malware may be Ransomware";
