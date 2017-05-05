@@ -1,6 +1,8 @@
 angular.module('Netsafe').controller('activityController', function($scope) {
   console.log('you are in activityController');
 
+  $scope.answered = false;
+
   var symptom_counter = 0;
 
   var tf_blue_screen = false;
@@ -350,6 +352,93 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     $("#malicious-programs-btn").removeClass("active");
   }
 
+  $scope.showAnswers = function(){
+    $scope.answered = !$scope.answered;
+
+    if(tf_desktop_popup && tf_infected_file && tf_infected_disk && tf_suspicious_email && tf_blue_screen){
+      $scope.answer = "Virus and Trojan Horse";
+    } else if (tf_browser_popup && tf_slow_computer && tf_malicious_programs){
+      $scope.answer = "Spyware and Adware";
+    } else if (tf_slow_computer && tf_infected_file && tf_win32 && tf_malicious_programs && tf_computer_restart){
+      $scope.answer = "Worms and Virus";
+    } else if (tf_slow_computer && tf_browser_popup && tf_infected_file && tf_malicious_programs){
+      $scope.answer = "Virus and Adware";
+    } else if (tf_slow_computer && tf_malicious_programs && tf_reversed_text){
+      $scope.answer = "Keylogger and Spyware";
+    } else if (tf_malicious_programs && tf_suspicious_email && tf_infected_disk && tf_locked_computer) {
+      $scope.answer = "Trojan Horse and Ransomware";
+    } else if (tf_browser_popup && tf_malicious_programs && tf_computer_restart) {
+      $scope.answer = "Trojan Horse and Adware";
+    } else if (tf_infected_disk && tf_infected_file && tf_os_error && tf_blue_screen) {
+      $scope.answer = "Trojan Horse, Virus and Worm";
+    } else if (tf_suspicious_email && tf_malicious_programs && tf_locked_computer) {
+      $scope.answer = "Spyware, Trojan Horse, and Randsomware";
+    } else if (tf_slow_computer && tf_reversed_text && tf_win32 && tf_desktop_popup && tf_blue_screen) {
+      $scope.answer = "Keylogger, Worms and Virus";
+    } else {
+      if(symptom_counter === 1){
+        if (tf_slow_computer || tf_computer_restart){
+          $scope.answer = "Possible malware may be Virus, Trojan Horse, Worms, Adware or Spyware";
+        } else if (tf_suspicious_email) {
+          $scope.answer = "Possible malware may be Trojan Horse or Ransomware";
+        } else {
+          $scope.answer = "Please choose more symptoms";
+        }
+      } else {
+        if (tf_slow_computer && tf_desktop_popup) {
+          if (tf_infected_file) {
+            if(tf_blue_screen){
+              $scope.answer = "Possible malware may be Virus";
+            } else {
+              $scope.answer = "Possible malware may be Virus Trojan Horse or Worms";
+            }
+          } else {
+            $scope.answer = "Possible malware may be Virus, Trojan Horse, Spyware or Worms";
+          }
+
+        } else if (tf_computer_restart && tf_malicious_programs) {
+          if(tf_infected_disk){
+            if(tf_suspicious_email){
+              $scope.answer = "Possible malware may be Trojan Horse";
+            } else {
+              $scope.answer = "Possible malware may be Trojan Horse or Virus";
+            }
+          } else {
+            $scope.answer = "Possible malware may be Trojan Horse, Virus or Spyware";
+          }
+
+        } else if (tf_computer_restart && tf_os_error) {
+          if(tf_infected_file){
+            if(tf_win32){
+              $scope.answer = "Possible malware may be Worms";
+            } else {
+              $scope.answer = "Possible malware may be Worms, Virus or Trojan Horse";
+            }
+          } else {
+            $scope.answer = "Possible malware may be Worm or Virus";
+          }
+
+        } else if (tf_slow_computer && tf_browser_popup) {
+          $scope.answer = "Possible malware may be Adware";
+        } else if (tf_slow_computer && tf_malicious_programs) {
+          if(tf_os_error){
+            $scope.answer = "Possible malware may be Spyware";
+          } else {
+            $scope.answer = "Possible malware may be Spyware or Trojan Horse";
+          }
+
+        } else if (tf_slow_computer && tf_reversed_text) {
+          $scope.answer = "Possible malware may be Keylogger";
+        } else if (tf_suspicious_email && tf_locked_computer) {
+          $scope.answer = "Possible malware may be Ransomware";
+        } else {
+          $scope.answer = "Please choose more symptoms or Combination not found";
+        }
+      }
+      //$scope.answer = "combination not found";
+    }
+
+  }
 
 
 });
