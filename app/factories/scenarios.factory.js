@@ -2,49 +2,49 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
   return {
     easy: [
     {
-      scenario: "Sarah is online chatting with a 10-year-old boy. The boy sends Sarah a picture of " +
+      scenario: "Sara is online chatting with a 10-year-old boy. The boy sends Sara a picture of " +
                 "himself and he wants Sara to send him a picture of herself and her family. Sara " +
                 "is thinking if she should send a picture or not. She decided to send a picture of " +
                 "herself and her family to the boy.",
       answers: [
         [
-          "---",
-          "---",
-          "To decide whether Sarah should send a picture or herself and her family or not.",
-          "---"
+          "To decide which photo is best to send.",
+          "To decide if sending a photo with friends is better.",
+          "To decide whether Sara should send a picture or herself and her family or not.",
+          "To decide if Sara should include her siblings in the photo."
         ],
         [
           "Sara and the 10-year-old boy",
-          "---",
-          "---",
-          "---"
+          "Sara's parents",
+          "Sara and her family",
+          "10-year-old boy and his family."
         ],
         [
-          "---",
-          "---",
-          "---",
-          "Sarah, the boy, and Sarah’s family"
+          "The boy's family.",
+          "Sara and the boy.",
+          "The boy and Sara's family.",
+          "Sara, the boy, and Sara’s family"
         ],
         [
-          "---",
-          "---",
-          "---",
-          "Online messaging application, family photo"
+          "Internet and the family photo.",
+          "Internet and the Online messaging application.",
+          "Sara's phone and their family photo.",
+          "Online messaging application, family photo."
         ],
         [
-          "Sarah is chatting with a 10-year-old boy." +
-          "The boy sends Sarah a picture of himself." +
-          "The boy asks Sarah to send him a photo of herself and her family." +
-          "Sarah sends a picture of herself and her family to the boy.",
-          "---",
-          "---",
-          "---"
+          "Sara is chatting with a 10-year-old boy." +
+          "The boy sends Sara a picture of himself." +
+          "The boy asks Sara to send him a photo of herself and her family." +
+          "Sara sends a picture of herself and her family to the boy.",
+          "Sara and her family took a photo where she sent it to the boy.",
+          "They both promised each other to send their photos and their family's photos.",
+          "Sara reported and muted the boy in the messaging application."
         ],
         [
-          "---",
+          "Make yourself look good online",
           "Giving away too much information (Digital Tattoo)",
-          "---",
-          "---"
+          "Know where you are in cyberspace",
+          "Don't abuse your power"
         ],
         [
           "Sarah sends the photo and told her parents what she did.",
@@ -112,7 +112,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ]
     },
     {
-      scenario: "A good friend of yours comes to talk to you one day to tell you that one of the older" +
+      scenario: "A good friend of yours comes to talk to you one day to tell you that one of the older " +
                 "students has recorded a video of her practicing for the school play. The older student " +
                 "edited the video to make your friend look immature and unintelligent and has been " +
                 "showing it to all of his friends. Your friend tells you that she is embarrassed and upset," +
@@ -321,9 +321,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
+          "Bob should not have message his co-worker while his co-worker is busy.",
+          "The co-worker got mad and emailed Bob that he is busy and should not bother him while working.",
+          "The co-worker ignored Bob’s message because he was busy.",
           "Bob should have only sent one message to his co-worker informing that he needs the information immediately."
         ]
       ]
@@ -376,19 +376,19 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
+          "You also post an embarrassing photo of your friend ad tag him/her.",
+          "You post a rude comment directed to the people making fun of you and your friends.",
+          "You also make fun of your friends to make you seem okay with it and there’s no big deal about it.",
           "Your friend should have asked permission first if you want to be tagged in a photo or share your photo."
         ]
       ]
     },
     {
-      scenario: "You begin to receive snaps (how you communicate through Snapchat) from a user " +
-                "you don’t recognize. This person claims to go to your school and seems to know a " +
-                "lot of information about your school and your classes that makes you believe him." +
-                "After a bit, he begins to ask you questions about you and your friends. However," +
-                "when you ask for the person’s name, he avoids the question.",
+      scenario: "You begin to receive snaps (how you communicate through Snapchat) from a user you don’t recognize. " +
+                "This person claims to go to your school and seems to know a lot of information about your school " +
+                "and your classes that makes you believe him. After a bit, he begins to ask you questions about you and " +
+                "your friends. However, when you ask for the person’s name, he avoids the question and changes " +
+                "the topic. Your conversation with him on Snapchat continues.",
 
       answers: [
         [
@@ -431,9 +431,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
+          "You report the user’s profile to snapchat.",
+          "You ask the person to send a picture of himself/herself.",
+          "You ask your computer savvy friend to stalk the person and look for information about him/her.",
           "The other user should have given his name or identity to you before you engage to the conversation any further."
         ]
       ]
@@ -477,14 +477,14 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         [
           "---",
           "Help keep flame wars under control and " +
-          "Adhere to the same standards of behavior online that you follow in real life",
+          "Remember the human",
           "---",
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
+          "His enemies should continue to respond to Abner’s threats and insult.",
+          "Abner shouldn’t have posted comments to the forum.",
+          "Abner keeps on responding to their threats and insults them in a way that provokes them.",
           "Abner should just stop responding and save himself the energy or he could respond to them in a manner that does not provoke them."
         ]
       ]
@@ -534,9 +534,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
+          "The supervisor should require the secretary to be always on the clock even if she’s not at work.",
+          "The supervisor asks the security admin to access the e-mail of the secretary instead of asking the password from the secretary.",
+          "The secretary gives her password to her supervisor unwillingly.",
           "The secretary should explain to the supervisor that it breaks the netiquette."
         ]
       ]
@@ -607,9 +607,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
+          "Marty should not have gotten mad because it was only for fun.",
+          "Marty should get mad at them and demanded to take down the website.",
+          "You should have only emailed the link of the website to your closest friends.",
           "You and the other group of students shouldn’t have created a website containing postings that include made-up stories, jokes and cartoons involving Marty."
         ]
       ]
@@ -664,9 +664,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
+          "Anna should have looked up the answer to her question on the internet instead of posting in the discussion group.",
+          "Miko should have just ignored Anna’s question.",
+          "Anna should have just asked some of her friends about her problem instead of posting a question in the discussion group.",
           "Miko should have shared and answered Anna’s question nicely to help her."
         ]
       ]
@@ -731,9 +731,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
+          "Kenneth should have just stayed away from the issue and kept quiet about it.",
+          "The school administration should suspend Penelope for spreading false rumors.",
+          "The small delegation of students should have just ignored the long message of Penelope.",
           "Penelope should not have sent a long message with a heavy religious note."
         ]
       ]
@@ -795,9 +795,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
+          "You and your friends should have just made those jokes through a private chat.",
+          "Your friend should not have gotten mad to her parents.",
+          "Your friend’s parents should not have called the school.",
           "You and your friend shouldn’t have behaved inappropriately online/ on Facebook you’re your friend’s parents shouldn’t have went through the private messages of their daughter."
         ]
       ]
@@ -853,10 +853,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
-          "-  George shouldn’t have accessed Elijah’s email and tried to fix their problem with each other by having a mature conversation."
+          "Elijah should have hired someone to hack George’s email account to get even with him.",
+          "George should have just spammed Elijah to annoy him.",
+          "Elijah should email each of his co-workmates informing them that George probably hacked his email account.",
+          "George shouldn’t have accessed Elijah’s email and tried to fix their problem with each other by having a mature conversation."
         ]
       ]
     }
