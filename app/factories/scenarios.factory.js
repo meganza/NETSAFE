@@ -47,10 +47,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
-          "correct"
+          "Sarah sends the photo and told her parents what she did.",
+          "Sarah tells the boy that he is a freaky and creepy person.",
+          "Sarah asks her friends online what should she do about it.",
+          "Sarah politely declines the boy’s request and ends her conversation with the boy."
         ]
       ]
     },
@@ -104,10 +104,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
-          "correct"
+          "You tell your interviewer the reason why you wrote that blog post.",
+          "You wrote a personal email to your teacher telling that she is not fair in her grading and you insulted her and criticized her teaching skills.",
+          "You lie about the blog post telling the interviewer that someone else could have written that post under your name.",
+          "You shouldn’t have written a blog post criticizing your teacher. Instead, you could have told to your parents what happened and brought the issue to the principal’s office or school administration to settle it."
         ]
       ]
     },
@@ -159,10 +159,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
-          "correct"
+          "Your friend makes a post online calling out the older student’s behaviour and called him a jerk and other negative remarks.",
+          "You convince your friend to tell other people what the older student did but fabricate some parts of the story to make it look worse.",
+          "Your friend also edited a video making fun of the older student.",
+          "The older student should not have edited the video to make your friend look immature and unintelligent."
         ]
       ]
     },
@@ -210,10 +210,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
-          "correct"
+          "The anonymous person should have personally asked Adam his password instead.",
+          "Adam asks his classmates who opened his notebook.",
+          "Adam shouldn’t have written down his password in his notebook",
+          "The anonymous person should not have opened Adam’s notebook with his password."
         ]
       ]
     },
@@ -261,10 +261,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---"
         ],
         [
-          "---",
-          "---",
-          "---",
-          "correct"
+          "Jose promises not to access Steve’s facebook account unless Steve asks him to do so",
+          "Jose also gives his user ID and password to Steve.",
+          "Steve changes his user ID and password.",
+          "Steve should not have given his user ID and password to Jose. He could have just shown his Facebook account to Jose without giving his User ID and password."
         ]
       ]
     }
@@ -324,7 +324,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "Bob should have only sent one message to his co-worker informing that he needs the information immediately."
         ]
       ]
     },
@@ -379,7 +379,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "Your friend should have asked permission first if you want to be tagged in a photo or share your photo."
         ]
       ]
     },
@@ -434,7 +434,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "The other user should have given his name or identity to you before you engage to the conversation any further."
         ]
       ]
     },
@@ -485,7 +485,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "Abner should just stop responding and save himself the energy or he could respond to them in a manner that does not provoke them."
         ]
       ]
     },
@@ -537,7 +537,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "The secretary should explain to the supervisor that it breaks the netiquette."
         ]
       ]
     }
@@ -610,7 +610,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "You and the other group of students shouldn’t have created a website containing postings that include made-up stories, jokes and cartoons involving Marty."
         ]
       ]
     },
@@ -667,7 +667,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "Miko should have shared and answered Anna’s question nicely to help her."
         ]
       ]
     },
@@ -734,7 +734,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "Penelope should not have sent a long message with a heavy religious note."
         ]
       ]
     },
@@ -798,7 +798,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "You and your friend shouldn’t have behaved inappropriately online/ on Facebook you’re your friend’s parents shouldn’t have went through the private messages of their daughter."
         ]
       ]
     },
@@ -856,7 +856,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "---",
           "---",
           "---",
-          "correct"
+          "-  George shouldn’t have accessed Elijah’s email and tried to fix their problem with each other by having a mature conversation."
         ]
       ]
     }
