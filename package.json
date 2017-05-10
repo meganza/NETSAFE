@@ -1,6 +1,7 @@
 {
   "name": "NETSAFE",
   "main": "index.html",
+  "version": "0.22.3",
   "window": {
     "title": "NETSAFE",
     "min_width":      1280,
