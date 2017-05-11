@@ -1,27 +1,32 @@
 <div class="header">
-	Identity Theft
+  Identity Theft
 </div>
 
 <div class="center">
   <div class="container">
 
-    <video controls="controls">
+    <!-- FOR NATIVE APP -->
+    <!-- <video controls="controls">
       <source src="videos/Identity theft.mp4" type="video/mp4">
-    </video>
+    </video> -->
+
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/qguDRN2jxGs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
 
   </div>
 </div>
 
 <div class="help" ng-show="clicked">
-	<div class="help-modal">
-		<div class="help-header">
-			Identity Theft
-			<a class="close" ng-click="clickHelp()">
+  <div class="help-modal">
+    <div class="help-header">
+      Identity Theft
+      <a class="close" ng-click="clickHelp()">
         <i class="fa fa-times"></i>
       </a>
-		</div>
-		<div class="help-content">
-			Identity theft is a crime of fraud wherein criminals portray as other individuals. Most of the time,
+    </div>
+    <div class="help-content">
+      Identity theft is a crime of fraud wherein criminals portray as other individuals. Most of the time,
       it is for financial gain. Criminals are able to get another person’s credentials and sensitive
       information through the malwares that have been installed in the system.
       <br><br>Aside from protecting yourself from malware, additional steps can be taken to prevent identity
@@ -31,6 +36,6 @@
       they could protect your information.
       <br><br>If and when you suspect that you are a victim of identity theft, it is important to
       place fraud alerts on your credit cards and file police reports.
-		</div>
-	</div>
+    </div>
+  </div>
 </div>

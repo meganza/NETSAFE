@@ -1,5 +1,5 @@
 <div class="header">
-	Fundamental Concepts on Netiquette
+  Fundamental Concepts on Netiquette
 </div>
 
 <br>
@@ -14,97 +14,113 @@
 
 
 <div class="tab-content-container">
-	<div id="tab-content-1" class="tab-content">
-		<div class="sub-topic">
-	  	<button ng-click="showCYOVid(1)">Digital Tattoo</button>
-			<button ng-click="showCYOVid(2)">Internet Privacy</button>
-		</div>
+  <div id="tab-content-1" class="tab-content">
+    <div class="sub-topic">
+      <button ng-click="showCYOVid(1)">Digital Tattoo</button>
+      <button ng-click="showCYOVid(2)">Internet Privacy</button>
+    </div>
 
-	  <div id="CYO-video-1" class="CYO-video">
-		  <video controls="controls">
-      	<source src="videos/Digital tattoo.mp4" type="video/mp4">
-    	</video>
-	  </div>
+    <div id="CYO-video-1" class="CYO-video">
+      <!-- FOR NATIVE APP -->
+      <!-- <video controls="controls">
+        <source src="videos/Digital tattoo.mp4" type="video/mp4">
+      </video> -->
 
-	  <div id="CYO-video-2" class="CYO-video">
-		  <video controls="controls">
-				<source src="videos/Internet Privacy.mp4" type="video/mp4">
-			</video>
-	  </div>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/lljOiBv4V6w?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
 
-<!-- 	  <div id="footer">
-		  	<button ng-click="showCYOVid(1)">Digital Tattoo</button>
-		  	<button ng-click="showCYOVid(2)">Internet Privacy</button>
-	  </div> -->
-	</div>
+    <div id="CYO-video-2" class="CYO-video">
+      <!-- FOR NATIVE APP -->
+      <!-- <video controls="controls">
+        <source src="videos/Internet Privacy.mp4" type="video/mp4">
+      </video> -->
 
-	<div id="tab-content-2" class="tab-content">
-		<video controls="controls">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/AsidPDo6icM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+<!--    <div id="footer">
+        <button ng-click="showCYOVid(1)">Digital Tattoo</button>
+        <button ng-click="showCYOVid(2)">Internet Privacy</button>
+    </div> -->
+  </div>
+
+  <div id="tab-content-2" class="tab-content">
+    <!-- FOR NATIVE APP -->
+    <!-- <video controls="controls">
       <source src="videos/Respecting Others Online.mp4" type="video/mp4">
-    </video>
-	</div>
+    </video> -->
+
+    <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/P-OCp3e00Ks?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+  </div>
 </div>
 
 <div class="help" ng-show="clicked">
-	<div class="help-modal">
-		<div class="help-header">
-			<!-- {{fHeader}} -->
-			Fundamental Concepts on Netiquette
-			<a class="close" ng-click="clickHelp()">
+  <div class="help-modal">
+    <div class="help-header">
+      <!-- {{fHeader}} -->
+      Fundamental Concepts on Netiquette
+      <a class="close" ng-click="clickHelp()">
         <i class="fa fa-times"></i>
       </a>
-		</div>
-		<div class="help-content">
-			<b>Digital Tattoo</b><br>
-			A digital tattoo represents all the information a user posts online. Photos, text, comments, or other forms of media posted by a user is permanently on the internet even if it was deleted. An internet user’s digital tattoo can also be called a digital footprint. A person’s digital tattoo will affect the person’s reputation especially since companies tend to do research on the background of the people they employ. According to Marie Cooney (n.d.), there are five things you should ask before you post:
+    </div>
+    <div class="help-content">
+      <b>Digital Tattoo</b><br>
+      A digital tattoo represents all the information a user posts online. Photos, text, comments, or other forms of media posted by a user is permanently on the internet even if it was deleted. An internet user’s digital tattoo can also be called a digital footprint. A person’s digital tattoo will affect the person’s reputation especially since companies tend to do research on the background of the people they employ. According to Marie Cooney (n.d.), there are five things you should ask before you post:
 
-			<br><br>
-			1.	What do I look like?
-			<blockquote> It is important to keep in mind the impression an internet user might
-			leave upon other internet users, considering that that other internet user might be a
-			university or even a company the internet user might be trying to impress.
-			</blockquote>
+      <br><br>
+      1.  What do I look like?
+      <blockquote> It is important to keep in mind the impression an internet user might
+      leave upon other internet users, considering that that other internet user might be a
+      university or even a company the internet user might be trying to impress.
+      </blockquote>
 
-			2.	Is this “ink” permanent?
-			<blockquote> A post online is forever in a way that if one thinks that they have already
-			deleted a post, there is still no guarantee that someone else might have already copied or
-			downloaded it. One should always remember that it is easy for other people to copy what an
-			internet user shares online, change it, and share it without the internet user knowing.
-			</blockquote>
+      2.  Is this “ink” permanent?
+      <blockquote> A post online is forever in a way that if one thinks that they have already
+      deleted a post, there is still no guarantee that someone else might have already copied or
+      downloaded it. One should always remember that it is easy for other people to copy what an
+      internet user shares online, change it, and share it without the internet user knowing.
+      </blockquote>
 
-			3.	Am I giving away too much?
-			<blockquote> The more information you share, the more people can learn about you, and the
-			more people learn about you, the more they could use the information against you.
-			</blockquote>
+      3.  Am I giving away too much?
+      <blockquote> The more information you share, the more people can learn about you, and the
+      more people learn about you, the more they could use the information against you.
+      </blockquote>
 
-			4.	Would I want this shared about me?
-			<blockquote> For instance, a netizen shares a picture of their friend online. It is only
-			right that the netizen ask permission to their friend if they would want their photo posted.
-			</blockquote>
+      4.  Would I want this shared about me?
+      <blockquote> For instance, a netizen shares a picture of their friend online. It is only
+      right that the netizen ask permission to their friend if they would want their photo posted.
+      </blockquote>
 
-			5.	Does it pass the billboard test?
-			<blockquote> Before you post something online, think: would you be happy to see what you
-			posted on a billboard where the rest of your parents, your grandparents, your neighbors
-			could see it? If not, do you really want to share it?
-			</blockquote>
+      5.  Does it pass the billboard test?
+      <blockquote> Before you post something online, think: would you be happy to see what you
+      posted on a billboard where the rest of your parents, your grandparents, your neighbors
+      could see it? If not, do you really want to share it?
+      </blockquote>
 
-			<br>
-			<b>Internet Privacy</b><br>
-			Internet Privacy is the level of security and privacy of personal information of an individual.
-			Internet privacy refers to multiple techniques and technologies used to protect data. It is also
-			known as online privacy. Internet privacy is a great concern when it comes to online transactions,
-			the use of social media, visiting online forums and playing online games. If a person’s internet
-			privacy is compromised, the person might fall victim to cyber attacks like identity theft.
-			To avoid risks on internet privacy, use protective software like anti- viruses and firewalls.
-			When shopping, avoid untrusted websites. One should also avoid going to websites with low security
-			always use strong passwords that consist of numbers, letters and special characters.
-			(“Internet Privacy”, n.d.)
+      <br>
+      <b>Internet Privacy</b><br>
+      Internet Privacy is the level of security and privacy of personal information of an individual.
+      Internet privacy refers to multiple techniques and technologies used to protect data. It is also
+      known as online privacy. Internet privacy is a great concern when it comes to online transactions,
+      the use of social media, visiting online forums and playing online games. If a person’s internet
+      privacy is compromised, the person might fall victim to cyber attacks like identity theft.
+      To avoid risks on internet privacy, use protective software like anti- viruses and firewalls.
+      When shopping, avoid untrusted websites. One should also avoid going to websites with low security
+      always use strong passwords that consist of numbers, letters and special characters.
+      (“Internet Privacy”, n.d.)
 
-			<br><br><br>
-			<b>Respecting Others Online</b><br>
-			Respecting others online deals with the more external factors, more specifically,
-			the people one interacts with on the internet. It deals with the behavior an internet
-			user exhibits towards another internet user.
-		</div>
-	</div>
+      <br><br><br>
+      <b>Respecting Others Online</b><br>
+      Respecting others online deals with the more external factors, more specifically,
+      the people one interacts with on the internet. It deals with the behavior an internet
+      user exhibits towards another internet user.
+    </div>
+  </div>
 </div>
