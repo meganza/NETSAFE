@@ -1,0 +1,17 @@
+{
+  "bitwise": false,
+  "browser": false,
+  "curly": false,
+  "eqeqeq": false,
+  "esnext": false,
+  "latedef": false,
+  "noarg": false,
+  "node": false,
+  "strict": false,
+  "undef": false,
+  "unused": false,
+  "globals": {
+    "angular": false,
+    "$": false
+  }
+}

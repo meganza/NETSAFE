@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NETSAFE</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <base href="/">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+
+    <!-- this line removes any default padding and style. you might only need one of these values set. -->
+    <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="styles/start.css" /> -->
+    <link rel="stylesheet" type="text/css" href="styles/netsafe.css" />
+    <link rel="stylesheet" type="text/css" href="styles/sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="styles/activity.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="styles/slick.css"/> -->
+    <!-- <link rel="stylesheet" type="text/css" href="styles/slick-theme.css"/> -->
+
+    <!-- endbuild -->
+    <title>Netsafe</title>
+  </head>
+  <body ng-app="Netsafe">
+
+    <div ui-view></div>
+
+
+
+</body>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+   !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+   (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+   r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+   }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-XXXXX-X');
+   ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/factories/sketch.factory.js"></script>
+<script type="text/javascript" src="scripts/factories/scenarios.factory.js"></script>
+<script type="text/javascript" src="scripts/controllers/index.controller.js"></script>
+<script type="text/javascript" src="scripts/controllers/netivity.controller.js"></script>
+<script type="text/javascript" src="scripts/controllers/netsafe.controller.js"></script>
+<script type="text/javascript" src="scripts/controllers/main.controller.js"></script>
+<script type="text/javascript" src="scripts/controllers/fundamental.controller.js"></script>
+<script type="text/javascript" src="scripts/controllers/rules.controller.js"></script>
+<script type="text/javascript" src="scripts/controllers/malware.controller.js"></script>
+<script type="text/javascript" src="scripts/controllers/cybercitizenship.controller.js"></script>
+<script type="text/javascript" src="scripts/controllers/definition.controller.js"></script>
+<script type="text/javascript" src="scripts/controllers/activity.controller.js"></script>
+<!-- endbuild -->
+</html>
