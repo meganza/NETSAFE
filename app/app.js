@@ -1,4 +1,4 @@
-var Netsafe = angular.module('Netsafe', ['ui.router', 'angular-p5'])
+var Netsafe = angular.module('Netsafe', ['ui.router'])
 
 Netsafe.config(function($stateProvider) {
 
