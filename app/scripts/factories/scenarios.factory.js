@@ -864,5 +864,5 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
   ]
 
 
-  }
+  };
 });

@@ -65,7 +65,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showComputerRestart = function(){
     if(symptom_counter !== 5 && !tf_computer_restart) {
@@ -83,7 +83,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
         console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showSlowComputer = function(){
     if(symptom_counter !== 5 && !tf_slow_computer){
@@ -101,7 +101,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showLockedComputer = function(){
     if(symptom_counter !== 5 && !tf_locked_computer){
@@ -119,7 +119,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showReversedText = function(){
     if(symptom_counter !== 5 && !tf_reversed_text){
@@ -137,7 +137,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showNotResponding = function(){
     if(symptom_counter !== 5 && !tf_not_responding){
@@ -155,7 +155,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showSuspiciousEmail = function(){
     if(symptom_counter !== 5 && !tf_suspicious_email){
@@ -173,7 +173,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showBrowserPopup = function(){
     if(symptom_counter !== 5 && !tf_browser_popup){
@@ -191,7 +191,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showWin32Error = function(){
     if(symptom_counter !== 5 && !tf_win32){
@@ -211,7 +211,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showDesktopPopup = function(){
     if(symptom_counter !== 5 && !tf_desktop_popup){
@@ -229,7 +229,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showOSError = function(){
     if(symptom_counter !==5 && !tf_os_error){
@@ -247,7 +247,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showInfectedStorage = function(){
     if(symptom_counter !== 5 &&!tf_infected_disk){
@@ -267,7 +267,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showInfectedFiles = function(){
     if(symptom_counter !== 5 && !tf_infected_file){
@@ -285,7 +285,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showMaliciousPrograms = function(){
     if(symptom_counter !== 5 && !tf_malicious_programs){
@@ -303,7 +303,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showBrowserToolbar = function(){
     if(symptom_counter !== 5 && !tf_browser_toolbars){
@@ -321,7 +321,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showNoStartProgram = function(){
     if(symptom_counter !== 5 && !tf_no_start_progams){
@@ -339,7 +339,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.showUnknownExe = function(){
     if(symptom_counter !== 5 && !tf_unknown_exe){
@@ -357,7 +357,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
       console.log(symptom_counter);
     }
-  }
+  };
 
   $scope.clearSymptom = function(){
     symptom_counter = 0;
@@ -423,7 +423,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     $("#browser-toolbar-btn").removeClass("active");
     $("#no-start-programs-btn").removeClass("active");
     $("#unknown-exe-btn").removeClass("active");
-  }
+  };
 
   $scope.showAnswers = function(){
     $scope.answered = !$scope.answered;
@@ -511,7 +511,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
       //$scope.answer = "combination not found";
     }
 
-  }
+  };
 
 
 });

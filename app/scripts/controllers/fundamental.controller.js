@@ -15,6 +15,6 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
   $scope.showCYOVid = function(id){
     $(".CYO-video").hide();
     $("#CYO-video-" + id).show();
-  }
+  };
 
 });

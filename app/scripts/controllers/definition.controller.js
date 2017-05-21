@@ -6,6 +6,6 @@ angular.module('Netsafe').controller('definitionController', function($scope) {
   $scope.showDefVid = function(id){
     $(".Def-video").hide();
     $("#Def-video-" + id).show();
-  }
+  };
 
 });

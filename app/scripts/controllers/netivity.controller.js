@@ -22,8 +22,8 @@ angular.module('Netsafe').controller('netivityController',
   $scope.showTab(1);
 
   $scope.showEasyScenario = function(index) {
-    $(".button-num").removeClass("active");
-    $("#button-num-"+ index).addClass("active");
+    // $(".button-num").removeClass("active");
+    // $("#button-num-"+ index).addClass("active");
     $scope.currentScenario = index;
     $scope.answers = [null, null, null, null, null, null, null];
 
@@ -75,7 +75,7 @@ angular.module('Netsafe').controller('netivityController',
     "What are the actions of the people involved?",
     "What guidelines are related to the scenario?",
     "Solution"
-  ]
+  ];
 
   $scope.easyScenarios = $scope.scenarios.easy;
   $scope.medScenarios = $scope.scenarios.med;
