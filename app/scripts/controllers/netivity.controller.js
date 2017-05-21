@@ -1,5 +1,5 @@
 angular.module('Netsafe').controller('netivityController',
-  function($scope, ScenariosFactory) {
+  function($scope, $timeout, ScenariosFactory) {
   $scope.scenarios = ScenariosFactory;
 
   $(".activity-alert").hide();
@@ -8,7 +8,9 @@ angular.module('Netsafe').controller('netivityController',
   $scope.answers = [null, null, null, null, null, null, null];
   $scope.correctAnswers = [2, 0, 3, 3, 0, 1, 3];
 
-  $scope.currentScenario = -1;
+  $timeout(function() {
+    $scope.currentScenario = -1;
+  }, 1);
 
   // Tabs for scenario difficulty
   $scope.showTab = function(id){
@@ -46,8 +48,8 @@ angular.module('Netsafe').controller('netivityController',
     $(".answer-modal").hide();
   };
 
-  $scope.clickAnswer = function(index){
-    $("#answer-" + index).toggle();
+  $scope.clickAnswer = function(questionIndex, scenarioIndex, difficulty){
+    $("#answer-" + questionIndex + "-" + scenarioIndex + '-' + difficulty).toggle();
   };
 
   $scope.checkAnswer = function(){

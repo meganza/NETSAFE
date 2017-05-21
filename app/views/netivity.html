@@ -42,15 +42,15 @@
         <th class="core-answer">
           <p class="answer-icon">
             {{$parent.scenario.answers[$index][answers[$index]]}}
-            <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
+            <a ng-click="clickAnswer($index, $parent.$index, 'easy')" style="text-decoration: none; cursor: pointer; color: #dd953e">
               <i class="fa fa-pencil"></i>
             </a>
           </p>
-          <div class="answer-modal help" id="answer-{{$index}}">
+          <div class="answer-modal help" id="answer-{{$index}}-{{$parent.$index}}-easy">
             <div class="help-modal">
               <div class="help-header">
                 Question
-                <a class="close" ng-click="clickAnswer($index)">
+                <a class="close" ng-click="clickAnswer($index, $parent.$index, 'easy')">
                   <i class="fa fa-times"></i>
                 </a>
               </div>
@@ -67,7 +67,7 @@
                     {{answer}}
                   </label>
                 </div>
-                <a ng-click="clickAnswer($index)">
+                <a ng-click="clickAnswer($index, $parent.$index, 'easy')">
                   <div class="submit-button">
                     Submit Answer
                   </div>
@@ -94,7 +94,7 @@
     </div>
     <div id="netivity-scenario-nav">
       <p>
-        <button ng-repeat="scenario in easyScenarios track by $index"
+        <button ng-repeat="scenario in medScenarios track by $index"
                 ng-click="showMedScenario($index)"
                 class="button-num">
           {{$index+1}}
@@ -115,15 +115,15 @@
         <th class="core-answer">
           <p class="answer-icon">
             {{$parent.scenario.answers[$index][answers[$index]]}}
-            <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
+            <a ng-click="clickAnswer($index, $parent.$index, 'medium')" style="text-decoration: none; cursor: pointer; color: #dd953e">
               <i class="fa fa-pencil"></i>
             </a>
           </p>
-          <div class="answer-modal help" id="answer-{{$index}}">
+          <div class="answer-modal help" id="answer-{{$index}}-{{$parent.$index}}-medium">
             <div class="help-modal">
               <div class="help-header">
                 Question
-                <a class="close" ng-click="clickAnswer($index)">
+                <a class="close" ng-click="clickAnswer($index, $parent.$index, 'medium')">
                   <i class="fa fa-times"></i>
                 </a>
               </div>
@@ -140,7 +140,7 @@
                     {{answer}}
                   </label>
                 </div>
-                <a ng-click="clickAnswer($index)">
+                <a ng-click="clickAnswer($index, $parent.$index, 'medium')">
                   <div class="submit-button">
                     Submit Answer
                   </div>
@@ -167,7 +167,7 @@
     </div>
     <div id="netivity-scenario-nav">
       <p>
-        <button ng-repeat="scenario in easyScenarios track by $index"
+        <button ng-repeat="scenario in hardScenarios track by $index"
                 ng-click="showHardScenario($index)"
                 class="button-num">
           {{$index+1}}
@@ -188,15 +188,15 @@
         <th class="core-answer">
           <p class="answer-icon">
             {{$parent.scenario.answers[$index][answers[$index]]}}
-            <a ng-click="clickAnswer($index)" style="text-decoration: none; cursor: pointer; color: #dd953e">
+            <a ng-click="clickAnswer($index, $parent.$index, 'hard')" style="text-decoration: none; cursor: pointer; color: #dd953e">
               <i class="fa fa-pencil"></i>
             </a>
           </p>
-          <div class="answer-modal help" id="answer-{{$index}}">
+          <div class="answer-modal help" id="answer-{{$index}}-{{$parent.$index}}-hard">
             <div class="help-modal">
               <div class="help-header">
                 Question
-                <a class="close" ng-click="clickAnswer($index)">
+                <a class="close" ng-click="clickAnswer($index, $parent.$index, 'hard')">
                   <i class="fa fa-times"></i>
                 </a>
               </div>
@@ -213,7 +213,7 @@
                     {{answer}}
                   </label>
                 </div>
-                <a ng-click="clickAnswer($index)">
+                <a ng-click="clickAnswer($index, $parent.$index, 'hard')">
                   <div class="submit-button">
                     Submit Answer
                   </div>
