@@ -1,7 +1,7 @@
 #canvas {
   margin: 0 auto;
   height: 600px;
-  /*background-color: #fff;*/
+  /*background-color: #ff;*/
   /*top: 300px;*/
 }
 
@@ -25,7 +25,7 @@
   transform: translate(-50%, -50%);
   position: absolute;
   /*top: 65%;*/
-  top: 480px;
+  top: 530px;
   left: 50%;
   padding-bottom: 50px;
 }
@@ -68,4 +68,8 @@
 #infected-file-btn.active, #malicious-programs-btn.active, #browser-toolbar-btn.active,
 #no-start-programs-btn.active, #unknown-exe-btn.active {
   background-color: #fdcd71;
+}
+
+#full-width-btn {
+  width: 100%;
 }

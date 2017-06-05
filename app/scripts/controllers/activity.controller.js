@@ -2,6 +2,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
   console.log('you are in activityController');
 
   $scope.answered = false;
+  $scope.custom = false;
 
   var symptom_counter = 0;
 
@@ -511,6 +512,10 @@ angular.module('Netsafe').controller('activityController', function($scope) {
       //$scope.answer = "combination not found";
     }
 
+  };
+
+  $scope.addCustom = function(){
+    $scope.custom = !$scope.custom;
   };
 
 

@@ -56,7 +56,9 @@
 
       <div class="bold-btn symp-select" ng-click="clearSymptom()">Clear all symptoms</div>
       <div class="bigger-btn bold-btn symp-select" ng-click="showAnswers()">View possible answers</div>
-      <!-- <div id="full-width-btn" class="bold-btn symp-select" ng-click="showAnswers()">View possible answers</div> -->
+
+      <br><br>
+      <div id="full-width-btn" class="bold-btn symp-select" ng-click="addCustom()">Custom Combination</div>
     </div>
 
   </div>
@@ -72,6 +74,24 @@
     </div>
     <div class="help-content">
       {{answer}}
+    </div>
+  </div>
+</div>
+
+<div class="custom" ng-show="custom">
+  <div class="help-modal">
+    <div class="help-header">
+      Custom Combination
+      <a class="close" ng-click="addCustom()">
+        <i class="fa fa-times"></i>
+      </a>
+    </div>
+    <div class="help-content">
+      Content here to add custom combination <br>
+      Name: Text field <br>
+      Buttons for symptoms <br>
+      Answer <br>
+      Save <br>
     </div>
   </div>
 </div>
