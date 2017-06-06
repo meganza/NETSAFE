@@ -514,9 +514,17 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
   };
 
+  $('.checkboxes').on('change', function(){
+    if($('.checkboxes:checked').length > 5){
+      this.checked = false;
+    }
+  });
+
   $scope.addCustom = function(){
     $scope.custom = !$scope.custom;
   };
+
+
 
 
 });
