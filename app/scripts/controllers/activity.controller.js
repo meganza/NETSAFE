@@ -1,6 +1,7 @@
 angular.module('Netsafe').controller('activityController', function($scope) {
   console.log('you are in activityController');
 
+  var dataSet;
   $scope.answered = false;
   $scope.custom = false;
 
@@ -520,9 +521,18 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     }
   });
 
-  $scope.addCustom = function(){
+  $scope.openCustom = function(){
     $scope.custom = !$scope.custom;
   };
+
+  $('#add').click(function(){
+    var data = [
+      $('#name').val(),
+      $('#answer').val()
+    ];
+    dataSet.push(data);
+    localStorage.setItem('dataSet', JSON.stringify(dataSet));
+  });
 
 
 
