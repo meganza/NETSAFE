@@ -525,14 +525,17 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     $scope.custom = !$scope.custom;
   };
 
-  $('#add').click(function(){
-    var data = [
-      $('#name').val(),
-      $('#answer').val()
-    ];
-    dataSet.push(data);
-    localStorage.setItem('dataSet', JSON.stringify(dataSet));
-  });
+  $scope.saved = localStorage.getItem('data');
+  //$scope.data = (localStorage.getItem('data')!==null) ? JSON.parse($scope.saved) : [ {name: 'hi', answer: 'hello'} ];
+  localStorage.setItem('data', JSON.stringify($scope.data));
+
+  $scope.addCustom = function(){
+    $scope.data.push({
+      name: $scope.name,
+      answer: $scope.answer,
+    });
+    localStorage.setItem('data', JSON.stringify($scope.data));
+  };
 
 
 
