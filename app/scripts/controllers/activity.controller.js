@@ -512,8 +512,20 @@ angular.module('Netsafe').controller('activityController', function($scope) {
       }
       //$scope.answer = "combination not found";
     }
-
   };
+
+  $scope.save = function(){
+    localStorage.setItem('checkboxData', JSON.stringify($scope.checkboxData));
+  }
+
+  $scope.load = function(){
+    console.log(localStorage.getItem('checkboxData'));
+    if(localStorage.getItem('checkboxData')){
+      $scope.checkboxData = JSON.parte(localStorage.getItem('checkboxData'));
+    } else {
+
+    }
+  }
 
   $('.checkboxes').on('change', function(){
     if($('.checkboxes:checked').length > 5){
@@ -525,19 +537,34 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     $scope.custom = !$scope.custom;
   };
 
+  var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+
+  $scope.checkboxSelect = function(event){
+    localStorage.setItem("checkboxValues", JSON.stringify(event.target.id));
+  };
+
+
+  // NOTE: STRINGIFY BEFORE STORING
+
   $scope.saved = localStorage.getItem('data');
-  //$scope.data = (localStorage.getItem('data')!==null) ? JSON.parse($scope.saved) : [ {name: 'hi', answer: 'hello'} ];
-  localStorage.setItem('data', JSON.stringify($scope.data));
+  $scope.data = $scope.data || [];
+  // if (localStorage.getItem('data')) {
+  //   //$scope.data = JSON.parse($scope.saved);
+  //   //$scope.data = JSON.parse(JSON.stringify($scope.saved || null));
+  //   $scope.data = $scope.data || [];
+  // }
+  // else {
+  //   $scope.data = [ {name: 'hi', answer: 'hello'} ]
+  // }
 
   $scope.addCustom = function(){
     $scope.data.push({
       name: $scope.name,
-      answer: $scope.answer,
+      //symptom: $checkboxValues,
+      answer: $scope.answer
     });
     localStorage.setItem('data', JSON.stringify($scope.data));
   };
-
-
 
 
 });
