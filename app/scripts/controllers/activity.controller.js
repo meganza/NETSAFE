@@ -537,13 +537,6 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     $scope.custom = !$scope.custom;
   };
 
-  var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
-
-  $scope.checkboxSelect = function(event){
-    localStorage.setItem("checkboxValues", JSON.stringify(event.target.id));
-  };
-
-
   // NOTE: STRINGIFY BEFORE STORING
 
   $scope.saved = localStorage.getItem('data');
@@ -558,13 +551,88 @@ angular.module('Netsafe').controller('activityController', function($scope) {
   // }
 
   $scope.addCustom = function(){
+    $scope.custom = !$scope.custom; // close modal
+
+    $scope.checkboxArray = [];
+
+    angular.forEach($scope.checkboxData, function(checkbox){
+      if(checkbox.selected){
+        $scope.checkboxArray.push(checkbox.id);
+      }
+    });
+
+    console.log($scope.checkboxArray);
+
     $scope.data.push({
       name: $scope.name,
       //symptom: $checkboxValues,
       answer: $scope.answer
     });
     localStorage.setItem('data', JSON.stringify($scope.data));
+    //localStorage.setItem('checkboxData', JSON.stringify($scope.checkboxData)); // this one gets all checkedcbox data
   };
 
+  $scope.load = function(){
+    console.log(localStorage.getItem('checkboxData'));
+    if (localStorage.getItem('checkboxData')){
+      $scope.checkboxData = JSON.parse(localStorage.getItem('checkboxData'));
+    } else {
+      $scope.checkboxData = [
+        {
+          name: "Computer Crash",
+          id: 1
+        }, {
+          name: "Computer Restart",
+          id: 2
+        }, {
+          name: "Slow Performance",
+          id: 3
+        }, {
+          name: "Locked Computer",
+          id: 4
+        }, {
+          name: "Reversed Text",
+          id: 5
+        }, {
+          name: "Not Responding",
+          id: 6
+        }, {
+          name: "Downloading Email Files",
+          id: 7
+        }, {
+          name: "Browser Pop-up",
+          id: 8
+        }, {
+          name: "Win32 Error",
+          id: 9
+        }, {
+          name: "Desktop Pop-up",
+          id: 10
+        }, {
+          name: "OS Errors",
+          id: 11
+        }, {
+          name: "Infected Storage",
+          id: 12
+        }, {
+          name: "Infected Files",
+          id: 13
+        }, {
+          name: "Malicious Programs",
+          id: 14
+        }, {
+          name: "Browser Toolbar",
+          id: 15
+        }, {
+          name: "Programs Not Starting",
+          id: 16
+        }, {
+          name: "Unknown Exe Running",
+          id: 17
+        }
+      ]
+    }
+  }
+  $scope.load();
 
 });
