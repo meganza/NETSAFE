@@ -598,11 +598,19 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     $scope.custom = !$scope.custom;
   };
 
-  $scope.saved = localStorage.getItem('data');
-  $scope.data = $scope.data || [];
+  $scope.data = JSON.parse(localStorage.getItem('data')) || [];
+
+  // put localstorage data into buttons
+  //$('#localStorageData0').text($scope.data[0].name);
+  //$('#localStorageData1').text($scope.data[1].name);
+  //$('#localStorageData2').text($scope.data[2].name);
+  //$('#localStorageData3').text($scope.data[3].name);
+  //$('#localStorageData4').text($scope.data[4].name);
+  // ERROR: TypeError: Cannot read property 'name' of undefined
 
   $scope.addCustom = function(){
-    $scope.custom = !$scope.custom; // close modal
+    // close modal
+    $scope.custom = !$scope.custom;
 
     // get checkbox id
     $scope.checkboxArray = [];
@@ -619,6 +627,27 @@ angular.module('Netsafe').controller('activityController', function($scope) {
       answer: $scope.answer
     });
     localStorage.setItem('data', JSON.stringify($scope.data));
+
+    // clear form content when opening again
+    $('#activity-form')[0].reset();
+
+    //put data into button
+    $('#localStorageData0').text($scope.data[0].name);
+    $('#localStorageData1').text($scope.data[1].name);
+    $('#localStorageData2').text($scope.data[2].name);
+    $('#localStorageData3').text($scope.data[3].name);
+    $('#localStorageData4').text($scope.data[4].name);
+    // ERROR (but working): TypeError: Cannot read property 'name' of undefined
+  };
+
+  $scope.playCustom = function(){
+    console.log("playCUstom");
+  };
+
+  $scope.clearCustom = function(num){
+    console.log("clearCustom");
+    //localStorage.removeItem($scope.data[num]);
+    console.log($scope.data[num]);
   };
 
 });

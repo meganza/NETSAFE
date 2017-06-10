@@ -35,6 +35,30 @@
   margin: 0 auto;
 }
 
+.custom-symp {
+  background: #ffe1a8;
+  width: 19.7%;
+  height: 50px;
+  color: #875315;
+  border: 1px solid #efd197;
+  letter-spacing: .5px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  margin-bottom: 5px;
+}
+
+.custom-close i{
+  color: #875315;
+  line-height: 0px;
+  margin-top: 25px;
+}
+
+.localStorageData {
+  width: 80%;
+}
+
 .symp-select {
   background: #ffe1a8;
   width: 19.7%;
