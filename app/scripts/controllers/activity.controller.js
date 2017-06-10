@@ -555,13 +555,16 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
     $scope.checkboxArray = [];
 
-    angular.forEach($scope.checkboxData, function(checkbox){
+    $scope.checkboxData.forEach(function(checkbox){
+      console.log(checkbox);
       if(checkbox.selected){
+        console.log(checkbox);
         $scope.checkboxArray.push(checkbox.id);
       }
     });
 
     console.log($scope.checkboxArray);
+
 
     $scope.data.push({
       name: $scope.name,
@@ -580,55 +583,72 @@ angular.module('Netsafe').controller('activityController', function($scope) {
       $scope.checkboxData = [
         {
           name: "Computer Crash",
-          id: 1
+          id: 1,
+          selected: false
         }, {
           name: "Computer Restart",
-          id: 2
+          id: 2,
+          selected: false
         }, {
           name: "Slow Performance",
-          id: 3
+          id: 3,
+          selected: false
         }, {
           name: "Locked Computer",
-          id: 4
+          id: 4,
+          selected: false
         }, {
           name: "Reversed Text",
-          id: 5
+          id: 5,
+          selected: false
         }, {
           name: "Not Responding",
-          id: 6
+          id: 6,
+          selected: false
         }, {
           name: "Downloading Email Files",
-          id: 7
+          id: 7,
+          selected: false
         }, {
           name: "Browser Pop-up",
-          id: 8
+          id: 8,
+          selected: false
         }, {
           name: "Win32 Error",
-          id: 9
+          id: 9,
+          selected: false
         }, {
           name: "Desktop Pop-up",
-          id: 10
+          id: 10,
+          selected: false
         }, {
           name: "OS Errors",
-          id: 11
+          id: 11,
+          selected: false
         }, {
           name: "Infected Storage",
-          id: 12
+          id: 12,
+          selected: false
         }, {
           name: "Infected Files",
-          id: 13
+          id: 13,
+          selected: false
         }, {
           name: "Malicious Programs",
-          id: 14
+          id: 14,
+          selected: false
         }, {
           name: "Browser Toolbar",
-          id: 15
+          id: 15,
+          selected: false
         }, {
           name: "Programs Not Starting",
-          id: 16
+          id: 16,
+          selected: false
         }, {
           name: "Unknown Exe Running",
-          id: 17
+          id: 17,
+          selected: false
         }
       ]
     }
