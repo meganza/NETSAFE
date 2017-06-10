@@ -514,18 +514,78 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     }
   };
 
-  $scope.save = function(){
-    localStorage.setItem('checkboxData', JSON.stringify($scope.checkboxData));
-  }
-
-  $scope.load = function(){
-    console.log(localStorage.getItem('checkboxData'));
-    if(localStorage.getItem('checkboxData')){
-      $scope.checkboxData = JSON.parte(localStorage.getItem('checkboxData'));
-    } else {
-
+  // contents of checkbox data
+  $scope.checkboxData = [
+    {
+      name: "Computer Crash",
+      id: 1,
+      checked: false
+    }, {
+      name: "Computer Restart",
+      id: 2,
+      checked: false
+    }, {
+      name: "Slow Performance",
+      id: 3,
+      checked: false
+    }, {
+      name: "Locked Computer",
+      id: 4,
+      checked: false
+    }, {
+      name: "Reversed Text",
+      id: 5,
+      checked: false
+    }, {
+      name: "Not Responding",
+      id: 6,
+      checked: false
+    }, {
+      name: "Downloading Email Files",
+      id: 7,
+      checked: false
+    }, {
+      name: "Browser Pop-up",
+      id: 8,
+      checked: false
+    }, {
+      name: "Win32 Error",
+      id: 9,
+      checked: false
+    }, {
+      name: "Desktop Pop-up",
+      id: 10,
+      checked: false
+    }, {
+      name: "OS Errors",
+      id: 11,
+      checked: false
+    }, {
+      name: "Infected Storage",
+      id: 12,
+      checked: false
+    }, {
+      name: "Infected Files",
+      id: 13,
+      checked: false
+    }, {
+      name: "Malicious Programs",
+      id: 14,
+      checked: false
+    }, {
+      name: "Browser Toolbar",
+      id: 15,
+      checked: false
+    }, {
+      name: "Programs Not Starting",
+      id: 16,
+      checked: false
+    }, {
+      name: "Unknown Exe Running",
+      id: 17,
+      checked: false
     }
-  }
+  ];
 
   $('.checkboxes').on('change', function(){
     if($('.checkboxes:checked').length > 5){
@@ -533,126 +593,32 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     }
   });
 
+  // open / close the modal
   $scope.openCustom = function(){
     $scope.custom = !$scope.custom;
   };
 
-  // NOTE: STRINGIFY BEFORE STORING
-
   $scope.saved = localStorage.getItem('data');
   $scope.data = $scope.data || [];
-  // if (localStorage.getItem('data')) {
-  //   //$scope.data = JSON.parse($scope.saved);
-  //   //$scope.data = JSON.parse(JSON.stringify($scope.saved || null));
-  //   $scope.data = $scope.data || [];
-  // }
-  // else {
-  //   $scope.data = [ {name: 'hi', answer: 'hello'} ]
-  // }
 
   $scope.addCustom = function(){
     $scope.custom = !$scope.custom; // close modal
 
+    // get checkbox id
     $scope.checkboxArray = [];
 
-    $scope.checkboxData.forEach(function(checkbox){
-      console.log(checkbox);
-      if(checkbox.selected){
-        console.log(checkbox);
-        $scope.checkboxArray.push(checkbox.id);
-      }
+    $('.checkboxes:checked').each(function() {
+      console.log($(this).val());
+      $scope.checkboxArray.push($(this).val());
     });
 
-    console.log($scope.checkboxArray);
-
-
+    // put name, symptom, answer in data array
     $scope.data.push({
       name: $scope.name,
-      //symptom: $checkboxValues,
+      symptom: $scope.checkboxArray,
       answer: $scope.answer
     });
     localStorage.setItem('data', JSON.stringify($scope.data));
-    //localStorage.setItem('checkboxData', JSON.stringify($scope.checkboxData)); // this one gets all checkedcbox data
   };
-
-  $scope.load = function(){
-    console.log(localStorage.getItem('checkboxData'));
-    if (localStorage.getItem('checkboxData')){
-      $scope.checkboxData = JSON.parse(localStorage.getItem('checkboxData'));
-    } else {
-      $scope.checkboxData = [
-        {
-          name: "Computer Crash",
-          id: 1,
-          selected: false
-        }, {
-          name: "Computer Restart",
-          id: 2,
-          selected: false
-        }, {
-          name: "Slow Performance",
-          id: 3,
-          selected: false
-        }, {
-          name: "Locked Computer",
-          id: 4,
-          selected: false
-        }, {
-          name: "Reversed Text",
-          id: 5,
-          selected: false
-        }, {
-          name: "Not Responding",
-          id: 6,
-          selected: false
-        }, {
-          name: "Downloading Email Files",
-          id: 7,
-          selected: false
-        }, {
-          name: "Browser Pop-up",
-          id: 8,
-          selected: false
-        }, {
-          name: "Win32 Error",
-          id: 9,
-          selected: false
-        }, {
-          name: "Desktop Pop-up",
-          id: 10,
-          selected: false
-        }, {
-          name: "OS Errors",
-          id: 11,
-          selected: false
-        }, {
-          name: "Infected Storage",
-          id: 12,
-          selected: false
-        }, {
-          name: "Infected Files",
-          id: 13,
-          selected: false
-        }, {
-          name: "Malicious Programs",
-          id: 14,
-          selected: false
-        }, {
-          name: "Browser Toolbar",
-          id: 15,
-          selected: false
-        }, {
-          name: "Programs Not Starting",
-          id: 16,
-          selected: false
-        }, {
-          name: "Unknown Exe Running",
-          id: 17,
-          selected: false
-        }
-      ]
-    }
-  }
-  $scope.load();
 
 });
