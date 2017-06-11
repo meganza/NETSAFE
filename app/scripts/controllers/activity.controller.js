@@ -514,79 +514,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     }
   };
 
-  // contents of checkbox data
-  $scope.checkboxData = [
-    {
-      name: "Computer Crash",
-      id: 1,
-      checked: false
-    }, {
-      name: "Computer Restart",
-      id: 2,
-      checked: false
-    }, {
-      name: "Slow Performance",
-      id: 3,
-      checked: false
-    }, {
-      name: "Locked Computer",
-      id: 4,
-      checked: false
-    }, {
-      name: "Reversed Text",
-      id: 5,
-      checked: false
-    }, {
-      name: "Not Responding",
-      id: 6,
-      checked: false
-    }, {
-      name: "Downloading Email Files",
-      id: 7,
-      checked: false
-    }, {
-      name: "Browser Pop-up",
-      id: 8,
-      checked: false
-    }, {
-      name: "Win32 Error",
-      id: 9,
-      checked: false
-    }, {
-      name: "Desktop Pop-up",
-      id: 10,
-      checked: false
-    }, {
-      name: "OS Errors",
-      id: 11,
-      checked: false
-    }, {
-      name: "Infected Storage",
-      id: 12,
-      checked: false
-    }, {
-      name: "Infected Files",
-      id: 13,
-      checked: false
-    }, {
-      name: "Malicious Programs",
-      id: 14,
-      checked: false
-    }, {
-      name: "Browser Toolbar",
-      id: 15,
-      checked: false
-    }, {
-      name: "Programs Not Starting",
-      id: 16,
-      checked: false
-    }, {
-      name: "Unknown Exe Running",
-      id: 17,
-      checked: false
-    }
-  ];
-
+  // limit checkbox selection to maximum of 5
   $('.checkboxes').on('change', function(){
     if($('.checkboxes:checked').length > 5){
       this.checked = false;
@@ -600,13 +528,21 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
   $scope.data = JSON.parse(localStorage.getItem('data')) || [];
 
-  // put localstorage data into buttons
-  //$('#localStorageData0').text($scope.data[0].name);
-  //$('#localStorageData1').text($scope.data[1].name);
-  //$('#localStorageData2').text($scope.data[2].name);
-  //$('#localStorageData3').text($scope.data[3].name);
-  //$('#localStorageData4').text($scope.data[4].name);
-  // ERROR: TypeError: Cannot read property 'name' of undefined
+  //if scope data has contents, put contents in until where there is data
+  if($scope.data){
+    for(var i = 0; i < $scope.data.length; i ++ ){
+      if($scope.data[i]){
+        var locstore = "#localStorageData";
+        var specificlocstore = locstore + "" + i;
+        $(specificlocstore).text($scope.data[i].name);
+      }
+    }
+  };
+
+  //if scope data has more than 5 contents, disable customize content button
+  if($scope.data && ($scope.data.length > 5)){
+    // disable button here
+  };
 
   $scope.addCustom = function(){
     // close modal
@@ -620,34 +556,112 @@ angular.module('Netsafe').controller('activityController', function($scope) {
       $scope.checkboxArray.push($(this).val());
     });
 
-    // put name, symptom, answer in data array
-    $scope.data.push({
-      name: $scope.name,
-      symptom: $scope.checkboxArray,
-      answer: $scope.answer
-    });
-    localStorage.setItem('data', JSON.stringify($scope.data));
+    if($scope.data.length < 5){ // if localstorage is less than 5, you can just add into the array
+      // put name, symptom, answer in data array
+      $scope.data.push({
+        name: $scope.name,
+        symptom: $scope.checkboxArray,
+        answer: $scope.answer
+      });
+      localStorage.setItem('data', JSON.stringify($scope.data));
 
-    // clear form content when opening again
-    $('#activity-form')[0].reset();
+      // clear form content when opening again
+      $('#activity-form')[0].reset();
+    } else { // if localstorage is already more than 5, look for "empty" data, where name is "-"
+      var data = JSON.parse(localStorage.getItem('data'));
+      for (var i = 0; i < $scope.data.length; i++){
+        if(data[i].name === "-"){
+          data[i].name = $scope.name;
+          data[i].symptom = $scope.checkboxArray;
+          data[i].answer = $scope.answer;
+          break; // to go out of loop
+        }
+      }
+      localStorage.setItem('data', JSON.stringify(data));
+    }
 
     //put data into button
-    $('#localStorageData0').text($scope.data[0].name);
-    $('#localStorageData1').text($scope.data[1].name);
-    $('#localStorageData2').text($scope.data[2].name);
-    $('#localStorageData3').text($scope.data[3].name);
-    $('#localStorageData4').text($scope.data[4].name);
-    // ERROR (but working): TypeError: Cannot read property 'name' of undefined
+    if($scope.data){
+      var data = JSON.parse(localStorage.getItem('data'));
+      for(var i = 0; i < $scope.data.length; i ++ ){
+        if(data[i]){
+          var locstore = "#localStorageData";
+          var specificlocstore = locstore + "" + i;
+          $(specificlocstore).text(data[i].name);
+        }
+      }
+    }; //if ends here
   };
 
-  $scope.playCustom = function(){
-    console.log("playCUstom");
+  $scope.playCustom = function(num){
+    $scope.clearSymptom
+
+    var data = JSON.parse(localStorage.getItem('data'));
+
+    for(var i = 0; i < data[num].symptom.length; i++){
+      if(data[num].symptom[i] === "1"){
+        $("#blue-screen").show();
+      } else if (data[num].symptom[i] === "2"){
+        $("#computer-restart"). show();
+      } else if (data[num].symptom[i] === "3"){
+        $("#slow-computer").show();
+      } else if (data[num].symptom[i] === "4"){
+        $("#locked-computer").show();
+      } else if (data[num].symptom[i] === "5"){
+        $("#reversed-text").show();
+      } else if (data[num].symptom[i] === "6"){
+        $("#not-responding").show();
+      } else if (data[num].symptom[i] === "7"){
+        $("#suspicious-email").show();
+      } else if (data[num].symptom[i] === "8"){
+        $("#browser-popup").show();
+      } else if (data[num].symptom[i] === "9"){
+        $("#win32-gif").show();
+        $("#win32-png").show();
+      } else if (data[num].symptom[i] === "10"){
+        $("#desktop-popup").show();
+      } else if (data[num].symptom[i] === "11"){
+        $("#os-error").show();
+      } else if (data[num].symptom[i] === "12"){
+        $("#infected-disk-gif").show();
+        $("#infected-disk-png").show();
+      } else if (data[num].symptom[i] === "13"){
+        $("#infected-file").show();
+      } else if (data[num].symptom[i] === "14"){
+        $("#malicious-programs").show();
+      } else if (data[num].symptom[i] === "15"){
+        $("#browser-toolbar").show();
+      } else if (data[num].symptom[i] === "16"){
+        $("#no-start-programs").show();
+      } else { // 17
+        $("#unknown-exe").show();
+      };
+    };
   };
 
   $scope.clearCustom = function(num){
-    console.log("clearCustom");
+    $scope.clearSymptom();
+
     //localStorage.removeItem($scope.data[num]);
-    console.log($scope.data[num]);
+    var data = JSON.parse(localStorage.getItem('data'));
+
+    data[num].name = "-";
+    data[num].symptom = [];
+    data[num].answer = "-";
+
+    localStorage.setItem('data', JSON.stringify(data));
+
+    var locstore = "#localStorageData";
+    var specificlocstore = locstore + "" + num;
+    $(specificlocstore).text(data[num].name);
+  };
+
+  // show answer function for custom combinations
+  $scope.showAnswer = function(num){
+    $scope.answered = !$scope.answered;
+
+    var data = JSON.parse(localStorage.getItem('data'));
+    $scope.answer = data[num].answer;
   };
 
 });

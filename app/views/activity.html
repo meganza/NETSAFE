@@ -60,47 +60,72 @@
       <br><br>
       <div id="full-width-btn" class="bold-btn symp-select" ng-click="openCustom()">Custom Combination</div>
 
-      <div class="custom-symp">
-        <div id="localStorageData0" class=" col-xs-10 localStorageData" ng-click="playCustom()"> - </div>
+      <div class="custom-symp symp-select">
+        <div id="localStorageData0" class="col-xs-10 localStorageData" ng-click="playCustom(0)"> - </div>
         <div class="col-xs-2">
           <a class="custom-close" ng-click="clearCustom(0)">
             <i class="fa fa-times"></i>
           </a>
         </div>
+        <div class="col-xs-2">
+          <a class="custom-close" ng-click="showAnswer(0)">
+            <i class="fa fa-eye"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="custom-symp">
-        <div id="localStorageData1" class=" col-xs-10 localStorageData" ng-click="playCustom()"> - </div>
+      <div class="custom-symp symp-select">
+        <div id="localStorageData1" class=" col-xs-10 localStorageData" ng-click="playCustom(1)"> - </div>
         <div class="col-xs-2">
           <a class="custom-close" ng-click="clearCustom(1)">
             <i class="fa fa-times"></i>
           </a>
         </div>
+        <div class="col-xs-2">
+          <a class="custom-close" ng-click="showAnswer(1)">
+            <i class="fa fa-eye"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="custom-symp">
-        <div id="localStorageData2" class=" col-xs-10 localStorageData" ng-click="playCustom()"> - </div>
+      <div class="custom-symp symp-select">
+        <div id="localStorageData2" class=" col-xs-10 localStorageData" ng-click="playCustom(2)"> - </div>
         <div class="col-xs-2">
           <a class="custom-close" ng-click="clearCustom(2)">
             <i class="fa fa-times"></i>
           </a>
         </div>
+        <div class="col-xs-2">
+          <a class="custom-close" ng-click="showAnswer(2)">
+            <i class="fa fa-eye"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="custom-symp">
-        <div id="localStorageData3" class=" col-xs-10 localStorageData" ng-click="playCustom()"> - </div>
+      <div class="custom-symp symp-select">
+        <div id="localStorageData3" class=" col-xs-10 localStorageData" ng-click="playCustom(3)"> - </div>
         <div class="col-xs-2">
           <a class="custom-close" ng-click="clearCustom(3)">
             <i class="fa fa-times"></i>
           </a>
         </div>
+        <div class="col-xs-2">
+          <a class="custom-close" ng-click="showAnswer(3)">
+            <i class="fa fa-eye"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="custom-symp">
-        <div id="localStorageData4" class=" col-xs-10 localStorageData" ng-click="playCustom"> - </div>
+      <div class="custom-symp symp-select">
+        <div id="localStorageData4" class=" col-xs-10 localStorageData" ng-click="playCustom(4)"> - </div>
         <div class="col-xs-2">
-          <a class="custom-close" ng-click="clearCustom(5)">
+          <a class="custom-close" ng-click="clearCustom(4)">
             <i class="fa fa-times"></i>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a class="custom-close" ng-click="showAnswer(4)">
+            <i class="fa fa-eye"></i>
           </a>
         </div>
       </div>
@@ -225,7 +250,7 @@
         </div>
         <div class="form-check form-check-inline col-sm-4">
           <label class="form-check-label">
-            <input class="checkboxes form-check-input" type="checkbox" value="16"> Malicious Programs
+            <input class="checkboxes form-check-input" type="checkbox" value="14"> Malicious Programs
           </label>
         </div>
         <div class="form-check form-check-inline col-sm-4">
