@@ -539,11 +539,6 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     }
   };
 
-  //if scope data has more than 5 contents, disable customize content button
-  if($scope.data && ($scope.data.length > 5)){
-    // disable button here
-  };
-
   $scope.addCustom = function(){
     // close modal
     $scope.custom = !$scope.custom;
