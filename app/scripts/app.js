@@ -1,4 +1,4 @@
-var Netsafe = angular.module('Netsafe', ['ui.router']);
+var Netsafe = angular.module('Netsafe', ['ui.router', 'youtube-embed']);
 
 Netsafe.config(function($stateProvider) {
 
