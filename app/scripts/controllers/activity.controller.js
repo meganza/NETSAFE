@@ -589,7 +589,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
   };
 
   $scope.playCustom = function(num){
-    $scope.clearSymptom
+    $scope.clearSymptom();
 
     var data = JSON.parse(localStorage.getItem('data'));
 
