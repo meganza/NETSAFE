@@ -537,7 +537,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
         $(specificlocstore).text($scope.data[i].name);
       }
     }
-  };
+  }
 
   $scope.addCustom = function(){
     // close modal
@@ -586,7 +586,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
         }
       }
     }; //if ends here
-  };
+  }
 
   $scope.playCustom = function(num){
     $scope.clearSymptom();
@@ -630,8 +630,8 @@ angular.module('Netsafe').controller('activityController', function($scope) {
         $("#no-start-programs").show();
       } else { // 17
         $("#unknown-exe").show();
-      };
-    };
+      }
+    }
   };
 
   $scope.clearCustom = function(num){

@@ -64,27 +64,27 @@ Netsafe.config(function($stateProvider) {
   })
   .state('netsafe.identity', {
     url: '/identity-theft',
-    //controller:
+    controller: 'techniquesController',
     templateUrl: 'views/identity.html'
   })
   .state('netsafe.spam', {
     url: '/spam',
-    //controller:
+    controller: 'techniquesController',
     templateUrl: 'views/spam.html'
   })
   .state('netsafe.phishing', {
     url: '/phishing',
-    //controller:
+    controller: 'techniquesController',
     templateUrl: 'views/phishing.html'
   })
   .state('netsafe.pharming', {
     url: '/pharming',
-    //controller:
+    controller: 'techniquesController',
     templateUrl: 'views/pharming.html'
   })
   .state('netsafe.rogue', {
     url: '/rogue-security-software',
-    //controller:
+    controller: 'techniquesController',
     templateUrl: 'views/rogue.html'
   })
   .state('netsafe.activity', {

@@ -1,6 +1,10 @@
 angular.module('Netsafe').controller('fundamentalController', function($scope) {
 	console.log('you are in fundamentalController');
 
+  $scope.digitalTattooVid = 'https://www.youtube.com/watch?v=lljOiBv4V6w';
+  $scope.internetPrivacyVid = 'https://www.youtube.com/watch?v=AsidPDo6icM';
+  $scope.respectingOthersVid = 'https://www.youtube.com/watch?v=H0TQIJdJw_U';
+
 
 	$scope.showTab = function(id){
     $(".tab").removeClass("active");
