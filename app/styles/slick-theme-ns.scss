@@ -1,0 +1,63 @@
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: "slick";
+  font-size: 30px;
+  line-height: 1;
+  color: #568e92;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 109, ../../app/styles/slick-theme.scss */
+.slick-prev:before {
+  content: "◀︎";
+}
+/* line 111, ../../app/styles/slick-theme.scss */
+[dir="rtl"] .slick-prev:before {
+  content: "▶︎";
+}
+
+/* line 123, ../../app/styles/slick-theme.scss */
+.slick-next:before {
+  content: "▶";
+}
+/* line 125, ../../app/styles/slick-theme.scss */
+[dir="rtl"] .slick-next:before {
+  content: "︎◀︎";
+}
+
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "•";
+  width: 20px;
+  height: 20px;
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #568e92;
+  opacity: 0.25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

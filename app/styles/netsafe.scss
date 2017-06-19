@@ -90,6 +90,19 @@ button {
   letter-spacing: .5px;
 }
 
+.malwr-btn {
+  background: #ffe1a8;
+  padding: 7 40 7 40px;
+  color: #875315;
+  border: 1px solid #efd197;
+  letter-spacing: .5px;
+  display: inline;
+}
+
+.cyo-btn.active, .malwr-btn.active {
+  background: #fdcd71;
+}
+
 #footer {
   bottom: 15px;
 /*  width: 100%;*/
@@ -323,6 +336,7 @@ video {
 
 .sub-topic {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 blockquote {
