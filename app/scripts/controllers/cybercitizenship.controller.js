@@ -14,8 +14,8 @@ angular.module('Netsafe').controller('cybercitizenshipController', function($sco
     setTimeout($scope.pauseVideo = function(){
                 player.pauseVideo();
               }, 3000);
-    setTimeout($scope.pauseVideo = function(){
-                player.pauseVideo();
-              }, 6000);
+    // setTimeout($scope.pauseVideo = function(){
+    //             player.pauseVideo();
+    //           }, 6000);
   });
 });

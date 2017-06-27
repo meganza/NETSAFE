@@ -528,6 +528,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
   $scope.data = JSON.parse(localStorage.getItem('data')) || [];
 
+  //during init
   //if scope data has contents, put contents in until where there is data
   if($scope.data){
     for(var i = 0; i < $scope.data.length; i ++ ){
@@ -547,19 +548,40 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     $scope.checkboxArray = [];
 
     $('.checkboxes:checked').each(function() {
-      console.log($(this).val());
       $scope.checkboxArray.push($(this).val());
     });
 
-    if($scope.data.length < 5){ // if localstorage is less than 5, you can just add into the array
-      // put name, symptom, answer in data array
-      $scope.data.push({
-        name: $scope.name,
-        symptom: $scope.checkboxArray,
-        answer: $scope.answer
-      });
-      localStorage.setItem('data', JSON.stringify($scope.data));
+    if($scope.data.length < 5){
 
+      if($scope.data.length == 0){
+        $scope.data.push({
+              name: $scope.name,
+              symptom: $scope.checkboxArray,
+              answer: $scope.answer
+        });
+
+        localStorage.setItem('data', JSON.stringify($scope.data));
+      } else {
+        var data = JSON.parse(localStorage.getItem('data'));
+        if(data.length < 5){
+          var newItem = {
+            name: $scope.name,
+            symptom: $scope.checkboxArray,
+            answer: $scope.answer
+          };
+          data.push(newItem);
+        } else {
+          for (var i = 0; i < data.length; i++){
+            if(data[i].name === "-"){
+              data[i].name = $scope.name;
+              data[i].symptom = $scope.checkboxArray;
+              data[i].answer = $scope.answer;
+              break; // to go out of loop
+            }
+          }
+        }
+        localStorage.setItem('data', JSON.stringify(data));
+      }
       // clear form content when opening again
       $('#activity-form')[0].reset();
     } else { // if localstorage is already more than 5, look for "empty" data, where name is "-"
@@ -573,19 +595,18 @@ angular.module('Netsafe').controller('activityController', function($scope) {
         }
       }
       localStorage.setItem('data', JSON.stringify(data));
+      $('#activity-form')[0].reset();
     }
 
     //put data into button
-    if($scope.data){
-      var data = JSON.parse(localStorage.getItem('data'));
-      for(var i = 0; i < $scope.data.length; i ++ ){
-        if(data[i]){
-          var locstore = "#localStorageData";
-          var specificlocstore = locstore + "" + i;
-          $(specificlocstore).text(data[i].name);
-        }
+    var data = JSON.parse(localStorage.getItem('data'));
+    for(var i = 0; i < data.length; i ++ ){
+      if(data[i]){
+        var locstore = "#localStorageData";
+        var specificlocstore = locstore + "" + i;
+        $(specificlocstore).text(data[i].name);
       }
-    }; //if ends here
+    }
   }
 
   $scope.playCustom = function(num){
