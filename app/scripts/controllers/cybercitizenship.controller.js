@@ -16,8 +16,9 @@ angular.module('Netsafe').controller('cybercitizenshipController', function($sco
     //             player.pauseVideo();
     //           }, 3000);
 
-    // var time = player.getCurrentTime();
-    // console.log(time);
+    var time = player.getCurrentTime();
+    console.log(time);
+
 
     // if(time < 4500){
     //   var rate = player.getPlaybackRate();
@@ -27,8 +28,19 @@ angular.module('Netsafe').controller('cybercitizenshipController', function($sco
     //           }, remainingTime * 1000);
     // }
 
+  //   if (!$scope.pausedAlready) {
+  //   $scope.timer = $timeout(function () {
+  //     // pause the video
+  //       $scope.pausedAlready = true
+  //     }, 3000);
+  //   } else {
+  //     $timeout.cancel($scope.timer)
+  // }
+
 
   });
+
+
 
 
 
