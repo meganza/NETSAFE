@@ -1,6 +1,8 @@
 angular.module('Netsafe').controller('cybercitizenshipController', function($scope) {
 	console.log('you are in cybercitizenshipController');
 
+  var pauseCount = 0;
+
   $scope.playerVars = {
     controls: 1,
     rel: 0
@@ -10,38 +12,37 @@ angular.module('Netsafe').controller('cybercitizenshipController', function($sco
 
   // how to target a single video ?
   $scope.$on('youtube.player.playing', function($event, player){
-    // pauses AFTER 3 SECONDS after EACH play/pause
+    console.log(pauseCount);
 
-    // setTimeout($scope.pauseVideo = function(){
-    //             player.pauseVideo();
-    //           }, 3000);
+    if (pauseCount == 0){
+      // pause at first pause time
+      setTimeout($scope.pauseVideo = function(){
+                  player.pauseVideo();
+                }, 3000);   // pauses at 0:02 [0, 1, 2]
+      pauseCount++;
+    } else if (pauseCount == 1){
+      setTimeout($scope.pauseVideo = function(){
+                  player.pauseVideo();
+                }, 6000);   // pauses at 0:08 [3, 4, 5, 6, 7, 8]
+      // second pause time
+      pauseCount++;
+    } else if (pauseCount == 2){
+      // third pause count
+      setTimeout($scope.pauseVideo = function(){
+                  player.pauseVideo();
+                }, 2000);   // pauses at 0:08 [9, 10]
+      // if last,
+      pauseCount = 10;
+    }
 
-    var time = player.getCurrentTime();
-    console.log(time);
-
-
-    // if(time < 4500){
-    //   var rate = player.getPlaybackRate();
-    //   var remainingTime = (4500 - time) / rate;
-    //   setTimeout($scope.pauseVideo = function(){
-    //             player.pauseVideo();
-    //           }, remainingTime * 1000);
-    // }
-
-  //   if (!$scope.pausedAlready) {
-  //   $scope.timer = $timeout(function () {
-  //     // pause the video
-  //       $scope.pausedAlready = true
-  //     }, 3000);
-  //   } else {
-  //     $timeout.cancel($scope.timer)
-  // }
-
-
+    // problem: its not at a SPECIFIC time, pause @ ___ seconds, play, pauses @ ___ seconds
+    // if the pause is by the teacher, then it will work up everything
+    console.log(pauseCount);
   });
 
-
-
-
+  $scope.$on('youtube.player.ended', function($event, player){
+    pauseCount = 0;
+    console.log(pauseCount);
+  });
 
 });
