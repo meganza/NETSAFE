@@ -8,31 +8,22 @@ angular.module('Netsafe').controller('cybercitizenshipController', function($sco
     rel: 0
   };
 
-  $scope.cyberCitizenshipVid = 'https://www.youtube.com/watch?v=Xp4tWIy5rnc';
+  $scope.cyberCitizenshipVid = 'https://www.youtube.com/watch?v=7kLr6tZDFRo';
 
   // how to target a single video ?
   $scope.$on('youtube.player.playing', function($event, player){
     console.log(pauseCount);
 
-    if (pauseCount == 0){
-      // pause at first pause time
+    if (pauseCount == 0){ // pause at first pause time
       setTimeout($scope.pauseVideo = function(){
                   player.pauseVideo();
-                }, 3000);   // pauses at 0:02 [0, 1, 2]
+                }, 15000);   // 0:14
       pauseCount++;
-    } else if (pauseCount == 1){
+    } else if (pauseCount == 1){ // second pause time
       setTimeout($scope.pauseVideo = function(){
                   player.pauseVideo();
-                }, 6000);   // pauses at 0:08 [3, 4, 5, 6, 7, 8]
-      // second pause time
+                }, 8800);   // 0:23
       pauseCount++;
-    } else if (pauseCount == 2){
-      // third pause count
-      setTimeout($scope.pauseVideo = function(){
-                  player.pauseVideo();
-                }, 2000);   // pauses at 0:08 [9, 10]
-      // if last,
-      pauseCount = 10;
     }
 
     // problem: its not at a SPECIFIC time, pause @ ___ seconds, play, pauses @ ___ seconds

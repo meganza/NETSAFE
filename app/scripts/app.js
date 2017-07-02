@@ -87,6 +87,11 @@ Netsafe.config(function($stateProvider) {
     controller: 'techniquesController',
     templateUrl: 'views/rogue.html'
   })
+  .state('netsafe.prevention', {
+    url: '/cyberattack-prevention',
+    controller: 'techniquesController',
+    templateUrl: 'views/prevention.html'
+  })
   .state('netsafe.activity', {
     url: '/safety-security-activity',
     controller: 'activityController',
