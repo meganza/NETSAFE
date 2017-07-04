@@ -9,7 +9,7 @@ angular.module('Netsafe').controller('techniquesController', function($scope) {
   $scope.identityVid = 'https://www.youtube.com/watch?v=3rLkVSBciVo'; // done or revised
   $scope.spamVid = 'https://www.youtube.com/watch?v=WgEfmudj-50'; // done or revised
   $scope.phishingVid = 'https://www.youtube.com/watch?v=Dqcv_fHhuCY'; // done or revised
-  $scope.pharmingVid = 'https://www.youtube.com/watch?v=S3-GvYfb2cI';
+  $scope.pharmingVid = 'https://www.youtube.com/watch?v=qnl7lD9QYik'; // done or revised
   $scope.rogueVid = 'https://www.youtube.com/watch?v=lRIknf-sQn0'; // done or revised
   $scope.preventionVid = 'https://www.youtube.com/watch?v=lRIknf-sQn0';
 
@@ -62,8 +62,29 @@ angular.module('Netsafe').controller('techniquesController', function($scope) {
                   }, 9500);   // 0:50
         pauseCount++;
       }
-    } else if (player.getVideoData().video_id == "S3-GvYfb2cI"){  // pharming video
+    } else if (player.getVideoData().video_id == "qnl7lD9QYik"){  // pharming video
       console.log("hello, pharming vid is playing");
+      if (pauseCount == 0){ // pause at first pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 10000);   // 0:09
+        pauseCount++;
+      } else if (pauseCount == 1){ // second pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 10000);   // 0:19
+        pauseCount++;
+      } else if (pauseCount == 2){ // third pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 13000);   // 0:32
+        pauseCount++;
+      } else if (pauseCount == 3){ // fourth pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 15500);   // 0:48
+        pauseCount++;
+      }
     } else if (player.getVideoData().video_id == "lRIknf-sQn0"){  // rogue security software video playing
       console.log("hello, rogue vid is playing");
       if (pauseCount == 0){ // pause at first pause time
