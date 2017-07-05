@@ -5,7 +5,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       scenario: "Sara is online chatting with a 10-year-old boy. The boy sends Sara a picture of " +
                 "himself and he wants Sara to send him a picture of herself and her family. Sara " +
                 "is thinking if she should send a picture or not. She decided to send a picture of " +
-                "herself and her family to the boy.",
+                "herself and her family to the boy. A few days later, Sarah found a fake online article " +
+                "about a scam which contains her family photo and  the names of her parents and siblings. ",
       answers: [
         [
           "To decide which photo is best to send.",
@@ -29,13 +30,14 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Internet and the family photo.",
           "Internet and the Online messaging application.",
           "Sara's phone and their family photo.",
-          "Online messaging application, family photo."
+          "Online messaging application, family photo, fake online article"
         ],
         [
           "Sara is chatting with a 10-year-old boy." +
           "The boy sends Sara a picture of himself." +
           "The boy asks Sara to send him a photo of herself and her family." +
-          "Sara sends a picture of herself and her family to the boy.",
+          "Sara sends a picture of herself and her family to the boy." +
+          "Sarah founds a fake online article containing her family photo and names of her parents and siblings.",
           "Sara and her family took a photo where she sent it to the boy.",
           "They both promised each other to send their photos and their family's photos.",
           "Sara reported and muted the boy in the messaging application."
@@ -61,7 +63,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "Further in the post, you ridicule the teacher’s age, race, and physical " +
                 "appearance. Now, you are in university and you are applying for a highly " +
                 "competitive internship. During the interview, the interviewer brings out a " +
-                "copy of the blog post and questions you about it.",
+                "copy of the blog post and questions you about your misbehavior.",
 
       answers: [
         [
@@ -115,8 +117,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       scenario: "A good friend of yours comes to talk to you one day to tell you that one of the older " +
                 "students has recorded a video of her practicing for the school play. The older student " +
                 "edited the video to make your friend look immature and unintelligent and has been " +
-                "showing it to all of his friends. Your friend tells you that she is embarrassed and upset," +
-                "but has not told anyone about this.",
+                "showing it to all of his friends. Your friend has been ridiculed by other students because of the video." +
+                "Your friend tells you that she is embarrassed and upset, but has not told anyone about this.",
 
       answers: [
         [
@@ -146,8 +148,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         [
           "The older student recorded a video of your friend while your friend was practicing " +
           "for a school play. The older student then edited the video to make your friend look " +
-          "immature and unintelligent and has shown it to all of his friends. Meanwhile, your " +
-          "friend has stayed quiet about this.",
+          "immature and unintelligent and has shown it to all of his friends. Other students " +
+          "ridiculed and bullied your friend because of the video.Meanwhile, your friend has stayed quiet about this.",
           "The school's play was recorded and shown by the older students.",
           "The video recording was edited to make it look pretty.",
           "Your friend bullied back the older student."
@@ -198,7 +200,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Notebook"
         ],
         [
-          "The unknown perpetrator took a peek at Adam’s password that he saved in his notebook.",
+          "Adam wrote down his password in his notebook. Adam left his notebook in class  went to the counseling office." +
+          "The unknown perpetrator took a peek at Adam’s notebook where his password was written down." +
+          "The unknown perpetrator accessed Adam’s email account and read some of his inbox  messages.",
           "Adam left his notebook on his table.",
           "The unknown person accidentally opened Adam's notebook.",
           "Adam wrote his password in the notebook."
@@ -213,7 +217,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "The anonymous person should have personally asked Adam his password instead.",
           "Adam asks his classmates who opened his notebook.",
           "Adam shouldn’t have written down his password in his notebook",
-          "The anonymous person should not have opened Adam’s notebook with his password."
+          "The anonymous person shouldn’t have accessed Adam’s email account and read his inbox messages."
         ]
       ]
     },
@@ -221,7 +225,11 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       scenario: "Your class is discussing reasons for not sharing personal information. However, " +
                 "Steve wants Jose, his best friend, to check out his Facebook page to see if he has " +
                 "appropriate information. Steve gave Jose his user ID and password to access his " +
-                "Facebook account so another person can okay his information.",
+                "Facebook account so another person can okay his information." +
+                "The next day, Jose said that Steve’s information in facebook is okay and  started " +
+                "teasing Steve about a girl that he likes in school. However, he never told Jose about " +
+                "the girl he likes.  Steve asked Jose how he found out about it and Jose said that he " +
+                "read their conversation while checking Steve’s facebook account.",
 
       answers: [
         [
@@ -249,7 +257,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Facebook"
         ],
         [
-          "Steve gave his best friend his password and user ID to check if his account information is okay",
+          "Steve gave his best friend his password and user ID to check if his account information is okay" +
+          "Jose checked Steve’s facebook account information and read Steve’s conversation with a girl he likes in school.",
           "Jose hacked Steve's facebook account and changed his password.",
           "Steve and Jose hacked other people's facebook accounts and changed their passwords.",
           "Jose forcibly asked for Steve's facebook password to message one of their classmates."
@@ -387,8 +396,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       scenario: "You begin to receive snaps (how you communicate through Snapchat) from a user you don’t recognize. " +
                 "This person claims to go to your school and seems to know a lot of information about your school " +
                 "and your classes that makes you believe him. After a bit, he begins to ask you questions about you and " +
-                "your friends. However, when you ask for the person’s name, he avoids the question and changes " +
-                "the topic. Your conversation with him on Snapchat continues.",
+                "your friends. However, when you ask for the person’s name, he avoids the question." +
+                "Your conversation with him on Snapchat continues. On the following days, some of " +
+                "your friends told you that there is someone who added them on snapchat and asked " +
+                "them to hang out with him. The guy also insisted that you are friends with him and " +
+                "even told them stories about you which made it seem that you have been friends with " +
+                "him for quite some time.",
 
       answers: [
         [
@@ -683,7 +696,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "spreading rumors about the school administration being indifferent and atheist using " +
                 "the school mailing list. Kenneth, Penelope’s friend, got a bit pissed because of " +
                 "her actions. He decided to tell Penelope that what she did was wrong by posting " +
-                "it on Penelope’s facebook timeline.",
+                "it on Penelope’s facebook timeline. A lot of people saw it, including Penelope’s " +
+                "family and relatives. This made Penelope’s family  and relatives  made a big fuss " +
+                "about it and asked her what happened. ",
       answers: [
         [
           "To inform the whole student body of Our Lord and Savior.",
@@ -692,7 +707,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "To inform the administration of their wrongdoing."
         ],
         [
-          "Penelope, school administration, students, and Kenneth",
+          "Penelope, school administration, students, Kenneth and Penelope’s family and relatives",
           "The homeroom teacher and the guidance counselor",
           "Kenneth and Penelope",
           "The whole student body and the city mayor"
@@ -718,7 +733,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "from sending emails unrelated to school purposes." +
           "Penelope spread rumors about the school" +
           "administration for being indifferent and atheists," +
-          "Kenneth posted on Penelope’s timeline telling her that her actions were wrong.",
+          "Kenneth posted on Penelope’s timeline telling her that her actions were wrong." +
+          "Penelope’s family made a big fuss about Kenneth’s post on Penelope’s timeline.",
           "Penelope accidentally emailed everyone of the religous message which made the others mad.",
           "Kenneth had a different religion from Penelope which is why Kenneth was disappointed when Penelope had sent the religous messages.",
           "The school was not a secular one and Penelope violated the hand book."
