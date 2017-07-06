@@ -11,7 +11,7 @@ angular.module('Netsafe').controller('techniquesController', function($scope) {
   $scope.phishingVid = 'https://www.youtube.com/watch?v=Dqcv_fHhuCY'; // done or revised
   $scope.pharmingVid = 'https://www.youtube.com/watch?v=qnl7lD9QYik'; // done or revised
   $scope.rogueVid = 'https://www.youtube.com/watch?v=lRIknf-sQn0'; // done or revised
-  $scope.preventionVid = 'https://www.youtube.com/watch?v=lRIknf-sQn0';
+  $scope.preventionVid = 'https://www.youtube.com/watch?v=gQc0o1bxWqc'; // done or revised
 
   var pauseCount = 0;
 
@@ -100,6 +100,22 @@ angular.module('Netsafe').controller('techniquesController', function($scope) {
       }
     } else {                                                      // prevention video playing
       console.log("hello, prevention vid is playing");
+      if (pauseCount == 0){ // pause at first pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 42000);   // 0:41
+        pauseCount++;
+      } else if (pauseCount == 1){ // second pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 55000);   // 1:36, 96
+        pauseCount++;
+      } else if (pauseCount == 2){ // third pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 28000);   // 2:04, 124
+        pauseCount++;
+      }
     }
 
     // problem: its not at a SPECIFIC time, pause @ ___ seconds, play, pauses @ ___ seconds
