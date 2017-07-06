@@ -10,7 +10,6 @@ angular.module('Netsafe').controller('cybercitizenshipController', function($sco
 
   $scope.cyberCitizenshipVid = 'https://www.youtube.com/watch?v=7kLr6tZDFRo';
 
-  // how to target a single video ?
   $scope.$on('youtube.player.playing', function($event, player){
     console.log(pauseCount);
 

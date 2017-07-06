@@ -8,7 +8,7 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
 
   $scope.digitalTattooVid = 'https://www.youtube.com/watch?v=lljOiBv4V6w';
   $scope.internetPrivacyVid = 'https://www.youtube.com/watch?v=2Ctc_3Nv2ME';  // done or revised
-  $scope.respectingOthersVid = 'https://www.youtube.com/watch?v=H0TQIJdJw_U';
+  $scope.respectingOthersVid = 'https://www.youtube.com/watch?v=hMTqP7KchTU'; // done or revised
 
   var pauseCount = 0;
 
@@ -67,6 +67,17 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
       }
     } else {                                                        // respecting others
       console.log("hello, respecting others  vid is playing");
+      if (pauseCount == 0){ // pause at first pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 16500);   // pauses at 0:16
+        pauseCount++;
+      } else if (pauseCount == 1){ // second pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 14500);   // 0:31
+        pauseCount++;
+      }
     }
 
     // problem: its not at a SPECIFIC time, pause @ ___ seconds, play, pauses @ ___ seconds
