@@ -8,7 +8,7 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
 
   $scope.digitalTattooVid = 'https://www.youtube.com/watch?v=lljOiBv4V6w';
   $scope.internetPrivacyVid = 'https://www.youtube.com/watch?v=2Ctc_3Nv2ME';  // done or revised
-  $scope.respectingOthersVid = 'https://www.youtube.com/watch?v=hMTqP7KchTU'; // done or revised
+  $scope.respectingOthersVid = 'https://www.youtube.com/watch?v=Wx1IU7EtgwE'; // done or revised
 
   var pauseCount = 0;
 
@@ -17,26 +17,6 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
 
     if(player.getVideoData().video_id == "lljOiBv4V6w"){        // digital tattoo
       console.log("hello, internet privacy vid is playing");
-      // if (pauseCount == 0){
-      //   // pause at first pause time
-      //   setTimeout($scope.pauseVideo = function(){
-      //               player.pauseVideo();
-      //             }, 3000);   // pauses at 0:02 [0, 1, 2]
-      //   pauseCount++;
-      // } else if (pauseCount == 1){
-      //   setTimeout($scope.pauseVideo = function(){
-      //               player.pauseVideo();
-      //             }, 6000);   // pauses at 0:08 [3, 4, 5, 6, 7, 8]
-      //   // second pause time
-      //   pauseCount++;
-      // } else if (pauseCount == 2){
-      //   // third pause count
-      //   setTimeout($scope.pauseVideo = function(){
-      //               player.pauseVideo();
-      //             }, 2000);   // pauses at 0:08 [9, 10]
-      //   // if last,
-      //   pauseCount = 10;
-      // }
     } else if (player.getVideoData().video_id == "2Ctc_3Nv2ME"){   // internet privacy
       console.log("hello, internet privacy vid is playing");
       if (pauseCount == 0){ // pause at first pause time
