@@ -3,7 +3,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     easy: [
     {
       scenario: "Sara is online chatting with a 10-year-old boy. The boy sends Sara a picture of " +
-                "himself and he wants Sara to send him a picture of herself and her family. Sara " +
+                "himself, and he wants Sara to send him a picture of herself and her family. Sara " +
                 "is thinking if she should send a picture or not. She decided to send a picture of " +
                 "herself and her family to the boy. A few days later, Sarah found a fake online article " +
                 "about a scam which contains her family photo and  the names of her parents and siblings. ",
@@ -49,18 +49,18 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Don't abuse your power"
         ],
         [
-          "Sarah sends the photo and told her parents what she did.",
-          "Sarah tells the boy that he is a freaky and creepy person.",
-          "Sarah asks her friends online what should she do about it.",
-          "Sarah politely declines the boy’s request and ends her conversation with the boy."
+          "Sarah should send the photo and tells her parents what she did.",
+          "Sarah should the boy that he is a freaky and creepy person.",
+          "Sarah should ask her friends online what she should do about it.",
+          "Sarah should politely decline the boy’s request and ends her conversation with the boy."
         ]
       ]
     },
     {
       scenario: "While you were in Middle School, you wrote a blog post where you criticized " +
-                "one of your teachers for being mean to you in class. You claim the teacher " +
+                "one of your teachers for being mean to you in class. You claimed the teacher " +
                 "was not fair in her grading and she insulted you in front of your classmates. " +
-                "Further in the post, you ridicule the teacher’s age, race, and physical " +
+                "Further in the post, you ridiculed the teacher’s age, race, and physical " +
                 "appearance. Now, you are in university and you are applying for a highly " +
                 "competitive internship. During the interview, the interviewer brings out a " +
                 "copy of the blog post and questions you about your misbehavior.",
@@ -106,9 +106,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Share expert knowledge"
         ],
         [
-          "You tell your interviewer the reason why you wrote that blog post.",
-          "You wrote a personal email to your teacher telling that she is not fair in her grading and you insulted her and criticized her teaching skills.",
-          "You lie about the blog post telling the interviewer that someone else could have written that post under your name.",
+          "You should tell your interviewer the reason why you wrote that blog post.",
+          "You should have written a wrote a personal email to your teacher instead, telling her that she did not grade you fairly and you insulted her and criticized her teaching skills.",
+          "You should lie about the blog post and tell the interviewer that someone else could have written that post under your name.",
           "You shouldn’t have written a blog post criticizing your teacher. Instead, you could have told to your parents what happened and brought the issue to the principal’s office or school administration to settle it."
         ]
       ]
@@ -116,8 +116,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     {
       scenario: "A good friend of yours comes to talk to you one day to tell you that one of the older " +
                 "students has recorded a video of her practicing for the school play. The older student " +
-                "edited the video to make your friend look immature and unintelligent and has been " +
-                "showing it to all of his friends. Your friend has been ridiculed by other students because of the video." +
+                "edited the video to make your friend look immature and unintelligent, and has been " +
+                "showing it to all of his friends. Your friend has been ridiculed and bullied by other students because of the video. " +
                 "Your friend tells you that she is embarrassed and upset, but has not told anyone about this.",
 
       answers: [
@@ -161,9 +161,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Know where you are in cyberspace"
         ],
         [
-          "Your friend makes a post online calling out the older student’s behaviour and called him a jerk and other negative remarks.",
-          "You convince your friend to tell other people what the older student did but fabricate some parts of the story to make it look worse.",
-          "Your friend also edited a video making fun of the older student.",
+          "Your friend should make a post online calling out the older student’s behaviour and called him a jerk and other negative remarks.",
+          "You should convince your friend to tell other people what the older student did but fabricate some parts of the story to make it look worse.",
+          "Your friend should also edit a video making fun of the older student.",
           "The older student should not have edited the video to make your friend look immature and unintelligent."
         ]
       ]
@@ -172,7 +172,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       scenario: "Adam’s school provides email accounts to all students. Adam is afraid that he " +
                 "might forget his password and writes it down in his notebook. One day during class " +
                 "he is called to the counseling office. He leaves his books in class and goes to " +
-                "the office. When he gets back, he sees his notebook open to the page with his password.",
+                "the office. When he gets back, he sees his notebook is open. When he tried accessing " +
+                "his e-mail account at home, he saw that some of his inbox messages were read by someone else.",
 
       answers: [
         [
@@ -215,9 +216,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ],
         [
           "The anonymous person should have personally asked Adam his password instead.",
-          "Adam asks his classmates who opened his notebook.",
-          "Adam shouldn’t have written down his password in his notebook",
-          "The anonymous person shouldn’t have accessed Adam’s email account and read his inbox messages."
+          "Adam should ask his classmates who opened his notebook.",
+          "Adam shouldn’t have written down his password in his notebook.",
+          "The anonymous person shouldn’t have accessed Adam’s e-mail account and also shouldn’t have read his inbox messages."
         ]
       ]
     },
@@ -226,10 +227,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "Steve wants Jose, his best friend, to check out his Facebook page to see if he has " +
                 "appropriate information. Steve gave Jose his user ID and password to access his " +
                 "Facebook account so another person can okay his information." +
-                "The next day, Jose said that Steve’s information in facebook is okay and  started " +
+                "The next day, Jose said that Steve’s information on Facebook is okay and started " +
                 "teasing Steve about a girl that he likes in school. However, he never told Jose about " +
-                "the girl he likes.  Steve asked Jose how he found out about it and Jose said that he " +
-                "read their conversation while checking Steve’s facebook account.",
+                "the girl he likes. Steve asked Jose how he found out about it and Jose said that he read " +
+                "their conversation while checking Steve’s facebook account.",
 
       answers: [
         [
@@ -270,9 +271,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Don’t abuse your power"
         ],
         [
-          "Jose promises not to access Steve’s facebook account unless Steve asks him to do so",
-          "Jose also gives his user ID and password to Steve.",
-          "Steve changes his user ID and password.",
+          "Jose should promise not to access Steve’s facebook account unless Steve asks him to do so",
+          "Jose should also gives his user ID and password to Steve.",
+          "Steve should change his user ID and password.",
           "Steve should not have given his user ID and password to Jose. He could have just shown his Facebook account to Jose without giving his User ID and password."
         ]
       ]
@@ -282,12 +283,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
   med: [
     {
       scenario: "Bob needs to get the details for a project from his co-worker as soon as possible. " +
-      "He consistently messaged the his co-worker through e-mail regarding the similar content throughout " +
-      "the day. The co-worker got mad a Bob for sending the multiple messages started sending obscene " +
-      " messages but informed that he will send it once he was finished with his own work. Bob did not " +
-      "realize that the co-worker was busy with his own work. Eventually, the co-worker was able to send " +
-      "the information Bob needed but the co-worker is annoyed by Bob but apologized for being rude and " +
-      "Bob regrets spamming co-worker.",
+      "Because of this, he consistently messaged his co-worker throughout the day through e-mail. " +
+      "The co-worker got mad at Bob for sending multiple messages so he started sending obscene " +
+      "messages while also informing Bob that he will send it once he was finished with his own work. " +
+      "Bob did not realize that the co-worker was busy with his own work. Eventually, the co-worker " +
+      "was able to send the information Bob needed but the co-worker is now annoyed with Bob. " +
+      "The co-worker apologized for being rude and Bob now regrets spamming his co-worker.",
 
       answers: [
         [
@@ -331,15 +332,15 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ],
         [
           "Bob should not have message his co-worker while his co-worker is busy.",
-          "The co-worker got mad and emailed Bob that he is busy and should not bother him while working.",
-          "The co-worker ignored Bob’s message because he was busy.",
+          "Even though the co-worker got mad, he should have just e-mailed Bob that he is busy and should not bother him while working.",
+          "The co-worker ignores Bob’s message because he was busy.",
           "Bob should have only sent one message to his co-worker informing that he needs the information immediately."
         ]
       ]
     },
     {
-      scenario: "A friend tags you in a picture on Facebook. The picture was taken last summer " +
-                "while you and others were at the beach. You don’t feel comfortable with the way you " +
+      scenario: "A friend tags you on a picture on Facebook. The picture was taken last summer " +
+                "while you and other people were at the beach. You don’t feel comfortable with the way you " +
                 "or your friends look in the picture. Other Facebook users have begun to post comments " +
                 "on the picture making fun of you and your friends. You feel embarrassed and disrespected.",
 
@@ -385,20 +386,20 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Respect other people’s time and bandwidth and make yourself look good online"
         ],
         [
-          "You also post an embarrassing photo of your friend ad tag him/her.",
+          "You also post an embarrassing photo of your friend and tag him/her.",
           "You post a rude comment directed to the people making fun of you and your friends.",
-          "You also make fun of your friends to make you seem okay with it and there’s no big deal about it.",
-          "Your friend should have asked permission first if you want to be tagged in a photo or share your photo."
+          "You also make fun of your friends to make it seem that you’re okay with it and just not make a big deal of it.",
+          "Your friend should have asked permission first if you wanted to be tagged on a photo or have your photo even be shared to the public."
         ]
       ]
     },
     {
       scenario: "You begin to receive snaps (how you communicate through Snapchat) from a user you don’t recognize. " +
                 "This person claims to go to your school and seems to know a lot of information about your school " +
-                "and your classes that makes you believe him. After a bit, he begins to ask you questions about you and " +
+                "and your classes which makes you believe that he actually does go to your school. After a bit, he begins to ask you questions about you and " +
                 "your friends. However, when you ask for the person’s name, he avoids the question." +
                 "Your conversation with him on Snapchat continues. On the following days, some of " +
-                "your friends told you that there is someone who added them on snapchat and asked " +
+                "your friends tell you that there is someone who added them on snapchat and asked " +
                 "them to hang out with him. The guy also insisted that you are friends with him and " +
                 "even told them stories about you which made it seem that you have been friends with " +
                 "him for quite some time.",
@@ -447,7 +448,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "You report the user’s profile to snapchat.",
           "You ask the person to send a picture of himself/herself.",
           "You ask your computer savvy friend to stalk the person and look for information about him/her.",
-          "The other user should have given his name or identity to you before you engage to the conversation any further."
+          "The other user should have given his name or identity to you before you engage with him in conversation any further."
         ]
       ]
     },
@@ -497,7 +498,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         [
           "His enemies should continue to respond to Abner’s threats and insult.",
           "Abner shouldn’t have posted comments to the forum.",
-          "Abner keeps on responding to their threats and insults them in a way that provokes them.",
+          "Abner should keep on responding to their threats and insults them in a way that provokes them.",
           "Abner should just stop responding and save himself the energy or he could respond to them in a manner that does not provoke them."
         ]
       ]
@@ -548,9 +549,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ],
         [
           "The supervisor should require the secretary to be always on the clock even if she’s not at work.",
-          "The supervisor asks the security admin to access the e-mail of the secretary instead of asking the password from the secretary.",
+          "The supervisor should ask the security admin to access the secretary’s e-mail account instead of asking for the password from the secretary herself.",
           "The secretary gives her password to her supervisor unwillingly.",
-          "The secretary should explain to the supervisor that it breaks the netiquette."
+          "The secretary should explain to the supervisor that it breaks netiquette rules."
         ]
       ]
     }
@@ -561,12 +562,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     {
       scenario: "You and a group of students have created a website about a classmate, his name " +
                 "is Marty. The website includes postings that include made-up stories, jokes and " +
-                "cartoons involving the student. The site also includes a place where visitors can " +
-                "post comments and an email link for people to send their messages directly to the " +
-                "student. You email everyone in your class a link to the site. One of your classmates " +
+                "cartoons involving Marty. The site also includes a place where visitors can " +
+                "post comments and an email link for people to send their messages directly to Marty. " +
+                "You email everyone in your class a link to the site. One of your classmates " +
                 "sent the link of the website to Marty. Marty saw the postings and got mad and hurt." +
                 "Despite his feelings, he politely asked the people responsible to take down the " +
-                "website through the comments. However, you did not comply to his request and replied " +
+                "website through the comments. However, you did not comply with his request and replied " +
                 "to his comment that it is just for fun. Marty argued that what they’re doing is bad " +
                 "and should not be tolerated. Some other people joined in the thread of conversation " +
                 "and jeered at Marty for being such a kill joy. This made Marty more furious and " +
@@ -621,7 +622,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ],
         [
           "Marty should not have gotten mad because it was only for fun.",
-          "Marty should get mad at them and demanded to take down the website.",
+          "Marty should get mad at them and demand that they take down the website.",
           "You should have only emailed the link of the website to your closest friends.",
           "You and the other group of students shouldn’t have created a website containing postings that include made-up stories, jokes and cartoons involving Marty."
         ]
@@ -631,7 +632,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       scenario: "Anna posts the following question on the LearningCommons, an online discussion group: " +
                 "'I am having a problem with saving using C++. I cannot create the .cpp file, can anyone " +
                 "help me?' Another student, Miko, knows the answer to Anna’s question but instead, he " +
-                "responds to the query quite acidly: 'YOU IDIOT! How the heck did you make it through " +
+                "responds to the query with contempt: 'YOU IDIOT! How the heck did you make it through " +
                 "the selection process? It’s so easy my little sister can do it! Why not quit now and save " +
                 "yourself some embarrassment and head down to the elementary school where you belong?' " +
                 "Anna found Miko’s reply offending and insulting.",
@@ -685,7 +686,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ]
     },
     {
-      scenario: "After the September 11th terrorist attack, many students and teachers send " +
+      scenario: "After the September 11th terrorist attack, many students and teachers sent " +
                 "related email to the “all-student” or “all-faculty” mailing lists. Most of the " +
                 "messages contain information about the status of former students and about ways " +
                 "people can help in the crisis. But Penelope sends a long note with a heavy religious " +
@@ -697,8 +698,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "the school mailing list. Kenneth, Penelope’s friend, got a bit pissed because of " +
                 "her actions. He decided to tell Penelope that what she did was wrong by posting " +
                 "it on Penelope’s facebook timeline. A lot of people saw it, including Penelope’s " +
-                "family and relatives. This made Penelope’s family  and relatives  made a big fuss " +
-                "about it and asked her what happened. ",
+                "family and relatives. This made Penelope’s family and relatives make a big fuss about it, " +
+                "and made them ask her about what happened",
       answers: [
         [
           "To inform the whole student body of Our Lord and Savior.",
@@ -757,7 +758,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     {
       scenario: "You and a friend like to joke on Facebook by insulting each other. " +
                 "Sometimes these insults include references to inappropriate behavior, " +
-                "mocking of classmates, and use of swearing. Your friend’s parents, went " +
+                "mocking of classmates, and use of swearing. Your friend’s parents went " +
                 "through your friend’s private messages to other people just to check their " +
                 "daughters activities. They read your and your friend’s private messages and " +
                 "found your behaviors alarming. Her parents call your school and your parents to " +
@@ -814,18 +815,18 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "You and your friends should have just made those jokes through a private chat.",
           "Your friend should not have gotten mad to her parents.",
           "Your friend’s parents should not have called the school.",
-          "You and your friend shouldn’t have behaved inappropriately online/ on Facebook you’re your friend’s parents shouldn’t have went through the private messages of their daughter."
+          "You and your friend shouldn’t have behaved inappropriately online on Facebook / your friend’s parents shouldn’t have gone through their daughter’s private messages."
         ]
       ]
     },
     {
       scenario: "George and Elijah are workmates in the IT department of their company. " +
-                "George is a system admin and Elijah works as a tech support. Recently, " +
+                "George is a system admin and Elijah works as tech support. Recently, " +
                 "George and Elijah had a misunderstanding in their work that escalated to a bigger " +
                 "fight. George took advantage of his position at work and accessed Elijah’s company " +
                 "email account. He used Elijah’s email account to send spam messages to their " +
-                "co-workmates. He even read some of Elijah’s emails to Marianne, an employee in " +
-                "their company as well and the woman Elijah has taken interest of. George did this " +
+                "co-workmates. He even read some of Elijah’s emails to Marianne, an fellow employee in " +
+                "their company as well and the woman Elijah has taken an interest in. George did this " +
                 "to smear the image of George to their workmates.",
       answers: [
         [
@@ -872,7 +873,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Elijah should have hired someone to hack George’s email account to get even with him.",
           "George should have just spammed Elijah to annoy him.",
           "Elijah should email each of his co-workmates informing them that George probably hacked his email account.",
-          "George shouldn’t have accessed Elijah’s email and tried to fix their problem with each other by having a mature conversation."
+          "George shouldn’t have accessed Elijah’s e-mail and should have just tried to fix their problem with each other by having a mature conversation."
         ]
       ]
     }
