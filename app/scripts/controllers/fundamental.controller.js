@@ -6,7 +6,7 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
     rel: 0
   };
 
-  $scope.digitalTattooVid = 'https://www.youtube.com/watch?v=lljOiBv4V6w';
+  $scope.digitalTattooVid = 'https://www.youtube.com/watch?v=L_zB8iqDNxY'; // done or revised
   $scope.internetPrivacyVid = 'https://www.youtube.com/watch?v=2Ctc_3Nv2ME';  // done or revised
   $scope.respectingOthersVid = 'https://www.youtube.com/watch?v=Wx1IU7EtgwE'; // done or revised
 
@@ -14,9 +14,35 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
 
   $scope.$on('youtube.player.playing', function($event, player){
     console.log(player.getVideoData().video_id); // get the video id of the playing video
-
-    if(player.getVideoData().video_id == "lljOiBv4V6w"){        // digital tattoo
+    if(player.getVideoData().video_id == "L_zB8iqDNxY"){        // digital tattoo
       console.log("hello, internet privacy vid is playing");
+      if (pauseCount == 0){ // pause at first pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 21650);   // pauses at 0:23
+        pauseCount++;
+      } else if (pauseCount == 1){ // second pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 24000);   // 0:46
+        pauseCount++;
+      } else if (pauseCount == 2){ // third pause count
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 21500);   // 1:08
+        pauseCount++;
+      } else if (pauseCount == 3){ // fourth pause count
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 10000);   // 1:19
+        pauseCount++;
+      } else if (pauseCount == 4){ // fifth pause count
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 12500);   // 1:34
+        pauseCount++;
+      }
+
     } else if (player.getVideoData().video_id == "2Ctc_3Nv2ME"){   // internet privacy
       console.log("hello, internet privacy vid is playing");
       if (pauseCount == 0){ // pause at first pause time

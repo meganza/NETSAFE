@@ -12,6 +12,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  require('load-grunt-tasks')(grunt);
+
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
@@ -451,6 +453,19 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    electron: {
+        macosBuild: {
+            options: {
+                name: 'Fixture',
+                dir: 'app',
+                out: 'dist',
+                version: '1.3.5',
+                platform: 'darwin',
+                arch: 'x64'
+            }
+        }
     }
   });
 
@@ -483,6 +498,8 @@ module.exports = function (grunt) {
     'connect:test',
     'karma'
   ]);
+
+  grunt.registerTask('electron', ['electron'])
 
   grunt.registerTask('build', [
     'clean:dist',
