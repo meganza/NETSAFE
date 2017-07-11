@@ -6,7 +6,7 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
     rel: 0
   };
 
-  $scope.digitalTattooVid = 'https://www.youtube.com/watch?v=PIGhcbS7IOk'; // done or revised
+  $scope.digitalTattooVid = 'https://www.youtube.com/watch?v=Yf1UC1vVhwc'; // done or revised
   $scope.internetPrivacyVid = 'https://www.youtube.com/watch?v=2Ctc_3Nv2ME';  // done or revised
   $scope.respectingOthersVid = 'https://www.youtube.com/watch?v=Wx1IU7EtgwE'; // done or revised
 
@@ -14,7 +14,7 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
 
   $scope.$on('youtube.player.playing', function($event, player){
     console.log(player.getVideoData().video_id); // get the video id of the playing video
-    if(player.getVideoData().video_id == "PIGhcbS7IOk"){        // digital tattoo
+    if(player.getVideoData().video_id == "Yf1UC1vVhwc"){        // digital tattoo
       console.log("hello, internet privacy vid is playing");
       if (pauseCount == 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
