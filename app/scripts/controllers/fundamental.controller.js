@@ -123,4 +123,25 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
     $("#cyo-btn-" + id).addClass("active");
   };
 
+  var prevID = 0;
+
+  $scope.showHelpTab = function(id){
+    if(prevID === id){
+      $(".malwr-help-btn").removeClass("active");
+      $scope.showHelpTab(10);
+
+      prevID = 0;
+    } else {
+      $(".malwr-help-btn").removeClass("active");
+      $(".tab-help-content").hide();
+
+      $("#malwr-help-btn-"+ id).addClass("active");
+      $("#tab-help-content-" + id).show();
+
+      prevID = id;
+    }
+  };
+
+  $scope.showHelpTab(1);
+
 });

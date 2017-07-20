@@ -92,7 +92,7 @@ button {
   letter-spacing: .5px;
 }
 
-.malwr-btn {
+.malwr-btn{
   background: #ffe1a8;
   padding: 7 40 7 40px;
   color: #875315;
@@ -101,7 +101,16 @@ button {
   display: inline;
 }
 
-.cyo-btn.active, .malwr-btn.active {
+.malwr-help-btn {
+  background: #ffe1a8;
+  padding: 7 10 7 10px;
+  color: #875315;
+  border: 1px solid #efd197;
+  letter-spacing: .5px;
+  display: inline;
+}
+
+.cyo-btn.active, .malwr-btn.active, .malwr-help-btn.active {
   background: #fdcd71;
 }
 

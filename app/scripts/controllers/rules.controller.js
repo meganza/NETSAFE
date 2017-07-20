@@ -87,4 +87,25 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
     $scope.answer5Clicked = true;
   };
 
+  var prevID = 0;
+
+  $scope.showHelpTab = function(id){
+    if(prevID === id){
+      $(".malwr-help-btn").removeClass("active");
+      $scope.showHelpTab(10);
+
+      prevID = 0;
+    } else {
+      $(".malwr-help-btn").removeClass("active");
+      $(".tab-help-content").hide();
+
+      $("#malwr-help-btn-"+ id).addClass("active");
+      $("#tab-help-content-" + id).show();
+
+      prevID = id;
+    }
+  };
+
+  $scope.showHelpTab(1);
+
 });
