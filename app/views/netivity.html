@@ -2,238 +2,155 @@
   Netiquette Activity
 </div>
 <br>
-<div id="tab-1" class="tab" ng-click="showTab(1)">
-  Easy
+
+<div id="netivity-scenario-nav">
+  <p>
+    <button ng-repeat="scenario in contentScenarios track by $index"
+            ng-click="showScenario($index)"
+            id="button-num-($index)"
+            class="button-num">
+      {{$index+1}}
+    </button>
+  </p>
 </div>
-<div id="tab-2" class="tab" ng-click="showTab(2)">
-  Medium
-</div>
-<div id="tab-3" class="tab" ng-click="showTab(3)">
-  Hard
-</div>
-<div class="tab-content-container">
 
-<!-- Easy Difficulty Scenarios -->
-  <div id="tab-content-1" class="tab-content">
-    <div class="difficulty-header">
-      Easy Difficulty Scenarios
+<div class="scenario-content"
+     ng-repeat="scenario in contentScenarios track by $index"
+     ng-show="$parent.currentScenario === $index">
+
+  <div class="core-scenario" style="text-align: center;">
+    {{scenario.scenario}}
+  </div>
+
+  <div class="dropdown">
+    <select ng-model="guideline">
+      <option ng-repeat="element in elements" value="{{element.value}}">
+        {{element.name}}
+      </option>
+    </select>
+  </div>
+
+  <table class="core-table" style="width: 90%">
+    <tr>
+      <th style="width: 20%">Element</th>
+      <th style="width: 40%">Scenario Elements</th>
+      <th style="width: 40%">Guideline Elements</th>
+    </tr>
+    <tr ng-repeat="question in questions">
+      <td class="core-question" style="text-align: left;"> {{question}} </td>
+
+       <td>
+        <select class="elements-dropdown">
+          <option ng-value="$index" ng-repeat="answer in $parent.scenario.answers[$index] track by $index" class="option-design">
+            {{answer}}
+          </option>
+        </select>
+      </td>
+
+      <td>
+        <div ng-show="guideline=='1'" ng-repeat="guide in dtGuidelines[$index] track by $index">
+          {{guide}}
+        </div>
+
+        <div ng-show="guideline=='2'">
+          second is selected
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <a ng-click="checkAnswer()">
+    <div class="check-button">
+      Check Answer
     </div>
-    <div id="netivity-scenario-nav">
-      <p>
-        <button ng-repeat="scenario in easyScenarios track by $index"
-                ng-click="showEasyScenario($index)"
-                id="button-num-($index)"
-                class="button-num">
-          {{$index+1}}
-        </button>
-      </p>
+  </a>
+
+  <br><br>
+
+  <table class="core-table" style="width: 90%">
+    <tr>
+      <th>Cause and Effect Table</th>
+    </tr>
+
+    <tr ng-repeat-start="labor in scenario.labors">
+      <td class="center-me">
+        <select class="elements-dropdown">
+          <option>Select Action</option>
+          <option ng-repeat="labor in scenario.labors">
+            {{labor}}
+          </option>
+        </select>
+      </td>
+    </tr>
+
+    <tr ng-repeat-end ng-if="$index % 1 == 0" ng-hide="$last">
+      <td class="center-me"> ▼ </td>
+    </tr>
+  </table>
+
+  <a ng-click="checkDivisionAnswer()">
+    <div class="check-button">
+      Check Answer
     </div>
+  </a>
 
-  <div class="scenario-content"
-       ng-repeat="scenario in easyScenarios track by $index"
-       ng-show="$parent.currentScenario === $index">
-    <div class="core-scenario">
-      {{scenario.scenario}}
-    </div>
+  <br><br>
 
-    <table class="core-table">
-      <tr ng-repeat="question in questions track by $index">
-        <th class="core-question"> {{question}} </th>
-        <th class="core-answer">
-          <p class="answer-icon">
-            {{$parent.scenario.answers[$index][answers[$index]]}}
-            <a ng-click="clickAnswer($index, $parent.$index, 'easy')" style="text-decoration: none; cursor: pointer; color: #dd953e">
-              <i class="fa fa-pencil"></i>
-            </a>
-          </p>
-          <div class="answer-modal help" id="answer-{{$index}}-{{$parent.$index}}-easy">
-            <div class="help-modal">
-              <div class="help-header">
-                Question
-                <a class="close" ng-click="clickAnswer($index, $parent.$index, 'easy')">
-                  <i class="fa fa-times"></i>
-                </a>
-              </div>
-              <div class="help-content">
-                <div class="modal-question">
-                  {{question}}
-                </div>
+  <!-- NOTE: Content here will show if first Check Answer is all correct -->
+  <div class="col-sm-6">
+    <table class="core-table" style="width: 95%">
+      <tr>
+        <th style="width: 30%">Rule Involved</th>
+        <th style="width: 70%">Description</th>
+      </tr>
+      <tr ng-repeat="question in questions">
+        <td class="core-question" style="text-align: left;">
+          Hello
+        </td>
 
-                <div class="modal-question-radio" ng-repeat="answer in $parent.scenario.answers[$index] track by $index">
-                  <label>
-                    <input type="radio"
-                           ng-value="$index"
-                           ng-model="$parent.answers[$parent.$index]">
-                    {{answer}}
-                  </label>
-                </div>
-                <a ng-click="clickAnswer($index, $parent.$index, 'easy')">
-                  <div class="submit-button">
-                    Submit Answer
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </th>
+         <td>
+          Hello
+        </td>
+
+      </tr>
+    </table>
+  </div>
+
+  <!-- NOTE: Content here will show if Check Division Answer is all correct -->
+  <div class="col-sm-6">
+    <table class="core-table" style="width: 95%">
+      <tr>
+        <th>Division of Labor</th>
+      </tr>
+
+      <tr ng-repeat-start="labor in scenario.labors" class="table-content">
+        <td>
+          {{labor}}
+          <a class="negate center-me" ng-click="checkNegatedAnswer()" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+            <i class="fa fa-ban"></i>
+          </a>
+        </td>
+      </tr>
+
+      <tr ng-repeat-end ng-if="$index % 1 == 0" ng-hide="$last">
+        <td class="center-me"> ▼ </td>
       </tr>
     </table>
 
-    <a ng-click="checkAnswer()">
+    <a ng-click="checkFinalAnswer()">
       <div class="check-button">
         Check Answer
       </div>
     </a>
+
+    <br><br><br>
   </div>
-  </div> <!-- Tab content closing tab -->
 
-  <!-- Medium Difficulty Scenarios -->
-  <div id="tab-content-2" class="tab-content">
-    <div class="difficulty-header">
-      Medium Difficulty Scenarios
-    </div>
-    <div id="netivity-scenario-nav">
-      <p>
-        <button ng-repeat="scenario in medScenarios track by $index"
-                ng-click="showMedScenario($index)"
-                class="button-num">
-          {{$index+1}}
-        </button>
-      </p>
-    </div>
 
-  <div class="scenario-content"
-       ng-repeat="scenario in medScenarios track by $index"
-       ng-show="$parent.currentScenario === $index">
-    <div class="core-scenario">
-      {{scenario.scenario}}
-    </div>
 
-    <table class="core-table">
-      <tr ng-repeat="question in questions track by $index">
-        <th class="core-question"> {{question}} </th>
-        <th class="core-answer">
-          <p class="answer-icon">
-            {{$parent.scenario.answers[$index][answers[$index]]}}
-            <a ng-click="clickAnswer($index, $parent.$index, 'medium')" style="text-decoration: none; cursor: pointer; color: #dd953e">
-              <i class="fa fa-pencil"></i>
-            </a>
-          </p>
-          <div class="answer-modal help" id="answer-{{$index}}-{{$parent.$index}}-medium">
-            <div class="help-modal">
-              <div class="help-header">
-                Question
-                <a class="close" ng-click="clickAnswer($index, $parent.$index, 'medium')">
-                  <i class="fa fa-times"></i>
-                </a>
-              </div>
-              <div class="help-content">
-                <div class="modal-question">
-                  {{question}}
-                </div>
+</div>
 
-                <div class="modal-question-radio" ng-repeat="answer in $parent.scenario.answers[$index] track by $index">
-                  <label>
-                    <input type="radio"
-                           ng-value="$index"
-                           ng-model="$parent.answers[$parent.$index]">
-                    {{answer}}
-                  </label>
-                </div>
-                <a ng-click="clickAnswer($index, $parent.$index, 'medium')">
-                  <div class="submit-button">
-                    Submit Answer
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </th>
-      </tr>
-    </table>
 
-    <a ng-click="checkAnswer()">
-      <div class="check-button">
-        Check Answer
-      </div>
-    </a>
-  </div>
-  </div> <!-- Tab content closing tab -->
-
-  <!-- Hard Difficulty Scenarios -->
-  <div id="tab-content-3" class="tab-content">
-    <div class="difficulty-header">
-      Hard Difficulty Scenarios
-    </div>
-    <div id="netivity-scenario-nav">
-      <p>
-        <button ng-repeat="scenario in hardScenarios track by $index"
-                ng-click="showHardScenario($index)"
-                class="button-num">
-          {{$index+1}}
-        </button>
-      </p>
-    </div>
-
-  <div class="scenario-content"
-       ng-repeat="scenario in hardScenarios track by $index"
-       ng-show="$parent.currentScenario === $index">
-    <div class="core-scenario">
-      {{scenario.scenario}}
-    </div>
-
-    <table class="core-table">
-      <tr ng-repeat="question in questions track by $index">
-        <th class="core-question"> {{question}} </th>
-        <th class="core-answer">
-          <p class="answer-icon">
-            {{$parent.scenario.answers[$index][answers[$index]]}}
-            <a ng-click="clickAnswer($index, $parent.$index, 'hard')" style="text-decoration: none; cursor: pointer; color: #dd953e">
-              <i class="fa fa-pencil"></i>
-            </a>
-          </p>
-          <div class="answer-modal help" id="answer-{{$index}}-{{$parent.$index}}-hard">
-            <div class="help-modal">
-              <div class="help-header">
-                Question
-                <a class="close" ng-click="clickAnswer($index, $parent.$index, 'hard')">
-                  <i class="fa fa-times"></i>
-                </a>
-              </div>
-              <div class="help-content">
-                <div class="modal-question">
-                  {{question}}
-                </div>
-
-                <div class="modal-question-radio" ng-repeat="answer in $parent.scenario.answers[$index] track by $index">
-                  <label>
-                    <input type="radio"
-                           ng-value="$index"
-                           ng-model="$parent.answers[$parent.$index]">
-                    {{answer}}
-                  </label>
-                </div>
-                <a ng-click="clickAnswer($index, $parent.$index, 'hard')">
-                  <div class="submit-button">
-                    Submit Answer
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </th>
-      </tr>
-    </table>
-
-    <a ng-click="checkAnswer()">
-      <div class="check-button">
-        Check Answer
-      </div>
-    </a>
-  </div>
-  </div> <!-- Tab content closing tab -->
-
-</div>  <!-- tab-content div end -->
 
 <div id="footer">
   <button id="netivity-prev" class="prev" ui-sref="netsafe.rules"> ◀︎ Core Rules of Netiquette </button>

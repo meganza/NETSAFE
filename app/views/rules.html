@@ -2,836 +2,447 @@
   10 Core Rules Of Netiquette
 </div>
 
-<div class="center">
-	<div class="container netivity-container">
-		<div class="carousel">
+<br>
+<div id="netivity-scenario-nav">
+  <p>
+    <button class="tutorial-button" ng-click="tutorialContent = !tutorialContent">
+      <span ng-show="!tutorialContent"> Show <b>Tutorial</b> </span>
+      <span ng-show="tutorialContent"> Hide <b>Tutorial</b> </span>
+    </button>
+    </button>
+    <button ng-repeat="rule in contentRules track by $index"
+            ng-click="showRule($index)"
+            id="button-num-($index)"
+            class="button-num">
+      {{$index+1}}
+    </button>
+  </p>
+</div>
 
-			<div> <!-- RULE # 1 -->
-        <div class="rule-title">
-          Rule 1: Remember the Human
-        </div>
-        <div class="core-scenario">
-          Thomas is a budding digital artist. He is proud of his works so he posts his
-          digital artworks on his facebook page. He received an email from some fellow
-          he has never met. This fellow tells Thomas that his works are trash and should
-          quit creating digital arts.
-        </div>
+<br><br>
 
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/1.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked1" ng-click="answer1Clicked1 = !answer1Clicked1">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked1" ng-click="answer1Clicked1 = !answer1Clicked1">
-                  Posting digital artworks of Thomas
-                </div>
-              </th>
-            </tr>
+<div class="scenario-content"
+     ng-repeat="rule in contentRules track by $index"
+     ng-show="!tutorialContent && $parent.currentRule === $index">
 
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked1" ng-click="answer2Clicked1 = !answer2Clicked1">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked1" ng-click="answer2Clicked1 = !answer2Clicked1">
-                  Thomas and an anonymous fellow
-                </div>
-              </th>
-            </tr>
+  <div class="rule-title" title="tip">
+    {{rule.rule}}
+  </div>
 
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked1" ng-click="answer3Clicked1 = !answer3Clicked1">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked1" ng-click="answer3Clicked1 = !answer3Clicked1">
-                  Thomas
-                </div>
-              </th>
-            </tr>
+  <div class="rule-description">
+    {{rule.description}}
+  </div>
 
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked1" ng-click="answer4Clicked1 = !answer4Clicked1">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked1" ng-click="answer4Clicked1 = !answer4Clicked1">
-                  E-mail and Facebook
-                </div>
-              </th>
-            </tr>
+  <br>
 
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked1" ng-click="answer5Clicked1 = !answer5Clicked1">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked1" ng-click="answer5Clicked1 = !answer5Clicked1">
-                  Thomas posted his digital artworks on his facebook page.
-                  <br>
-                  The anonymous fellow emailed Thomas that his digital artworks
-                  are trash and should quit creating digital arts.
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers1()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
+  <table class="core-table" style="width: 80%" ng-show="doDontTable" >
+    <tr>
+      <th style="width: 50%">Do's</th>
+      <th style="width: 50%">Don'ts</th>
+    </tr>
 
-			<div> <!-- RULE # 2 -->
-        <div class="rule-title">
-          Rule 2: Adhere to the same standards of behavior online that you follow in real life
-        </div>
-        <div class="core-scenario">
-          Michelle is the class beadle in one of her classes. She sent friend
-          requests to her classmates to be able to add them in their class’ facebook group.
-          One of her classmates, Kenneth, confirmed the friend request and it appeared on their
-          newsfeeds. It says “Michelle Dy and Kenneth Agustin are now friends.”  Kenneth’s
-          friends wrote disgusting comments on their “new friendship report” just to make fun of him.
-          Michelle read these comments and felt disrespected and objectified by Kenneth’s friends.
-        </div>
+    <tr>
+      <td class="table-content" style="text-align: left;">
+        <ul>
+          <li ng-repeat="do in rule.dos" style="list-style-type: circle; margin-left: 25px;">
+            {{do}}
+          </li>
+        </ul>
+      </td>
+      <td class="table-content" style="text-align: left;">
+        <ul>
+          <li ng-repeat="dont in rule.donts" style="list-style-type: circle; margin-left: 25px;">
+            {{dont}}
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/2.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked2" ng-click="answer1Clicked2 = !answer1Clicked2">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked2" ng-click="answer1Clicked2 = !answer1Clicked2">
-                  Add classmates in their class’ facebook group
-                </div>
-              </th>
-            </tr>
+  <div class="center-me">
+    <button class="tables-button" ng-click="doDontTable = !doDontTable">
+      <span ng-show="!doDontTable"> Show <b>Do / Dont Table</b> </span>
+      <span ng-show="doDontTable"> Hide <b>Do / Dont Table</b> </span>
+    </button>
+    <button class="tables-button" ng-click="scenarioContent = !scenarioContent">
+      <span ng-show="!scenarioContent"> Show <b>Scenario</b> </span>
+      <span ng-show="scenarioContent"> Hide <b>Scenario</b> </span>
+    </button>
+  </div>
 
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked2" ng-click="answer2Clicked2 = !answer2Clicked2">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked2" ng-click="answer2Clicked2 = !answer2Clicked2">
-                  Michelle, Kenneth, and Kenneth’s friends
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked2" ng-click="answer3Clicked2 = !answer3Clicked2">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked2" ng-click="answer3Clicked2 = !answer3Clicked2">
-                  Michelle and Kenneth
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked2" ng-click="answer4Clicked2 = !answer4Clicked2">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked2" ng-click="answer4Clicked2 = !answer4Clicked2">
-                  Facebook
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked2" ng-click="answer5Clicked2 = !answer5Clicked2">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked2" ng-click="answer5Clicked2 = !answer5Clicked2">
-                  Michelle sent friend requests to her classmates.
-                  <br>
-                  Kenneth confirmed the friend request of Michelle.
-                  <br>
-                  Kenneth’s friends commented disgusting things on the “new friendship report” of Kenneth and Michelle.
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers2()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
-
-			<div> <!-- RULE # 3 -->
-        <div class="rule-title">
-          Rule 3: Know where you are in cyberspace
-        </div>
-        <div class="core-scenario">
-          Martin is a current high school student. He uses millennial words and phrases when
-          texting or chatting with his friends. He needs to send an email to his teacher asking
-          about their class project. In his email, he used the words and phrases , “TBH”, “on fleek”,
-          “lit”,  and “jk”. His teacher replied to his email telling him to be more professional and
-          use proper words when writing emails.
-        </div>
-
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/3.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked3" ng-click="answer1Clicked3 = !answer1Clicked3">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked3" ng-click="answer1Clicked3 = !answer1Clicked3">
-                  Martin needs to send an email to his teacher
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked3" ng-click="answer2Clicked3 = !answer2Clicked3">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked3" ng-click="answer2Clicked3 = !answer2Clicked3">
-                  Martin and his teacher
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked3" ng-click="answer3Clicked3 = !answer3Clicked3">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked3" ng-click="answer3Clicked3 = !answer3Clicked3">
-                  Martin
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked3" ng-click="answer4Clicked3 = !answer4Clicked3">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked3" ng-click="answer4Clicked3 = !answer4Clicked3">
-                  Email and millennial words and phrases
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked3" ng-click="answer5Clicked3 = !answer5Clicked3">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked3" ng-click="answer5Clicked3 = !answer5Clicked3">
-                  Martin sent an email to his teacher containing millennial words and phrases such as “TBH”,
-                  “on fleek”, “lit”, and “jk”
-                  <br>
-                  Martin’s teacher replied to him and said that he should use proper words and be more
-                  professional in writing important emails
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers3()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
-
-			<div> <!-- RULE # 4 -->
-        <div class="rule-title">
-          Rule 4: Respect other people’s time and bandwidth
-        </div>
-        <div class="core-scenario">
-          Trixie is trying to fix a bug in her code. However, after her several attempts to fix
-          it she still can’t make her program work. So, she posted her problem with her code on
-          an online discussion group several times thinking that she could get answers right away in doing so.
-        </div>
-
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/4.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked4" ng-click="answer1Clicked4 = !answer1Clicked4">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked4" ng-click="answer1Clicked4 = !answer1Clicked4">
-                  Fix a bug in Trixie’s code
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked4" ng-click="answer2Clicked4 = !answer2Clicked4">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked4" ng-click="answer2Clicked4 = !answer2Clicked4">
-                  Trixie and people in the discussion group
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked4" ng-click="answer3Clicked4 = !answer3Clicked4">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked4" ng-click="answer3Clicked4 = !answer3Clicked4">
-                  Trixie and people in the discussion group
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked4" ng-click="answer4Clicked4 = !answer4Clicked4">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked4" ng-click="answer4Clicked4 = !answer4Clicked4">
-                  Online discussion group
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked4" ng-click="answer5Clicked4 = !answer5Clicked4">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked4" ng-click="answer5Clicked4 = !answer5Clicked4">
-                  Trixie posted her problem in her code multiple times in the discussion group.
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers4()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
-
-			<div> <!-- RULE # 5 -->
-        <div class="rule-title">
-          Rule 5: Make yourself look good online
-        </div>
-        <div class="core-scenario">
-          George decided to have an online diary thru a blog. He usually writes about things
-          that interest him or what is interesting about his day.  However, people who read his
-          blog left comments saying that some of his posts are incoherent, there are a lot of
-          grammatical errors, and contains unpleasant words. This made him mad so he deleted his blog.
-        </div>
-
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/5.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked5" ng-click="answer1Clicked5 = !answer1Clicked5">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked5" ng-click="answer1Clicked5 = !answer1Clicked5">
-                  Writing an online diary/ blog
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked5" ng-click="answer2Clicked5 = !answer2Clicked5">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked5" ng-click="answer2Clicked5 = !answer2Clicked5">
-                  George and other people reading his blog
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked5" ng-click="answer3Clicked5 = !answer3Clicked5">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked5" ng-click="answer3Clicked5 = !answer3Clicked5">
-                  George
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked5" ng-click="answer4Clicked5 = !answer4Clicked5">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked5" ng-click="answer4Clicked5 = !answer4Clicked5">
-                  Blog
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked5" ng-click="answer5Clicked5 = !answer5Clicked5">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked5" ng-click="answer5Clicked5 = !answer5Clicked5">
-                  George posted personal accounts of his day or his thoughts containing
-                  grammatical errors, unpleasant words, and some are incoherent.
-                  <br>
-                  People who read his blog pointed out his errors.
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers5()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
-
-			<div> <!-- RULE # 6 -->
-        <div class="rule-title">
-          Rule 6: Share expert knowledge
-        </div>
-        <div class="core-scenario">
-          Marc is a college student taking up computer science. He is a good programmer.
-          He usually visits online discussion groups related to programming such as stack overflow
-          to read some programming techniques he could use. While traversing through the site,
-          he saw a newly posted question of another person which he knows the answer to. But he thinks
-          that it’s an easy question so he did not bother to answer it.
-        </div>
-
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/6.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked6" ng-click="answer1Clicked6 = !answer1Clicked6">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked6" ng-click="answer1Clicked6 = !answer1Clicked6">
-                  To get answers on one of the questions in the online discussion group
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked6" ng-click="answer2Clicked6 = !answer2Clicked6">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked6" ng-click="answer2Clicked6 = !answer2Clicked6">
-                  Marc
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked6" ng-click="answer3Clicked6 = !answer3Clicked6">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked6" ng-click="answer3Clicked6 = !answer3Clicked6">
-                  Person
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked6" ng-click="answer4Clicked6 = !answer4Clicked6">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked6" ng-click="answer4Clicked6 = !answer4Clicked6">
-                  Online discussion group
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked6" ng-click="answer5Clicked6 = !answer5Clicked6">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked6" ng-click="answer5Clicked6 = !answer5Clicked6">
-                  Marc visits online discussion groups related to programming.
-                  <br>
-                  Marc ignored the question of a person needing help in his/her code.
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers6()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
-
-			<div> <!-- RULE # 7 -->
-        <div class="rule-title">
-          Rule 7: Help keep flame wars under control
-        </div>
-        <div class="core-scenario">
-          Donald read his friend’s opinion on LGBT. His friend is a passionate advocate of anti-discrimination,
-          especially about LGBT rights. After reading his friend’s post on facebook, Donald commented and
-          expressed his strong disagreement on his friend’s opinion. This caused an exchange of heated commentaries
-          between the two. A lot of people saw the thread of comments and joined in the argument. Some people even
-          taunted both parties and made the conversation more heated.
-        </div>
-
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/7.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked7" ng-click="answer1Clicked7 = !answer1Clicked7">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked7" ng-click="answer1Clicked7 = !answer1Clicked7">
-                  Expressing one’s  opinion online
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked7" ng-click="answer2Clicked7 = !answer2Clicked7">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked7" ng-click="answer2Clicked7 = !answer2Clicked7">
-                  Donald, Donald’s friend, and other people
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked7" ng-click="answer3Clicked7 = !answer3Clicked7">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked7" ng-click="answer3Clicked7 = !answer3Clicked7">
-                  Donald and Donald’s friend
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked7" ng-click="answer4Clicked7 = !answer4Clicked7">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked7" ng-click="answer4Clicked7 = !answer4Clicked7">
-                  Facebook
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked7" ng-click="answer5Clicked7 = !answer5Clicked7">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked7" ng-click="answer5Clicked7 = !answer5Clicked7">
-                  Donald’s friend posted his opinion about LGBT on facebook.
-                  <br>
-                  Donald strongly expressed his disagreement towards his friend’s opinion.
-                  <br>
-                  Other people taunted and joined in the heated conversation of the two.
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers7()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
-
-			<div> <!-- RULE # 8 -->
-        <div class="rule-title">
-          Rule 8: Respect other people’s privacy
-        </div>
-        <div class="core-scenario">
-          Wayne recently learned how to hack someone’s facebook account. To test if he could do
-          it again and to practice his newly acquired “skill”, he tried to hack one of his friend’s
-          account. He successfully gained access to his friend’s account and out of curiosity,
-          he read some of his friend’s personal messages to other people.
-        </div>
-
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/8.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked8" ng-click="answer1Clicked8 = !answer1Clicked8">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked8" ng-click="answer1Clicked8 = !answer1Clicked8">
-                  To test and practice Wayne’s hacking skills
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked8" ng-click="answer2Clicked8 = !answer2Clicked8">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked8" ng-click="answer2Clicked8 = !answer2Clicked8">
-                  Wayne and his friend
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked8" ng-click="answer3Clicked8 = !answer3Clicked8">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked8" ng-click="answer3Clicked8 = !answer3Clicked8">
-                  Wayne’s friend
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked8" ng-click="answer4Clicked8 = !answer4Clicked8">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked8" ng-click="answer4Clicked8 = !answer4Clicked8">
-                  Facebook and hacking tools
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked8" ng-click="answer5Clicked8 = !answer5Clicked8">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked8" ng-click="answer5Clicked8 = !answer5Clicked8">
-                  Wayne hacked his friend’s facebook account.
-                  <br>
-                  Wayne read some of his friend’s personal messages to other people.
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers8()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
-
-			<div> <!-- RULE # 9 -->
-        <div class="rule-title">
-          Rule 9: Don’t abuse your power
-        </div>
-        <div class="core-scenario">
-          Justin works in the IT department of his company. He works as a system admin
-          in their company system. He had a crush on one of his workmates, Karen. To impress her,
-          he started stalking Karen in her social media accounts and even accessed her company email
-          to gather information about her. His actions were found out and he lost his job.
-        </div>
-
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/9.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked9" ng-click="answer1Clicked9 = !answer1Clicked9">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked9" ng-click="answer1Clicked9 = !answer1Clicked9">
-                  To impress Karen
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked9" ng-click="answer2Clicked9 = !answer2Clicked9">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked9" ng-click="answer2Clicked9 = !answer2Clicked9">
-                  Justin and Karen
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked9" ng-click="answer3Clicked9 = !answer3Clicked9">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked9" ng-click="answer3Clicked9 = !answer3Clicked9">
-                  Justin and Karen
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked9" ng-click="answer4Clicked9 = !answer4Clicked9">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked9" ng-click="answer4Clicked9 = !answer4Clicked9">
-                  Company system, company email, and social media accounts
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked9" ng-click="answer5Clicked9 = !answer5Clicked9">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked9" ng-click="answer5Clicked9 = !answer5Clicked9">
-                  Justin stalked Karen in her social media accounts and accessed her company email.
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers9()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
-
-			<div> <!-- RULE # 10 -->
-        <div class="rule-title">
-          Rule 10: Be forgiving of other people’s mistakes
-        </div>
-        <div class="core-scenario">
-          Sophiya is a history major student. One of her friends, Cassie, shared a post on
-          facebook about a trivia on Julius Casear. She found a minor error and corrected her
-          friend’s mistake on the comments section. Sophiya’s friend got embarrassed and immediately
-          deleted her post after reading Sophiya’s correction.
-        </div>
-        <div class="core-data">
-          <img class="col-sm-2" src="images/rules/10.png" style="width: 250px;">
-          <table class="col-sm-10 core-table">
-            <tr>
-              <th class="core-question"> What is needed in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer1Clicked" ng-click="answer1Clicked = !answer1Clicked">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer1Clicked" ng-click="answer1Clicked = !answer1Clicked">
-                  Share a trivia about Julius Caesar
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who are involved in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer2Clicked" ng-click="answer2Clicked = !answer2Clicked">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer2Clicked" ng-click="answer2Clicked = !answer2Clicked">
-                  Sophiya and Cassie
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> Who and what are affected by the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer3Clicked" ng-click="answer3Clicked = !answer3Clicked">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer3Clicked" ng-click="answer3Clicked = !answer3Clicked">
-                  Cassie
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What tools are used in the scenario? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer4Clicked" ng-click="answer4Clicked = !answer4Clicked">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer4Clicked" ng-click="answer4Clicked = !answer4Clicked">
-                  Facebook
-                </div>
-              </th>
-            </tr>
-
-            <tr>
-              <th class="core-question"> What are the actions of the people involved? </th>
-              <th class="core-answer">
-                <div class="hidden-answer" ng-hide="answer5Clicked" ng-click="answer5Clicked = !answer5Clicked">
-                  [CLICK TO SEE ANSWER]
-                </div>
-                <div ng-show="answer5Clicked" ng-click="answer5Clicked = !answer5Clicked">
-                  Cassie shared a post on facebook about a trivia on Julius Caesar.
-                  <br>
-                  Sohpiya corrected the minor error in Cassie’s post.
-                  <br>
-                  Cassie deleted her post.
-                </div>
-              </th>
-            </tr>
-          </table>
-          <br>
-          <button ng-click="showAnswers10()" style="margin-top: 15px;"> <b> Show Answers </b> </button>
-        </div>
-      </div>
-		</div> <!-- carousel end div -->
-
-    <div id="footer">
-      <button class="prev" ui-sref="netsafe.fundamental"> ◀︎ Fundamental Concepts </button>
-      <button class="next" ui-sref="netsafe.netivity"> Netiquette Activity ▶︎ </button>
+  <div ng-show="scenarioContent">
+    <div class="core-scenario" style="text-align: center;">
+      {{rule.scenario}}
     </div>
 
-	</div>
+    <div class="center-me">
+      <button class="tables-button" ng-click="elementsTable = !elementsTable"><b>①</b> Elements Table</button>
+      <button class="tables-button" ng-click="causeEffectTable = !causeEffectTable" ng-disable="!selement-4"><b>②</b> Cause and Effect Table</button>
+    </div>
+
+    <div ng-show="elementsTable">
+      <table class="core-table" style="width: 80%">
+        <tr>
+          <th style="width: 33%">Element</th>
+          <th style="width: 33%">Guideline Elements</th>
+          <th style="width: 33%">Scenario Elements</th>
+        </tr>
+
+        <tr ng-repeat="question in questions">
+          <td class="core-question" style="text-align: left;"> {{question}} </td>
+
+          <td class="table-content" style="text-align: left;" ng-repeat="element in rule.elements[$index] track by $index">
+            {{element}}
+          </td>
+
+          <td >
+            <div class="table-content" ng-repeat="selement in rule.selements track by $index">
+              <span ng-click="viewAnswer($index)" ng-show="!answerClicked[$index]" class="hidden-answer center-me"> [ CLICK TO SEE ANSWER ]</span>
+              <span ng-show="answerClicked[$index]"> {{selement}} </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div ng-show="causeEffectTable">
+
+    <!-- TODO: Highlight feature. This button, when clicked, highlights the actions
+              that violated the rule in discussion. (try and see ngClass directive)  -->
+      <a ng-click="showSolution = !showSolution">
+        <div class="check-button">
+          <span ng-show="!showSolution"> Highlight Violated Actions </span>
+          <span ng-show="showSolution"> Unhighlight Violated Actions </span>
+        </div>
+      </a>
+      <br>
+
+      <table class="core-table" style="width: 80%">
+        <tr>
+          <th>Cause and Effect Table</th>
+        </tr>
+
+        <tr ng-repeat-start="labor in rule.labors">
+          <td>
+            <div ng-hide="laborClicked">
+                {{labor.old}}
+                <a class="negate center-me" ng-click="laborClicked = !laborClicked" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+                  <i class="fa fa-ban"></i>
+                </a>
+            </div>
+            <div ng-show="laborClicked">
+                {{labor.new}}
+            </div>
+          </td>
+        </tr>
+        <tr ng-repeat-end ng-if="$index % 1 == 0" ng-hide="$last">
+          <td class="center-me"> ▼ </td>
+        </tr>
+      </table>
+
+      <a ng-click="showSolution = !showSolution">
+        <div class="check-button">
+          <span ng-show="!showSolution"> Show Solution </span>
+          <span ng-show="showSolution"> Hide Solution </span>
+        </div>
+      </a>
+
+      <div ng-show="showSolution">
+        <br>
+        <table class="core-table" style="width: 80%">
+          <tr>
+            <th style="width: 20%">Solution</th>
+            <td style="width: 80%">{{rule.solution}}</td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="tutorial-content" ng-show="tutorialContent">
+  <div class="rule-title" title="tip">
+    Understanding the tables
+  </div>
+
+  <div class="rule-description">
+    This is the page where you can understand what and how the tables work for the 10 Core Rules lecture.<br>
+    The oranges boxes could be clicked to expand or compress the contents inside of it.
+  </div><br>
+  <div class="tutorial-steps" ng-click="step1 = !step1">
+    <span ng-show="!step1"> Show <b>Step 1</b> Do's and Dont's Table</span>
+    <span ng-show="step1"> <b>Step 1:</b> Discuss the current netiquette core rule <br>
+      A table below is for the do's and don'ts for the specific netiquette core rule. As an example,
+      let's use rule 8, Respect other people's privacy. This is also the first table that you will see.
+    </span>
+  </div>
+
+  <br>
+
+  <div ng-show="step1">
+    <table class="core-table" style="width: 80%">
+      <tr>
+        <th style="width: 50%">Do's</th>
+        <th style="width: 50%">Don'ts</th>
+      </tr>
+
+      <tr>
+        <td class="table-content" style="text-align: left;">
+          <ul>
+            <li style="list-style-type: circle; margin-left: 25px;">
+              The do's of the core rule is listed here.
+            </li>
+            <li style="list-style-type: circle; margin-left: 25px;">
+              This is where you can discuss the do's for the specified netiquette core rules
+            </li>
+          </ul>
+        </td>
+        <td class="table-content" style="text-align: left;">
+          <ul>
+            <li style="list-style-type: circle; margin-left: 25px;">
+              The don'ts of the core rule is listed here.
+            </li>
+            <li style="list-style-type: circle; margin-left: 25px;">
+              This is where you can discuss the don'ts for the specified netiquette core rules
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+    <br>
+  </div>
+
+  <div class="tutorial-steps" ng-click="step2 = !step2">
+    <span ng-show="!step2"> Show <b>Step 2</b> </span>
+    <span ng-show="step2"> <b>Step 2:</b> Read and understand the scenario <br>
+      This will be your basis for dissecting the scenario so you have to be
+      aware on how you will identify each element. Here is a sample scenario.
+    </span>
+  </div>
+
+  <br>
+
+  <div class="core-scenario" style="text-align: center;" ng-show="step2">
+    Sam accidentally left his Facebook open before leaving the school’s computer lab.
+    Clover used the computer after him and started reading his private messages. She
+    found out that he was secretly gay and was dating Jerry. Rumor started to spread
+    throughout the school and people started mocking them. Because of this, Sam and Alex
+    stopped going to school.
+  </div>
+
+  <div class="tutorial-steps" ng-click="step3 = !step3">
+    <span ng-show="!step3"> Show <b>Step 3</b> Elements Table</span>
+    <span ng-show="step3"> <b>Step 3:</b> Identifying the elements <br>
+      The guideline elements are the elements that pertain to the core rules, a general "template" for the questions.
+      The scenario elements, on the other hand, specifically answers the element question that pertain to the scenario presented.
+      It has a <b>click to reveal</b> answer feature since it is for lecture.
+    </span>
+  </div>
+
+  <br>
+
+  <div ng-show="step3">
+    <table class="core-table" style="width: 80%">
+      <tr>
+        <th style="width: 5%">Element</th>
+        <th style="width: 60%">Guideline Elements</th>
+        <th style="width: 35%">Scenario Elements</th>
+      </tr>
+
+      <tr>
+        <td class="core-question" style="text-align: left;"> Subject (people active in the scenario) </td>
+        <td class="table-content" style="text-align: left;"> Owner and infiltrator
+          <div class="tutorial-steps tutorial-steps-table"> <b>Step 3.a: </b>
+          The Subject is/are the people who are active in the scenario.
+          Their actions have direct impact in the scenario.  Sam is a subject because he was the one who
+          left his account open. Clover is a subject because she read his private messages. They are the
+          active elements in the scenario. Jerry is not a subject because he did not do anything in the
+          scenario, thus making him an inactive element.
+          </div>
+        </td>
+        <td class="table-content" style="text-align: left;"> Sam and Clover</td>
+      </tr>
+
+      <tr>
+        <td class="core-question" style="text-align: left;"> Objective (what is the first action that triggered the chain of events?) </td>
+        <td class="table-content" style="text-align: left;"> Access to private Information
+          <div class="tutorial-steps tutorial-steps-table"> <b>Step 3.b: </b>
+          The objective is the first action that triggered the series of events. The objective is what
+          causes everything that happens in the scenario. Clover would not have accessed and read Sam’s
+          private messages if he did not accidentally leave his account open. The objective is the main
+          motive of why the event happened in the first place.
+          </div>
+        </td>
+        <td class="table-content" style="text-align: left;"> Sam accidentally left his Facebook open before leaving the school’s computer lab. </td>
+      </tr>
+
+      <tr>
+        <td class="core-question" style="text-align: left;"> Community (external factors / people affected whether active or inactive) </td>
+        <td class="table-content" style="text-align: left;"> Owner and infiltrator
+          <div class="tutorial-steps tutorial-steps-table"> <b>Step 3.c: </b>
+          The community is/are the people who are affected in the scenario whether they are active or
+          inactive. Jerry is affected in the scenario because he was mocked when Sam accidentally left his
+          account open.
+          </div>
+        </td>
+        <td class="table-content" style="text-align: left;"> Sam, Clover, and Jerry</td>
+      </tr>
+
+      <tr>
+        <td class="core-question" style="text-align: left;"> Tools (what tools explicitly used in the scenario) </td>
+        <td class="table-content" style="text-align: left;"> Communication Devices
+          <div class="tutorial-steps tutorial-steps-table"> <b>Step 3.d: </b>
+          The tool is the objects that are directly related to cyberspace or the type of media explicitly
+          used in the scenario. In this case, Facebook was the only media used in the scenario.
+          </div>
+        </td>
+        <td class="table-content" style="text-align: left;"> Facebook</td>
+      </tr>
+    </table>
+  <br>
+  </div>
+
+  <div class="tutorial-steps" ng-click="step4 = !step4">
+    <span ng-show="!step4"> Show <b>Step 4</b> Cause and Effect Table </span>
+    <span ng-show="step4"> <b>Step 4:</b> Negating the causes for an objective solution <br>
+      For the lecture, the events that happened are already stated. Every event, besides the first event, is
+      caused by another event. Note that the objective is usually the first event that happens. Reading the table
+      goes from <b>top to bottom</b>, but negating the causes will be read from <b>bottom to top</b>. Negating the
+      causes will be done by clicking the stop sign on the right most of each cause row.<br>
+      Additionally, a highligh button is placed at the top of the table and when it is clicked, it will highlight the
+      actions that violated the rule in discussion.
+    </span>
+  </div>
+
+  <br>
+
+  <div ng-show="step4">
+
+    <!-- TODO: Add the highlight feature here -->
+
+    <table class="core-table" style="width: 80%">
+      <tr>
+        <th>Cause and Effect Table</th>
+      </tr>
+
+      <tr>
+        <td>
+          <div ng-hide="laborClicked1">
+              Sam accidentally left his facebook account open.
+              <a class="negate center-me" ng-click="laborClicked1 = !laborClicked1" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+                <i class="fa fa-ban"></i>
+              </a>
+          </div>
+          <div ng-show="laborClicked1">
+              Sam accidentally left his facebook account open.
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="center-me"> ▼ </td>
+      </tr>
+
+      <td>
+        <div ng-hide="laborClicked2">
+            Clover read his private messages
+            <a class="negate center-me" ng-click="laborClicked2 = !laborClicked2" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+              <i class="fa fa-ban"></i>
+            </a>
+        </div>
+        <div ng-show="laborClicked2">
+            Clover does not read his private messages
+        </div>
+      </td>
+
+      <tr>
+        <td class="center-me"> ▼ </td>
+      </tr>
+
+      <td>
+        <div ng-hide="laborClicked3">
+            Clover found out that Sam was secretly gay and was dating Jerry.
+            <a class="negate center-me" ng-click="laborClicked3 = !laborClicked3" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+              <i class="fa fa-ban"></i>
+            </a>
+        </div>
+        <div ng-show="laborClicked3">
+            Clover does not find out that Sam was secretly gay and was dating Jerry.
+        </div>
+      </td>
+
+      <tr>
+        <td class="center-me"> ▼ </td>
+      </tr>
+
+      <td>
+        <div ng-hide="laborClicked4">
+            Rumor Spread about Sam and Jerry dating and they were mocked by other students.
+            <a class="negate center-me" ng-click="laborClicked4 = !laborClicked4" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+              <i class="fa fa-ban"></i>
+            </a>
+        </div>
+        <div ng-show="laborClicked4">
+            Rumor does not spread about Sam and Jerry dating and they were mocked by other students.
+        </div>
+      </td>
+
+      <tr>
+        <td class="center-me"> ▼ </td>
+      </tr>
+
+      <td>
+        <div ng-hide="laborClicked5">
+          Sam and Jerry stopped going to school.
+            <a class="negate center-me" ng-click="laborClicked5 = !laborClicked5" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+              <i class="fa fa-ban"></i>
+            </a>
+        </div>
+        <div ng-show="laborClicked5">
+            Sam and Jerry do not stop going to school.
+        </div>
+      </td>
+    </table>
+  <br>
+  </div>
+
+
+  <div class="tutorial-steps" ng-click="step5 = !step5">
+    <span ng-show="!step5"> Show <b>Step 5</b> </span>
+    <span ng-show="step5"> <b>Step 5:</b> Objective Solution <br>
+      Negate the causes from bottom to top. You stop negating the events when all actions do not violate the rule.
+      The solution to the problem will be identified, by clicking on the show solution, once you negate all actions that violate the rule.<br>
+      When clicking the "Show Solution" button, the solution will be shown beneath it.
+    </span>
+  </div>
+
+  <div ng-show="step5">
+    <a ng-click="showSolution = !showSolution">
+      <div class="check-button">
+        <span ng-show="!showSolution"> Show Solution </span>
+        <span ng-show="showSolution"> Hide Solution </span>
+      </div>
+    </a>
+
+    <div ng-show="showSolution">
+      <br>
+      <table class="core-table" style="width: 80%">
+        <tr>
+          <th style="width: 20%">Solution</th>
+          <td style="width: 80%">Clover should not have read Sam's private messages</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<br>
+<div id="footer">
+  <button id="netivity-prev" class="prev" ui-sref="netsafe.fundamental"> ◀︎ Fundamental Concepts </button>
+  <button id="netivity-next" class="next" ui-sref="netsafe.netivity"> Netiquette Activity ▶︎ </button>
 </div>
 
 <div class="help" ng-show="clicked">

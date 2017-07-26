@@ -9,47 +9,16 @@ angular.module('Netsafe').controller('netivityController',
   $scope.correctAnswers = [2, 0, 3, 3, 0, 1, 3];
 
   $timeout(function() {
-    $scope.currentScenario = -1;
+    $scope.currentScenario = 0;
   }, 1);
 
-  // Tabs for scenario difficulty
-  $scope.showTab = function(id){
-    $(".tab").removeClass("active");
-    $(".tab-content").hide();
-    $("#tab-"+ id).addClass("active");
-    $("#tab-content-" + id).show();
-    $scope.answers = [null, null, null, null, null, null, null];
-  };
-
-  $scope.showTab(1);
-
-  $scope.showEasyScenario = function(index) {
+  $scope.showScenario = function(index) {
     // $(".button-num").removeClass("active");
     // $("#button-num-"+ index).addClass("active");
     $scope.currentScenario = index;
     $scope.answers = [null, null, null, null, null, null, null];
 
     $(".answer-modal").hide();
-  };
-
-  $scope.showMedScenario = function(index) {
-
-    $scope.currentScenario = index;
-    $scope.answers = [null, null, null, null, null, null, null];
-
-    $(".answer-modal").hide();
-  };
-
-  $scope.showHardScenario = function(index) {
-
-    $scope.currentScenario = index;
-    $scope.answers = [null, null, null, null, null, null, null];
-
-    $(".answer-modal").hide();
-  };
-
-  $scope.clickAnswer = function(questionIndex, scenarioIndex, difficulty){
-    $("#answer-" + questionIndex + "-" + scenarioIndex + '-' + difficulty).toggle();
   };
 
   $scope.checkAnswer = function(){
@@ -69,19 +38,74 @@ angular.module('Netsafe').controller('netivityController',
     }
   };
 
-  $scope.questions = [
-    "What is needed in the scenario?",
-    "Who are involved in the scenario?",
-    "Who and what are affected by the scenario?",
-    "What tools are used in the scenario?",
-    "What are the actions of the people involved?",
-    "What guidelines are related to the scenario?",
-    "Solution"
+  $scope.checkDivisionAnswer = function(){
+    //fill up
+  };
+
+  $scope.checkFinalAnswer = function(){
+    //fill up
+  };
+
+  $scope.checkNegatedAnswer = function(){
+    //fill up
+  };
+
+
+  $scope.elements = [
+    { value: 1,
+      name: 'Digital Tattoo'
+    }, {
+      value: 2,
+      name: 'Respecting Others Online'
+    }, {
+      value: 3,
+      name: 'Remember the Human'
+    }, {
+      value: 4,
+      name: 'Adhere to the Same Standards of Behavior Online and Offline'
+    }, {
+      value: 5,
+      name: 'Know where you are in Cyberspace'
+    }, {
+      value: 6,
+      name: 'Respecting Other People\'s Time and Bandwidth'
+    }, {
+      value: 7,
+      name: 'Make Yourself Look Good Online'
+    }, {
+      value: 8,
+      name: 'Share Expert Knowledge'
+    }, {
+      value: 9,
+      name: 'Help Keep Flame Wars Under Control'
+    }, {
+      value: 10,
+      name: 'Respect Other People\'s Privacy'
+    }, {
+      value: 11,
+      name: 'Don\'t Abuse Your Power'
+    }, {
+      value: 12,
+      name: 'Be Forgiving of Other People\'s Mistakes'
+    }
   ];
 
-  $scope.easyScenarios = $scope.scenarios.easy;
-  $scope.medScenarios = $scope.scenarios.med;
-  $scope.hardScenarios = $scope.scenarios.hard;
+  $scope.dtGuidelines = [
+    {name: "Sender and Receiver"},
+    {name: "Only say things you would say to a real person's face in real life"},
+    {name: "Sender and Receiver"},
+    {name: "Communication Devices"}
+  ];
+
+  $scope.questions = [
+    "Subject (internal factors / people active in the scenario)",
+    "Objective (what action triggered/stimulated the series of events?)",
+    "Community (external factors / people affected whether active or inactive)",
+    "Tools (what tools explicitly used in the scenario)",
+    "Rules / Guidelines Applied (based on the element of comparison, what rules apply)"
+  ];
+
+  $scope.contentScenarios = $scope.scenarios.content;
 
   var prevID = 0;
 

@@ -58,7 +58,8 @@
       <div class="bigger-btn bold-btn symp-select" ng-click="showAnswers()">View possible answers</div>
 
       <br><br>
-      <div id="full-width-btn" class="bold-btn symp-select" ng-click="openCustom()">Custom Combination</div>
+      <div id="full-width-btn" class="bold-btn symp-select" ng-click="openCustom()" title="This can be added before the class so that students may not see the symptoms selected. This can also be used for new malwares with the same symptoms currently in the system.">
+        Custom Combination</div>
 
       <div class="custom-symp symp-select">
         <div id="localStorageData0" class="col-xs-10 localStorageData" ng-click="playCustom(0)"> - </div>
@@ -130,6 +131,8 @@
         </div>
       </div>
 
+      <div class="tutorial-steps" style="width: 100%; margin-bottom: 5px;">A custom combination can be added before the class so that students may not see the symptoms selected. <br>
+        This can also be used for new malwares with the same symptoms currently in the system. <br></div>
 
     </div>
 
@@ -175,15 +178,6 @@
         </div>
 
         <b>Symptoms</b> <br>
-
-        <!-- <div ng-app="Netsafe" ng-controller="activityController">
-          <div ng-repeat="checkbox in checkboxData" class="form-check form-check-inline col-sm-4">
-            <label>
-              <input type="checkbox" ng-model="checkbox.checked"/>
-              {{checkbox.name}}
-            </label>
-          </div>
-        </div> -->
         <div class="form-check form-check-inline col-sm-4">
           <label class="form-check-label">
             <input class="checkboxes form-check-input" type="checkbox" value="1"> Computer Crash
