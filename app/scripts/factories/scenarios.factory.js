@@ -2,100 +2,94 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
   return {
     content: [
     {
-      scenario: "Sara is online chatting with a 10-year-old boy. The boy sends Sara a picture of " +
-                "himself, and he wants Sara to send him a picture of herself and her family. Sara " +
-                "is thinking if she should send a picture or not. She decided to send a picture of " +
-                "herself and her family to the boy. A few days later, Sarah found a fake online article " +
-                "about a scam which contains her family photo and  the names of her parents and siblings. ",
-      answers: [
+      scenario: "While you were in Middle School, you often use swear words on twitter. Whenever you tweet, " +
+                "there were always swear words included. Most of your followers got put off because of your " +
+                "behavior online and even your cousins, who follows you, saw your tweets full of curse words. " +
+                "Your behavior online was found out by your parents through your cousins. Because of this, your " +
+                "parents got disappointed and grounded you for a week and no longer allowed you to use any kind " +
+                "of social media. ",
+      answers: [  // correct answers should be placed 3, 1, 4, 4, 2
+        [[     // 3
+          "Your followers",
+          "Cousins and your parents",
+          "You, cousins, your parents",
+          "Cousins"
+        ]],
+        [[ // 1
+          "You often use swear words in your tweets",
+          "You often use Twitter",
+          "You tweet uninteresting things",
+          "Your cousins told your parents about your behavior on Twitter"
+        ]],
+        [[ // 4
+          "Cousins, you, parents",
+          "You",
+          "Parents",
+          "You, your followers, Parents"
+        ]],
+        [[ // 4
+          "Snapchat",
+          "Instagram",
+          "Facebook",
+          "Twitter"
+        ]],
         [
-            "Sarah and the anonymous person",
-            "Sarah, her family, and the anonymous person",
-            "Sarah and her family",
-            "Sarah"
-          ], [
-            "Talk about the trending tag",
-            "Sarah should send a photo to the anonymous user",
-            "The anonymous user should send a photo to Sarah",
-            "For them to talk about their families"
-          ], [
-            "Sarah and the anonymous person",
-            "Sarah, her family, and the anonymous person",
-            "Sarah and her family",
-            "Sarah"
-          ], [
-            "Twitter",
-            "Twitter, fake online articles and photos",
-            "Fake online articles and photos",
-            "Twitter and photos"
-          ], [
-            "Digital Tattoo",
-            "Respecting Others Online",
+          [ // 2
             "Remember the Human",
-            "Adhere to the Same Standards of Behavior Online and Offline",
-            "Know where you are in Cyberspace",
-            "Respecting Other People\'s Time and Bandwidth",
-            "Make Yourself Look Good Online",
-            "Share Expert Knowledge",
-            "Help Keep Flame Wars Under Control",
-            "Respect Other People\'s Privacy"
+            "Make yourself look good online",
+            "Don’t abuse your power",
+            "Adhere to the same standards of behavior online that you follow in real life"
+          ],
+          [
+            "Remember the Human",
+            "Make yourself look good online",
+            "Don’t abuse your power",
+            "Adhere to the same standards of behavior online that you follow in real life"
           ]
+        ]
       ],
+      answersOrder: [[2], [0], [3], [3], [1, 3]],
       labors: [
-            "Anonymous person asks Sarah to send him a photo of her and her family",
-            "Sarah and anonymous person talks about a trending tag",
-            "Sarah sends a photo of her and her family",
-            "Sarah sees her photo with her family in a fake online article",
-            "Anonymous person sends a photo of himself swimming at the beach"
-      ]
+            "Whenever you tweet, you include swear words.",
+            "Your parents got disappointed and grounded you for a week and no longer allowed you to use any kind of social media.",
+            "Most of your followers got put off because of your behavior online and even your cousins, who follows you, saw your tweets full of curse words.",
+            "Your behavior online was found out by your parents through your cousins. "
+      ],
+      laborsOrder: [0, 2, 3, 1],
+      correctLabors: [
+            {
+              old: "Whenever you tweet, you include swear words.",
+              new: "Whenever you tweet, you do not include swear words."
+            }, {
+              old: "Most of your followers got put off because of your behavior online and even your cousins, who follows you, saw your tweets full of curse words. ",
+              new: "Whenever you tweet, you do not include swear words."
+            }, {
+              old: "Your behavior online was found out by your parents through your cousins.",
+              new: "Your behavior online was not found out by your parents through your cousins. "
+            }, {
+              old: "Your parents got disappointed and grounded you for a week and no longer allowed you to use any kind of social media. ",
+              new: "Your parents did not get disappointed and grounded you for a week and allowed you to use any kind of social media.  "
+            }
+      ],
+      correctRules: [
+        {
+          title: "Make yourself look good online",
+          description: "Be presentable on the internet by only posting accurate and logical things.",
+          highlights: [0]
+        }, {
+          title: "SECONDO ASKHDSD Make yourself look good online",
+          description: "Be presentable on the internet by only posting accurate and logical things.",
+          highlights: [0]
+        },
+      ],
+      negateStop: -1,
+      solution: "You should not use swear words as much as possible, especially when online where other people " +
+                "can see it. People might see it as an inappropriate behavior and could reflect their judgement " +
+                "of your character. Do not use offensive language and it is better to keep your reputation or self " +
+                "image good online where a lot of people could see your posts, tweets, and profile. "
     },
     {
-      scenario: "Hello Sara is online chatting with a 10-year-old boy. The boy sends Sara a picture of " +
-                "himself, and he wants Sara to send him a picture of herself and her family. Sara " +
-                "is thinking if she should send a picture or not. She decided to send a picture of " +
-                "herself and her family to the boy. A few days later, Sarah found a fake online article " +
-                "about a scam which contains her family photo and  the names of her parents and siblings. ",
-      answers: [
-        [
-            "sdfds",
-            "Sarah, her family, and the anonymous person",
-            "Sarah and her family",
-            "Sarah"
-          ], [
-            "sdfsdf ",
-            "Sarah should send a photo to the anonymous user",
-            "The anonymous user should send a photo to Sarah",
-            "For them to talk about their families"
-          ], [
-            " sdfsd ",
-            "Sarah, her family, and the anonymous person",
-            "Sarah and her family",
-            "Sarah"
-          ], [
-            "sdfsdfsdf",
-            "Twitter, fake online articles and photos",
-            "Fake online articles and photos",
-            "Twitter and photos"
-          ], [
-            "Digital Tattoo",
-            "Respecting Others Online",
-            "Remember the Human",
-            "Adhere to the Same Standards of Behavior Online and Offline",
-            "Know where you are in Cyberspace",
-            "Respecting Other People\'s Time and Bandwidth",
-            "Make Yourself Look Good Online",
-            "Share Expert Knowledge",
-            "Help Keep Flame Wars Under Control",
-            "Respect Other People\'s Privacy"
-          ]
-      ],
-      labors: [
-            " sdfsdfsd",
-            "Sarah and anonymous person talks about a trending tag",
-            "Sarah sends a photo of her and her family",
-            "Sarah sees her photo with her family in a fake online article",
-            "Anonymous person sends a photo of himself swimming at the beach"
-      ]
+      // put stuff here
     },
     {
       // put stuff here

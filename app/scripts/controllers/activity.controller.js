@@ -432,7 +432,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
   $scope.showAnswers = function(){
     $scope.answered = !$scope.answered;
 
-    var possible = "Possible malware/s may be: "
+    var possible = "Possible malware/s may be: ";
     var builder = "";
 
     if(tf_slow_computer){
@@ -529,25 +529,25 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     for (var i in symptom_filter){
       if(symptom_filter[i] == symptom_counter){
         check_for_match = true;
-        if(i == 0){
+        if(i === 0){
           builder = builder + "Virus ";
-        } else if (i == 1){
+        } else if (i === 1){
           builder = builder + "Trojan Horse ";
-        } else if (i == 2){
+        } else if (i === 2){
           builder = builder + "Worms ";
-        } else if (i == 3){
+        } else if (i === 3){
           builder = builder + "Adware ";
-        } else if (i == 4){
+        } else if (i === 4){
           builder = builder + "Spyware ";
-        } else if (i == 5){
+        } else if (i === 5){
           builder = builder + "Keylogger ";
-        } else if (i == 6){
+        } else if (i === 6){
           builder = builder + "Ransomware ";
         }
       }
     }
 
-    if(check_for_match == false){
+    if(check_for_match === false){
       possible = "No specific malware can be found given symptom combination";
     }
 
@@ -594,7 +594,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
     if($scope.data.length < 5){
 
-      if($scope.data.length == 0){
+      if($scope.data.length === 0){
         $scope.data.push({
               name: $scope.name,
               symptom: $scope.checkboxArray,
@@ -648,7 +648,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
         $(specificlocstore).text(data[i].name);
       }
     }
-  }
+  };
 
   $scope.playCustom = function(num){
     $scope.clearSymptom();

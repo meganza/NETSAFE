@@ -1,19 +1,19 @@
 <div class="header">
   10 Core Rules Of Netiquette
 </div>
-
 <br>
+
 <div id="netivity-scenario-nav">
   <p>
     <button class="tutorial-button" ng-click="tutorialContent = !tutorialContent">
       <span ng-show="!tutorialContent"> Show <b>Tutorial</b> </span>
       <span ng-show="tutorialContent"> Hide <b>Tutorial</b> </span>
     </button>
-    </button>
     <button ng-repeat="rule in contentRules track by $index"
             ng-click="showRule($index)"
             id="button-num-($index)"
-            class="button-num">
+            class="button-num"
+            ng-class="{active: !tutorialContent && $parent.currentRule === $index }">
       {{$index+1}}
     </button>
   </p>
@@ -76,8 +76,8 @@
     </div>
 
     <div class="center-me">
-      <button class="tables-button" ng-click="elementsTable = !elementsTable"><b>①</b> Elements Table</button>
-      <button class="tables-button" ng-click="causeEffectTable = !causeEffectTable" ng-disable="!selement-4"><b>②</b> Cause and Effect Table</button>
+      <button id="tables-button-1" class="tables-button" ng-click="openTable(1)" ng-class="{ active: elementsTable }"><b>①</b> Elements Table</button>
+      <button id="tables-button-2" class="tables-button" ng-click="openTable(2)" ng-model="isDisabled" ng-disabled="isDisabled" ng-class="{ active: causeEffectTable }"><b>②</b> Cause and Effect Table</button>
     </div>
 
     <div ng-show="elementsTable">
@@ -95,24 +95,27 @@
             {{element}}
           </td>
 
-          <td >
-            <div class="table-content" ng-repeat="selement in rule.selements track by $index">
-              <span ng-click="viewAnswer($index)" ng-show="!answerClicked[$index]" class="hidden-answer center-me"> [ CLICK TO SEE ANSWER ]</span>
-              <span ng-show="answerClicked[$index]"> {{selement}} </span>
-            </div>
+          <td>
+            <span ng-click="viewAnswer($index)" ng-show="!answerClicked[$index]" class="hidden-answer center-me">
+              [ CLICK TO SEE ANSWER ]
+            </span>
+            <span ng-show="answerClicked[$index]">
+              {{rule.selements[$index]}}
+            </span>
           </td>
         </tr>
       </table>
+
+      <div class="center-me">
+        <button class="tables-button" ng-click="showAll()">Show All Answers</button>
+      </div>
     </div>
 
     <div ng-show="causeEffectTable">
-
-    <!-- TODO: Highlight feature. This button, when clicked, highlights the actions
-              that violated the rule in discussion. (try and see ngClass directive)  -->
-      <a ng-click="showSolution = !showSolution">
+      <a ng-model="highlightToggle" ng-click="highlight($parent.currentRule)">
         <div class="check-button">
-          <span ng-show="!showSolution"> Highlight Violated Actions </span>
-          <span ng-show="showSolution"> Unhighlight Violated Actions </span>
+          <span ng-show="!highlightToggle"> Highlight Violated Actions </span>
+          <span ng-show="highlightToggle"> Unhighlight Violated Actions </span>
         </div>
       </a>
       <br>
@@ -122,15 +125,16 @@
           <th>Cause and Effect Table</th>
         </tr>
 
-        <tr ng-repeat-start="labor in rule.labors">
+        <tr ng-repeat-start="labor in rule.labors" class="action action-{{$index}}">
           <td>
-            <div ng-hide="laborClicked">
+            <div ng-hide="laborClicked[$index]">
                 {{labor.old}}
-                <a class="negate center-me" ng-click="laborClicked = !laborClicked" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+                <a class="negate center-me" ng-click="negateLabor($index, $parent.currentRule)" style="float: right;" title="Negate the corresponding action">
                   <i class="fa fa-ban"></i>
                 </a>
+
             </div>
-            <div ng-show="laborClicked">
+            <div ng-show="laborClicked[$index]">
                 {{labor.new}}
             </div>
           </td>
@@ -140,7 +144,7 @@
         </tr>
       </table>
 
-      <a ng-click="showSolution = !showSolution">
+      <a ng-model="showSolution" ng-click="viewSolution()">
         <div class="check-button">
           <span ng-show="!showSolution"> Show Solution </span>
           <span ng-show="showSolution"> Hide Solution </span>
@@ -156,11 +160,9 @@
           </tr>
         </table>
       </div>
-
     </div>
-  </div>
-
-</div>
+  </div> <!-- div ng-show scenarioContent close-->
+</div> <!-- Scenario-content div close -->
 
 <div class="tutorial-content" ng-show="tutorialContent">
   <div class="rule-title" title="tip">
@@ -172,7 +174,7 @@
     The oranges boxes could be clicked to expand or compress the contents inside of it.
   </div><br>
   <div class="tutorial-steps" ng-click="step1 = !step1">
-    <span ng-show="!step1"> Show <b>Step 1</b> Do's and Dont's Table</span>
+    <span ng-show="!step1"> Show <b>Step 1</b> Do's and Dont's <b>Table</b></span>
     <span ng-show="step1"> <b>Step 1:</b> Discuss the current netiquette core rule <br>
       A table below is for the do's and don'ts for the specific netiquette core rule. As an example,
       let's use rule 8, Respect other people's privacy. This is also the first table that you will see.
@@ -215,7 +217,7 @@
   </div>
 
   <div class="tutorial-steps" ng-click="step2 = !step2">
-    <span ng-show="!step2"> Show <b>Step 2</b> </span>
+    <span ng-show="!step2"> Show <b>Step 2</b> Scenario</span>
     <span ng-show="step2"> <b>Step 2:</b> Read and understand the scenario <br>
       This will be your basis for dissecting the scenario so you have to be
       aware on how you will identify each element. Here is a sample scenario.
@@ -233,7 +235,7 @@
   </div>
 
   <div class="tutorial-steps" ng-click="step3 = !step3">
-    <span ng-show="!step3"> Show <b>Step 3</b> Elements Table</span>
+    <span ng-show="!step3"> Show <b>Step 3</b> Elements <b>Table</b></span>
     <span ng-show="step3"> <b>Step 3:</b> Identifying the elements <br>
       The guideline elements are the elements that pertain to the core rules, a general "template" for the questions.
       The scenario elements, on the other hand, specifically answers the element question that pertain to the scenario presented.
@@ -254,12 +256,15 @@
       <tr>
         <td class="core-question" style="text-align: left;"> Subject (people active in the scenario) </td>
         <td class="table-content" style="text-align: left;"> Owner and infiltrator
-          <div class="tutorial-steps tutorial-steps-table"> <b>Step 3.a: </b>
-          The Subject is/are the people who are active in the scenario.
-          Their actions have direct impact in the scenario.  Sam is a subject because he was the one who
-          left his account open. Clover is a subject because she read his private messages. They are the
-          active elements in the scenario. Jerry is not a subject because he did not do anything in the
-          scenario, thus making him an inactive element.
+          <div class="tutorial-steps tutorial-steps-table" ng-click="step3a = !step3a">
+            <span ng-show="!step3a"> <b>Step 3.a: Subject</b> </span>
+            <span ng-show="step3a">
+              <b>Step 3.a: Subject</b> The Subject is/are the people who are active in the scenario.
+              Their actions have direct impact in the scenario.  Sam is a subject because he was the one who
+              left his account open. Clover is a subject because she read his private messages. They are the
+              active elements in the scenario. Jerry is not a subject because he did not do anything in the
+              scenario, thus making him an inactive element.
+            </span>
           </div>
         </td>
         <td class="table-content" style="text-align: left;"> Sam and Clover</td>
@@ -268,11 +273,14 @@
       <tr>
         <td class="core-question" style="text-align: left;"> Objective (what is the first action that triggered the chain of events?) </td>
         <td class="table-content" style="text-align: left;"> Access to private Information
-          <div class="tutorial-steps tutorial-steps-table"> <b>Step 3.b: </b>
-          The objective is the first action that triggered the series of events. The objective is what
-          causes everything that happens in the scenario. Clover would not have accessed and read Sam’s
-          private messages if he did not accidentally leave his account open. The objective is the main
-          motive of why the event happened in the first place.
+          <div class="tutorial-steps tutorial-steps-table" ng-click="step3b = !step3b">
+            <span ng-show="!step3b"> <b>Step 3.b: Objective</b> </span>
+            <span ng-show="step3b">
+              <b>Step 3.b: Objective</b> The objective is the first action that triggered the series of events. The objective is what
+              causes everything that happens in the scenario. Clover would not have accessed and read Sam’s
+              private messages if he did not accidentally leave his account open. The objective is the main
+              motive of why the event happened in the first place.
+            </span>
           </div>
         </td>
         <td class="table-content" style="text-align: left;"> Sam accidentally left his Facebook open before leaving the school’s computer lab. </td>
@@ -281,10 +289,13 @@
       <tr>
         <td class="core-question" style="text-align: left;"> Community (external factors / people affected whether active or inactive) </td>
         <td class="table-content" style="text-align: left;"> Owner and infiltrator
-          <div class="tutorial-steps tutorial-steps-table"> <b>Step 3.c: </b>
-          The community is/are the people who are affected in the scenario whether they are active or
-          inactive. Jerry is affected in the scenario because he was mocked when Sam accidentally left his
-          account open.
+          <div class="tutorial-steps tutorial-steps-table" ng-click="step3c = !step3c">
+            <span ng-show="!step3c"> <b>Step 3.c: Community</b> </span>
+            <span ng-show="step3c">
+              <b>Step 3.c: Community</b> The community is/are the people who are affected in the scenario whether they are active or
+              inactive. Jerry is affected in the scenario because he was mocked when Sam accidentally left his
+              account open.
+            </span>
           </div>
         </td>
         <td class="table-content" style="text-align: left;"> Sam, Clover, and Jerry</td>
@@ -293,9 +304,12 @@
       <tr>
         <td class="core-question" style="text-align: left;"> Tools (what tools explicitly used in the scenario) </td>
         <td class="table-content" style="text-align: left;"> Communication Devices
-          <div class="tutorial-steps tutorial-steps-table"> <b>Step 3.d: </b>
-          The tool is the objects that are directly related to cyberspace or the type of media explicitly
-          used in the scenario. In this case, Facebook was the only media used in the scenario.
+          <div class="tutorial-steps tutorial-steps-table" ng-click="step3d = !step3d">
+            <span ng-show="!step3d"> <b>Step 3.d: Tools</b> </span>
+            <span ng-show="step3d">
+              <b>Step 3.d: Tools</b> The tool is the objects that are directly related to cyberspace or the type of media explicitly
+              used in the scenario. In this case, Facebook was the only media used in the scenario.
+            </span>
           </div>
         </td>
         <td class="table-content" style="text-align: left;"> Facebook</td>
@@ -305,7 +319,7 @@
   </div>
 
   <div class="tutorial-steps" ng-click="step4 = !step4">
-    <span ng-show="!step4"> Show <b>Step 4</b> Cause and Effect Table </span>
+    <span ng-show="!step4"> Show <b>Step 4</b> Cause and Effect <b>Table</b> </span>
     <span ng-show="step4"> <b>Step 4:</b> Negating the causes for an objective solution <br>
       For the lecture, the events that happened are already stated. Every event, besides the first event, is
       caused by another event. Note that the objective is usually the first event that happens. Reading the table
@@ -319,8 +333,13 @@
   <br>
 
   <div ng-show="step4">
-
-    <!-- TODO: Add the highlight feature here -->
+    <a ng-click="tutorialHighlight = !tutorialHighlight">
+      <div class="check-button">
+        <span ng-show="!tutorialHighlight"> Highlight Violated Actions </span>
+        <span ng-show="tutorialHighlight"> Unhighlight Violated Actions </span>
+      </div>
+    </a>
+    <br>
 
     <table class="core-table" style="width: 80%">
       <tr>
@@ -347,13 +366,14 @@
 
       <td>
         <div ng-hide="laborClicked2">
-            Clover read his private messages
+            <span ng-show="tutorialHighlight" class="action highlighted"> Clover read his private messages </span>
+            <span ng-show="!tutorialHighlight" class="action"> Clover read his private messages </span>
             <a class="negate center-me" ng-click="laborClicked2 = !laborClicked2" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
               <i class="fa fa-ban"></i>
             </a>
         </div>
         <div ng-show="laborClicked2">
-            Clover does not read his private messages
+          Clover does not read his private messages
         </div>
       </td>
 
@@ -405,12 +425,11 @@
         </div>
       </td>
     </table>
-  <br>
+    <br>
   </div>
 
-
   <div class="tutorial-steps" ng-click="step5 = !step5">
-    <span ng-show="!step5"> Show <b>Step 5</b> </span>
+    <span ng-show="!step5"> Show <b>Step 5</b> Solution </span>
     <span ng-show="step5"> <b>Step 5:</b> Objective Solution <br>
       Negate the causes from bottom to top. You stop negating the events when all actions do not violate the rule.
       The solution to the problem will be identified, by clicking on the show solution, once you negate all actions that violate the rule.<br>

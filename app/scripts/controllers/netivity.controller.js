@@ -1,29 +1,80 @@
 angular.module('Netsafe').controller('netivityController',
   function($scope, $timeout, ScenariosFactory) {
   $scope.scenarios = ScenariosFactory;
+  $scope.contentScenarios = $scope.scenarios.content;
+  $scope.solutionModal = false;
+
+  $scope.elementsTable = true;
+  $scope.isCEDisabled = true;
+  $scope.isCDisabled = true;
+
+  // $scope.laborClicked = [];
+  // $scope.allowSolution = false;
 
   $(".activity-alert").hide();
   $(".answer-modal").hide();
 
-  $scope.answers = [null, null, null, null, null, null, null];
-  $scope.correctAnswers = [2, 0, 3, 3, 0, 1, 3];
+  $scope.openTable = function (num){
+    if(num === 1){
+      $scope.elementsTable = !$scope.elementsTable;
+    } else if (num === 2){
+      $scope.causeEffectTable = !$scope.causeEffectTable;
+    } else {
+      $scope.comparisonTable = !$scope.comparisonTable;
+    }
+  };
+
+  $scope.elementsAnswers = [[], [], [], [], []];
+  $scope.correctAnswers = [];
 
   $timeout(function() {
     $scope.currentScenario = 0;
   }, 1);
 
-  $scope.showScenario = function(index) {
-    // $(".button-num").removeClass("active");
-    // $("#button-num-"+ index).addClass("active");
-    $scope.currentScenario = index;
-    $scope.answers = [null, null, null, null, null, null, null];
-
-    $(".answer-modal").hide();
+  $scope.addAnswer = function (selectIndex){
+    console.log(selectIndex);
+    console.log($scope.elementsAnswers);
   };
 
-  $scope.checkAnswer = function(){
-    for(var i = $scope.correctAnswers.length; i--;) {
-      if($scope.correctAnswers[i] === $scope.answers[i])
+  $scope.checkElements = function(pIndex){
+    console.log("hello");
+    $scope.correctAnswers = $scope.contentScenarios[pIndex].answersOrder;
+    console.log($scope.correctAnswers.length);
+
+    $scope.wrongAnswers = [];
+
+    for(var i = 0; i < $scope.correctAnswers.length; i++){
+      for(var j = 0; j < $scope.correctAnswers[i].length; j++){
+        if($scope.correctAnswers[i][j] !== $scope.elementsAnswers[i][j]){
+          $scope.wrongAnswers.push(i + 1);
+        }
+      }
+    }
+
+    $scope.correct = !$scope.wrongAnswers.length;
+    if($scope.correct){
+      $('.checkCorrect').show();
+      $scope.isCEDisabled = false;
+    } else {
+      $('.checkWrong').show();
+    }
+
+    console.log($scope.wrongAnswers);
+  };
+
+  $scope.causeEffectAnswers = [];
+  $scope.correctCauseEffectAnswers = [];
+
+  $scope.addCEAnswer = function (pIndex){
+    console.log(pIndex);
+    $scope.correctCauseEffectAnswers = $scope.contentScenarios[pIndex].laborsOrder;
+    console.log($scope.correctCauseEffectAnswers);
+    console.log($scope.causeEffectAnswers);
+  };
+
+  $scope.checkCauseEffectAnswer = function(){
+    for(var i = $scope.correctCauseEffectAnswers.length; i--;) {
+      if($scope.correctCauseEffectAnswers[i] === $scope.causeEffectAnswers[i])
         $scope.correct = true;
       else {
         i = 0;
@@ -33,79 +84,78 @@ angular.module('Netsafe').controller('netivityController',
 
     if($scope.correct){
       $('.checkCorrect').show();
+      $scope.isCDisabled = false;
     } else {
       $('.checkWrong').show();
     }
   };
 
-  $scope.checkDivisionAnswer = function(){
-    //fill up
-  };
+  $scope.highlightTogg = [];
 
-  $scope.checkFinalAnswer = function(){
-    //fill up
-  };
+  $scope.highlight = function(index, pIndex){
+    $scope.currentScenarioRuleHighlights = $scope.contentScenarios[pIndex].correctRules[index].highlights;
+    $scope.currentScenarioLaborsLength = $scope.contentScenarios[pIndex].labors.length;
 
-  $scope.checkNegatedAnswer = function(){
-    //fill up
-  };
+    if(!$scope.highlightTogg[index]){
+      $scope.highlightTogg[index] = true;
+      $('#highlight-'+index).addClass("active");
 
-
-  $scope.elements = [
-    { value: 1,
-      name: 'Digital Tattoo'
-    }, {
-      value: 2,
-      name: 'Respecting Others Online'
-    }, {
-      value: 3,
-      name: 'Remember the Human'
-    }, {
-      value: 4,
-      name: 'Adhere to the Same Standards of Behavior Online and Offline'
-    }, {
-      value: 5,
-      name: 'Know where you are in Cyberspace'
-    }, {
-      value: 6,
-      name: 'Respecting Other People\'s Time and Bandwidth'
-    }, {
-      value: 7,
-      name: 'Make Yourself Look Good Online'
-    }, {
-      value: 8,
-      name: 'Share Expert Knowledge'
-    }, {
-      value: 9,
-      name: 'Help Keep Flame Wars Under Control'
-    }, {
-      value: 10,
-      name: 'Respect Other People\'s Privacy'
-    }, {
-      value: 11,
-      name: 'Don\'t Abuse Your Power'
-    }, {
-      value: 12,
-      name: 'Be Forgiving of Other People\'s Mistakes'
+      for(var i = 0; i < $scope.currentScenarioLaborsLength; i++){
+        for(var j = 0; j< $scope.currentScenarioRuleHighlights.length; j++){
+          if(i === $scope.currentScenarioRuleHighlights[j] && !$scope.laborClicked[i])
+            $(".action-" + i).addClass("highlighted");
+        }
+      }
+    } else {
+      $('.highlight').removeClass("active");
+      $scope.highlightTogg[index] = false;
+      $(".action").removeClass("highlighted");
     }
-  ];
+  };
 
-  $scope.dtGuidelines = [
-    {name: "Sender and Receiver"},
-    {name: "Only say things you would say to a real person's face in real life"},
-    {name: "Sender and Receiver"},
-    {name: "Communication Devices"}
-  ];
+  $scope.laborClicked = [];
+  $scope.firstChecker = false;
+  $scope.allowSolution = false;
 
-  $scope.questions = [
-    "Subject (internal factors / people active in the scenario)",
-    "Objective (what action triggered/stimulated the series of events?)",
-    "Community (external factors / people affected whether active or inactive)",
-    "Tools (what tools explicitly used in the scenario)",
-    "Rules / Guidelines Applied (based on the element of comparison, what rules apply)"
-  ];
+  $scope.negateLabor = function (index, pIndex){
+    console.log(pIndex);
+    if(!$scope.firstChecker){
+      $scope.laborLength = $scope.contentScenarios[pIndex].correctLabors.length;
+      $scope.laborLength--;
+      $scope.firstChecker = true;
+      console.log("inside not first checker");
+    }
+    console.log("curent length: " + $scope.laborLength);
 
-  $scope.contentScenarios = $scope.scenarios.content;
+    if($scope.laborLength === index && index != $scope.contentScenarios[pIndex].negateStop){
+       $scope.laborClicked[index] = !$scope.laborClicked[index];
+       $scope.laborLength--;
+    }
+
+    // stops on the number of where the negation ends
+    if($scope.laborLength === $scope.contentScenarios[pIndex].negateStop){
+        console.log($scope.laborLength);
+        $scope.allowSolution = true;
+    }
+  };
+
+  $scope.showScenario = function(index) {
+
+    $scope.currentScenario = index;
+    $scope.answers = [null, null, null, null, null, null, null];
+    $scope.currentRule = index;
+    $scope.wrongAnswers = [];
+    $scope.laborClicked = [];
+    $scope.openedAll = false;
+
+    $(".answer-modal").hide();
+  };
+
+  $scope.viewSolution = function (){
+    if($scope.allowSolution){
+      $scope.solutionModal = !$scope.solutionModal;
+    }
+  };
 
   var prevID = 0;
 
@@ -127,4 +177,126 @@ angular.module('Netsafe').controller('netivityController',
   };
 
   $scope.showHelpTab(1);
+
+  $scope.elements = [
+    { value: 1,
+      name: 'Remember the Human'
+    }, {
+      value: 2,
+      name: 'Adhere to the Same Standards of Behavior Online and Offline'
+    }, {
+      value: 3,
+      name: 'Know where you are in Cyberspace'
+    }, {
+      value: 4,
+      name: 'Respecting Other People\'s Time and Bandwidth'
+    }, {
+      value: 5,
+      name: 'Make Yourself Look Good Online'
+    }, {
+      value: 6,
+      name: 'Share Expert Knowledge'
+    }, {
+      value: 7,
+      name: 'Help Keep Flame Wars Under Control'
+    }, {
+      value: 8,
+      name: 'Respect Other People\'s Privacy'
+    }, {
+      value: 9,
+      name: 'Don\'t Abuse Your Power'
+    }, {
+      value: 10,
+      name: 'Be Forgiving of Other People\'s Mistakes'
+    }
+  ];
+
+  $scope.guidelines1 = [
+    {name: "Sender and/or Receiver"},
+    {name: "When the sender makes a statement or posted something on the online platform"},
+    {name: "Sender and/or Receiver"},
+    {name: "Online platform"},
+    {name: "Remember the human"}
+  ];
+
+  $scope.guidelines2 = [
+    {name: "Netizen/s"},
+    {name: "When the netizen posts online"},
+    {name: "Netizen/s"},
+    {name: "Online platform"},
+    {name: "Adhere to the same standards of behavior online that you follow in real life"}
+  ];
+
+  $scope.guidelines3 = [
+    {name: "Netizen/s"},
+    {name: "When you start participating in a new community online"},
+    {name: "New netizen and/or netizens native to the domain"},
+    {name: "Online platform"},
+    {name: "Know where you are in cyberspace"}
+  ];
+
+  $scope.guidelines4 = [
+    {name: "Sender and/or receiver"},
+    {name: "When you are sending information on the online platform"},
+    {name: "Sender, receiver, and/or netizens in the online community"},
+    {name: "Online platform"},
+    {name: "Respect other people’s time and bandwidth"}
+  ];
+
+  $scope.guidelines5 = [
+    {name: "Netizen/s"},
+    {name: "When you are posting your own content on the online platform"},
+    {name: "Other netizens following the netizen on the online platform"},
+    {name: "Online platform"},
+    {name: "Make yourself look good online"}
+  ];
+
+  $scope.guidelines6 = [
+    {name: "Sender and receiver"},
+    {name: "When you’re asking for or  exchanging expert information"},
+    {name: "Sender and receiver"},
+    {name: "Online platform"},
+    {name: "Share expert knowledge"}
+  ];
+
+  $scope.guidelines7 = [
+    {name: "Sender and/or receiver"},
+    {name: "Posting or making a statement online"},
+    {name: "Sender and/or receiver"},
+    {name: "Online platform"},
+    {name: "Help keep flame wars under control"}
+  ];
+
+  $scope.guidelines8 = [
+    {name: "Owner and infiltrator"},
+    {name: "When you access other people's private information without their full consent "},
+    {name: "Owner and infiltrator"},
+    {name: "Access to online account of other netizen"},
+    {name: "Respect other people’s privacy"}
+  ];
+
+  $scope.guidelines9 = [
+    {name: "Subordinate and/or Admin"},
+    {name: "When there is a need to access admin features"},
+    {name: "Subordinate/s and/or Boss"},
+    {name: "Company network, company online platform"},
+    {name: "Don’t abuse your power"}
+  ];
+
+  $scope.guidelines10 = [
+    {name: "Sender and/or receiver"},
+    {name: "Posting or making a statement online"},
+    {name: "Receiver"},
+    {name: "Online platform"},
+    {name: "Be forgiving of other people’s mistakes"}
+  ];
+
+  $scope.questions = [
+    "Subject (internal factors / people active in the scenario)",
+    "Objective (what action triggered/stimulated the series of events?)",
+    "Community (external factors / people affected whether active or inactive)",
+    "Tools (what tools explicitly used in the scenario)",
+    "Rules / Guidelines Applied (based on the element of comparison, what rules apply)"
+  ];
+
 });
