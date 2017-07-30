@@ -137,10 +137,10 @@ angular.module('Netsafe').controller('netivityController',
   };
 
   $scope.showScenario = function(index) {
-
     $scope.currentScenario = index;
-    $scope.elementsAnswers = [null, null, null, null, null, null, null];
     $scope.currentRule = index;
+    $scope.elementsAnswers = [];
+    $scope.causeEffectAnswers = [];
     $scope.wrongAnswers = [];
     $scope.laborClicked = [];
     $scope.openedAll = false;
@@ -291,9 +291,25 @@ angular.module('Netsafe').controller('netivityController',
   $scope.questions = [
     "Subject (internal factors / people active in the scenario)",
     "Objective (what action triggered/stimulated the series of events?)",
-    "Community (external factors / people affected whether active or inactive)",
+    "Community (Who are involved whether active or inactive)",
     "Tools (what tools explicitly used in the scenario)",
     "Rules / Guidelines Applied (based on the element of comparison, what rules apply)"
   ];
+
+  $scope.elementsGuide = [
+    {content: "The subject is/are the people who are active in the scenario. Their actions have direct impact in the scenario. "},
+    {content: "The objective is the first action that triggered the series of events. The objective is what causes everything that happens in the scenario. "},
+    {content: "The community is/are the people who are affected in the scenario whether they are active or inactive. "},
+    {content: "The tool is the objects that are directly related to cyberspace or the type of media explicitly used in the scenario."},
+    {content: "The rules / guidelines are the specific ones that violate the scenario in discussion."}
+  ];
+
+  $scope.tutLaborClick = function(num){
+    if(num === 3){
+      $scope.thirdAction = true;
+    } else if (num === 2 && $scope.thirdAction){
+      $scope.secondAction = true;
+    }
+  };
 
 });

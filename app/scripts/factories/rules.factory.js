@@ -14,11 +14,11 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Say anything that could be saved and used against you."
       ],
       scenario: "Thomas is a budding digital artist. He is proud of his works so he posts his digital " +
-                "artworks of rainforests on his Facebook page. He received an email from some fellow " +
-                "he has never met. This fellow tells Thomas that his works are trash and should quit " +
-                "creating digital art. Thomas got hurt and his self confidence in his artistic skills diminished. ",
+                "artworks of rainforests on his Facebook page. An anonymous fellow wrote an email to Thomas " +
+                "containing a message that says “Your art is trash and you should quit doing digital artworks.” " +
+                "Thomas got hurt and his self confidence in his artistic skills diminished.",
       elements: [
-        {name: "Sender and/or Receiver"},
+        {name: "Sender and Receiver"},
         {name: "When the sender makes a statement or posted something on the online platform"},
         {name: "Sender and/or Receiver"},
         {name: "Online platform"}
@@ -26,7 +26,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       selements: [
         "Thomas and anonymous fellow",
         "Thomas posting his digital work",
-        "Thomas",
+        "Thomas and anonymous fellow",
         "E-mail and Facebook"
       ],
       labors: [
@@ -163,7 +163,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
                 "times thinking that she could get answers right away in doing so. The other people in the " +
                 "discussion group got irritated by Trixie’s same multiple posts because those covered up most " +
                 "of the discussion page of the group. Because of this, one of the people in the community " +
-                "reported her account to the admin and then Trixie got blocked from the online discussion group.",
+                "reported her account to the admin and then, Trixie got blocked by the admin from the online discussion group.",
       elements: [
         {name: "Sender and/or receiver"},
         {name: "When you are sending information on the online platform"},
@@ -171,9 +171,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "Sender, receiver, and/or netizens in the online community",
+        "Trixie, person in the discussion group, and admin",
         "Trixie posted her problem with her code on an online discussion group several times",
-        "People in the discussion group",
+        "Trixie, people in the discussion group, and admin",
         "Online discussion group"
       ],
       labors: [
@@ -187,8 +187,8 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               old: "One of the people in the community reported Trixie’s account to the admin.",
               new: "Trixie did not get reported by one of the people in the community."
             }, {
-              old: "Trixie got blocked from the online discussion group.",
-              new: "Trixie did not get blocked from the online discussion group."
+              old: "Trixie got blocked by the admin from the online discussion group.",
+              new: "Trixie got blocked by the admin from the online discussion group."
             }
       ],
       solution: "Trixie should have not posted her problem with her code several times, one could be enough. " +
@@ -216,7 +216,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       elements: [
         {name: "Netizen/s"},
         {name: "When you are posting your own content on the online platform"},
-        {name: "Other netizens following the netizen on the online platform"},
+        {name: "Netizen/s"},
         {name: "Online platform"}
       ],
       selements: [
@@ -259,16 +259,16 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Post sources that could be considered unreliable.",
         "Be compliant in the spread of erroneous information online."
       ],
-      scenario: "Justin posted a question on Stack Overflow, a programming forum, about a programming " +
-                "problem for his project. Another user, named Josh, answered his question quite " +
-                "confidently. However, Marc, an experienced computer programmer, noticed that Josh’s " +
-                "answer to Justin’s question was erroneous. Despite knowing the correct solution, Marc " +
-                "did not bother to share the correct answer. Justin’s program did not run properly and " +
-                "got a low mark in his project.",
+      scenario: "Justin posted a question on Stack Overflow, a programming forum, about a programming problem " +
+                "for his project. Another user, Josh, who is a novice programmer, answered his question quite " +
+                "confidently. However, Marc, an experienced computer programmer, noticed that Josh’s answer to " +
+                "Justin’s question has a minor error. Josh was not aware that his answer has a minor error. Despite " +
+                "knowing the correct solution, Marc did not bother to share the correct answer. Justin’s program did " +
+                "not run properly and got a low mark in his project.",
       elements: [
         {name: "Sender and/or receiver"},
         {name: "When you’re asking for or exchanging expert information"},
-        {name: "Sender and/or receiver"},
+        {name: "Sender and receiver"},
         {name: "Online platform"}
       ],
       selements: [
@@ -291,8 +291,8 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               old: "Marc did not bother to share his correct answer.",
               new: "Marc shared the correct answer."
             }, {
-              old: "Justin’s program did not fail to run properly and he did not get a low mark for his project.",
-              new: "Justin’s program did not fail to run properly and he did a low mark for his project."
+              old: "Justin’s program did not run properly and got a low mark for his project. ",
+              new: "Justin’s program ran properly and he did not get a low mark for his project."
             }
       ],
       solution: "Marc should have taken full notice of Josh’s erroneous answer and shared the correct answer. " +
@@ -310,21 +310,21 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Express opinions without holding back your emotions.",
         "Destroy the camaraderie within the discussion group."
       ],
-      scenario: "You are a very outspoken person when it comes to your beliefs and it shows on your " +
-                "posts on Facebook. You recently posted your opinions against the current president and " +
-                "his administration. A supporter of the current president started bashing you through your " +
-                "posts. You remain firm about your stand and you start retaliating. The conversation starts " +
-                "to get heated and it has turned into a senseless exchange. ",
+      scenario: "You are a very outspoken person when it comes to your beliefs and it shows on your posts on " +
+                "Facebook. You recently posted your opinions against the current president and his administration. " +
+                "A lot of people in facebook has seen your post. A supporter of the current president started bashing " +
+                "you through your posts. You remain firm about your stand and you start retaliating. The conversation " +
+                "starts to get heated and it has turned into a senseless exchange.",
       elements: [
         {name: "Sender and/or receiver"},
         {name: "Posting or making a statement online"},
-        {name: "Sender and/or receiver"},
+        {name: "Sender and receiver"},
         {name: "Online platform"}
       ],
       selements: [
         "You and the supporter",
         "You posted your opinions against the current president and his administration",
-        "You and the supporter",
+        "You, the supporter, and friends/people in Facebook",
         "Facebook"
       ],
       labors: [
@@ -332,6 +332,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               old: "You posted about your opinions against the current president and administration on Facebook.",
               new: "-"
             }, {
+              old: "A lot of people in facebook has seen your post",
+              new: "-"
+            },{
               old: "A supporter started bashing you on your posts.",
               new: "-"
             }, {
@@ -365,13 +368,13 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       elements: [
         {name: "Owner and infiltrator"},
         {name: "When you access other people’s information without their full consent"},
-        {name: "Access to online account or personal devices  of other netizen"},
+        {name: "Owner and Infiltrator"},
         {name: "Online platform"}
       ],
       selements: [
         "Wayne and his friend",
         "Wayne wanting to test what he learned about hacking on a Facebook account",
-        "Wayne’s friend",
+        "Wayne and Wayne’s friend",
         "Facebook"
       ],
       labors: [
@@ -413,13 +416,13 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       elements: [
         {name: "Subordinate and admin"},
         {name: "When there is a need to access admin features"},
-        {name: "Subordinate and/or admin"},
+        {name: "Subordinate and admin"},
         {name: "Company network, company online platform"}
       ],
       selements: [
         "Justin and Justin’s Boss",
         "When the boss allowed Justin’s computer to access the company database",
-        "Justin and Karen",
+        "Justin, Justin’s Boss, Karen, the company",
         "Company database, Justin’s computer"
       ],
       labors: [
@@ -431,7 +434,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               new: "Justin did not use this type of access to get information about Karen."
             }, {
               old: "The admin found out about him getting the information about Karen.",
-              new: "Justin did not use this type of access to get information about Karen."
+              new: "The admin did not find out about him getting the information about Karen."
             }, {
               old: "Justin got fired.",
               new: "Justin did not get fired."
@@ -454,22 +457,23 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Humiliate someone publicly instead of correcting them or humiliate them while correcting them.",
         "Being untoward to them when correcting them."
       ],
-      scenario: "Sophiya is a history major student. One of her friends, Cassie, shared a post on Facebook " +
-                "about Julius Ceasar trivia. Sophiya found factual errors and some grammatical errors. She bluntly " +
-                "commented on Cassie’s post that it has a lot of errors and rudely demanded that Cassie post the " +
-                "actual facts. Cassie got embarrassed and immediately deleted her post after reading Sophiya’s " +
-                "comments. Sophiya only realized later on that it would embarrass Cassie and later on felt bad about " +
-                "what she did. ",
+      scenario: "Sophiya is a history major student. One of her friends, Cassie, shared a post on " +
+                "Facebook about Julius Ceasar trivia. Sophiya found factual errors and some grammatical " +
+                "errors. She bluntly commented on Cassie’s post that it has a lot of errors and rudely " +
+                "demanded that Cassie post the actual facts. A lot of people including Cassie’s friends " +
+                "saw the post along with the comments. Cassie got embarrassed and immediately deleted her " +
+                "post after reading Sophiya’s comments. Sophiya only realized later on that it would embarrass " +
+                "Cassie and later on felt bad about what she did.",
       elements: [
         {name: "Sender and/or receiver"},
         {name: "Posting or making a statement online"},
-        {name: "Receiver"},
+        {name: "Sender and receiver"},
         {name: "Online platform"}
       ],
       selements: [
         "Sophiya and Cassie",
         "Cassie shared a post on Facebook",
-        "Cassie",
+        "Cassie, Sophiya, and people in Facebook",
         "Facebook"
       ],
       labors: [
@@ -480,6 +484,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               old: "Sophiya bluntly commented that her post had a lot of errors and rudely demanded that Cassie post the actual facts.",
               new: "Sophiya did not bluntly comment that her post had a lot of errors and did not rudely demand that Cassie post the actual facts."
             }, {
+              old: "A lot of people including Cassie’s friends saw the comments on her post.",
+              new: "A lot of people including Cassie’s friends did not see the comments on her post."
+            },{
               old: "Cassie got embarrassed and deleted the post immediately afterwards.",
               new: "Cassie did not get embarrassed and did not delete the post immediately afterwards."
             }, {

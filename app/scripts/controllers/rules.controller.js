@@ -127,7 +127,7 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
   $scope.questions = [
       "Subject (people active in the scenario)",
       "Objective (what is the first action that triggered the chain of events?)",
-      "Community (external factors / people affected whether active or inactive)",
+      "Community (Who are involved whether active or inactive)",
       "Tools (what tools explicitly used in the scenario)"
   ];
 
@@ -151,7 +151,6 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
     } else if(num === 1 && $scope.laborClicked5 && $scope.laborClicked4 && $scope.laborClicked3 && $scope.laborClicked2){
       $scope.laborClicked1 = true;
     }
-
   };
 
 });
