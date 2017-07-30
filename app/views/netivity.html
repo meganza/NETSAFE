@@ -31,8 +31,8 @@
     <button id="tables-button-1" class="tables-button" ng-class="{ active: elementsTable }" ng-click="openTable(1)">
       <b>①</b> Elements Table
     </button>
-    <button id="tables-button-2" class="tables-button" ng-click="openTable(2)" ng-model="isCEDisabled" ng-disabled="isCEDisabled"><b>②</b> Cause and Effect Table</button>
-    <button id="tables-button-3" class="tables-button" ng-click="openTable(3)" ng-model="isCisabled" ng-disabled="isCDisabled"><b>③</b> Comparison Table</button>
+    <button id="tables-button-2" class="tables-button" ng-click="openTable(2)" ng-model="isCEDisabled" ng-disabled="isCEDisabled" ng-class="{ active: causeEffectTable }"><b>②</b> Cause and Effect Table</button>
+    <button id="tables-button-3" class="tables-button" ng-click="openTable(3)" ng-model="isCisabled" ng-disabled="isCDisabled" ng-class="{ active: comparisonTable }"><b>③</b> Comparison Table</button>
   </div>
 
   <!-- TO DO: Repeating Select given array length -->
@@ -48,8 +48,8 @@
     <table class="core-table" style="width: 90%">
       <tr>
         <th style="width: 20%">Element</th>
-        <th style="width: 40%">Guideline Elements</th>
-        <th style="width: 40%">Scenario Elements</th>
+        <th style="width: 30%">Guideline Elements</th>
+        <th style="width: 50%">Scenario Elements</th>
       </tr>
       <tr ng-repeat="question in questions">
         <td class="core-question" style="text-align: left;"> {{question}} </td>
@@ -130,7 +130,7 @@
       </tr>
     </table>
 
-    <a ng-click="checkCauseEffectAnswer()">
+    <a ng-click="checkCauseEffectAnswer($parent.currentScenario)">
       <div class="check-button">
         Check Answer
       </div>
@@ -485,7 +485,7 @@
   <a class="close" onclick="$('.checkCorrect').hide()">
     <i class="fa fa-times"></i>
   </a>
-  <strong> Well done! </strong> All answers are correct!
+  <strong> Well done! </strong> All answers are correct! Proceed to the next table!
 </div>
 
 <div class="checkWrong alert alert-danger activity-alert" role="alert">

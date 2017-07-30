@@ -138,4 +138,20 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
     $scope.viewAnswer(3);
   };
 
+  $scope.tutLaborClick = function(num){
+    console.log("Hello");
+    if(num === 5){
+      $scope.laborClicked5 = true;
+    } else if (num === 4 && $scope.laborClicked5){
+      $scope.laborClicked4 = true;
+    } else if (num === 3 && $scope.laborClicked5 && $scope.laborClicked4){
+      $scope.laborClicked3 = true;
+    } else if (num === 2 && $scope.laborClicked5 && $scope.laborClicked4 && $scope.laborClicked3){
+      $scope.laborClicked2 = true;
+    } else if(num === 1 && $scope.laborClicked5 && $scope.laborClicked4 && $scope.laborClicked3 && $scope.laborClicked2){
+      $scope.laborClicked1 = true;
+    }
+
+  };
+
 });

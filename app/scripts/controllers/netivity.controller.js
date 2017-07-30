@@ -8,9 +8,6 @@ angular.module('Netsafe').controller('netivityController',
   $scope.isCEDisabled = true;
   $scope.isCDisabled = true;
 
-  // $scope.laborClicked = [];
-  // $scope.allowSolution = false;
-
   $(".activity-alert").hide();
   $(".answer-modal").hide();
 
@@ -72,16 +69,16 @@ angular.module('Netsafe').controller('netivityController',
     console.log($scope.causeEffectAnswers);
   };
 
-  $scope.checkCauseEffectAnswer = function(){
-    for(var i = $scope.correctCauseEffectAnswers.length; i--;) {
-      if($scope.correctCauseEffectAnswers[i] === $scope.causeEffectAnswers[i])
-        $scope.correct = true;
-      else {
-        i = 0;
-        $scope.correct = false;
+  $scope.checkCauseEffectAnswer = function(pIndex){
+    $scope.wrongAnswers = [];
+
+    for(var i = 0; i < $scope.correctCauseEffectAnswers.length; i++){
+        if($scope.correctCauseEffectAnswers[i] !== $scope.causeEffectAnswers[i]){
+          $scope.wrongAnswers.push(i + 1);
       }
     }
 
+    $scope.correct = !$scope.wrongAnswers.length;
     if($scope.correct){
       $('.checkCorrect').show();
       $scope.isCDisabled = false;
@@ -142,7 +139,7 @@ angular.module('Netsafe').controller('netivityController',
   $scope.showScenario = function(index) {
 
     $scope.currentScenario = index;
-    $scope.answers = [null, null, null, null, null, null, null];
+    $scope.elementsAnswers = [null, null, null, null, null, null, null];
     $scope.currentRule = index;
     $scope.wrongAnswers = [];
     $scope.laborClicked = [];

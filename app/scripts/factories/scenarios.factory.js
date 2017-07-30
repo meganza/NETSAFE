@@ -477,7 +477,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "If you are the one being flamed, always reply in a mature manner and do not " +
                 "destroy the camaraderie in the discussion by adding fuel to the fire. If you " +
                 "disagree on one’s opinion or statement, do it in a calm and polite way."
-    }, {
+    },
+    {
       scenario: "A secretary on the campus of a tax-supported university was on sick leave. " +
                 "The secretary’s supervisor has a lot of work to do for their upcoming project. " +
                 "The supervisor accessed  the secretary’s e-mail using the admin password to see " +
@@ -562,94 +563,395 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       solution: "The supervisor should have not used the admin password to access her " +
                 "secretary’s email account without the secretary’s knowledge. Do not abuse " +
                 "your power to access your subordinate’s e-mail account "
-    }, {
-      // case # 8
-    }, { // template if 2
-      // scenario: "While you were in Middle School, you often use swear words on twitter. Whenever you tweet, " +
-      //           "there were always swear words included. Most of your followers got put off because of your " +
-      //           "behavior online and even your cousins, who follows you, saw your tweets full of curse words. " +
-      //           "Your behavior online was found out by your parents through your cousins. Because of this, your " +
-      //           "parents got disappointed and grounded you for a week and no longer allowed you to use any kind " +
-      //           "of social media. ",
-      // answers: [  // correct answers should be placed 3, 1, 4, 4, 2
-      //   [[     // 3
-      //     "Your followers",
-      //     "Cousins and your parents",
-      //     "You, cousins, your parents",
-      //     "Cousins"
-      //   ]],
-      //   [[ // 1
-      //     "You often use swear words in your tweets",
-      //     "You often use Twitter",
-      //     "You tweet uninteresting things",
-      //     "Your cousins told your parents about your behavior on Twitter"
-      //   ]],
-      //   [[ // 4
-      //     "Cousins, you, parents",
-      //     "You",
-      //     "Parents",
-      //     "You, your followers, Parents"
-      //   ]],
-      //   [[ // 4
-      //     "Snapchat",
-      //     "Instagram",
-      //     "Facebook",
-      //     "Twitter"
-      //   ]],
-      //   [
-      //     [ // 2
-      //       "Remember the Human",
-      //       "Make yourself look good online",
-      //       "Don’t abuse your power",
-      //       "Adhere to the same standards of behavior online that you follow in real life"
-      //     ],
-      //     [
-      //       "Remember the Human",
-      //       "Make yourself look good online",
-      //       "Don’t abuse your power",
-      //       "Adhere to the same standards of behavior online that you follow in real life"
-      //     ]
-      //   ]
-      // ],
-      // answersOrder: [[2], [0], [3], [3], [1, 3]],
-      // labors: [
-      //       "Whenever you tweet, you include swear words.",
-      //       "Your parents got disappointed and grounded you for a week and no longer allowed you to use any kind of social media.",
-      //       "Most of your followers got put off because of your behavior online and even your cousins, who follows you, saw your tweets full of curse words.",
-      //       "Your behavior online was found out by your parents through your cousins. "
-      // ],
-      // laborsOrder: [0, 2, 3, 1],
-      // correctLabors: [
-      //       {
-      //         old: "Whenever you tweet, you include swear words.",
-      //         new: "Whenever you tweet, you do not include swear words."
-      //       }, {
-      //         old: "Most of your followers got put off because of your behavior online and even your cousins, who follows you, saw your tweets full of curse words. ",
-      //         new: "Whenever you tweet, you do not include swear words."
-      //       }, {
-      //         old: "Your behavior online was found out by your parents through your cousins.",
-      //         new: "Your behavior online was not found out by your parents through your cousins. "
-      //       }, {
-      //         old: "Your parents got disappointed and grounded you for a week and no longer allowed you to use any kind of social media. ",
-      //         new: "Your parents did not get disappointed and grounded you for a week and allowed you to use any kind of social media.  "
-      //       }
-      // ],
-      // correctRules: [
-      //   {
-      //     title: "Respect other people’s privacy",
-      //     description: "Never ask someone's information that you are not comfortable giving out yourself and do not get someone's private information without permission",
-      //     highlights: [0]
-      //   }, {
-      //     title: "SECONDO ASKHDSD Make yourself look good online",
-      //     description: "Be presentable on the internet by only posting accurate and logical things.",
-      //     highlights: [0]
-      //   },
-      // ],
-      // negateStop: -1,
-      // solution: "You should not use swear words as much as possible, especially when online where other people " +
-      //           "can see it. People might see it as an inappropriate behavior and could reflect their judgement " +
-      //           "of your character. Do not use offensive language and it is better to keep your reputation or self " +
-      //           "image good online where a lot of people could see your posts, tweets, and profile. "
+    },
+    {
+      scenario: "A class started learning about how to make websites from one of their subjects. Their " +
+                "teacher asked them to practice making websites. A group of students have created a " +
+                "defamatory website about a classmate. His name is Marty. The website includes postings " +
+                "that include made-up stories, jokes and cartoons involving the student. The site also " +
+                "includes a place where visitors can post comments and an email link for people to send " +
+                "their messages directly to the student. The group emails everyone in their class a link " +
+                "to the site. One of the classmates sent the link of the website to Marty, informing him " +
+                "about the website. Marty acted out due to anger and hurt by revealing bad things about the " +
+                "group. The group got mad and started to state false information about Marty. Their " +
+                "classmates started joining in, some of them against Marty and some of them against the " +
+                "group, which made the situation get a lot bigger and a lot worse. ",
+      answers: [
+        [[ // 2
+          "Marty and classmates",
+          "The group, Marty, and classmates",
+          "The group and Marty",
+          "The group and classmates"
+        ]],
+        [[ // 4
+          "When one of the classmates informed Marty about the website",
+          "When Marty responded to them and told them to stop",
+          "When the group emailed a link to all their classmates",
+          "When the group made a defamatory website about Marty that had rude posts about him"
+        ]],
+        [[ // 1
+          "Marty and classmates",
+          "The group and Marty",
+          "The group, Marty, and classmates",
+          "The group and classmates"
+        ]],
+        [[ // 1
+          "Email, website",
+          "Email",
+          "Website",
+          "Facebook"
+        ]],
+        [
+          [ // 3
+            "Know where you are in cyberspace",
+            "Make yourself look good online",
+            "Remember the Human",
+            "Adhere to the same standards of behavior online that you follow in real life"
+          ],
+          [ // 1
+            "Respect people's time and bandwidth",
+            "Adhere to the same standards of behavior online that you follow in real life",
+            "Don’t abuse your power",
+            "Share expert knowledge"
+          ],
+          [ //4
+            "Respect other people's privacy",
+            "Be forgiving of other people's mistakes",
+            "Share expert knowledge",
+            "Help keep flame wars under control"
+          ]
+        ]
+      ],
+      answersOrder: [[1], [3], [0], [0], [2, 0, 3]],
+      labors: [
+            "The group sent it to the whole class.",
+            "One of the classmates informed Marty about it.",
+            "Marty acted out due to anger and hurt by revealing bad things about the group.",
+            "Their class started to join in which made the situation get a lot bigger and a lot worse, some on Marty’s side and some one the group’s side.",
+            "A group of students have created a defamatory website about Marty.",
+            "The group responded by continuing to state false information about Marty.",
+            "The class started to learn about making websites and the teacher asked them to practice making websites"
+      ],
+      laborsOrder: [6, 4, 0, 1, 2, 5, 3],
+      correctLabors: [
+            {
+              old: "The class started to learn about making websites and the teacher asked them to practice making websites",
+              new: "-"
+            }, {
+              old: "A group of students have created a defamatory website about Marty.",
+              new: "A group of students did not create a defamatory website about Marty."
+            }, {
+              old: "The group sent it to the whole class.",
+              new: "The group did not send it to the whole class."
+            }, {
+              old: "One of the classmates informed Marty about it.",
+              new: "One of the classmates did not inform Marty about it."
+            }, {
+              old: "Marty acted out due to anger and hurt by revealing bad things about the group.",
+              new: "Marty did not act out due to anger and hurt by revealing bad things about the group."
+            }, {
+              old: "The group responded by continuing to state false information about Marty.",
+              new: "The group responded by continuing to state false information about Marty."
+            }, {
+              old: "Their class started to join in which made the situation get a lot bigger and a lot worse, some on Marty’s side and some one the group’s side.",
+              new: "Their class did not start to join in which did not make the situation a lot bigger and a lot worse."
+            }
+      ],
+      correctRules: [
+        {
+          title: "Remember the human",
+          description: "Remembering the person on the other side of the screen",
+          highlights: [1]
+        }, {
+          title: "Respect People's time and bandwidth",
+          description: "Be considerate of other people’s time on the internet. Send only important things and to only those who need it",
+          highlights: [2]
+        }, {
+          title: "Help keep flame wars under control",
+          description: "Keep the camaraderie in discussions online",
+          highlights: [4, 5, 6]
+        }
+      ],
+      negateStop: 0,
+      solution: "The group should not have responded by continuing to state false information about " +
+                "Marty. Marty should not have acted  out due to anger and hurt by revealing bad " +
+                "things about the group. The class should not have started to join in. The group " +
+                "sent it to the whole class. A group of students created a defamatory website about " +
+                "their classmate Marty."
+    },
+    {
+     scenario: "After the a terrorist attack in their town, many students and teachers from a " +
+                "school in that town sent related email to the “all-student” and “all-faculty” " +
+                "mailing lists. It is implied that the messages contain only helpful information " +
+                "about the status of faculty and students who were injured from the attack, and " +
+                "about ways the student body and the faculty can help in the crisis. But Penelope " +
+                "sends a long email to the mailing list about how she feels regarding the situation " +
+                "which would have been more appropriate in a blog or a newsletter. The administration " +
+                "takes notice of her email and sends a personal email to Penelope saying that she " +
+                "should refrain from sending unrelated emails and should only use it for school " +
+                "purposes only. This action was misinterpreted and taken badly by Penelope. So, " +
+                "she started spreading rumors about the school administration being insensitive " +
+                "about students’ and faculty’s grief using the school mailing list. Because of her " +
+                "retaliation online, Penelope received three weeks of detention.",
+      answers: [
+        [[ // 2
+          "Penelope, favulty, and school admin",
+          "Penelope and school admin",
+          "Penelope",
+          "Penelope and faculty"
+        ]],
+        [[ // 4
+          "Penelope sending the school mailing list about the school admin being insensitive about the students’ and faculty’s grief",
+          "The school admin sending Penelope an email",
+          "Penelope sending the email about her feelings on the situation that would have been more appropriate on a blog",
+          "The school admin sending to students and faculty information"
+        ]],
+        [[ // 3
+          "The school admin",
+          "Penelope",
+          "Recipients of Penelope’s email and Penelope",
+          "Recipients of Penelope’s email"
+        ]],
+        [[ // 4
+          "Discussion Group",
+          "Forum",
+          "Website",
+          "Email"
+        ]],
+        [
+          [ // 4
+            "Don't abuse your power",
+            "Make yourself look good online",
+            "Remember the Human",
+            "Be forgiving of other people's mistakes"
+          ],
+          [ // 1
+            "Know where you are in cyberspace",
+            "Adhere to the same standards of behavior online that you follow in real life",
+            "Don’t abuse your power",
+            "Share expert knowledge"
+          ],
+          [ //2
+            "Respect other people's privacy",
+            "Respect people's time and bandwidth",
+            "Share expert knowledge",
+            "Help keep flame wars under control"
+          ]
+        ]
+      ],
+      answersOrder: [[1], [3], [2], [3], [3, 0, 1]],
+      labors: [
+           "The school admin sends Penelope an email telling her that she should refrain from sending unrelated emails and should use it for school purposes only",
+           "Penelope took it the wrong way and started spreading rumors about the school administration being insensitive about students and faculty’s grief using the school mailing list",
+           "Students and teachers from a school in a town who had a recent terrorist attack send helpful information in the mailing list to each other",
+           "Penelope sends an email about her feelings regarding the situation that would have been more appropriate on a personal blog",
+           "Penelope receives three weeks of detention"
+      ],
+      laborsOrder: [2, 3, 0, 1, 4],
+      correctLabors: [
+            {
+              old: "Students and teachers from a school in a town who had a recent terrorist attack send helpful information in the mailing list to each other",
+              new: "-"
+            }, {
+              old: "Penelope sends an email about her feelings regarding the situation that would have been more appropriate on a personal blog",
+              new: "Penelope does not send an email about her feelings regarding the situation that would have been more appropriate on a personal blog"
+            }, {
+              old: "The school admin sends Penelope an email telling her that she should refrain from sending unrelated emails and should use it for school purposes only",
+              new: "The school admin does not take notice of this and does not send her an email that she should refrain from sending unrelated emails and should use it for school purposes only"
+            }, {
+              old: "Penelope took it the wrong way and started spreading rumors about the school administration being insensitive about students and faculty’s grief using the school mailing list",
+              new: "Penelope did not take it the wrong way and did not start spreading rumors about the school administration being insensitive about students and faculty’s grief using the school mailing list"
+            }, {
+              old: "Penelope receives three weeks of detention",
+              new: "Penelope does not receive three weeks of detention"
+            }
+      ],
+      correctRules: [
+        {
+          title: "Be forgiving of other people's mistakes",
+          description: "Do not hold people’s mistakes that they’ve made online against them",
+          highlights: [3]
+        }, {
+          title: "Respect People's time and bandwidth",
+          description: "Be considerate of other people’s time on the internet. Send only important things and to only those who need it",
+          highlights: [1]
+        }, {
+          title: "Know where you are in cyberspace",
+          description: "Follow the rules of the domain and act accordingly to those rules while in that domain",
+          highlights: [3]
+        }
+      ],
+      negateStop: 0,
+      solution: "Penelope should not have taken it the wrong way and should not have started " +
+                "spreading rumors about the school administration being insensitive about students " +
+                "and faculty’s grief using the school mailing list. Penelope should not have sent an " +
+                "email about her feelings regarding the situation and should have just put it on a " +
+                "personal blog or newsletter instead."
+    },
+    {
+      scenario: "You and your friend are talking to each other about your love lives through chat. " +
+                "You are about to go on a date with a guy you know from school and you are very " +
+                "excited about it. You tell your friend about it through chat. You go outside to " +
+                "walk the dog and leave the phone at home. While you’re out, your phone receives " +
+                "messages sent by your friend. Your mom gets curious from the constant buzzing and " +
+                "looks through your phone. She sees your friend’s message that says “That’s nice! " +
+                "What are you gonna wear when you meet Jack on your date this Friday?” When you get " +
+                "back, she gets mad at you for not telling her you are seeing this guy. You are now " +
+                "grounded. ",
+      answers: [
+        [[ // 3
+          "Your friends and your mom",
+          "You and your mom",
+          "You, your friend, and your mom",
+          "You and your friend"
+        ]],
+        [[ // 1
+          "Your mom reads the messages on your chat with your friend",
+          "You and your friend talking about your love lives through chat",
+          "You are going on a date with Jack this Friday",
+          "Your mom grounds you"
+        ]],
+        [[ // 4
+          "Your friend",
+          "Jack",
+          "Your mom",
+          "You"
+        ]],
+        [[ // 4
+          "Text",
+          "Instagram",
+          "Facebook",
+          "Chat messaging"
+        ]],
+        [[ // 2
+            "Remember the Human",
+            "Respect other people's privacy",
+            "Don’t abuse your power",
+            "Adhere to the same standards of behavior online that you follow in real life"
+        ]]
+      ],
+      answersOrder: [[2], [0], [3], [3], [1]],
+      labors: [
+            "You tell your friend you are excited to go on a date with Jack who is your schoolmate",
+            "Your friend messages you back wondering about what you’re going to wear to your date",
+            "You are grounded",
+            "Your mom looks through your phone and sees your friend’s message",
+            "You and your friend are talking to each other about your love lives through chat",
+            "You leave your phone unattended"
+      ],
+      laborsOrder: [4, 0, 1, 5, 3, 2],
+      correctLabors: [
+            {
+              old: "You and your friend are talking to each other about your love lives through chat",
+              new: "-"
+            }, {
+              old: "You tell your friend you are excited to go on a date with Jack who is your schoolmate",
+              new: "-"
+            }, {
+              old: "Your friend messages you back wondering about what you’re going to wear to your date",
+              new: "-"
+            }, {
+              old: "You leave your phone unattended",
+              new: "-"
+            }, {
+              old: "Your mom looks through your phone and sees your friend’s message",
+              new: "Your mom looks does not through your phone and does not read your friend’s message to you"
+            }, {
+              old: "You are grounded",
+              new: "You are not grounded"
+            }
+      ],
+      correctRules: [
+        {
+          title: "Respect other people's privacy",
+          description: "Never ask someone's information that you are not comfortable giving out yourself and do not get someone's private information without permission",
+          highlights: [4]
+        }
+      ],
+      negateStop: 3,
+      solution: "Your mom should not have looked through your phone and should not have read " +
+                "your friend’s message to you. Do not read other people’s personal messages or emails."
+    },
+    {
+      scenario: "George and Elijah are working together on a project. They are workmates in the " +
+                "IT department of their company. George is a system admin and Elijah works as a " +
+                "tech support. Recently, George and Elijah had a misunderstanding about how to do " +
+                "certain things with their jobs that escalated to a bigger fight. George took " +
+                "advantage of his position at work and accessed Elijah’s company email account " +
+                "and used Elijah’s email account to send spam messages to their co-workers to " +
+                "get back at Elijah.",
+      answers: [
+        [[ // 2
+          "George and the company",
+          "George and Elijah",
+          "Elijah and co-workers",
+          "Elijah"
+        ]],
+        [[ // 4
+          "George and Elijah email each other",
+          "George sending emails through Elijah’s email",
+          "George and Elijah had a misunderstanding",
+          "George and Elijah are working together on a project"
+        ]],
+        [[ // 3
+          "Co-workers",
+          "Elijah and co-workers",
+          "George and Elijah",
+          "George and co-workers"
+        ]],
+        [[ // 4
+          "Facebook",
+          "Comany Platform",
+          "Company databse",
+          "Email"
+        ]],
+        [
+          [ // 2
+            "Make yourself look good online",
+            "Don't abuse your power",
+            "Remember the Human",
+            "Be forgiving of other people's mistakes"
+          ],
+          [ // 1
+            "Respect other people's time and bandwidth",
+            "Adhere to the same standards of behavior online that you follow in real life",
+            "Don’t abuse your power",
+            "Share expert knowledge"
+          ]
+        ]
+      ],
+      answersOrder: [[1], [3], [2], [3], [1, 0]],
+      labors: [
+          "George accessed Elijah’s company email account and used it to send spam messages to their co-workmates to get back at Elijah",
+          "George and Elijah has a misunderstanding about how to get their job done",
+          "George and Elijah are working together on a project"
+      ],
+      laborsOrder: [2, 1, 0],
+      correctLabors: [
+            {
+              old: "George and Elijah are working together on a project",
+              new: "-"
+            }, {
+              old: "George and Elijah has a misunderstanding about how to get their job done",
+              new: "-"
+            }, {
+              old: "George accessed Elijah’s company email account and used it to send spam messages to their co-workmates to get back at Elijah",
+              new: "George did not access Elijah’s company email account and did not use it to send spam messages to their co-workmates to get back at Elijah"
+            }
+      ],
+      correctRules: [
+        {
+          title: "Don’t abuse your power",
+          description: "Respect your subordinate’s online privacy",
+          highlights: [2]
+        }, {
+          title: "Respect People's time and bandwidth",
+          description: "Be considerate of other people’s time on the internet. Send only important things and to only those who need it",
+          highlights: [2]
+        }
+      ],
+      negateStop: 1,
+      solution: "George should not have accessed Elijah’s company email account. b. George should not have used it to send spam messages to their co-workmates to get back at Elijah."
     }
   ]
   };
