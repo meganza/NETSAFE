@@ -65,6 +65,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Make yourself look good online",
           description: "Don’t use offensive language",
           highlights: [0]
@@ -143,6 +144,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Respect other people's time and bandwidth",
           description: "Expect that others will instantaneously respond to your questions and concerns and posting/sending similar content multiple times",
           highlights: [3]
@@ -231,6 +233,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Respect other people’s time and bandwidth",
           description: "Expect that others will instantaneously respond to your questions and concerns and posting / sending similar content multiple times",
           highlights: [3]
@@ -307,6 +310,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Respect other people’s privacy",
           description: "Never ask someone's information that you are not comfortable giving out yourself and do not get someone's private information without permission",
           highlights: [0]
@@ -383,6 +387,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Know where you are in cyberspace",
           description: "Follow the rules of the domain and act accordingly to those rules while in that domain.",
           highlights: [2]
@@ -467,6 +472,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Help Keep Flame Wars Under Control",
           description: "Keep the camaraderie in discussions online.",
           highlights: [4]
@@ -555,6 +561,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Don’t abuse your power",
           description: "Respect your subordinate’s online privacy.",
           highlights: [2]
@@ -660,14 +667,17 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Remember the human",
           description: "Remembering the person on the other side of the screen",
           highlights: [1]
         }, {
+          id: 1,
           title: "Respect People's time and bandwidth",
           description: "Be considerate of other people’s time on the internet. Send only important things and to only those who need it",
           highlights: [2]
         }, {
+          id: 2,
           title: "Help keep flame wars under control",
           description: "Keep the camaraderie in discussions online",
           highlights: [4, 5, 6]
@@ -769,14 +779,17 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Be forgiving of other people's mistakes",
           description: "Do not hold people’s mistakes that they’ve made online against them",
           highlights: [3]
         }, {
+          id: 1,
           title: "Respect People's time and bandwidth",
           description: "Be considerate of other people’s time on the internet. Send only important things and to only those who need it",
           highlights: [1]
         }, {
+          id: 2,
           title: "Know where you are in cyberspace",
           description: "Follow the rules of the domain and act accordingly to those rules while in that domain",
           highlights: [3]
@@ -864,6 +877,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Respect other people's privacy",
           description: "Don’t read other people’s personal messages or emails.",
           highlights: [4]
@@ -943,10 +957,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
+          id: 0,
           title: "Don’t abuse your power",
           description: "Respect your subordinate’s online privacy",
           highlights: [2]
         }, {
+          id: 1,
           title: "Respect People's time and bandwidth",
           description: "Be considerate of other people’s time on the internet. Send only important things and to only those who need it",
           highlights: [2]

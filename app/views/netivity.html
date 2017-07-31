@@ -153,9 +153,9 @@
 
            <td>
             {{rules.description}}
-            <a id="highlight-{{$index}}" ng-model="highlightToggle[rules.title]" class="negate highlight center-me" ng-click="highlight($index, $parent.currentScenario, rules.title)" style="float: right;" title="Highlight the corresponding actions that violate rule">
-              <i class="fa fa-exclamation-triangle" style="font-size: 12px"></i> <p style="font-weight: lighter; font-size: 10px; display: inline; text-transform: uppercase;"> highlight violating actions</p>
-            </a>
+            <button class="negate highlight center-me" ng-click="highlight($index, $parent.currentScenario)" ng-model="highlightToggle[rules.id]" ng-class="{ active: highlightToggle[rules.id] }" style="float: right; padding: 0 2 0 2px;" title="Highlight the corresponding actions that violate rule">
+              <i class="fa fa-exclamation-triangle" style="font-size: 12px"></i> <p style="font-weight: lighter; font-size: 9px; display: inline; text-transform: uppercase;"> highlight violating actions</p>
+            </button>
           </td>
 
         </tr>

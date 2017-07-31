@@ -4,13 +4,14 @@ angular.module('Netsafe').controller('netivityController',
   $scope.contentScenarios = $scope.scenarios.content;
   $scope.solutionModal = false;
 
-  $scope.elementsTable = true;
+  $scope.elementsTable = false; // CWD: change to true
   $scope.causeEffectTable = false;
-  $scope.comparisonTable = false; // change to false
-  // change to true
-  $scope.isCEDisabled = true;
-  $scope.isCDisabled = true;
+  $scope.comparisonTable = true; // CWD: change to false
+  // CWD: change to true
+  $scope.isCEDisabled = false;
+  $scope.isCDisabled = false;
 
+  $scope.highlightToggle = {};
   $scope.noAns = true;
 
   $(".activity-alert").hide();
@@ -101,6 +102,18 @@ angular.module('Netsafe').controller('netivityController',
       if($scope.correct){
         $('.checkCorrect').show();
         $scope.isCDisabled = false;
+
+        // sets highlight toggle object to false
+        $scope.totalRules = $scope.contentScenarios[pIndex].correctRules.length;
+        console.log($scope.totalRules);
+        for(var m = 0; m < $scope.totalRules; m++){
+          console.log("inside loop " +  m);
+
+          $scope.highlightToggle[m] = false;
+        }
+        var str = JSON.stringify($scope.highlightToggle);
+        console.log("highlightToggle: " + str);
+
       } else {
         $('.checkWrong').show();
       }
@@ -109,18 +122,19 @@ angular.module('Netsafe').controller('netivityController',
     }
   };
 
-  $scope.highlightToggle = [];
-
   $scope.highlight = function(index, pIndex){
+    console.log("index: " + index);
+    console.log("pIndex: " + pIndex);
+
     $scope.currentScenarioRuleHighlights = $scope.contentScenarios[pIndex].correctRules[index].highlights;
     $scope.currentScenarioLaborsLength = $scope.contentScenarios[pIndex].labors.length;
 
-    console.log("index: " + index);
+    var str = JSON.stringify($scope.highlightToggle);
+    console.log("highlightToggle: " + str);
 
     if(!$scope.highlightToggle[index]){
-      console.log("this one says t/f: " + $scope.highlightToggle[index]);
-      $scope.highlightToggle[index] = true;
-      $('#highlight-'+index).addClass("active");
+
+      //$('#highlight-'+index).addClass("active");
 
       for(var i = 0; i < $scope.currentScenarioLaborsLength; i++){
         for(var j = 0; j< $scope.currentScenarioRuleHighlights.length; j++){
@@ -128,8 +142,10 @@ angular.module('Netsafe').controller('netivityController',
             $(".action-" + i).addClass("highlighted");
         }
       }
+      $scope.highlightToggle[index] = true;
+      console.log("highlightToggle: " + str);
     } else {
-      $('.highlight').removeClass("active");
+      //$('.highlight').removeClass("active");
       $scope.highlightToggle[index] = false;
       $(".action").removeClass("highlighted");
     }
@@ -176,9 +192,16 @@ angular.module('Netsafe').controller('netivityController',
     $('.checkWrong').hide();
     $('.checkNoAns').hide();
     $scope.elementsTable = true;
-    $scope.isCEDisabled = true;
-    $scope.isCDisabled = true;
+    // CWD: CHANGE WHEN DONE
+    // $scope.isCEDisabled = true;
+    // $scope.isCDisabled = true;
     $(".action").removeClass("highlighted");
+
+    $scope.highlightToggle = {};
+
+    var str = JSON.stringify($scope.highlightToggle);
+    console.log("highlightToggle: " + str);
+
   };
 
   $scope.viewSolution = function (){
