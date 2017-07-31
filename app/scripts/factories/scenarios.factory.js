@@ -970,6 +970,87 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       negateStop: 1,
       solution: "George should not have accessed Elijah’s company email account. b. George should not have used it to send spam messages to their co-workmates to get back at Elijah."
+    },
+    {
+      scenario: "Jake the youtuber uploaded a video on Youtube about the new trend in social media where " +
+                "people do the “ice bucket challenge” to raise awareness on disease known as Amyotrophic " +
+                "Lateral Sclerosis (ALS). He stated in the video that the “Ice Bucket Challenge” is a " +
+                "challenge where a person can either opt to pour ice on themselves or to donate money to " +
+                "ALS Associations. He ended his video by donating to his local ALS Association. His followers " +
+                "got mad at him because they felt like he was ruining the fun of the ice bucket challenge by not " +
+                "choosing to pour ice on himself. They started leaving toxic comments in his video like calling him " +
+                "a coward and telling him that he should take down his video. He took down his video and never talked " +
+                "about the “ice bucket challenge” again.",
+      answers: [
+        [[     // 3
+          "Jake’s Followers",
+          "Jake",
+          "Jake’s Followers and Jake",
+          "Youtube"
+        ]],
+        [[ // 1
+          "Jake uploaded a video about the 'Ice bucket challenge'",
+          "Jake’s Followers left toxic comments on his video",
+          "Jake donated to the ALS Association",
+          "Jake’s Followers got mad at him"
+        ]],
+        [[ // 4
+          "Jake",
+          "Jake's Followers",
+          "Youtube",
+          "Jake’s Followers and Jake"
+        ]],
+        [[ // 4
+          "Snapchat",
+          "E-mail",
+          "Facebook",
+          "Youtube"
+        ]],
+        [[ // 2
+            "Make yourself look good online",
+            "Remember the Human",
+            "Don’t abuse your power",
+            "Adhere to the same standards of behavior online that you follow in real life"
+        ]]
+      ],
+      answersOrder: [[2], [0], [3], [3], [1]],
+      labors: [
+            "Jake uploaded a video about the 'Ice Bucket Challenge'",
+            "Jake took down the video and never talked about the “Ice Bucket Challenge” again",
+            "Jake donated to the ALS Association ",
+            "Jake’s Followers started leaving toxic comments on his video ",
+            "Jake’s Followers got mad at him for not doing the 'Ice Bucket Challenge'"
+      ],
+      laborsOrder: [0, 2, 4, 3, 1],
+      correctLabors: [
+            {
+              old: "Jake uploaded a video about the 'Ice Bucket Challenge'",
+              new: "-"
+            }, {
+              old: "Jake donated to the ALS Association ",
+              new: "-"
+            }, {
+              old: "Jake’s Followers got mad at him for not doing the 'Ice Bucket Challenge'",
+              new: "- "
+            }, {
+              old: "Jake’s Followers started leaving toxic comments on his video ",
+              new: "Jake’s Followers did not leave toxic comments on his video"
+            }, {
+              old: "Jake took down the video and never talked about the “Ice Bucket Challenge” again",
+              new: "Jake did not take down the video"
+            }
+      ],
+      correctRules: [
+        {
+          id: 0,
+          title: "Remember the Human",
+          description: "Remembering the person on the other side of the screen",
+          highlights: [3]
+        }
+      ],
+      negateStop: 2,
+      solution: "Jake’s Followers should not leave toxic comments on his video. Do not say something " +
+                "that could be considered mean or rude without thinking about it first."
     }
   ]
   };
