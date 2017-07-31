@@ -190,6 +190,7 @@ angular.module('Netsafe').controller('netivityController',
     $('.checkCorrect').hide();
     $('.checkWrong').hide();
     $('.checkNoAns').hide();
+    $scope.solutionModal = false;
     $scope.elementsTable = true;
     $scope.isCEDisabled = true;
     $scope.isCDisabled = true;
@@ -265,7 +266,7 @@ angular.module('Netsafe').controller('netivityController',
   $scope.guidelines1 = [
     {name: "Sender and Receiver"},
     {name: "When the sender makes a statement or posted something on the online platform"},
-    {name: "Sender and/or Receiver"},
+    {name: "Sender and Receiver"},
     {name: "Online platform"},
     {name: "Remember the human"}
   ];

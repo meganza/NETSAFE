@@ -20,7 +20,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       elements: [
         {name: "Sender and Receiver"},
         {name: "When the sender makes a statement or posted something on the online platform"},
-        {name: "Sender and/or Receiver"},
+        {name: "Sender and Receiver"},
         {name: "Online platform"}
       ],
       selements: [
@@ -347,8 +347,8 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       ],
       solution: "You should not have started retaliating. Do not express opinions without holding back your " +
                 "emotions. Do not destroy the camaraderie in the discussion group",
-      highlights: [ 2 ],
-      negateStop: 1
+      highlights: [ 3 ],
+      negateStop: 2
     }, {
       rule: "№8: Respect Other People’s Privacy",
       description: "Never ask someone's information that you are not comfortable giving out yourself " +
@@ -392,8 +392,8 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               new: "Wayne’s friend did not  find out and did not get mad at Wayne for invading his privacy."
             }
       ],
-      solution: "You should not have started retaliating. Do not express opinions without holding back your " +
-                "emotions. Do not destroy the camaraderie in the discussion group",
+      solution: "Wayne should not have tried his new hacking skills on his friend’s account without his " +
+                "permission. Do not access information that is not meant to be public or not meant for them to be read",
       highlights: [ 1 ],
       negateStop: 0
     }, {
