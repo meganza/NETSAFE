@@ -179,8 +179,13 @@ angular.module('Netsafe').controller('netivityController',
   $scope.showScenario = function(index) {
     $scope.currentScenario = index;
     $scope.currentRule = index;
+
+    $scope.correctAnswers = [];
     $scope.elementsAnswers = [];
+
     $scope.causeEffectAnswers = [];
+    $scope.correctCauseEffectAnswers = [];
+
     $scope.wrongAnswers = [];
     $scope.laborClicked = [];
 
@@ -190,12 +195,16 @@ angular.module('Netsafe').controller('netivityController',
     $('.checkCorrect').hide();
     $('.checkWrong').hide();
     $('.checkNoAns').hide();
+
     $scope.solutionModal = false;
     $scope.elementsTable = true;
     $scope.isCEDisabled = true;
     $scope.isCDisabled = true;
-    $(".action").removeClass("highlighted");
 
+    $scope.firstChecker = false;
+    $scope.allowSolution = false;
+
+    $(".action").removeClass("highlighted");
     $scope.highlightToggle = [];
 
     var str = JSON.stringify($scope.highlightToggle);
