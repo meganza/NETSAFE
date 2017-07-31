@@ -113,10 +113,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Password"
         ]],
         [[ // 4
-            "Respect other people's privacy",
+            "Respect other people's time and bandwidth",
             "Be forgiving of other people's mistakes",
             "Don’t abuse your power",
-            "Respect other people's time and bandwidth"
+            "Respect other people's privacy"
         ]]
       ],
       answersOrder: [[3], [2], [2], [0], [3]],
@@ -145,8 +145,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       correctRules: [
         {
           id: 0,
-          title: "Respect other people's time and bandwidth",
-          description: "Expect that others will instantaneously respond to your questions and concerns and posting/sending similar content multiple times",
+          title: "Respect other people's privacy",
+          description: "Don't access information that is not meant to be public or not meant for them to be read",
           highlights: [3]
         }
       ],
@@ -235,7 +235,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         {
           id: 0,
           title: "Respect other people’s time and bandwidth",
-          description: "Expect that others will instantaneously respond to your questions and concerns and posting / sending similar content multiple times",
+          description: "Don't expect that others will instantaneously respond to your questions and concerns and don't post / send similar content multiple times",
           highlights: [3]
         }
       ],
@@ -598,9 +598,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "When the group made a defamatory website about Marty that had rude posts about him"
         ]],
         [[ // 1
-          "Marty and classmates",
+          "Marty, the group, and classmates",
           "The group and Marty",
-          "The group, Marty, and classmates",
+          "Marty and classmates",
           "The group and classmates"
         ]],
         [[ // 1
