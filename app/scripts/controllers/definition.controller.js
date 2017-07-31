@@ -15,17 +15,17 @@ angular.module('Netsafe').controller('definitionController', function($scope) {
   $scope.$on('youtube.player.playing', function($event, player){
     console.log(pauseCount);
 
-    if (pauseCount == 0){ // pause at first pause time
+    if (pauseCount === 0){ // pause at first pause time
       setTimeout($scope.pauseVideo = function(){
                   player.pauseVideo();
                 }, 28500);   // 0:28
       pauseCount++;
-    } else if (pauseCount == 1){ // second pause time
+    } else if (pauseCount === 1){ // second pause time
       setTimeout($scope.pauseVideo = function(){
                   player.pauseVideo();
                 }, 14500);   // 0:43
       pauseCount++;
-    } else if (pauseCount == 2){ // third pause time
+    } else if (pauseCount === 2){ // third pause time
       setTimeout($scope.pauseVideo = function(){
                   player.pauseVideo();
                 }, 18000);   // 1:01, 61

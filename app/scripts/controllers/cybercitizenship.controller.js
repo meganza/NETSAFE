@@ -13,12 +13,12 @@ angular.module('Netsafe').controller('cybercitizenshipController', function($sco
   $scope.$on('youtube.player.playing', function($event, player){
     console.log(pauseCount);
 
-    if (pauseCount == 0){ // pause at first pause time
+    if (pauseCount === 0){ // pause at first pause time
       setTimeout($scope.pauseVideo = function(){
                   player.pauseVideo();
                 }, 15000);   // 0:14
       pauseCount++;
-    } else if (pauseCount == 1){ // second pause time
+    } else if (pauseCount === 1){ // second pause time
       setTimeout($scope.pauseVideo = function(){
                   player.pauseVideo();
                 }, 8800);   // 0:23

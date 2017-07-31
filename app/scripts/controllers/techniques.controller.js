@@ -18,81 +18,81 @@ angular.module('Netsafe').controller('techniquesController', function($scope) {
   $scope.$on('youtube.player.playing', function($event, player){
     console.log(player.getVideoData().video_id); // get the video id of the playing video
 
-    if(player.getVideoData().video_id == "3rLkVSBciVo"){          // identity theft video
+    if(player.getVideoData().video_id === "3rLkVSBciVo"){          // identity theft video
       console.log("hello, identity theft vid is playing");
-      if (pauseCount == 0){ // pause at first pause time
+      if (pauseCount === 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 10000);   // 0:09
         pauseCount++;
-      } else if (pauseCount == 1){ // second pause time
+      } else if (pauseCount === 1){ // second pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 19000);   // 0:28
         pauseCount++;
-      } else if (pauseCount == 2){ // third pause time
+      } else if (pauseCount === 2){ // third pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 16000);   // 0:44
         pauseCount++;
       }
-    } else if (player.getVideoData().video_id == "WgEfmudj-50"){  // spam video
+    } else if (player.getVideoData().video_id === "WgEfmudj-50"){  // spam video
       console.log("hello, spam vid is playing");
-      if (pauseCount == 0){ // pause at first pause time
+      if (pauseCount === 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 10500);   // 0:10
         pauseCount++;
       }
-    } else if (player.getVideoData().video_id == "Dqcv_fHhuCY"){  // phishing video
+    } else if (player.getVideoData().video_id === "Dqcv_fHhuCY"){  // phishing video
       console.log("hello, phishing vid is playing");
-      if (pauseCount == 0){ // pause at first pause time
+      if (pauseCount === 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 19000);   // 0:18
         pauseCount++;
-      } else if (pauseCount == 1){ // second pause time
+      } else if (pauseCount === 1){ // second pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 21800);   // 0:40
         pauseCount++;
-      } else if (pauseCount == 2){ // third pause time
+      } else if (pauseCount === 2){ // third pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 9500);   // 0:50
         pauseCount++;
       }
-    } else if (player.getVideoData().video_id == "qnl7lD9QYik"){  // pharming video
+    } else if (player.getVideoData().video_id === "qnl7lD9QYik"){  // pharming video
       console.log("hello, pharming vid is playing");
-      if (pauseCount == 0){ // pause at first pause time
+      if (pauseCount === 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 10000);   // 0:09
         pauseCount++;
-      } else if (pauseCount == 1){ // second pause time
+      } else if (pauseCount === 1){ // second pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 10000);   // 0:19
         pauseCount++;
-      } else if (pauseCount == 2){ // third pause time
+      } else if (pauseCount === 2){ // third pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 13000);   // 0:32
         pauseCount++;
-      } else if (pauseCount == 3){ // fourth pause time
+      } else if (pauseCount === 3){ // fourth pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 15500);   // 0:48
         pauseCount++;
       }
-    } else if (player.getVideoData().video_id == "lRIknf-sQn0"){  // rogue security software video playing
+    } else if (player.getVideoData().video_id === "lRIknf-sQn0"){  // rogue security software video playing
       console.log("hello, rogue vid is playing");
-      if (pauseCount == 0){ // pause at first pause time
+      if (pauseCount === 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 9000);   // 0:08
         pauseCount++;
-      } else if (pauseCount == 1){ // second pause time
+      } else if (pauseCount === 1){ // second pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 11800);   // 0:20
@@ -100,17 +100,17 @@ angular.module('Netsafe').controller('techniquesController', function($scope) {
       }
     } else {                                                      // prevention video playing
       console.log("hello, prevention vid is playing");
-      if (pauseCount == 0){ // pause at first pause time
+      if (pauseCount === 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 42000);   // 0:41
         pauseCount++;
-      } else if (pauseCount == 1){ // second pause time
+      } else if (pauseCount === 1){ // second pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 55000);   // 1:36, 96
         pauseCount++;
-      } else if (pauseCount == 2){ // third pause time
+      } else if (pauseCount === 2){ // third pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 28000);   // 2:04, 124

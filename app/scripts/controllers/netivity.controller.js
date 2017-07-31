@@ -4,14 +4,13 @@ angular.module('Netsafe').controller('netivityController',
   $scope.contentScenarios = $scope.scenarios.content;
   $scope.solutionModal = false;
 
-  $scope.elementsTable = false; // CWD: change to true
+  $scope.elementsTable = true;
   $scope.causeEffectTable = false;
-  $scope.comparisonTable = true; // CWD: change to false
-  // CWD: change to true
-  $scope.isCEDisabled = false;
-  $scope.isCDisabled = false;
+  $scope.comparisonTable = false;
+  $scope.isCEDisabled = true;
+  $scope.isCDisabled = true;
 
-  $scope.highlightToggle = {};
+  $scope.highlightToggle = [];
   $scope.noAns = true;
 
   $(".activity-alert").hide();
@@ -129,26 +128,26 @@ angular.module('Netsafe').controller('netivityController',
     $scope.currentScenarioRuleHighlights = $scope.contentScenarios[pIndex].correctRules[index].highlights;
     $scope.currentScenarioLaborsLength = $scope.contentScenarios[pIndex].labors.length;
 
-    var str = JSON.stringify($scope.highlightToggle);
-    console.log("highlightToggle: " + str);
+    console.log($scope.highlightToggle);
 
-    if(!$scope.highlightToggle[index]){
+    $scope.highlightToggle[index] = !$scope.highlightToggle[index];
 
-      //$('#highlight-'+index).addClass("active");
+    var someHighlighted = $scope.highlightToggle.some(function(highlight) {
+      return highlight;
+    });
 
+    if(someHighlighted){
       for(var i = 0; i < $scope.currentScenarioLaborsLength; i++){
         for(var j = 0; j< $scope.currentScenarioRuleHighlights.length; j++){
           if(i === $scope.currentScenarioRuleHighlights[j] && !$scope.laborClicked[i])
             $(".action-" + i).addClass("highlighted");
         }
       }
-      $scope.highlightToggle[index] = true;
-      console.log("highlightToggle: " + str);
     } else {
-      //$('.highlight').removeClass("active");
-      $scope.highlightToggle[index] = false;
       $(".action").removeClass("highlighted");
     }
+
+    console.log($scope.highlightToggle);
   };
 
   $scope.laborClicked = [];
@@ -192,12 +191,11 @@ angular.module('Netsafe').controller('netivityController',
     $('.checkWrong').hide();
     $('.checkNoAns').hide();
     $scope.elementsTable = true;
-    // CWD: CHANGE WHEN DONE
-    // $scope.isCEDisabled = true;
-    // $scope.isCDisabled = true;
+    $scope.isCEDisabled = true;
+    $scope.isCDisabled = true;
     $(".action").removeClass("highlighted");
 
-    $scope.highlightToggle = {};
+    $scope.highlightToggle = [];
 
     var str = JSON.stringify($scope.highlightToggle);
     console.log("highlightToggle: " + str);

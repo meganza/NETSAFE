@@ -14,58 +14,58 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
 
   $scope.$on('youtube.player.playing', function($event, player){
     console.log(player.getVideoData().video_id); // get the video id of the playing video
-    if(player.getVideoData().video_id == "Yf1UC1vVhwc"){        // digital tattoo
+    if(player.getVideoData().video_id === "Yf1UC1vVhwc"){        // digital tattoo
       console.log("hello, internet privacy vid is playing");
-      if (pauseCount == 0){ // pause at first pause time
+      if (pauseCount === 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 21650);   // pauses at 0:23
         pauseCount++;
-      } else if (pauseCount == 1){ // second pause time
+      } else if (pauseCount === 1){ // second pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 24000);   // 0:46
         pauseCount++;
-      } else if (pauseCount == 2){ // third pause count
+      } else if (pauseCount === 2){ // third pause count
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 21500);   // 1:08
         pauseCount++;
-      } else if (pauseCount == 3){ // fourth pause count
+      } else if (pauseCount === 3){ // fourth pause count
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 10000);   // 1:19
         pauseCount++;
-      } else if (pauseCount == 4){ // fifth pause count
+      } else if (pauseCount === 4){ // fifth pause count
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 12500);   // 1:34
         pauseCount++;
       }
 
-    } else if (player.getVideoData().video_id == "2Ctc_3Nv2ME"){   // internet privacy
+    } else if (player.getVideoData().video_id === "2Ctc_3Nv2ME"){   // internet privacy
       console.log("hello, internet privacy vid is playing");
-      if (pauseCount == 0){ // pause at first pause time
+      if (pauseCount === 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 3000);   // pauses at 0:02
         pauseCount++;
-      } else if (pauseCount == 1){ // second pause time
+      } else if (pauseCount === 1){ // second pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 12000);   // 0:14
         pauseCount++;
-      } else if (pauseCount == 2){ // third pause count
+      } else if (pauseCount === 2){ // third pause count
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 24000);   // 0:38
         pauseCount++;
-      } else if (pauseCount == 3){ // fourth pause count
+      } else if (pauseCount === 3){ // fourth pause count
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 18000);   // 0:56
         pauseCount++;
-      } else if (pauseCount == 4){ // fifth pause count
+      } else if (pauseCount === 4){ // fifth pause count
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 13000);   // 1:10
@@ -73,12 +73,12 @@ angular.module('Netsafe').controller('fundamentalController', function($scope) {
       }
     } else {                                                        // respecting others
       console.log("hello, respecting others  vid is playing");
-      if (pauseCount == 0){ // pause at first pause time
+      if (pauseCount === 0){ // pause at first pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 16500);   // pauses at 0:16
         pauseCount++;
-      } else if (pauseCount == 1){ // second pause time
+      } else if (pauseCount === 1){ // second pause time
         setTimeout($scope.pauseVideo = function(){
                     player.pauseVideo();
                   }, 14500);   // 0:31
