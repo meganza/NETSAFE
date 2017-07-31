@@ -5,18 +5,30 @@ angular.module('Netsafe').controller('netivityController',
   $scope.solutionModal = false;
 
   $scope.elementsTable = true;
-  $scope.isCEDisabled = true;
-  $scope.isCDisabled = true;
+  $scope.causeEffectTable = false;
+  $scope.comparisonTable = true; // change to false
+  // change to true
+  $scope.isCEDisabled = false;
+  $scope.isCDisabled = false;
+
+  $scope.noAns = true;
 
   $(".activity-alert").hide();
   $(".answer-modal").hide();
 
   $scope.openTable = function (num){
-    if(num === 1){
+    console.log("elements: " + $scope.elementsTable);
+    console.log("cause Effect: " + $scope.causeEffectTable);
+    console.log("comparison: " + $scope.comparisonTable);
+
+    if(num === 1 && !$scope.causeEffectTable && !$scope.comparisonTable){
+      $scope.noAns = true;
       $scope.elementsTable = !$scope.elementsTable;
-    } else if (num === 2){
+    } else if (num === 2 && !$scope.elementsTable && !$scope.comparisonTable){
+      $scope.noAns = true;
       $scope.causeEffectTable = !$scope.causeEffectTable;
-    } else {
+    } else if (num === 3 && !$scope.elementsTable && !$scope.causeEffectTable) {
+      $scope.noAns = true;
       $scope.comparisonTable = !$scope.comparisonTable;
     }
   };
@@ -29,19 +41,20 @@ angular.module('Netsafe').controller('netivityController',
   }, 1);
 
   $scope.addAnswer = function (selectIndex){
+    $scope.noAns = false;
     console.log(selectIndex);
     console.log($scope.elementsAnswers);
   };
 
   $scope.checkElements = function(pIndex){
-    console.log("hello");
     $scope.correctAnswers = $scope.contentScenarios[pIndex].answersOrder;
     console.log($scope.correctAnswers.length);
+    console.log($scope.elementsAnswers);
 
     $scope.wrongAnswers = [];
 
     for(var i = 0; i < $scope.correctAnswers.length; i++){
-      for(var j = 0; j < $scope.correctAnswers[i].length; j++){
+      for(var j = 0; j <= $scope.correctAnswers[i].length; j++){
         if($scope.correctAnswers[i][j] !== $scope.elementsAnswers[i][j]){
           $scope.wrongAnswers.push(i + 1);
         }
@@ -49,11 +62,15 @@ angular.module('Netsafe').controller('netivityController',
     }
 
     $scope.correct = !$scope.wrongAnswers.length;
-    if($scope.correct){
-      $('.checkCorrect').show();
-      $scope.isCEDisabled = false;
+    if(!$scope.noAns){
+      if($scope.correct){
+        $('.checkCorrect').show();
+        $scope.isCEDisabled = false;
+      } else {
+        $('.checkWrong').show();
+      }
     } else {
-      $('.checkWrong').show();
+      $('.checkNoAns').show();
     }
 
     console.log($scope.wrongAnswers);
@@ -63,10 +80,11 @@ angular.module('Netsafe').controller('netivityController',
   $scope.correctCauseEffectAnswers = [];
 
   $scope.addCEAnswer = function (pIndex){
-    console.log(pIndex);
+    $scope.noAns = false;
+    // console.log(pIndex);
     $scope.correctCauseEffectAnswers = $scope.contentScenarios[pIndex].laborsOrder;
-    console.log($scope.correctCauseEffectAnswers);
-    console.log($scope.causeEffectAnswers);
+    // console.log($scope.correctCauseEffectAnswers);
+    // console.log($scope.causeEffectAnswers);
   };
 
   $scope.checkCauseEffectAnswer = function(pIndex){
@@ -79,22 +97,29 @@ angular.module('Netsafe').controller('netivityController',
     }
 
     $scope.correct = !$scope.wrongAnswers.length;
-    if($scope.correct){
-      $('.checkCorrect').show();
-      $scope.isCDisabled = false;
+    if(!$scope.noAns){
+      if($scope.correct){
+        $('.checkCorrect').show();
+        $scope.isCDisabled = false;
+      } else {
+        $('.checkWrong').show();
+      }
     } else {
-      $('.checkWrong').show();
+      $('.checkNoAns').show();
     }
   };
 
-  $scope.highlightTogg = [];
+  $scope.highlightToggle = [];
 
   $scope.highlight = function(index, pIndex){
     $scope.currentScenarioRuleHighlights = $scope.contentScenarios[pIndex].correctRules[index].highlights;
     $scope.currentScenarioLaborsLength = $scope.contentScenarios[pIndex].labors.length;
 
-    if(!$scope.highlightTogg[index]){
-      $scope.highlightTogg[index] = true;
+    console.log("index: " + index);
+
+    if(!$scope.highlightToggle[index]){
+      console.log("this one says t/f: " + $scope.highlightToggle[index]);
+      $scope.highlightToggle[index] = true;
       $('#highlight-'+index).addClass("active");
 
       for(var i = 0; i < $scope.currentScenarioLaborsLength; i++){
@@ -105,7 +130,7 @@ angular.module('Netsafe').controller('netivityController',
       }
     } else {
       $('.highlight').removeClass("active");
-      $scope.highlightTogg[index] = false;
+      $scope.highlightToggle[index] = false;
       $(".action").removeClass("highlighted");
     }
   };
@@ -143,9 +168,17 @@ angular.module('Netsafe').controller('netivityController',
     $scope.causeEffectAnswers = [];
     $scope.wrongAnswers = [];
     $scope.laborClicked = [];
-    $scope.openedAll = false;
 
-    $(".answer-modal").hide();
+    $scope.causeEffectTable = false;
+    $scope.comparisonTable = false;
+
+    $('.checkCorrect').hide();
+    $('.checkWrong').hide();
+    $('.checkNoAns').hide();
+    $scope.elementsTable = true;
+    //$scope.isCEDisabled = true;
+    // $scope.isCDisabled = true;
+    $(".action").removeClass("highlighted");
   };
 
   $scope.viewSolution = function (){
@@ -209,7 +242,7 @@ angular.module('Netsafe').controller('netivityController',
   ];
 
   $scope.guidelines1 = [
-    {name: "Sender and/or Receiver"},
+    {name: "Sender and Receiver"},
     {name: "When the sender makes a statement or posted something on the online platform"},
     {name: "Sender and/or Receiver"},
     {name: "Online platform"},
@@ -227,7 +260,7 @@ angular.module('Netsafe').controller('netivityController',
   $scope.guidelines3 = [
     {name: "Netizen/s"},
     {name: "When you start participating in a new community online"},
-    {name: "New netizen and/or netizens native to the domain"},
+    {name: "Netizen/s"},
     {name: "Online platform"},
     {name: "Know where you are in cyberspace"}
   ];
@@ -243,13 +276,13 @@ angular.module('Netsafe').controller('netivityController',
   $scope.guidelines5 = [
     {name: "Netizen/s"},
     {name: "When you are posting your own content on the online platform"},
-    {name: "Other netizens following the netizen on the online platform"},
+    {name: "Netizen/s"},
     {name: "Online platform"},
     {name: "Make yourself look good online"}
   ];
 
   $scope.guidelines6 = [
-    {name: "Sender and receiver"},
+    {name: "Sender and/or receiver"},
     {name: "When you’re asking for or  exchanging expert information"},
     {name: "Sender and receiver"},
     {name: "Online platform"},
@@ -259,7 +292,7 @@ angular.module('Netsafe').controller('netivityController',
   $scope.guidelines7 = [
     {name: "Sender and/or receiver"},
     {name: "Posting or making a statement online"},
-    {name: "Sender and/or receiver"},
+    {name: "Sender and receiver"},
     {name: "Online platform"},
     {name: "Help keep flame wars under control"}
   ];
@@ -268,14 +301,14 @@ angular.module('Netsafe').controller('netivityController',
     {name: "Owner and infiltrator"},
     {name: "When you access other people's private information without their full consent "},
     {name: "Owner and infiltrator"},
-    {name: "Access to online account of other netizen"},
+    {name: "Online platform"},
     {name: "Respect other people’s privacy"}
   ];
 
   $scope.guidelines9 = [
-    {name: "Subordinate and/or Admin"},
+    {name: "Subordinate and Admin"},
     {name: "When there is a need to access admin features"},
-    {name: "Subordinate/s and/or Boss"},
+    {name: "Subordinate and admin"},
     {name: "Company network, company online platform"},
     {name: "Don’t abuse your power"}
   ];
@@ -283,7 +316,7 @@ angular.module('Netsafe').controller('netivityController',
   $scope.guidelines10 = [
     {name: "Sender and/or receiver"},
     {name: "Posting or making a statement online"},
-    {name: "Receiver"},
+    {name: "Sender and receiver"},
     {name: "Online platform"},
     {name: "Be forgiving of other people’s mistakes"}
   ];

@@ -38,7 +38,7 @@
   <div ng-show="elementsTable">
     <div class="dropdown" title="Check out the help button to review the 10 core rules">
       <select ng-model="guideline">
-        <option disabled selected value>Core Rules of Netiquette</option>
+        <option disabled selected value>-- Core Rules of Netiquette --</option>
         <option ng-repeat="element in elements" value="{{element.value}}">
           {{element.name}}
         </option>
@@ -117,7 +117,7 @@
       <tr ng-repeat-start="labor in scenario.labors">
         <td class="center-me">
           <select class="elements-dropdown" ng-model="causeEffectAnswers[$index]" ng-change="addCEAnswer($parent.$index)">
-            <option>Select Action</option>
+            <option disabled selected value>-- Select Action --</option>
             <option ng-value="$index" ng-repeat="labor in scenario.labors">
               {{labor}}
             </option>
@@ -153,7 +153,7 @@
 
            <td>
             {{rules.description}}
-            <a id="highlight-{{$index}}" class="negate highlight center-me" ng-click="highlight($index, $parent.currentScenario)" style="float: right;" title="Highlight the corresponding actions that violate rule">
+            <a id="highlight-{{$index}}" ng-model="highlightToggle[rules.title]" class="negate highlight center-me" ng-click="highlight($index, $parent.currentScenario, rules.title)" style="float: right;" title="Highlight the corresponding actions that violate rule">
               <i class="fa fa-exclamation-triangle" style="font-size: 12px"></i> <p style="font-weight: lighter; font-size: 10px; display: inline; text-transform: uppercase;"> highlight violating actions</p>
             </a>
           </td>
@@ -165,7 +165,7 @@
     <div class="col-sm-7">
       <table class="core-table" style="width: 95%">
         <tr>
-          <th>Division of Labor</th>
+          <th>Cause and Effect Table</th>
         </tr>
 
         <tr ng-repeat-start="labor in scenario.correctLabors" class="action action-{{$index}}">
@@ -189,7 +189,7 @@
 
       <a ng-click="viewSolution()">
         <div class="check-button">
-          Check Answer
+          Show Solution
         </div>
       </a>
       <br><br><br>
@@ -391,7 +391,7 @@
     <div class="col-sm-7">
       <table class="core-table" style="width: 95%">
         <tr>
-          <th>Division of Labor</th>
+          <th>Cause and Effect Table</th>
         </tr>
 
         <tr class="action">
@@ -951,6 +951,13 @@
 
     </div>
   </div>
+</div>
+
+<div class="checkNoAns alert alert-warning activity-alert" role="alert">
+  <a class="close" onclick="$('.checkNoAns').hide()">
+    <i class="fa fa-times"></i>
+  </a>
+  <strong> Oh no! </strong> Please put some answers!
 </div>
 
 <div class="checkCorrect alert alert-success activity-alert" role="alert">

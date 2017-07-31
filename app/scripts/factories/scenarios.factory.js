@@ -54,7 +54,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
               new: "Whenever you tweet, you do not include swear words."
             }, {
               old: "Most of your followers got put off because of your behavior online and even your cousins, who follows you, saw your tweets full of curse words. ",
-              new: "Whenever you tweet, you do not include swear words."
+              new: "Most of your followers did not get put off because of your behavior online and even your cousins, who follows you, did not see your tweets full of curse words."
             }, {
               old: "Your behavior online was found out by your parents through your cousins.",
               new: "Your behavior online was not found out by your parents through your cousins. "
@@ -66,7 +66,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       correctRules: [
         {
           title: "Make yourself look good online",
-          description: "Be presentable on the internet by only posting accurate and logical things.",
+          description: "Don’t use offensive language",
           highlights: [0]
         }
       ],
@@ -89,9 +89,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       answers: [
         [[ // 4
           "Adam, counsellor",
-          "Anonymous infiltrator, school",
+          "Anonymous person, school",
           "Adam",
-          "Adam, anonymous infiltrator"
+          "Adam, anonymous person, and other new student"
         ]],
         [[ // 3
           "Adam receives his new school e-mail and password",
@@ -100,9 +100,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Adam arrives at his new school"
         ]],
         [[ // 3
-          "Adam and the anonymous infiltrator",
+          "Adam and the anonymous person",
           "Adam and his new classmate",
-          "Adam",
+          "Adam, anonymous person, and other new student",
           "Adam and his counsellor"
         ]],
         [[ // 1
@@ -112,10 +112,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Password"
         ]],
         [[ // 4
-            "Remember the Human",
-            "Adhere to the same standards of behavior online that you follow in real life",
+            "Respect other people's privacy",
+            "Be forgiving of other people's mistakes",
             "Don’t abuse your power",
-            "Respect other people’s privacy"
+            "Respect other people's time and bandwidth"
         ]]
       ],
       answersOrder: [[3], [2], [2], [0], [3]],
@@ -143,8 +143,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       correctRules: [
         {
-          title: "Respect other people’s privacy",
-          description: "Never ask someone's information that you are not comfortable giving out yourself and do not get someone's private information without permission",
+          title: "Respect other people's time and bandwidth",
+          description: "Expect that others will instantaneously respond to your questions and concerns and posting/sending similar content multiple times",
           highlights: [3]
         }
       ],
@@ -191,7 +191,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
             "Remember the Human",
             "Adhere to the same standards of behavior online that you follow in real life",
             "Don’t abuse your power",
-            "Respect other people’s privacy"
+            "Respecting other people's time and bandwidth"
         ]]
       ],
       answersOrder: [[0], [3], [1], [3], [3]],
@@ -232,7 +232,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       correctRules: [
         {
           title: "Respect other people’s time and bandwidth",
-          description: "Be considerate of other people’s time on the internet. Send only important things and to only those who need it.",
+          description: "Expect that others will instantaneously respond to your questions and concerns and posting / sending similar content multiple times",
           highlights: [3]
         }
       ],
@@ -251,10 +251,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "She got mad at Greg for invading her privacy and sharing her photos to their " +
                 "friends without her permission.",
       answers: [
-        [[ // 4
+        [[ // 3
           "Classmates",
           "Karen, Greg, and Friends",
-          "Karen, Greg",
+          "Karen and Greg",
           "Friends"
         ]],
         [[ // 3
@@ -282,7 +282,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
             "Help keep flame wars under control"
         ]]
       ],
-      answersOrder: [[3], [2], [2], [1], [0]],
+      answersOrder: [[2], [2], [2], [1], [0]],
       labors: [
             "When Karen got back in class, she found out that the photos of her already spread out to her friends.",
             "While in class, Greg browsed through Karen’s iphone gallery without her consent, while Karen was in the restroom, and found photos of Karen wearing a facial mask.",
@@ -361,14 +361,14 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       answersOrder: [[0], [3], [2], [1], [0]],
       labors: [
             "He was amused by it and forwarded it on the CONNEX.",
-            "While in class, Greg browsed through Karen’s iphone gallery without her consent, while Karen was in the restroom, and found photos of Karen wearing a facial mask.",
+            "Jamie surfed the net for a while.",
             "The students or other people in CONNEX  brought this to the attention of the teacher and the Dean of Students.",
             "He came across a site that he thought was funny."
       ],
       laborsOrder: [1, 3, 0, 2],
       correctLabors: [
             {
-              old: "Jamie surfed the Net for a while.",
+              old: "Jamie surfed the net for a while.",
               new: "-"
             }, {
               old: "He came across a site that he thought was funny.",
@@ -396,11 +396,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     {
       scenario: "Abner is part of the debate team in his school. He is a good speaker or debater because " +
                 "he always has strong opinions on different important matters. One day, one of his classmates, " +
-                "Peter, shared a news article criticizing the United Nations Organization lack of action towards " +
-                "the Syrian bombings. However, Abner disagreed with the article and Peter’s opinion about it. So, he " +
-                "commented on Peter’s post and shared his insights. Peter responded to oppose Abner’s comment in a " +
-                "calm manner. Although, Abner found Peter’s reply very unintelligent so, he responded in a haughty " +
-                "manner to counter Peter’s reply and strongly insisted that Peter’s opinions were wrong and lack evidence.",
+                "Peter, shared a news article on Facebook, where a lot people can see it, criticizing the United " +
+                "Nations Organization lack of action towards the Syrian bombings. However, Abner disagreed with the " +
+                "article and Peter’s opinion about it. So, he commented on Peter’s post and shared his insights. " +
+                "Peter responded to oppose Abner’s comment in a calm manner. Although, Abner found Peter’s reply " +
+                "very unintelligent so, he responded in a haughty manner to counter Peter’s reply and strongly " +
+                "insisted that Peter’s opinions were wrong and lack evidence.",
       answers: [
         [[ // 4
           "Peter",
@@ -415,7 +416,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Abner disagreed with the article and peter’s opinion about it so he commented on Peter’s post and shared his insights"
         ]],
         [[ // 1
-          "Abner and Peter",
+          "Abner, Peter, and people in facebook",
           "Abner",
           "Peter",
           "Syrians"
@@ -503,7 +504,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "When the secretary was not able to confirm to through e-mail"
         ]],
         [[ // 1
-          "Secretary and superviser",
+          "Secretary and supervisor",
           "The other applicant",
           "Supervisor",
           "Secretary"
@@ -628,7 +629,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
             "One of the classmates informed Marty about it.",
             "Marty acted out due to anger and hurt by revealing bad things about the group.",
             "Their class started to join in which made the situation get a lot bigger and a lot worse, some on Marty’s side and some one the group’s side.",
-            "A group of students have created a defamatory website about Marty.",
+            "A group of students have created a defamatory website about their classmate Marty.",
             "The group responded by continuing to state false information about Marty.",
             "The class started to learn about making websites and the teacher asked them to practice making websites"
       ],
@@ -638,7 +639,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
               old: "The class started to learn about making websites and the teacher asked them to practice making websites",
               new: "-"
             }, {
-              old: "A group of students have created a defamatory website about Marty.",
+              old: "A group of students have created a defamatory website about their classmate Marty.",
               new: "A group of students did not create a defamatory website about Marty."
             }, {
               old: "The group sent it to the whole class.",
@@ -651,10 +652,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
               new: "Marty did not act out due to anger and hurt by revealing bad things about the group."
             }, {
               old: "The group responded by continuing to state false information about Marty.",
-              new: "The group responded by continuing to state false information about Marty."
+              new: "The group did not respond by continuing to state false information about Marty."
             }, {
               old: "Their class started to join in which made the situation get a lot bigger and a lot worse, some on Marty’s side and some one the group’s side.",
-              new: "Their class did not start to join in which did not make the situation a lot bigger and a lot worse."
+              new: "Their class did not start to join and it did not make the situation a lot bigger and a lot worse."
             }
       ],
       correctRules: [
@@ -695,7 +696,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "retaliation online, Penelope received three weeks of detention.",
       answers: [
         [[ // 2
-          "Penelope, favulty, and school admin",
+          "Penelope, faculty, and school admin",
           "Penelope and school admin",
           "Penelope",
           "Penelope and faculty"
@@ -704,7 +705,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Penelope sending the school mailing list about the school admin being insensitive about the students’ and faculty’s grief",
           "The school admin sending Penelope an email",
           "Penelope sending the email about her feelings on the situation that would have been more appropriate on a blog",
-          "The school admin sending to students and faculty information"
+          "The school admin sending information to students and faculty"
         ]],
         [[ // 3
           "The school admin",
@@ -815,7 +816,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Your friend",
           "Jack",
           "Your mom",
-          "You"
+          "you, your friend, your mom, and Jack"
         ]],
         [[ // 4
           "Text",
@@ -864,7 +865,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       correctRules: [
         {
           title: "Respect other people's privacy",
-          description: "Never ask someone's information that you are not comfortable giving out yourself and do not get someone's private information without permission",
+          description: "Don’t read other people’s personal messages or emails.",
           highlights: [4]
         }
       ],
@@ -873,7 +874,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "your friend’s message to you. Do not read other people’s personal messages or emails."
     },
     {
-      scenario: "George and Elijah are working together on a project. They are workmates in the " +
+      scenario: "George and Elijah are working together on a project and are communicating through email. " +
+                "George has access to Elijah’s account for work purposes. They are workmates in the " +
                 "IT department of their company. George is a system admin and Elijah works as a " +
                 "tech support. Recently, George and Elijah had a misunderstanding about how to do " +
                 "certain things with their jobs that escalated to a bigger fight. George took " +
@@ -896,7 +898,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         [[ // 3
           "Co-workers",
           "Elijah and co-workers",
-          "George and Elijah",
+          "George, Elijah, and co-workers",
           "George and co-workers"
         ]],
         [[ // 4

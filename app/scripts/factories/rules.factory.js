@@ -196,7 +196,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
                 "bandwidth when loading the content. ",
       highlights: [ 0 ],
       negateStop: -1
-    },{
+    }, {
       rule: "№5: Make Yourself Look Good Online",
       description: "Be presentable on the internet by only posting accurate and logical things.",
       dos: [
