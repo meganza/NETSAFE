@@ -187,7 +187,9 @@ angular.module('Netsafe').controller('netivityController',
     $scope.correctCauseEffectAnswers = [];
 
     $scope.wrongAnswers = [];
+
     $scope.laborClicked = [];
+    $scope.laborLength = [];
 
     $scope.causeEffectTable = false;
     $scope.comparisonTable = false;
