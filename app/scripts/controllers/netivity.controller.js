@@ -6,10 +6,10 @@ angular.module('Netsafe').controller('netivityController',
 
   $scope.elementsTable = true;
   $scope.causeEffectTable = false;
-  $scope.comparisonTable = true; // change to false
+  $scope.comparisonTable = false; // change to false
   // change to true
-  $scope.isCEDisabled = false;
-  $scope.isCDisabled = false;
+  $scope.isCEDisabled = true;
+  $scope.isCDisabled = true;
 
   $scope.noAns = true;
 
@@ -176,8 +176,8 @@ angular.module('Netsafe').controller('netivityController',
     $('.checkWrong').hide();
     $('.checkNoAns').hide();
     $scope.elementsTable = true;
-    //$scope.isCEDisabled = true;
-    // $scope.isCDisabled = true;
+    $scope.isCEDisabled = true;
+    $scope.isCDisabled = true;
     $(".action").removeClass("highlighted");
   };
 
