@@ -25,11 +25,15 @@
      ng-repeat="rule in contentRules track by $index"
      ng-show="!tutorialContent && $parent.currentRule === $index">
 
-  <div class="rule-title" title="tip">
+  <div class="rule-title">
     {{rule.rule}}
+    <button class="center-me" ng-click="ruleDescription = !ruleDescription" style="float: right; padding: 0 2 0 2px; width: 20px; margin-top: 10px;">
+      <i ng-show="!ruleDescription" class="fa fa-eye" style="font-size: 12px"></i>
+      <i ng-show="ruleDescription" class="fa fa-eye-slash" style="font-size: 12px"></i>
+    </button>
   </div>
 
-  <div class="rule-description">
+  <div class="rule-description" ng-show="ruleDescription">
     {{rule.description}}
   </div>
 

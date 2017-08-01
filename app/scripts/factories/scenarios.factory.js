@@ -41,6 +41,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]]
       ],
       answersOrder: [[2], [0], [3], [3], [1]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "Whenever you tweet, you include swear words.",
             "Your parents got disappointed and grounded you for a week and no longer allowed you to use any kind of social media.",
@@ -120,6 +126,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]]
       ],
       answersOrder: [[3], [2], [2], [0], [3]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "When he gets back, his notebook is open and another new student says that someone looked through his notebook without his permission.",
             "He is suddenly called to the guidance counsellor’s office so he rushes there.",
@@ -197,6 +209,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]]
       ],
       answersOrder: [[0], [3], [1], [3], [3]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "Bob’s co-worker got annoyed of Bob’s action because Bob could not wait for his reply while he was in a meeting. ",
             "Bob’s co-worker told him that he will be having a meeting later on that day.",
@@ -286,6 +304,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]]
       ],
       answersOrder: [[2], [2], [2], [1], [0]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "When Karen got back in class, she found out that the photos of her already spread out to her friends.",
             "While in class, Greg browsed through Karen’s iphone gallery without her consent, while Karen was in the restroom, and found photos of Karen wearing a facial mask.",
@@ -363,6 +387,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]]
       ],
       answersOrder: [[0], [3], [2], [1], [0]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "He was amused by it and forwarded it on the CONNEX.",
             "Jamie surfed the net for a while.",
@@ -440,6 +470,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]]
       ],
       answersOrder: [[3], [2], [0], [1], [0]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "Abner disagreed with the article and Peter’s opinion about it.",
             "Peter responded to oppose Abner’s comment in a calm manner. ",
@@ -529,6 +565,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]]
       ],
       answersOrder: [[1], [1], [0], [1], [0]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "The secretary’s supervisor has a lot of work to do for their upcoming project. ",
             "Accidentally, the supervisor clicked on an e-mail from a university. ",
@@ -631,6 +673,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]
       ],
       answersOrder: [[1], [3], [0], [0], [2, 0, 3]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "The group sent it to the whole class.",
             "One of the classmates informed Marty about it.",
@@ -751,6 +799,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]
       ],
       answersOrder: [[1], [3], [2], [3], [3, 0, 1]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
            "The school admin sends Penelope an email telling her that she should refrain from sending unrelated emails and should use it for school purposes only",
            "Penelope took it the wrong way and started spreading rumors about the school administration being insensitive about students and faculty’s grief using the school mailing list",
@@ -845,6 +899,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]]
       ],
       answersOrder: [[2], [0], [3], [3], [1]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "You tell your friend you are excited to go on a date with Jack who is your schoolmate",
             "Your friend messages you back wondering about what you’re going to wear to your date",
@@ -937,6 +997,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]
       ],
       answersOrder: [[1], [3], [2], [3], [1, 0]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
           "George accessed Elijah’s company email account and used it to send spam messages to their co-workmates to get back at Elijah",
           "George and Elijah has a misunderstanding about how to get their job done",
@@ -1014,6 +1080,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         ]]
       ],
       answersOrder: [[2], [0], [3], [3], [1]],
+      additionalDetails: [
+        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: ""},
+        {name: "sisdsf"},
+        {name: ""}
+      ],
       labors: [
             "Jake uploaded a video about the 'Ice Bucket Challenge'",
             "Jake took down the video and never talked about the “Ice Bucket Challenge” again",

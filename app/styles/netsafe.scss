@@ -295,9 +295,9 @@ button {
 }
 
 .core-scenario {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 23px;
   padding: 20 0px;
   color: #3b6669;
   /*text-align: left;*/
@@ -433,8 +433,6 @@ label {
   border: 1px solid #efd197;
   letter-spacing: .5px;
   text-align: center;
-  width: 50%;
-  margin: 0 auto;
   margin-top: 20px;
 }
 
@@ -536,4 +534,12 @@ option, select{
 
 .action.highlighted {
   background: #ffe1a8;
+}
+
+.action.negated {
+  background: #c1ebcd;
+}
+
+.ans.wrong {
+  background: #f2dede;
 }

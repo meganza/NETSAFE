@@ -4,7 +4,8 @@ angular.module('Netsafe').controller('netivityController',
   $scope.contentScenarios = $scope.scenarios.content;
   $scope.solutionModal = false;
 
-  $scope.elementsTable = true;
+  $scope.scenarioContent = true;
+  $scope.elementsTable = false;
   $scope.causeEffectTable = false;
   $scope.comparisonTable = false;
   $scope.isCEDisabled = true;
@@ -52,28 +53,40 @@ angular.module('Netsafe').controller('netivityController',
     console.log($scope.elementsAnswers);
 
     $scope.wrongAnswers = [];
+    $(".ans").removeClass("wrong");
 
     for(var i = 0; i < $scope.correctAnswers.length; i++){
       for(var j = 0; j <= $scope.correctAnswers[i].length; j++){
         if($scope.correctAnswers[i][j] !== $scope.elementsAnswers[i][j]){
-          $scope.wrongAnswers.push(i + 1);
+          $scope.wrongAnswers.push(i);
         }
       }
     }
 
     $scope.correct = !$scope.wrongAnswers.length;
-    if(!$scope.noAns){
-      if($scope.correct){
-        $('.checkCorrect').show();
-        $scope.isCEDisabled = false;
-      } else {
-        $('.checkWrong').show();
-      }
+    if($scope.correct){
+      $('.checkCorrect').show();
+      $scope.isCEDisabled = false;
+      $scope.scenarioDetails = true;
     } else {
-      $('.checkNoAns').show();
+      for(var m = 0; m < $scope.wrongAnswers.length; m++){
+        $(".ans-" + $scope.wrongAnswers[m]).addClass("wrong");
+      }
     }
+  };
 
-    console.log($scope.wrongAnswers);
+  $scope.answerAllElements = function(pIndex){
+    $(".ans").removeClass("wrong");
+    $scope.correctAnswers = $scope.contentScenarios[pIndex].answersOrder;
+
+    for(var i = 0; i < $scope.correctAnswers.length; i++){
+      console.log($scope.correctAnswers[i]);
+      for (var j = 0; j < $scope.correctAnswers[i].length; j++){
+        $scope.elementsAnswers[i][j] = $scope.correctAnswers[i][j];
+      }
+     }
+    $scope.isCEDisabled = false;
+    $scope.scenarioDetails = true;
   };
 
   $scope.causeEffectAnswers = [];
@@ -81,56 +94,81 @@ angular.module('Netsafe').controller('netivityController',
 
   $scope.addCEAnswer = function (pIndex){
     $scope.noAns = false;
-    // console.log(pIndex);
     $scope.correctCauseEffectAnswers = $scope.contentScenarios[pIndex].laborsOrder;
-    // console.log($scope.correctCauseEffectAnswers);
-    // console.log($scope.causeEffectAnswers);
+  };
+
+  $scope.answerAllCauseEffect = function(pIndex){
+    $scope.correctCauseEffectAnswers = $scope.contentScenarios[pIndex].laborsOrder;
+    for(var i = 0; i < $scope.correctCauseEffectAnswers.length; i++){
+      $scope.causeEffectAnswers[i] = $scope.correctCauseEffectAnswers[i];
+    }
+    $scope.isCDisabled = false;
+
+    $scope.totalRules = $scope.contentScenarios[pIndex].correctRules.length;
+      console.log($scope.totalRules);
+      for(var m = 0; m < $scope.totalRules; m++){
+        console.log("inside loop " +  m);
+        $scope.highlightToggle[m] = false;
+      }
   };
 
   $scope.checkCauseEffectAnswer = function(pIndex){
     $scope.wrongAnswers = [];
+    $(".ans").removeClass("wrong");
 
     for(var i = 0; i < $scope.correctCauseEffectAnswers.length; i++){
         if($scope.correctCauseEffectAnswers[i] !== $scope.causeEffectAnswers[i]){
-          $scope.wrongAnswers.push(i + 1);
+          $scope.wrongAnswers.push(i);
       }
     }
 
     $scope.correct = !$scope.wrongAnswers.length;
-    if(!$scope.noAns){
-      if($scope.correct){
-        $('.checkCorrect').show();
-        $scope.isCDisabled = false;
+    if($scope.correct){
+      $('.checkCorrect').show();
+      $scope.isCDisabled = false;
 
-        // sets highlight toggle object to false
-        $scope.totalRules = $scope.contentScenarios[pIndex].correctRules.length;
-        console.log($scope.totalRules);
-        for(var m = 0; m < $scope.totalRules; m++){
-          console.log("inside loop " +  m);
+      $scope.totalRules = $scope.contentScenarios[pIndex].correctRules.length;
+      console.log($scope.totalRules);
+      for(var m = 0; m < $scope.totalRules; m++){
+        console.log("inside loop " +  m);
 
-          $scope.highlightToggle[m] = false;
-        }
-        var str = JSON.stringify($scope.highlightToggle);
-        console.log("highlightToggle: " + str);
-
-      } else {
-        $('.checkWrong').show();
+        $scope.highlightToggle[m] = false;
       }
+      var str = JSON.stringify($scope.highlightToggle);
+      console.log("highlightToggle: " + str);
+
     } else {
-      $('.checkNoAns').show();
+      console.log($scope.wrongAnswers);
+      for(var m = 0; m < $scope.wrongAnswers.length; m++){
+        $(".ans-" + $scope.wrongAnswers[m]).addClass("wrong");
+      }
     }
   };
 
   $scope.highlight = function(index, pIndex){
-    console.log("index: " + index);
-    console.log("pIndex: " + pIndex);
-
     $scope.currentScenarioRuleHighlights = $scope.contentScenarios[pIndex].correctRules[index].highlights;
     $scope.currentScenarioLaborsLength = $scope.contentScenarios[pIndex].labors.length;
 
-    console.log($scope.highlightToggle);
+    console.log($scope.currentScenarioRuleHighlights);
 
     $scope.highlightToggle[index] = !$scope.highlightToggle[index];
+
+    // if($scope.highlightToggle[index]){
+    //   for(var i = 0; i < $scope.currentScenarioLaborsLength; i++){
+    //     for(var j = 0; j< $scope.currentScenarioRuleHighlights.length; j++){
+    //       if(i === $scope.currentScenarioRuleHighlights[j] && !$scope.laborClicked[i])
+    //         $(".action-" + i).addClass("highlighted");
+    //     }
+    //   }
+    // } else {
+    //   for(var m = 0; m < $scope.currentScenarioLaborsLength; m++){
+    //     for(var n = 0; n <= $scope.currentScenarioRuleHighlights.length; n++){
+    //       console.log("highlights in n is ", $scope.currentScenarioRuleHighlights[n]);
+    //       if(m === $scope.currentScenarioRuleHighlights[n] && !$scope.laborClicked[m])
+    //         $(".action-" + m).removeClass("highlighted");
+    //     }
+    //   }
+    // }
 
     var someHighlighted = $scope.highlightToggle.some(function(highlight) {
       return highlight;
@@ -146,8 +184,6 @@ angular.module('Netsafe').controller('netivityController',
     } else {
       $(".action").removeClass("highlighted");
     }
-
-    console.log($scope.highlightToggle);
   };
 
   $scope.laborClicked = [];
@@ -179,9 +215,10 @@ angular.module('Netsafe').controller('netivityController',
   $scope.showScenario = function(index) {
     $scope.currentScenario = index;
     $scope.currentRule = index;
+    $scope.scenarioDetails = false;
 
     $scope.correctAnswers = [];
-    $scope.elementsAnswers = [];
+    $scope.elementsAnswers = [[], [], [], [], []];
 
     $scope.causeEffectAnswers = [];
     $scope.correctCauseEffectAnswers = [];
@@ -191,15 +228,16 @@ angular.module('Netsafe').controller('netivityController',
     $scope.laborClicked = [];
     $scope.laborLength = [];
 
+    $scope.elementsTable = false;
     $scope.causeEffectTable = false;
     $scope.comparisonTable = false;
+    $scope.scenarioContent = true;
 
     $('.checkCorrect').hide();
     $('.checkWrong').hide();
     $('.checkNoAns').hide();
 
     $scope.solutionModal = false;
-    $scope.elementsTable = true;
     $scope.isCEDisabled = true;
     $scope.isCDisabled = true;
 
@@ -207,6 +245,7 @@ angular.module('Netsafe').controller('netivityController',
     $scope.allowSolution = false;
 
     $(".action").removeClass("highlighted");
+    $(".ans").removeClass("wrong");
     $scope.highlightToggle = [];
 
     var str = JSON.stringify($scope.highlightToggle);
@@ -356,8 +395,8 @@ angular.module('Netsafe').controller('netivityController',
 
   $scope.questions = [
     "Subject (internal factors / people active in the scenario)",
-    "Objective (what action triggered/stimulated the series of events?)",
-    "Community (Who are involved whether active or inactive)",
+    "Objective (what is the first action that triggered the chain of events?)",
+    "Community (who are involved whether active or inactive)",
     "Tools (what tools explicitly used in the scenario)",
     "Rules / Guidelines Applied (based on the element of comparison, what rules apply)"
   ];

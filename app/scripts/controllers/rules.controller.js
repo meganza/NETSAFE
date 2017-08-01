@@ -4,7 +4,6 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
   $scope.contentRules = $scope.rules.content;
   $scope.doDontTable = true;
   $scope.step1 = true;
-  $scope.clicked = 0;
   $scope.laborNegated = false;
   $scope.isDisabled = true;
   $scope.firstChecker = false;
@@ -12,6 +11,13 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
   $scope.laborClicked = [];
   $scope.allowSolution = false;
   $scope.showSolution = false;
+  $scope.ruleDescription = true;
+
+  $scope.scenarioDetails = false;
+
+  $scope.clickHelp = function(){
+    $scope.clicked = !$scope.clicked;
+  };
 
   $scope.openTable = function (num){
     if(num === 1){

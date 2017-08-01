@@ -526,8 +526,8 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
     var check_for_match = false;
 
-    for (var i in symptom_filter){
-      if(symptom_filter[i] == symptom_counter){
+    for (var i = 0; i < symptom_filter.length; i++){
+      if(symptom_filter[i] === symptom_counter){
         check_for_match = true;
         if(i === 0){
           builder = builder + "Virus ";
@@ -550,6 +550,9 @@ angular.module('Netsafe').controller('activityController', function($scope) {
     if(check_for_match === false){
       possible = "No specific malware can be found given symptom combination";
     }
+
+    console.log(symptom_filter);
+    console.log(builder);
 
     $scope.answer = possible + builder;
     symptom_filter = [0, 0, 0, 0, 0, 0, 0];

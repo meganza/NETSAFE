@@ -23,7 +23,14 @@
      ng-repeat="scenario in contentScenarios track by $index"
      ng-show="!tutorialContent && $parent.currentScenario === $index">
 
-  <div class="core-scenario" style="text-align: center;">
+  <div class="center-me">
+    <button class="tables-button" ng-click="scenarioContent = !scenarioContent">
+      <span ng-show="!scenarioContent"> Show <b>Scenario</b> </span>
+      <span ng-show="scenarioContent"> Hide <b>Scenario</b> </span>
+    </button>
+  </div>
+
+  <div class="core-scenario" style="text-align: center;" ng-show="scenarioContent">
     {{scenario.scenario}}
   </div>
 
@@ -53,7 +60,6 @@
       </tr>
       <tr ng-repeat="question in questions">
         <td class="core-question" style="text-align: left;"> {{question}} </td>
-
         <td>
           <div ng-show="guideline=='1'" ng-repeat="guide in guidelines1[$index] track by $index">
             {{guide}}
@@ -86,25 +92,25 @@
             {{guide}}
           </div>
         </td>
-
-        <td>
+        <td class="ans ans-{{$index}}">
           <select ng-repeat="answers in $parent.scenario.answers[$index] track by $index"
                   class="elements-dropdown"
                   ng-model="elementsAnswers[$parent.$index][$index]"
                   ng-change="addAnswer($parent.$index)">
             <option ng-repeat="answer in answers track by $index" ng-value="$index">{{answer}}</option>
           </select>
+          <div ng-show="scenarioDetails" ng-repeat="detail in scenario.additionalDetails[$index] track by $index">
+            {{detail}}
+          </div>
         </td>
-
       </tr>
     </table>
 
-    <a ng-click="checkElements($parent.currentScenario)">
-      <div class="check-button">
-        Check Answer
-      </div>
-    </a>
     <br>
+    <div class="center-me">
+      <button class="tables-button" ng-click="answerAllElements($parent.currentScenario)"> Show All Answers </button>
+      <button class="tables-button" ng-click="checkElements($parent.currentScenario)"> Check Answer </button>
+    </div>
   </div>
 
   <div ng-show="causeEffectTable">
@@ -114,9 +120,9 @@
         <th>Cause and Effect Table</th>
       </tr>
 
-      <tr ng-repeat-start="labor in scenario.labors">
+      <tr ng-repeat-start="labor in scenario.labors" class="ans ans-{{$index}}">
         <td class="center-me">
-          <select class="elements-dropdown" ng-model="causeEffectAnswers[$index]" ng-change="addCEAnswer($parent.$index)">
+          <select class="elements-dropdown" style="font-weight: lighter;" ng-model="causeEffectAnswers[$index]" ng-change="addCEAnswer($parent.$index)">
             <option disabled selected value>-- Select Action --</option>
             <option ng-value="$index" ng-repeat="labor in scenario.labors">
               {{labor}}
@@ -130,11 +136,10 @@
       </tr>
     </table>
 
-    <a ng-click="checkCauseEffectAnswer($parent.currentScenario)">
-      <div class="check-button">
-        Check Answer
-      </div>
-    </a>
+    <div class="center-me">
+      <button class="tables-button" ng-click="answerAllCauseEffect($parent.currentScenario)"> Show All Answers </button>
+      <button class="tables-button" ng-click="checkCauseEffectAnswer($parent.currentScenario)"> Check Answer </button>
+    </div>
     <br><br>
   </div>
 
@@ -168,7 +173,7 @@
           <th>Cause and Effect Table</th>
         </tr>
 
-        <tr ng-repeat-start="labor in scenario.correctLabors" class="action action-{{$index}}">
+        <tr ng-repeat-start="labor in scenario.correctLabors" class="action action-{{$index}}" ng-class="{ negated: laborClicked[$index] }">
           <td>
             <div ng-hide="laborClicked[$index]">
                 {{labor.old}}
@@ -212,7 +217,6 @@
 
 </div>
 
-<!-- TO DO: Add tutorial -->
 <div ng-show="tutorialContent">
   <div class="core-scenario" style="text-align: center;">
     The scenario is presented at the top of the screen. Below it, are three buttons where the teacher can click
@@ -447,7 +451,6 @@
     </div>
   </div>
 </div>
-
 
 <div id="footer">
   <button id="netivity-prev" class="prev" ui-sref="netsafe.rules"> ◀︎ Core Rules of Netiquette </button>
@@ -948,34 +951,16 @@
         </div>
       </div>
 
-
     </div>
   </div>
-</div>
-
-<div class="checkNoAns alert alert-warning activity-alert" role="alert">
-  <a class="close" onclick="$('.checkNoAns').hide()">
-    <i class="fa fa-times"></i>
-  </a>
-  <strong> Oh no! </strong> Please put some answers!
 </div>
 
 <div class="checkCorrect alert alert-success activity-alert" role="alert">
   <a class="close" onclick="$('.checkCorrect').hide()">
     <i class="fa fa-times"></i>
   </a>
-  <strong> Well done! </strong> All answers are correct! Proceed to the next table!<br>
+  <p style="font-size: 23px;"><strong> Well done! </strong> <br>All answers are correct!<br></p>
   Don't forget to close the current table you're in to open the next one!
-</div>
-
-<div class="checkWrong alert alert-danger activity-alert" role="alert">
-  <a class="close" onclick="$('.checkWrong').hide()">
-    <i class="fa fa-times"></i>
-  </a>
-  <strong> Try again! </strong> You might want to reconsider your answers in
-  <span ng-repeat="wrongAnswer in wrongAnswers track by $index">
-    {{wrongAnswer}}&nbsp;
-  </span>
 </div>
 
 <div class="help" ng-show="clickedTool">
