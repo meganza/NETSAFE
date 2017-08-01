@@ -149,40 +149,34 @@ angular.module('Netsafe').controller('netivityController',
     $scope.currentScenarioRuleHighlights = $scope.contentScenarios[pIndex].correctRules[index].highlights;
     $scope.currentScenarioLaborsLength = $scope.contentScenarios[pIndex].labors.length;
 
-    console.log($scope.currentScenarioRuleHighlights);
-
     $scope.highlightToggle[index] = !$scope.highlightToggle[index];
 
-    // if($scope.highlightToggle[index]){
-    //   for(var i = 0; i < $scope.currentScenarioLaborsLength; i++){
-    //     for(var j = 0; j< $scope.currentScenarioRuleHighlights.length; j++){
-    //       if(i === $scope.currentScenarioRuleHighlights[j] && !$scope.laborClicked[i])
-    //         $(".action-" + i).addClass("highlighted");
-    //     }
-    //   }
-    // } else {
-    //   for(var m = 0; m < $scope.currentScenarioLaborsLength; m++){
-    //     for(var n = 0; n <= $scope.currentScenarioRuleHighlights.length; n++){
-    //       console.log("highlights in n is ", $scope.currentScenarioRuleHighlights[n]);
-    //       if(m === $scope.currentScenarioRuleHighlights[n] && !$scope.laborClicked[m])
-    //         $(".action-" + m).removeClass("highlighted");
-    //     }
-    //   }
-    // }
-
-    var someHighlighted = $scope.highlightToggle.some(function(highlight) {
-      return highlight;
-    });
-
-    if(someHighlighted){
+    if($scope.highlightToggle[index]){
       for(var i = 0; i < $scope.currentScenarioLaborsLength; i++){
         for(var j = 0; j< $scope.currentScenarioRuleHighlights.length; j++){
           if(i === $scope.currentScenarioRuleHighlights[j] && !$scope.laborClicked[i])
-            $(".action-" + i).addClass("highlighted");
+            if( $(".action-" + i).hasClass("highlighted")){
+              $(".action-" + i).addClass("diffColor");
+            } else {
+              $(".action-" + i).addClass("highlighted");
+            }
         }
       }
     } else {
       $(".action").removeClass("highlighted");
+      $(".action").removeClass("diffColor");
+
+      for(var y = 0; y < $scope.contentScenarios[pIndex].correctRules.length; y++){
+        if($scope.highlightToggle[y] && y !== index){
+          console.log("evaluating ", y);
+          for(var h = 0; h < $scope.contentScenarios[pIndex].correctRules[y].highlights.length; h++){
+            for(var m = 0; m < $scope.currentScenarioLaborsLength; m++){
+              if(m === $scope.contentScenarios[pIndex].correctRules[y].highlights[h] && !$scope.laborClicked[m])
+                $(".action-" + m).addClass("highlighted");
+            }
+          }
+        }
+      }
     }
   };
 
