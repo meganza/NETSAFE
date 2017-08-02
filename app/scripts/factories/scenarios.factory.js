@@ -5,10 +5,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       scenario: "While you were in Middle School, you often use swear words on twitter. " +
                 "Whenever you tweet, there were always swear words included. Most of your " +
                 "followers got put off because of your behavior online and even your cousins, " +
-                "who follows you, saw your tweets full of curse words. Your behavior online was " +
-                "found out by your parents when your cousins sent a screenshot of your tweets to your " +
-                "parents via Facebook. Because of this, your parents got disappointed and grounded you " +
-                "for a week and no longer allowed you to use any kind of social media. ",
+                "who follows you, saw your tweets full of curse words. Your cousins sent a " +
+                "screenshot of your tweets to your parents via Facebook and your behavior online " +
+                "was found out by your parents. Because of this, your parents got disappointed and " +
+                "grounded you for a week and no longer allowed you to use any kind of social media.",
       answers: [
         [[     // 3
           "Your followers",
@@ -52,7 +52,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
             "Whenever you tweet, you include swear words.",
             "Your parents got disappointed and grounded you for a week and no longer allowed you to use any kind of social media.",
             "Most of your followers got put off because of your behavior online and even your cousins, who follows you, saw your tweets full of curse words.",
-            "Your behavior online was found out by your parents through your cousins. "
+            "Your cousins sent a screenshot of your tweets to your parents via Facebook and your behavior online was found out by your parents."
       ],
       laborsOrder: [0, 2, 3, 1],
       correctLabors: [
@@ -63,8 +63,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
               old: "Most of your followers got put off because of your behavior online and even your cousins, who follows you, saw your tweets full of curse words. ",
               new: "Most of your followers did not get put off because of your behavior online and even your cousins, who follows you, did not see your tweets full of curse words."
             }, {
-              old: "Your behavior online was found out by your parents through your cousins.",
-              new: "Your behavior online was not found out by your parents through your cousins. "
+              old: "Your cousins sent a screenshot of your tweets to your parents via Facebook and your behavior online was found out by your parents.",
+              new: "Your cousins did not send a screenshot of your tweets to your parents via Facebook and your behavior online was not found out by your parents. "
             }, {
               old: "Your parents got disappointed and grounded you for a week and no longer allowed you to use any kind of social media. ",
               new: "Your parents did not get disappointed and grounded you for a week and allowed you to use any kind of social media.  "
@@ -104,7 +104,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         [[ // 3
           "Adam receives his new school e-mail and password",
           "Adam speaks to his new schoolmate",
-          "Adam writes down his password on his notebook and leaves it",
+          "Adam saves his password and e-mail in his phone",
           "Adam arrives at his new school"
         ]],
         [[ // 3
@@ -134,25 +134,29 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         {name: ""}
       ],
       labors: [
-            "When he gets back, his notebook is open and another new student says that someone looked through his notebook without his permission.",
+            "Christian looks through Adam’s phone out of his curiosity in Adam’s email and password.",
             "He is suddenly called to the guidance counsellor’s office so he rushes there.",
             "Adam was given his school e-mail account as he arrived at his new school. ",
-            "He writes down his password on his notebook because he is forgetful. "
+            "He saves his password and e-mail in his phone because he is forgetful. ",
+            "hen Adam gets back, his phone is lighted up and facing up the table."
       ],
-      laborsOrder: [2, 3, 1, 0],
+      laborsOrder: [2, 3, 1, 0, 4],
       correctLabors: [
             {
               old: "Adam was given his school e-mail account as he arrived at his new school. ",
               new: "-"
             }, {
-              old: "He writes down his password on his notebook because he is forgetful.",
+              old: "He saves his password and e-mail in his phone because he is forgetful.",
               new: "-"
             }, {
               old: "He is suddenly called to the guidance counsellor’s office so he rushes there.",
               new: "-"
             }, {
-              old: "When he gets back, his notebook is open and another new student says that someone looked through his notebook without his permission. ",
-              new: "When he gets back, his notebook is not open and another new student says that someone did not look through his notebook without his permission."
+              old: "Christian looks through Adam’s phone out of his curiosity in Adam’s email and password. ",
+              new: "Christian doesn’t  look through Adam’s phone out of his curiosity in Adam’s e-mail and password."
+            }, {
+              old: "When Adam gets back, his phone is lighted up and facing up the table.",
+              new: "When Adam gets back, his phone is not lighted up and not facing up the table."
             }
       ],
       correctRules: [
@@ -164,9 +168,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         }
       ],
       negateStop: 2,
-      solution: "That person who looked through his notebook should not have looked through Adam’s notebook " +
-                "without his permission. Do not access information that is not meant to be public or not " +
-                "meant for them to be read."
+      solution: "Christian should have not looked through Adam’s phone out of his curiosity without the knowledge " +
+                "of Adam. Personal devices tend to contain information that are not meant to be accessed by the public " +
+                "or other people. "
     },
     {
       scenario: "Bob’s co-worker told him that he will be having a meeting later on that day. " +
@@ -238,8 +242,8 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
               old: "Bob waited for his co-worker’s reply for 5 minutes but he did not receive any reply. ",
               new: "-"
             }, {
-              old: "Bob sent 12 messages to his co-worker with the same content saying that “Hi, please send me the details of the project ASAP.” ",
-              new: "Bob did not send 12 messages to his co-worker with the same content saying that “Hi, please send me the details of the project ASAP.” "
+              old: "Bob sent 12 consecutive messages within 10 minutes to his co-worker with the same content saying that “Hi, please send me the details of the project ASAP.” ",
+              new: "Bob did not send 12 consecutive messages within 10 minutes to his co-worker with the same content saying that “Hi, please send me the details of the project ASAP.” "
             }, {
               old: "Bob’s co-worker got annoyed of Bob’s action because Bob could not wait for his reply while he was in a meeting. ",
               new: "Bob’s co-worker did not get annoyed of Bob’s action because Bob could wait for his reply while he was in a meeting. "
@@ -401,7 +405,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
             "He was amused by it and forwarded it on the CONNEX.",
             "Jamie surfed the net for a while.",
             "The students or other people in CONNEX  brought this to the attention of the teacher and the Dean of Students.",
-            "He came across a site that he thought was funny."
+            "He came across a site with dank memes about Donald trump which he thought was funny."
       ],
       laborsOrder: [1, 3, 0, 2],
       correctLabors: [
@@ -488,10 +492,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       labors: [
             "Abner disagreed with the article and Peter’s opinion about it.",
             "Peter responded to oppose Abner’s comment in a calm manner. ",
-            "Peter got offended and the conversation became more heated and the situation escalated quickly.",
+            "Abner strongly insisted that Peter’s opinions were thoughtless and pointless.",
             "Peter, shared a news article criticizing the United Nations Organization lack of action towards the Syrian bombings. ",
             "Abner commented on Peter’s post and shared his insights. ",
-            "Abner found Peter’s reply very unintelligent so, he responded in a haughty manner to counter Peter’s reply and strongly insisted that Peter’s opinions were wrong and lack evidence. "
+            "Abner found Peter’s reply very unintelligent so, he responded in a haughty manner to counter Peter’s reply. "
       ],
       laborsOrder: [ 3, 0, 4, 1, 5, 2 ],
       correctLabors: [
@@ -508,11 +512,11 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
               old: "Peter responded to oppose Abner’s comment in a calm manner. ",
               new: "-"
             }, {
-              old: "Abner found Peter’s reply very unintelligent so, he responded in a haughty manner to counter Peter’s reply and strongly insisted that Peter’s opinions were wrong and lack evidence. ",
-              new: "Abner found Peter’s reply very unintelligent so, he did not respond in a haughty manner to counter Peter’s reply and did not strongly insist that Peter’s opinions were wrong and lack evidence."
+              old: "Abner found Peter’s reply very unintelligent so, he responded in a haughty manner to counter Peter’s reply. ",
+              new: "Abner found Peter’s reply very unintelligent so, he did not respond in a haughty manner to counter Peter’s reply."
             }, {
-              old: "Peter got offended and the conversation became more heated and the situation escalated quickly.",
-              new: "Peter did not get offended and the conversation did not become more heated and the situation did not escalate quickly."
+              old: "Abner strongly insisted that Peter’s opinions were thoughtless and pointless.",
+              new: "Abner did not strongly insist that Peter’s opinions were thoughtless and pointless."
             }
       ],
       correctRules: [
@@ -585,10 +589,11 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
             "Accidentally, the supervisor clicked on an e-mail from a university. ",
             "The secretary received an e-mail from the university that they already gave her slot to another applicant because she wasn’t able to confirm her application before the deadline. ",
             "A secretary on the campus of a tax-supported university was on sick leave.",
-            "The supervisor accessed  the secretary’s e-mail using the admin password to see if departmental-related mail is coming in. ",
-            "The following day, the secretary did not see the e-mail from the university regarding her application for masters studies. "
+            "The supervisor accessed the secretary’s e-mail using the admin password to see if departmental-related mail is coming in without the secretary’s knowledge. ",
+            "The following day, the secretary did not see the e-mail from the university regarding her application for masters studies. ",
+            "The supervisor mistakenly clicked on the delete button instead of the back button."
       ],
-      laborsOrder: [ 3, 0, 4, 1, 5, 2 ],
+      laborsOrder: [ 3, 0, 4, 1, 6, 5, 2 ],
       correctLabors: [
             {
               old: "A secretary on the campus of a tax-supported university was on sick leave. ",
@@ -597,12 +602,15 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
               old: "The secretary’s supervisor has a lot of work to do for their upcoming project. ",
               new: "-"
             }, {
-              old: "The supervisor accessed the secretary’s e-mail using the admin password to see if departmental-related mail is coming in. ",
-              new: "The supervisor did not access the secretary’s e-mail using the admin password to see if departmental-related mail is coming in."
+              old: "The supervisor accessed the secretary’s e-mail using the admin password to see if departmental-related mail is coming in without the secretary’s knowledge. ",
+              new: "The supervisor did not access the secretary’s e-mail using the admin password to see if departmental-related mail is coming in without the secretary’s knowledge."
             }, {
               old: "Accidentally, the supervisor clicked on an e-mail from a university. ",
               new: "The supervisor did not accidentally click on an e-mail from a university. "
-            }, {
+            },{
+              old: "The supervisor mistakenly clicked on the delete button instead of the back button.",
+              new: "The supervisor did not mistakenly click on the delete button instead of the back button."
+            },{
               old: "The following day, the secretary did not see the e-mail from the university regarding her application for masters studies. ",
               new: "The following day, the secretary saw the e-mail from the university regarding her application for masters studies."
             }, {
@@ -748,7 +756,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "their classmate Marty."
     },
     {
-     scenario: "After the a terrorist attack in their town, many students and teachers from a " +
+     scenario: "After the terrorist attack in their town, many students and teachers from a " +
                "school in that town sent related email to the “all-student” and “all-faculty” mailing " +
                "lists. It is implied that the messages contain only helpful information about the status " +
                "of faculty and students who were injured from the attack, and about ways the student body " +
@@ -762,7 +770,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       answers: [
         [[ // 2
           "Penelope, faculty, and school admin",
-          "Penelope and school admin",
+          "Penelope, school, and school admin",
           "Penelope",
           "Penelope and faculty"
         ]],
@@ -807,7 +815,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[1], [3], [2], [3], [3, 0, 1]],
       additionalDetails: [
-        {name: "Sender/Netizen: Penelope and school"},
+        {name: "Sender/Netizen: Penelope; Receiver/Netizen: school and school admin"},
         {name: ""},
         {name: "Sender/Netizen: Penelope and school; Receiver/Netizen: Penelope and school"},
         {name: ""}
@@ -877,12 +885,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         [[ // 3
           "Your friends and your mom",
           "You and your mom",
-          "You, your friend, and your mom",
-          "You and your friend"
+          "You and your classmate",
+          "You, your friend, and your mom"
         ]],
         [[ // 1
+          "You and your friend are talking to each other about your love lives through chat",
           "Your mom reads the messages on your chat with your friend",
-          "You and your friend talking about your love lives through chat",
           "You are going on a date with Jack this Friday",
           "Your mom grounds you"
         ]],
@@ -890,7 +898,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Your friend",
           "Jack",
           "Your mom",
-          "you, your friend, your mom, and Jack"
+          "You, your friend, your classmate, and Jack"
         ]],
         [[ // 4
           "Text",
@@ -913,33 +921,41 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         {name: ""}
       ],
       labors: [
-            "You tell your friend you are excited to go on a date with Jack who is your schoolmate",
-            "Your friend messages you back wondering about what you’re going to wear to your date",
-            "You are grounded",
-            "Your mom looks through your phone and sees your friend’s message",
             "You and your friend are talking to each other about your love lives through chat",
-            "You leave your phone unattended"
+            "You tell your friend you are excited to go on a date with Jack who is your schoolmate",
+            "Your classmate gets curious from the constant buzzing and looks through your phone",
+            "Your phone receives messages sent by your friend",
+            "You and your classmate are working on a project at your home",
+            "You go outside to walk the dog and leave the phone at home",
+            "Your classmate reads your friend’s message",
+            "Your classmate teases you about your upcoming date"
       ],
-      laborsOrder: [4, 0, 1, 5, 3, 2],
+      laborsOrder: [4, 0, 1, 5, 3, 2, 7, 6],
       correctLabors: [
             {
+              old: "You and your classmate are working on a project at your home",
+              new: "-"
+            }, {
               old: "You and your friend are talking to each other about your love lives through chat",
               new: "-"
             }, {
               old: "You tell your friend you are excited to go on a date with Jack who is your schoolmate",
               new: "-"
             }, {
-              old: "Your friend messages you back wondering about what you’re going to wear to your date",
+              old: "You go outside to walk the dog and leave the phone at home",
               new: "-"
             }, {
-              old: "You leave your phone unattended",
+              old: "Your phone receives messages sent by your friend",
               new: "-"
             }, {
-              old: "Your mom looks through your phone and sees your friend’s message",
-              new: "Your mom looks does not through your phone and does not read your friend’s message to you"
+              old: "Your classmate gets curious from the constant buzzing and looks through your phone",
+              new: "Your classmate gets curious from the constant buzzing and does not look through your phone"
             }, {
-              old: "You are grounded",
-              new: "You are not grounded"
+              old: "Your classmate reads your friend’s message",
+              new: "Your classmate does not read your friend’s message"
+            }, {
+              old: "Your classmate teases you about your upcoming date",
+              new: "Your classmate does not tease you about your upcoming date"
             }
       ],
       correctRules: [
@@ -947,10 +963,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           id: 0,
           title: "Respect other people's privacy",
           description: "Don’t read other people’s personal messages or emails.",
-          highlights: [4]
+          highlights: [5]
         }
       ],
-      negateStop: 3,
+      negateStop: 4,
       solution: "Your mom should not have looked through your phone and should not have read " +
                 "your friend’s message to you. Do not read other people’s personal messages or emails."
     },
@@ -1096,9 +1112,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       labors: [
             "Jake uploaded a video about the 'Ice Bucket Challenge'",
             "Jake took down the video and never talked about the “Ice Bucket Challenge” again",
-            "Jake donated to the ALS Association ",
-            "Jake’s Followers started leaving toxic comments on his video ",
-            "Jake’s Followers got mad at him for not doing the 'Ice Bucket Challenge'"
+            "Jake opted not to do the ice bucket challenge but he ended his video by donating to his local ASL Association",
+            "Jake’s followers started leaving toxic comments on his video ",
+            "Jake’s followers got mad at him for not doing the 'Ice Bucket Challenge'"
       ],
       laborsOrder: [0, 2, 4, 3, 1],
       correctLabors: [
@@ -1106,14 +1122,14 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
               old: "Jake uploaded a video about the 'Ice Bucket Challenge'",
               new: "-"
             }, {
-              old: "Jake donated to the ALS Association ",
+              old: "Jake opted not to do the ice bucket challenge but he ended his video by donating to his local ASL Association",
               new: "-"
             }, {
-              old: "Jake’s Followers got mad at him for not doing the 'Ice Bucket Challenge'",
+              old: "Jake’s followers got mad at him for not doing the ‘Ice Bucket Challenge’",
               new: "- "
             }, {
-              old: "Jake’s Followers started leaving toxic comments on his video ",
-              new: "Jake’s Followers did not leave toxic comments on his video"
+              old: "Jake’s followers started leaving toxic comments on his video",
+              new: "Jake’s followers did not leave toxic comments on his video"
             }, {
               old: "Jake took down the video and never talked about the “Ice Bucket Challenge” again",
               new: "Jake did not take down the video"
