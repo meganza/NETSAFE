@@ -2,12 +2,13 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
   return {
     content: [
     {
-      scenario: "While you were in Middle School, you often use swear words on twitter. Whenever you tweet, " +
-                "there were always swear words included. Most of your followers got put off because of your " +
-                "behavior online and even your cousins, who follows you, saw your tweets full of curse words. " +
-                "Your behavior online was found out by your parents through your cousins. Because of this, your " +
-                "parents got disappointed and grounded you for a week and no longer allowed you to use any kind " +
-                "of social media. ",
+      scenario: "While you were in Middle School, you often use swear words on twitter. " +
+                "Whenever you tweet, there were always swear words included. Most of your " +
+                "followers got put off because of your behavior online and even your cousins, " +
+                "who follows you, saw your tweets full of curse words. Your behavior online was " +
+                "found out by your parents when your cousins sent a screenshot of your tweets to your " +
+                "parents via Facebook. Because of this, your parents got disappointed and grounded you " +
+                "for a week and no longer allowed you to use any kind of social media. ",
       answers: [
         [[     // 3
           "Your followers",
@@ -25,13 +26,13 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "Cousins, you, parents",
           "You",
           "Parents",
-          "You, your followers, Parents"
+          "You, cousins, your followers, parents"
         ]],
         [[ // 4
           "Snapchat",
           "Instagram",
           "Facebook",
-          "Twitter"
+          "Twitter and Facebook"
         ]],
         [[ // 2
             "Remember the Human",
@@ -42,9 +43,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[2], [0], [3], [3], [1]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Netizens: You, cousins, and your parents"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Netizens: You, cousins, your followers, parents"},
         {name: ""}
       ],
       labors: [
@@ -84,21 +85,21 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "image good online where a lot of people could see your posts, tweets, and profile. "
     },
     {
-      scenario: "Adam just recently got to his new school. The school apparently provides email " +
-                "accounts to all students. Not having been aware of this, and being aware that he " +
-                "is a forgetful person, Adam writes the password and e-mail given to him just now on " +
-                "his notebook (which is unsecure), confident that it will be on his person at all times " +
-                "when he is not using it. However, during class, he is suddenly called to the counseling " +
-                "office. In his haste, he leaves his books and notebooks in class and goes to the office. " +
-                "When he gets back, the class is dismissed, everyone is leaving, and his notebook is open to " +
-                "the page with his password. Another new student approaches you and says that he saw someone " +
-                "rifling through Adam’s notebook.",
+      scenario: "Adam just recently got to his new school. The school apparently provides email accounts " +
+                "to all students. Not having been aware of this, and being aware that he is a forgetful " +
+                "person, Adam saves the password and e-mail given to him just now in his phone (which has " +
+                "no password-lock), confident that it will be on his person at all times when he is not using " +
+                "it. However, during class, he is suddenly called to the counseling office. In his haste, he " +
+                "leaves his books and phone, facing down the table, in class and goes to the office. Christian, " +
+                "another new student, was curious what Adam’s email and password is so he looked through Adam’s " +
+                "phone. When Adam gets back, the class is dismissed, everyone is leaving, and his phone is lighted " +
+                "up and facing up the table. ",
       answers: [
         [[ // 4
           "Adam, counsellor",
           "Anonymous person, school",
           "Adam",
-          "Adam, anonymous person, and other new student"
+          "Adam and Christian"
         ]],
         [[ // 3
           "Adam receives his new school e-mail and password",
@@ -109,11 +110,11 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         [[ // 3
           "Adam and the anonymous person",
           "Adam and his new classmate",
-          "Adam, anonymous person, and other new student",
+          "Adam and Christian",
           "Adam and his counsellor"
         ]],
         [[ // 1
-          "Notebook",
+          "Phone",
           "E-mail",
           "School",
           "Password"
@@ -127,9 +128,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[3], [2], [2], [0], [3]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Owner: Adam; Infiltrator: Christian"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Owner: Adam; Infiltrator: Christian"},
         {name: ""}
       ],
       labors: [
@@ -168,14 +169,15 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "meant for them to be read."
     },
     {
-      scenario: "Bob’s co-worker told him that he will be having a meeting later on that day. A few hours " +
-                "later, Bob emailed his co-worker asking for details about a project they are working on. " +
-                "Bob waited for his co-worker’s reply for 5 minutes but he did not receive any reply. Because " +
-                "of this, Bob sent 12 messages to his co-worker with the same content saying that “Hi, please " +
-                "send me the details of the project ASAP.” Bob’s co-worker got annoyed of Bob’s actions because " +
-                "Bob could not wait for his reply while he was in a meeting. This caused a tension between their " +
-                "working relationship. Bob’s co-worker quit from the project and this left Bob to work on the " +
-                "project on his own.",
+      scenario: "Bob’s co-worker told him that he will be having a meeting later on that day. " +
+                "A few hours later, Bob emailed his co-worker asking for details about a project " +
+                "they are working on. Bob waited for his co-worker’s reply for 5 minutes but he did " +
+                "not receive any reply. Because of this, Bob sent 12 consecutive messages within 10 " +
+                "minutes to his co-worker with the same content saying that “Hi, please send me the " +
+                "details of the project ASAP.” Bob’s co-worker got annoyed of Bob’s actions because " +
+                "Bob could not wait for his reply while he was in a meeting. This caused a tension between " +
+                "their working relationship. Bob’s co-worker quit from the project and this left Bob to work " +
+                "on the project on his own.",
       answers: [
         [[ // 1
           "Bob, Bob’s co-worker",
@@ -210,9 +212,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[0], [3], [1], [3], [3]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Sender: Bob’s co-worker; Receiver: Bob"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Sender: Bob’s co-worker; Receiver: Bob"},
         {name: ""}
       ],
       labors: [
@@ -305,9 +307,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[2], [2], [2], [1], [0]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Owner: Karen; Infiltrator: Greg"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Owner: Karen; Infiltrator: Greg"},
         {name: ""}
       ],
       labors: [
@@ -337,7 +339,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           id: 0,
           title: "Respect other people’s privacy",
           description: "Never ask someone's information that you are not comfortable giving out yourself and do not get someone's private information without permission",
-          highlights: [0]
+          highlights: [0, 1]
         }
       ],
       negateStop: -1,
@@ -348,12 +350,14 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "respect the person’s privacy in real life."
     },
     {
-      scenario: "Jamie surfed the Net for a while. He came across a site that he thought was funny. " +
-                "He was amused by it and forwarded it on the CONNEX, a learning platform intended to " +
-                "provide students a way to discuss topics relevant to the course when they are outside " +
-                "the classroom. Unfortunately, not everyone in his class was amused by the humor and it " +
-                "was not appropriate for CONNEX. They brought this to the attention of the teacher and " +
-                "the Dean of Students.",
+      scenario: "Jamie surfed the Net for a while. He came across a site with dank memes about " +
+                "Donald Trump which he thought was funny. The meme contains a picture of Donald Trump " +
+                "signing a document that simply says “covfefe”. He was amused by it and forwarded it on the " +
+                "CONNEX, a learning platform intended to provide students a way to discuss topics relevant to " +
+                "the course, which is chemistry, when they are outside the classroom. Their teacher is also a " +
+                "part of the CONNEX as the administrator. Unfortunately, not everyone in his class was amused by " +
+                "the humor and it was not appropriate for CONNEX. They brought this to the attention of the " +
+                "teacher and the Dean of Students.",
       answers: [
         [[ // 1
           "Jamie, people in CONNEX",
@@ -388,9 +392,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[0], [3], [2], [1], [0]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Netizens: Jaime, people in CONNEX"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Netizens: Jaime, people in CONNEX"},
         {name: ""}
       ],
       labors: [
@@ -429,14 +433,19 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "not appropriate to the domain."
     },
     {
-      scenario: "Abner is part of the debate team in his school. He is a good speaker or debater because " +
-                "he always has strong opinions on different important matters. One day, one of his classmates, " +
-                "Peter, shared a news article on Facebook, where a lot people can see it, criticizing the United " +
-                "Nations Organization lack of action towards the Syrian bombings. However, Abner disagreed with the " +
-                "article and Peter’s opinion about it. So, he commented on Peter’s post and shared his insights. " +
-                "Peter responded to oppose Abner’s comment in a calm manner. Although, Abner found Peter’s reply " +
-                "very unintelligent so, he responded in a haughty manner to counter Peter’s reply and strongly " +
-                "insisted that Peter’s opinions were wrong and lack evidence.",
+      scenario: "Abner is part of the debate team in his school. He is a good speaker or debater " +
+                "because he always has strong opinions on different important matters. One day, one of his " +
+                "classmates, Peter, shared a news article on Facebook, where a lot people can see it, " +
+                "criticizing the United Nations Organization lack of action towards the Syrian bombings. " +
+                "However, Abner disagreed with the article and Peter’s opinion about it. So, he commented on " +
+                "Peter’s post and shared his insights. Abner commented that the United Nations Organization is " +
+                "working as hard as they can, and are already setting up meetings with different organizations, " +
+                "the Syrian government, and other governments involved to try and alleviate the situation in Syria. " +
+                "Peter responded to oppose Abner’s comment in a calm manner, “People are dying. Why can’t they act " +
+                "sooner? I don’t care what you say. I think that they should be working harder.” Abner deemed Peter’s " +
+                "reply unwise so he haughtily responded, “Quit acting like you know what you’re talking about, Peter. " +
+                "You’re not even working for the United Nations Organization so just shut up.“ Abner strongly insisted " +
+                "that Peter’s opinions were thoughtless and pointless.",
       answers: [
         [[ // 4
           "Peter",
@@ -471,9 +480,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[3], [2], [0], [1], [0]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Senders: Abner and Peter; Receivers: Abner and Peter"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Senders: Abner and Peter; Receivers: Abner and Peter"},
         {name: ""}
       ],
       labors: [
@@ -524,14 +533,14 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     {
       scenario: "A secretary on the campus of a tax-supported university was on sick leave. " +
                 "The secretary’s supervisor has a lot of work to do for their upcoming project. " +
-                "The supervisor accessed  the secretary’s e-mail using the admin password to see " +
-                "if departmental-related mail is coming in. Accidentally, the supervisor clicked " +
-                "on an e-mail from a university. However, she did not bother to read it and " +
-                "closed the window because there was a lot of e-mail coming in. The following day, " +
-                "the secretary did not see the e-mail from the university regarding her application " +
-                "for masters studies. A few more weeks passed by and the secretary received an " +
-                "e-mail from the university that they already gave her slot to another applicant " +
-                "because she wasn’t able to confirm her application before the deadline. ",
+                "The supervisor accessed the secretary’s e-mail using the admin password to see if " +
+                "departmental-related mail is coming in without the secretary’s knowledge. Accidentally, " +
+                "the supervisor clicked on an e-mail from a university. The supervisor mistakenly clicked " +
+                "on the delete button instead of the back button. The following day, the secretary couldn’t " +
+                "find an e-mail from the university regarding her application for masters studies and thought " +
+                "that the university hasn’t e-mailed her. A few more weeks passed by and the secretary received " +
+                "an e-mail from the university that they already gave her slot to another applicant because she " +
+                "wasn’t able to confirm her application before the deadline. ",
       answers: [
         [[ // 2
           "University",
@@ -566,9 +575,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[1], [1], [0], [1], [0]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Subordinate: secretary; Admin: supervisor"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Subordinate: secretary; Admin: supervisor"},
         {name: ""}
       ],
       labors: [
@@ -674,9 +683,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[1], [3], [0], [0], [2, 0, 3]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Senders: The group, Marty, and classmates; Receivers: The group, Marty, and classmates"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Senders: The group, Marty, and classmates; Receivers: The group, Marty, and classmates"},
         {name: ""}
       ],
       labors: [
@@ -740,18 +749,16 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     },
     {
      scenario: "After the a terrorist attack in their town, many students and teachers from a " +
-                "school in that town sent related email to the “all-student” and “all-faculty” " +
-                "mailing lists. It is implied that the messages contain only helpful information " +
-                "about the status of faculty and students who were injured from the attack, and " +
-                "about ways the student body and the faculty can help in the crisis. But Penelope " +
-                "sends a long email to the mailing list about how she feels regarding the situation " +
-                "which would have been more appropriate in a blog or a newsletter. The administration " +
-                "takes notice of her email and sends a personal email to Penelope saying that she " +
-                "should refrain from sending unrelated emails and should only use it for school " +
-                "purposes only. This action was misinterpreted and taken badly by Penelope. So, " +
-                "she started spreading rumors about the school administration being insensitive " +
-                "about students’ and faculty’s grief using the school mailing list. Because of her " +
-                "retaliation online, Penelope received three weeks of detention.",
+               "school in that town sent related email to the “all-student” and “all-faculty” mailing " +
+               "lists. It is implied that the messages contain only helpful information about the status " +
+               "of faculty and students who were injured from the attack, and about ways the student body " +
+               "and the faculty can help in the crisis. But Penelope sends a long email to the mailing list " +
+               "about how she feels regarding the situation which would have been more appropriate in a blog " +
+               "or a newsletter. The administration takes notice of her email and sends a personal email to Penelope " +
+               "saying that she should refrain from sending unrelated emails and should only use it for the above " +
+               "mentioned purposes only. This action was misinterpreted and taken badly by Penelope. So, she started " +
+               "spreading rumors about the school administration being insensitive about students’ and faculty’s grief " +
+               "using the school mailing list. Because of her retaliation online, Penelope received three weeks of detention.",
       answers: [
         [[ // 2
           "Penelope, faculty, and school admin",
@@ -768,7 +775,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         [[ // 3
           "The school admin",
           "Penelope",
-          "Recipients of Penelope’s email and Penelope",
+          "Penelope and school",
           "Recipients of Penelope’s email"
         ]],
         [[ // 4
@@ -800,9 +807,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[1], [3], [2], [3], [3, 0, 1]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Sender/Netizen: Penelope and school"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Sender/Netizen: Penelope and school; Receiver/Netizen: Penelope and school"},
         {name: ""}
       ],
       labors: [
@@ -857,15 +864,15 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "personal blog or newsletter instead."
     },
     {
-      scenario: "You and your friend are talking to each other about your love lives through chat. " +
-                "You are about to go on a date with a guy you know from school and you are very " +
-                "excited about it. You tell your friend about it through chat. You go outside to " +
-                "walk the dog and leave the phone at home. While you’re out, your phone receives " +
-                "messages sent by your friend. Your mom gets curious from the constant buzzing and " +
-                "looks through your phone. She sees your friend’s message that says “That’s nice! " +
-                "What are you gonna wear when you meet Jack on your date this Friday?” When you get " +
-                "back, she gets mad at you for not telling her you are seeing this guy. You are now " +
-                "grounded. ",
+      scenario: "You and your classmate are working on a project at your home for one whole day over the " +
+                "weekend. While you were taking a break, you and your friend are talking to each other about " +
+                "your love lives through chat. You are about to go on a date with a guy you know from school " +
+                "and you are very excited about it. You tell your friend about it through chat. You go outside " +
+                "to walk the dog and leave the phone at home. While you’re out, your phone receives messages sent " +
+                "by your friend. Your classmate gets curious from the constant buzzing and looks through your phone. " +
+                "She sees your friend’s message that says “That’s nice! What are you gonna wear when you meet Jack on " +
+                "your date this Friday?” When you get back, your classmate tells you that she is a close friend of Jake " +
+                "and started teasing you about your upcoming date. ",
       answers: [
         [[ // 3
           "Your friends and your mom",
@@ -900,9 +907,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[2], [0], [3], [3], [1]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Owner: You; Infiltrator: Your classmate"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Owner: You; Infiltrator: Your classmate"},
         {name: ""}
       ],
       labors: [
@@ -998,9 +1005,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[1], [3], [2], [3], [1, 0]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Subordinate: Elijah; Admin / Sender: George"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Subordinate: Elijah; Admin / Sender: George; Receiver: co-workers"},
         {name: ""}
       ],
       labors: [
@@ -1040,13 +1047,13 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     {
       scenario: "Jake the youtuber uploaded a video on Youtube about the new trend in social media where " +
                 "people do the “ice bucket challenge” to raise awareness on disease known as Amyotrophic " +
-                "Lateral Sclerosis (ALS). He stated in the video that the “Ice Bucket Challenge” is a " +
-                "challenge where a person can either opt to pour ice on themselves or to donate money to " +
-                "ALS Associations. He ended his video by donating to his local ALS Association. His followers " +
-                "got mad at him because they felt like he was ruining the fun of the ice bucket challenge by not " +
-                "choosing to pour ice on himself. They started leaving toxic comments in his video like calling him " +
-                "a coward and telling him that he should take down his video. He took down his video and never talked " +
-                "about the “ice bucket challenge” again.",
+                "Lateral Sclerosis (ALS). The video contained Jake simply discussing what the  “Ice Bucket " +
+                "Challenge” is a challenge where a person can either opt to pour ice on themselves or to donate " +
+                "money to ALS Associations. He opted to not do the challenge but he ended his video by donating to " +
+                "his local ALS Association. His followers got mad at him because they felt like he was ruining the " +
+                "fun of the ice bucket challenge by not choosing to pour ice on himself. They started leaving toxic " +
+                "comments in his video like calling him a coward and telling him that he should take down his video. " +
+                "He took down his video and never talked about the “ice bucket challenge” again.",
       answers: [
         [[     // 3
           "Jake’s Followers",
@@ -1081,9 +1088,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[2], [0], [3], [3], [1]],
       additionalDetails: [
-        {name: "Infiltrator: blah blah, sldfsfd"},
+        {name: "Sender: Jake’s followers; Receiver: Jake"},
         {name: ""},
-        {name: "sisdsf"},
+        {name: "Sender: Jake’s followers; Receiver: Jake"},
         {name: ""}
       ],
       labors: [

@@ -24,9 +24,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "Thomas and anonymous fellow",
+        "Thomas (receiver) and anonymous fellow (sender)",
         "Thomas posting his digital work",
-        "Thomas and anonymous fellow",
+        "Thomas (receiver) and anonymous fellow (sender)",
         "E-mail and Facebook"
       ],
       labors: [
@@ -70,9 +70,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "Benedict",
+        "Benedict (Netizen)",
         "Submitting the assignment online",
-        "Benedict and his classmate",
+        "Benedict and his classmate (Netizens)",
         "Yahoo Groups"
       ],
       labors: [
@@ -121,9 +121,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "Martin and teacher",
+        "Martin and teacher (Netizens)",
         "Martin sent an email to his teacher using millennial slang.",
-        "Martin and teacher",
+        "Martin and teacher (Netizens)",
         "School email account"
       ],
       labors: [
@@ -171,9 +171,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "Trixie, person in the discussion group, and admin",
+        "Trixie (sender), person in the discussion group, and admin (receivers)",
         "Trixie posted her problem with her code on an online discussion group several times",
-        "Trixie, people in the discussion group, and admin",
+        "Trixie (sender), people in the discussion group, and admin (receivers)",
         "Online discussion group"
       ],
       labors: [
@@ -220,9 +220,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "George and other people commenting on his blog",
+        "George and other people commenting on his blog (Netizens)",
         "George writing an online diary through a blog",
-        "George and other people commenting on his blog",
+        "George and other people commenting on his blog (Netizens)",
         "Blog"
       ],
       labors: [
@@ -272,9 +272,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "Justin, Josh, and Marc",
+        "Justin (receiver), Josh, and Marc (senders)",
         "Justin posted a programming question on Stack Overflow",
-        "Justin, Josh, and Marc",
+        "Justin (receiver), Josh, and Marc (senders)",
         "Stack Overflow"
       ],
       labors: [
@@ -322,9 +322,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "You and the supporter",
+        "You (sender) and the supporter (receiver)",
         "You posted your opinions against the current president and his administration",
-        "You, the supporter, and friends/people in Facebook",
+        "You (sender), the supporter, and friends/people in Facebook (receivers)",
         "Facebook"
       ],
       labors: [
@@ -372,9 +372,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "Wayne and his friend",
+        "Wayne (infiltrator) and his friend (owner)",
         "Wayne wanting to test what he learned about hacking on a Facebook account",
-        "Wayne and Wayne’s friend",
+        "Wayne (infiltrator) and Wayne’s friend (owner)",
         "Facebook"
       ],
       labors: [
@@ -420,9 +420,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Company network, company online platform"}
       ],
       selements: [
-        "Justin and Justin’s Boss",
+        "Justin (subordinate) and Justin’s Boss (admin)",
         "When the boss allowed Justin’s computer to access the company database",
-        "Justin, Justin’s Boss, Karen, the company",
+        "Justin (subordinate), Justin’s Boss (admin), Karen, the company (receivers)",
         "Company database, Justin’s computer"
       ],
       labors: [
@@ -471,9 +471,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         {name: "Online platform"}
       ],
       selements: [
-        "Sophiya and Cassie",
+        "Sophiya (sender) and Cassie (receiver)",
         "Cassie shared a post on Facebook",
-        "Cassie, Sophiya, and people in Facebook",
+        "Sophiya (sender), Cassie, and people in Facebook (receivers)",
         "Facebook"
       ],
       labors: [

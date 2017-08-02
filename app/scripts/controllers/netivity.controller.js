@@ -398,7 +398,7 @@ angular.module('Netsafe').controller('netivityController',
   $scope.elementsGuide = [
     {content: "The subject is/are the people who are active in the scenario. Their actions have direct impact in the scenario. "},
     {content: "The objective is the first action that triggered the series of events. The objective is what causes everything that happens in the scenario. "},
-    {content: "The community is/are the people who are affected in the scenario whether they are active or inactive. "},
+    {content: "The community is/are the people who are affected in the scenario whether they are active or inactive. Inactive people in a scenario are those who have no direct actions in the scenario but are only affected by the actions of the subject/s."},
     {content: "The tool is the objects that are directly related to cyberspace or the type of media explicitly used in the scenario."},
     {content: "The rules / guidelines are the specific ones that violate the scenario in discussion."}
   ];
