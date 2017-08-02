@@ -138,7 +138,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
             "He is suddenly called to the guidance counsellor’s office so he rushes there.",
             "Adam was given his school e-mail account as he arrived at his new school. ",
             "He saves his password and e-mail in his phone because he is forgetful. ",
-            "hen Adam gets back, his phone is lighted up and facing up the table."
+            "When Adam gets back, his phone is lighted up and facing up the table."
       ],
       laborsOrder: [2, 3, 1, 0, 4],
       correctLabors: [
