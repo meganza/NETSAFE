@@ -59,7 +59,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Forget the consequences of your actions on the internet just because you aren’t seen.",
         "Do illegal actions."
       ],
-      scenario: "The class is to submit their assignment online through Yahoo groups. Benedict saw that his " +
+      scenario: "The class submits their assignment online through Yahoo groups. Benedict saw that his " +
                 "classmate has already submitted and he downloaded his classmate’s file. He copy-pasted some " +
                 "of the content that his classmate wrote. When the results came back, they were both accused of " +
                 "cheating or plagiarism and were both given zeros for the assignment. ",
@@ -108,7 +108,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Act untowardly to the netizens of that domain due to lack of observation beforehand.",
         "Post content that is not appropriate for the domain."
       ],
-      scenario: "Martin is a current highschool student. He uses millennial words and phrases when texting " +
+      scenario: "Martin is a current highschool student. He likes to use millennial words and phrases when texting " +
                 "or chatting with his friends. He sends an email to his teacher asking about their class project " +
                 "using the school email account issued to them. In his email, he used the words and phrases, “TBH”, " +
                 "“on fleek”, “lit”, and “jk.” His teacher, a person who is fairly new to the internet,  replied to " +
@@ -360,33 +360,32 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Read other people’s personal messages or emails.",
         "Access information that is not meant to be public or not meant for them to be read."
       ],
-      scenario: "Wayne recently learned how to hack someone’s Facebook account. To test if he could do it " +
-                "again and to practice his newly acquired “skill”, he tried to hack one of his friends’ account. " +
-                "He successfully gained access to his friend’s account. Out of curiosity, he read some of his friend’s " +
-                "personal messages to other people. Wayne’s friend found out what happened and got mad at Wayne for " +
-                "invading his privacy.",
+      scenario: "Wayne hacked one of his friends’ account to practice his newly acquired skill which " +
+                "is hacking. He successfully gained access to his friend’s account. Out of curiosity, " +
+                "he read some of his friend’s personal messages to other people. Wayne’s friend found out " +
+                "what happened and got mad at Wayne for invading his privacy.",
       elements: [
         {name: "Owner and infiltrator"},
-        {name: "When you access other people’s information without their full consent"},
+        {name: "When you access other people’s information"},
         {name: "Owner and Infiltrator"},
         {name: "Online platform"}
       ],
       selements: [
         "Wayne (infiltrator) and his friend (owner)",
-        "Wayne wanting to test what he learned about hacking on a Facebook account",
+        "Wayne hacked one of his friends’ account to practice his newly acquired skill which is hacking",
         "Wayne (infiltrator) and Wayne’s friend (owner)",
         "Facebook"
       ],
       labors: [
             {
-              old: "Wayne recently learned how to hack.",
-              new: "-"
+              old: "Wayne hacked one of his friends’ account to practice his newly acquired skill.",
+              new: "Wayne did not hack one of his friends’ account to practice his newly acquired skill."
             }, {
-              old: "Wayne tried it out on his friend’s account without his permission and was able to enter.",
-              new: "Wayne did not try hacking his friend’s account without his permission and did not enter."
+              old: "Wayne successfully gained access to his friend’s account.",
+              new: "Wayne did not successfully gain access to his friend’s account."
             }, {
-              old: "Wayne read his friend’s email.",
-              new: "Wayne did not read his friend’s email."
+              old: "Wayne read his friend’s personal messages to other people.",
+              new: "Wayne did not read his friend’s personal messages to other people."
             }, {
               old: "Wayne’s friend found out and got mad at Wayne for invading his privacy.",
               new: "Wayne’s friend did not  find out and did not get mad at Wayne for invading his privacy."
@@ -394,18 +393,19 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       ],
       solution: "Wayne should not have tried his new hacking skills on his friend’s account without his " +
                 "permission. Do not access information that is not meant to be public or not meant for them to be read",
-      highlights: [ 1 ],
-      negateStop: 0
+      highlights: [ 0 ],
+      negateStop: -1
     }, {
       rule: "№9: Don’t Abuse Your Power",
       description: "Respect your subordinate’s online privacy",
       dos: [
-        "Respect people’s online privacy.",
+        "Respect your subordinate’s privacy.",
         "Know your boundaries."
       ],
       donts: [
         "Abuse your power to access your subordinate’s accounts.",
-        "Read private emails of employees."
+        "Read private emails of employees.",
+        "Use your skills or privileges as an admin or a developer for personal gain."
       ],
       scenario: "Justin works on the IT department of his company. He works as a system admin " +
                 "in their company. Justin’s boss allowed Justin’s computer to access the company database " +

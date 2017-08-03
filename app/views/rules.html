@@ -129,7 +129,7 @@
           <th>Cause and Effect Table</th>
         </tr>
 
-        <tr ng-repeat-start="labor in rule.labors" class="action action-{{$index}}">
+        <tr ng-repeat-start="labor in rule.labors" class="action action-{{$index}}" ng-class="{ negated: laborClicked[$index] }">
           <td>
             <div ng-hide="laborClicked[$index]">
                 {{labor.old}}
@@ -198,7 +198,7 @@
         <td class="table-content" style="text-align: left;">
           <ul>
             <li style="list-style-type: circle; margin-left: 25px;">
-              The do's of the core rule is listed here.
+              The do’s of the core rule are listed here
             </li>
             <li style="list-style-type: circle; margin-left: 25px;">
               This is where you can discuss the do's for the specified netiquette core rules
@@ -208,7 +208,7 @@
         <td class="table-content" style="text-align: left;">
           <ul>
             <li style="list-style-type: circle; margin-left: 25px;">
-              The don'ts of the core rule is listed here.
+              The don’ts of the core rule are listed here
             </li>
             <li style="list-style-type: circle; margin-left: 25px;">
               This is where you can discuss the don'ts for the specified netiquette core rules
@@ -233,7 +233,7 @@
   <div class="core-scenario" style="text-align: center;" ng-show="step2">
     Sam accidentally left his Facebook open before leaving the school’s computer lab.
     Clover used the computer after him and started reading his private messages. She
-    found out that he was secretly gay and was dating Jerry. Rumor started to spread
+    found out that he was secretly gay and was dating Jerry. The rumor started to spread
     throughout the school and people started mocking them. Because of this, Sam and Alex
     stopped going to school.
   </div>
@@ -267,7 +267,9 @@
               Their actions have direct impact in the scenario.  Sam is a subject because he was the one who
               left his account open. Clover is a subject because she read his private messages. They are the
               active elements in the scenario. Jerry is not a subject because he did not do anything in the
-              scenario, thus making him an inactive element.
+              scenario, thus making him an inactive element. The guideline elements are only the minimum
+              required people for a rule to apply. Other people can also be active in the scenario but are not
+              labelled as any of the guideline subjects. (ex. Sender, receiver and person 3).
             </span>
           </div>
         </td>
@@ -298,7 +300,8 @@
             <span ng-show="step3c">
               <b>Step 3.c: Community</b> The community is/are the people who are affected in the scenario whether they are active or
               inactive. Jerry is affected in the scenario because he was mocked when Sam accidentally left his
-              account open.
+              account open. The guideline elements are only the minimum amount of people for a rule to apply.
+              Other people who are active/inactive in a scenario can also be identified as part of the people who are involved.
             </span>
           </div>
         </td>
