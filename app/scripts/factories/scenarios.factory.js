@@ -677,20 +677,16 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         {name: ""}
       ],
       labors: [
-            "The group sent it to the whole class.",
-            "One of the classmates informed Marty about it.",
-            "Marty acted out due to anger and hurt by revealing bad things about the group.",
             "Their class started to join in which made the situation get a lot bigger and a lot worse, some on Marty’s side and some one the group’s side.",
-            "A group of students have created a defamatory website about their classmate Marty.",
             "The group responded by continuing to state false information about Marty.",
-            "The class started to learn about making websites and the teacher asked them to practice making websites"
+            "One of the classmates informed Marty about it.",
+            "A group of students have created a defamatory website about their classmate Marty.",
+            "The group sent it to the whole class.",
+            "Marty acted out due to anger and hurt by revealing bad things about the group."
       ],
-      laborsOrder: [6, 4, 0, 1, 2, 5, 3],
+      laborsOrder: [ 3, 4, 2, 5, 1, ],
       correctLabors: [
             {
-              old: "The class started to learn about making websites and the teacher asked them to practice making websites",
-              new: "-"
-            }, {
               old: "A group of students have created a defamatory website about their classmate Marty.",
               new: "A group of students did not create a defamatory website about Marty."
             }, {
@@ -715,20 +711,20 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           id: 0,
           title: "Remember the human",
           description: "Remembering the person on the other side of the screen",
-          highlights: [1]
+          highlights: [0]
         }, {
           id: 1,
           title: "Respect People's time and bandwidth",
           description: "Be considerate of other people’s time on the internet. Send only important things and to only those who need it",
-          highlights: [2]
+          highlights: [1]
         }, {
           id: 2,
           title: "Help keep flame wars under control",
           description: "Keep the camaraderie in discussions online",
-          highlights: [4, 5, 6]
+          highlights: [3, 4, 5]
         }
       ],
-      negateStop: 0,
+      negateStop: -1,
       solution: "The group should not have responded by continuing to state false information about " +
                 "Marty. Marty should not have acted  out due to anger and hurt by revealing bad " +
                 "things about the group. The class should not have started to join in. The group " +
