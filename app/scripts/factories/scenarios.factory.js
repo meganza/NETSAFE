@@ -684,7 +684,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
             "The group sent it to the whole class.",
             "Marty acted out due to anger and hurt by revealing bad things about the group."
       ],
-      laborsOrder: [ 3, 4, 2, 5, 1, ],
+      laborsOrder: [ 3, 4, 2, 5, 1, 0],
       correctLabors: [
             {
               old: "A group of students have created a defamatory website about their classmate Marty.",
