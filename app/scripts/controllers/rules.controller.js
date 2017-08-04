@@ -95,8 +95,7 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
 
     if($scope.highlightToggle){
       $scope.highlightToggle = !$scope.highlightToggle;
-     }
-    else {
+    } else {
       $scope.highlightToggle = $scope.highlightToggle;
     }
     $scope.answerClicked = [];
@@ -105,6 +104,9 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
     $scope.isDisabled = true;
     $scope.elementsTable = false;
     $scope.causeEffectTable = false;
+    $scope.showSolution = false;
+    $scope.firstChecker = false;
+    $scope.allowSolution = false;
     $(".action").removeClass("highlighted");
   };
 
