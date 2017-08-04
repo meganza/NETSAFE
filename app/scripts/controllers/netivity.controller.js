@@ -365,7 +365,7 @@ angular.module('Netsafe').controller('netivityController',
 
   $scope.guidelines8 = [
     {name: "Owner and infiltrator"},
-    {name: "When you access other people's private information without their full consent "},
+    {name: "When you access other people's private information"},
     {name: "Owner and infiltrator"},
     {name: "Online platform"},
     {name: "Respect other people’s privacy"}

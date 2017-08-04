@@ -3,7 +3,7 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
   $scope.rules = RulesFactory;
   $scope.contentRules = $scope.rules.content;
   $scope.doDontTable = true;
-  $scope.step1 = true;
+  $scope.step1 = false;
   $scope.laborNegated = false;
   $scope.isDisabled = true;
   $scope.firstChecker = false;
@@ -95,12 +95,17 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
 
     if($scope.highlightToggle){
       $scope.highlightToggle = !$scope.highlightToggle;
-    } else {
+     }
+    else {
       $scope.highlightToggle = $scope.highlightToggle;
     }
     $scope.answerClicked = [];
     $scope.laborClicked = [];
     $scope.openedAll = false;
+    $scope.isDisabled = true;
+    $scope.elementsTable = false;
+    $scope.causeEffectTable = false;
+    $(".action").removeClass("highlighted");
   };
 
   $timeout(function() {

@@ -5,15 +5,11 @@
 
 <div id="netivity-scenario-nav">
   <p>
-    <button class="tutorial-button" ng-click="tutorialContent = !tutorialContent">
-      <span ng-show="!tutorialContent"> Show <b>Tutorial</b> </span>
-      <span ng-show="tutorialContent"> Hide <b>Tutorial</b> </span>
-    </button>
     <button ng-repeat="rule in contentRules track by $index"
             ng-click="showRule($index)"
             id="button-num-($index)"
             class="button-num"
-            ng-class="{active: !tutorialContent && $parent.currentRule === $index }">
+            ng-class="{active: $parent.currentRule === $index }">
       {{$index+1}}
     </button>
   </p>
@@ -23,7 +19,7 @@
 
 <div class="scenario-content"
      ng-repeat="rule in contentRules track by $index"
-     ng-show="!tutorialContent && $parent.currentRule === $index">
+     ng-show="$parent.currentRule === $index">
 
   <div class="rule-title">
     {{rule.rule}}
@@ -167,304 +163,6 @@
     </div>
   </div> <!-- div ng-show scenarioContent close-->
 </div> <!-- Scenario-content div close -->
-
-<div class="tutorial-content" ng-show="tutorialContent">
-  <div class="rule-title" title="tip">
-    Understanding the tables
-  </div>
-
-  <div class="rule-description">
-    This is the page where you can understand what and how the tables work for the 10 Core Rules lecture.<br>
-    The oranges boxes could be clicked to expand or compress the contents inside of it.
-  </div><br>
-  <div class="tutorial-steps" ng-click="step1 = !step1">
-    <span ng-show="!step1"> Show <b>Step 1</b> Do's and Dont's <b>Table</b></span>
-    <span ng-show="step1"> <b>Step 1:</b> Discuss the current netiquette core rule <br>
-      A table below is for the do's and don'ts for the specific netiquette core rule. As an example,
-      let's use rule 8, Respect other people's privacy. This is also the first table that you will see.
-    </span>
-  </div>
-
-  <br>
-
-  <div ng-show="step1">
-    <table class="core-table" style="width: 80%">
-      <tr>
-        <th style="width: 50%">Do's</th>
-        <th style="width: 50%">Don'ts</th>
-      </tr>
-
-      <tr>
-        <td class="table-content" style="text-align: left;">
-          <ul>
-            <li style="list-style-type: circle; margin-left: 25px;">
-              The do’s of the core rule are listed here
-            </li>
-            <li style="list-style-type: circle; margin-left: 25px;">
-              This is where you can discuss the do's for the specified netiquette core rules
-            </li>
-          </ul>
-        </td>
-        <td class="table-content" style="text-align: left;">
-          <ul>
-            <li style="list-style-type: circle; margin-left: 25px;">
-              The don’ts of the core rule are listed here
-            </li>
-            <li style="list-style-type: circle; margin-left: 25px;">
-              This is where you can discuss the don'ts for the specified netiquette core rules
-            </li>
-          </ul>
-        </td>
-      </tr>
-    </table>
-    <br>
-  </div>
-
-  <div class="tutorial-steps" ng-click="step2 = !step2">
-    <span ng-show="!step2"> Show <b>Step 2</b> Scenario</span>
-    <span ng-show="step2"> <b>Step 2:</b> Read and understand the scenario <br>
-      This will be your basis for dissecting the scenario so you have to be
-      aware on how you will identify each element. Here is a sample scenario.
-    </span>
-  </div>
-
-  <br>
-
-  <div class="core-scenario" style="text-align: center;" ng-show="step2">
-    Sam accidentally left his Facebook open before leaving the school’s computer lab.
-    Clover used the computer after him and started reading his private messages. She
-    found out that he was secretly gay and was dating Jerry. The rumor started to spread
-    throughout the school and people started mocking them. Because of this, Sam and Alex
-    stopped going to school.
-  </div>
-
-  <div class="tutorial-steps" ng-click="step3 = !step3">
-    <span ng-show="!step3"> Show <b>Step 3</b> Elements <b>Table</b></span>
-    <span ng-show="step3"> <b>Step 3:</b> Identifying the elements <br>
-      The guideline elements are the elements that pertain to the core rules, a general "template" for the questions.
-      The scenario elements, on the other hand, specifically answers the element question that pertain to the scenario presented.
-      It has a <b>click to reveal</b> answer feature since it is for lecture.
-    </span>
-  </div>
-
-  <br>
-
-  <div ng-show="step3">
-    <table class="core-table" style="width: 80%">
-      <tr>
-        <th style="width: 5%">Element</th>
-        <th style="width: 60%">Guideline Elements</th>
-        <th style="width: 35%">Scenario Elements</th>
-      </tr>
-
-      <tr>
-        <td class="core-question" style="text-align: left;"> Subject (people active in the scenario) </td>
-        <td class="table-content" style="text-align: left;"> Owner and infiltrator
-          <div class="tutorial-steps tutorial-steps-table" ng-click="step3a = !step3a">
-            <span ng-show="!step3a"> <b>Step 3.a: Subject</b> </span>
-            <span ng-show="step3a">
-              <b>Step 3.a: Subject</b> The Subject is/are the people who are active in the scenario.
-              Their actions have direct impact in the scenario.  Sam is a subject because he was the one who
-              left his account open. Clover is a subject because she read his private messages. They are the
-              active elements in the scenario. Jerry is not a subject because he did not do anything in the
-              scenario, thus making him an inactive element. The guideline elements are only the minimum
-              required people for a rule to apply. Other people can also be active in the scenario but are not
-              labelled as any of the guideline subjects. (ex. Sender, receiver and person 3).
-            </span>
-          </div>
-        </td>
-        <td class="table-content" style="text-align: left;"> Sam and Clover</td>
-      </tr>
-
-      <tr>
-        <td class="core-question" style="text-align: left;"> Objective (what is the first action that triggered the chain of events?) </td>
-        <td class="table-content" style="text-align: left;"> Access to private Information
-          <div class="tutorial-steps tutorial-steps-table" ng-click="step3b = !step3b">
-            <span ng-show="!step3b"> <b>Step 3.b: Objective</b> </span>
-            <span ng-show="step3b">
-              <b>Step 3.b: Objective</b> The objective is the first action that triggered the series of events. The objective is what
-              causes everything that happens in the scenario. Clover would not have accessed and read Sam’s
-              private messages if he did not accidentally leave his account open. The objective is the main
-              motive of why the event happened in the first place.
-            </span>
-          </div>
-        </td>
-        <td class="table-content" style="text-align: left;"> Sam accidentally left his Facebook open before leaving the school’s computer lab. </td>
-      </tr>
-
-      <tr>
-        <td class="core-question" style="text-align: left;"> Community (Who are involved whether active or inactive) </td>
-        <td class="table-content" style="text-align: left;"> Owner and infiltrator
-          <div class="tutorial-steps tutorial-steps-table" ng-click="step3c = !step3c">
-            <span ng-show="!step3c"> <b>Step 3.c: Community</b> </span>
-            <span ng-show="step3c">
-              <b>Step 3.c: Community</b> The community is/are the people who are affected in the scenario whether they are active or
-              inactive. Jerry is affected in the scenario because he was mocked when Sam accidentally left his
-              account open. The guideline elements are only the minimum amount of people for a rule to apply.
-              Other people who are active/inactive in a scenario can also be identified as part of the people who are involved.
-            </span>
-          </div>
-        </td>
-        <td class="table-content" style="text-align: left;"> Sam, Clover, and Jerry</td>
-      </tr>
-
-      <tr>
-        <td class="core-question" style="text-align: left;"> Tools (what tools explicitly used in the scenario) </td>
-        <td class="table-content" style="text-align: left;"> Communication Devices
-          <div class="tutorial-steps tutorial-steps-table" ng-click="step3d = !step3d">
-            <span ng-show="!step3d"> <b>Step 3.d: Tools</b> </span>
-            <span ng-show="step3d">
-              <b>Step 3.d: Tools</b> The tool is the objects that are directly related to cyberspace or the type of media explicitly
-              used in the scenario. In this case, Facebook was the only media used in the scenario.
-            </span>
-          </div>
-        </td>
-        <td class="table-content" style="text-align: left;"> Facebook</td>
-      </tr>
-    </table>
-  <br>
-  </div>
-
-  <div class="tutorial-steps" ng-click="step4 = !step4">
-    <span ng-show="!step4"> Show <b>Step 4</b> Cause and Effect <b>Table</b> </span>
-    <span ng-show="step4"> <b>Step 4:</b> Negating the causes for an objective solution <br>
-      For the lecture, the events that happened are already stated. Every event, besides the first event, is
-      caused by another event. Note that the objective is the first event that started the chain of actions of the subject/s.
-      Reading the table goes from <b>top to bottom</b>, but negating the causes will be read from <b>bottom to top</b>.
-      Negating the causes will be done by clicking the stop sign on the right most of each cause row.<br>
-      Additionally, a highlight button is placed at the top of the table and when it is clicked, it will highlight the
-      actions that violated the rule in discussion.
-    </span>
-  </div>
-
-  <br>
-
-  <div ng-show="step4">
-    <a ng-click="tutorialHighlight = !tutorialHighlight">
-      <div class="check-button">
-        <span ng-show="!tutorialHighlight"> Highlight Violated Actions </span>
-        <span ng-show="tutorialHighlight"> Unhighlight Violated Actions </span>
-      </div>
-    </a>
-    <br>
-
-    <table class="core-table" style="width: 80%">
-      <tr>
-        <th>Cause and Effect Table</th>
-      </tr>
-
-      <tr>
-        <td>
-          <div ng-hide="laborClicked1">
-              Sam accidentally left his facebook account open.
-              <a class="negate center-me" ng-click="tutLaborClick(1)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
-                <i class="fa fa-ban"></i>
-              </a>
-          </div>
-          <div ng-show="laborClicked1" class="action negated">
-              Sam accidentally left his facebook account open.
-          </div>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="center-me"> ▼ </td>
-      </tr>
-
-      <td>
-        <div ng-hide="laborClicked2">
-            <span ng-show="tutorialHighlight" class="action highlighted"> Clover read his private messages </span>
-            <span ng-show="!tutorialHighlight" class="action"> Clover read his private messages </span>
-            <a class="negate center-me" ng-click="tutLaborClick(2)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
-              <i class="fa fa-ban"></i>
-            </a>
-        </div>
-        <div ng-show="laborClicked2" class="action negated">
-          Clover does not read his private messages
-        </div>
-      </td>
-
-      <tr>
-        <td class="center-me"> ▼ </td>
-      </tr>
-
-      <td>
-        <div ng-hide="laborClicked3">
-            Clover found out that Sam was secretly gay and was dating Jerry.
-            <a class="negate center-me" ng-click="tutLaborClick(3)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
-              <i class="fa fa-ban"></i>
-            </a>
-        </div>
-        <div ng-show="laborClicked3" class="action negated">
-            Clover does not find out that Sam was secretly gay and was dating Jerry.
-        </div>
-      </td>
-
-      <tr>
-        <td class="center-me"> ▼ </td>
-      </tr>
-
-      <td>
-        <div ng-hide="laborClicked4">
-            Rumor Spread about Sam and Jerry dating and they were mocked by other students.
-            <a class="negate center-me" ng-click="tutLaborClick(4)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
-              <i class="fa fa-ban"></i>
-            </a>
-        </div>
-        <div ng-show="laborClicked4" class="action negated">
-            Rumor does not spread about Sam and Jerry dating and they were mocked by other students.
-        </div>
-      </td>
-
-      <tr>
-        <td class="center-me"> ▼ </td>
-      </tr>
-
-      <td>
-        <div ng-hide="laborClicked5">
-          Sam and Jerry stopped going to school.
-            <a class="negate center-me" ng-click="tutLaborClick(5)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
-              <i class="fa fa-ban"></i>
-            </a>
-        </div>
-        <div ng-show="laborClicked5" class="action negated">
-            Sam and Jerry do not stop going to school.
-        </div>
-      </td>
-    </table>
-    <br>
-  </div>
-
-  <div class="tutorial-steps" ng-click="step5 = !step5">
-    <span ng-show="!step5"> Show <b>Step 5</b> Solution </span>
-    <span ng-show="step5"> <b>Step 5:</b> Objective Solution <br>
-      Negate the causes from bottom to top. You stop negating the events when all actions do not violate the rule.
-      The solution to the problem will be identified, by clicking on the show solution, once you negate all actions that violate the rule.<br>
-      When clicking the "Show Solution" button, the solution will be shown beneath it.
-    </span>
-  </div>
-
-  <div ng-show="step5">
-    <br>
-    <a ng-click="showSolution = !showSolution">
-      <div class="check-button">
-        <span ng-show="!showSolution"> Show Solution </span>
-        <span ng-show="showSolution"> Hide Solution </span>
-      </div>
-    </a>
-
-    <div ng-show="showSolution">
-      <br>
-      <table class="core-table" style="width: 80%">
-        <tr>
-          <th style="width: 20%">Solution</th>
-          <td style="width: 80%">Clover should not have read Sam's private messages</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-</div>
 
 <br>
 <div id="footer">
@@ -637,15 +335,299 @@
       </a>
     </div>
     <div class="help-content">
-      In this section, there is a scenario given that corresponds to the rule.
+      <div style="text-align: center; font-size: 16px;">
+        <b> Understanding the tables </b><br>
+        This is the page where you can understand what and how the tables work for the 10 Core Rules lecture.<br>
+        The oranges boxes could be clicked to expand or compress the contents inside of it. <br><br>
+      </div>
+
+      <div class="tutorial-steps" ng-click="step1 = !step1">
+        <span ng-show="!step1"> Show <b>Step 1</b> Do's and Dont's <b>Table</b></span>
+        <span ng-show="step1"> <b>Step 1:</b> Discuss the current netiquette core rule <br>
+          A table below is for the do's and don'ts for the specific netiquette core rule. As an example,
+          let's use rule 8, Respect other people's privacy. This is also the first table that you will see.
+        </span>
+      </div>
+
       <br>
-      The right side of the table contains the answer to each question. You may click on these cells or boxes to reveal the answer during the discussion or click “Show Answers” to reveal all answers at once.
+
+      <div ng-show="step1">
+        <table class="core-table" style="width: 95%">
+          <tr>
+            <th style="width: 50%">Do's</th>
+            <th style="width: 50%">Don'ts</th>
+          </tr>
+
+          <tr>
+            <td class="table-content" style="text-align: left;">
+              <ul>
+                <li style="list-style-type: circle; margin-left: 25px;">
+                  The do’s of the core rule are listed here
+                </li>
+                <li style="list-style-type: circle; margin-left: 25px;">
+                  This is where you can discuss the do's for the specified netiquette core rules
+                </li>
+              </ul>
+            </td>
+            <td class="table-content" style="text-align: left;">
+              <ul>
+                <li style="list-style-type: circle; margin-left: 25px;">
+                  The don’ts of the core rule are listed here
+                </li>
+                <li style="list-style-type: circle; margin-left: 25px;">
+                  This is where you can discuss the don'ts for the specified netiquette core rules
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </div>
+
+      <div class="tutorial-steps" ng-click="step2 = !step2">
+        <span ng-show="!step2"> Show <b>Step 2</b> Scenario</span>
+        <span ng-show="step2"> <b>Step 2:</b> Read and understand the scenario <br>
+          This will be your basis for dissecting the scenario so you have to be
+          aware on how you will identify each element. Here is a sample scenario.
+        </span>
+      </div>
+
       <br>
-      Use the arrows on the left and right side to go back to the previous rule or proceed to the next rule.
+
+      <div class="core-scenario" style="text-align: center; width: 100%; font-size: 17px; margin-top: -20px;" ng-show="step2">
+        Sam accidentally left his Facebook open before leaving the school’s computer lab.
+        Clover used the computer after him and started reading his private messages. She
+        found out that he was secretly gay and was dating Jerry. The rumor started to spread
+        throughout the school and people started mocking them. Because of this, Sam and Alex
+        stopped going to school.
+      </div>
+
+      <div class="tutorial-steps" ng-click="step3 = !step3">
+        <span ng-show="!step3"> Show <b>Step 3</b> Elements <b>Table</b></span>
+        <span ng-show="step3"> <b>Step 3:</b> Identifying the elements <br>
+          The guideline elements are the elements that pertain to the core rules, a general "template" for the questions.
+          The scenario elements, on the other hand, specifically answers the element question that pertain to the scenario presented.
+          It has a <b>click to reveal</b> answer feature since it is for lecture.
+        </span>
+      </div>
+
       <br>
-      You may click the buttons at the bottom of the page to go back to the Fundamental Concepts of Netiquette or to proceed to the Netiquette Activity.
+
+      <div ng-show="step3">
+        <table class="core-table" style="width: 95%">
+          <tr>
+            <th style="width: 5%">Element</th>
+            <th style="width: 60%">Guideline Elements</th>
+            <th style="width: 35%">Scenario Elements</th>
+          </tr>
+
+          <tr>
+            <td class="core-question" style="text-align: left;"> Subject (people active in the scenario) </td>
+            <td class="table-content" style="text-align: left;"> Owner and infiltrator
+              <div class="tutorial-steps tutorial-steps-table" ng-click="step3a = !step3a">
+                <span ng-show="!step3a"> <b>Step 3.a: Subject</b> </span>
+                <span ng-show="step3a">
+                  <b>Step 3.a: Subject</b> The Subject is/are the people who are active in the scenario.
+                  Their actions have direct impact in the scenario.  Sam is a subject because he was the one who
+                  left his account open. Clover is a subject because she read his private messages. They are the
+                  active elements in the scenario. Jerry is not a subject because he did not do anything in the
+                  scenario, thus making him an inactive element. The guideline elements are only the minimum
+                  required people for a rule to apply. Other people can also be active in the scenario but are not
+                  labelled as any of the guideline subjects. (ex. Sender, receiver and person 3).
+                </span>
+              </div>
+            </td>
+            <td class="table-content" style="text-align: left;"> Sam and Clover</td>
+          </tr>
+
+          <tr>
+            <td class="core-question" style="text-align: left;"> Objective (what is the first action that triggered the chain of events?) </td>
+            <td class="table-content" style="text-align: left;"> Access to private Information
+              <div class="tutorial-steps tutorial-steps-table" ng-click="step3b = !step3b">
+                <span ng-show="!step3b"> <b>Step 3.b: Objective</b> </span>
+                <span ng-show="step3b">
+                  <b>Step 3.b: Objective</b> The objective is the first action that triggered the series of events. The objective is what
+                  causes everything that happens in the scenario. Clover would not have accessed and read Sam’s
+                  private messages if he did not accidentally leave his account open. The objective is the main
+                  motive of why the event happened in the first place.
+                </span>
+              </div>
+            </td>
+            <td class="table-content" style="text-align: left;"> Sam accidentally left his Facebook open before leaving the school’s computer lab. </td>
+          </tr>
+
+          <tr>
+            <td class="core-question" style="text-align: left;"> Community (Who are involved whether active or inactive) </td>
+            <td class="table-content" style="text-align: left;"> Owner and infiltrator
+              <div class="tutorial-steps tutorial-steps-table" ng-click="step3c = !step3c">
+                <span ng-show="!step3c"> <b>Step 3.c: Community</b> </span>
+                <span ng-show="step3c">
+                  <b>Step 3.c: Community</b> The community is/are the people who are affected in the scenario whether they are active or
+                  inactive. Jerry is affected in the scenario because he was mocked when Sam accidentally left his
+                  account open. The guideline elements are only the minimum amount of people for a rule to apply.
+                  Other people who are active/inactive in a scenario can also be identified as part of the people who are involved.
+                </span>
+              </div>
+            </td>
+            <td class="table-content" style="text-align: left;"> Sam, Clover, and Jerry</td>
+          </tr>
+
+          <tr>
+            <td class="core-question" style="text-align: left;"> Tools (what tools explicitly used in the scenario) </td>
+            <td class="table-content" style="text-align: left;"> Communication Devices
+              <div class="tutorial-steps tutorial-steps-table" ng-click="step3d = !step3d">
+                <span ng-show="!step3d"> <b>Step 3.d: Tools</b> </span>
+                <span ng-show="step3d">
+                  <b>Step 3.d: Tools</b> The tool is the objects that are directly related to cyberspace or the type of media explicitly
+                  used in the scenario. In this case, Facebook was the only media used in the scenario.
+                </span>
+              </div>
+            </td>
+            <td class="table-content" style="text-align: left;"> Facebook</td>
+          </tr>
+        </table>
       <br>
-      Click the help button to view a brief discussion of each core rule.
+      </div>
+
+      <div class="tutorial-steps" ng-click="step4 = !step4">
+        <span ng-show="!step4"> Show <b>Step 4</b> Cause and Effect <b>Table</b> </span>
+        <span ng-show="step4"> <b>Step 4:</b> Negating the causes for an objective solution <br>
+          For the lecture, the events that happened are already stated. Every event, besides the first event, is
+          caused by another event. Note that the objective is the first event that started the chain of actions of the subject/s.
+          Reading the table goes from <b>top to bottom</b>, but negating the causes will be read from <b>bottom to top</b>.
+          Negating the causes will be done by clicking the stop sign on the right most of each cause row.<br>
+          Additionally, a highlight button is placed at the top of the table and when it is clicked, it will highlight the
+          actions that violated the rule in discussion.
+        </span>
+      </div>
+
+      <br>
+
+      <div ng-show="step4">
+        <a ng-click="tutorialHighlight = !tutorialHighlight">
+          <div class="check-button">
+            <span ng-show="!tutorialHighlight"> Highlight Violated Actions </span>
+            <span ng-show="tutorialHighlight"> Unhighlight Violated Actions </span>
+          </div>
+        </a>
+        <br>
+
+        <table class="core-table" style="width: 95%">
+          <tr>
+            <th>Cause and Effect Table</th>
+          </tr>
+
+          <tr>
+            <td>
+              <div ng-hide="laborClicked1">
+                  Sam accidentally left his facebook account open.
+                  <a class="negate center-me" ng-click="tutLaborClick(1)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+                    <i class="fa fa-ban"></i>
+                  </a>
+              </div>
+              <div ng-show="laborClicked1" class="action negated">
+                  Sam accidentally left his facebook account open.
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center-me"> ▼ </td>
+          </tr>
+
+          <td>
+            <div ng-hide="laborClicked2">
+                <span ng-show="tutorialHighlight" class="action highlighted"> Clover read his private messages </span>
+                <span ng-show="!tutorialHighlight" class="action"> Clover read his private messages </span>
+                <a class="negate center-me" ng-click="tutLaborClick(2)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+                  <i class="fa fa-ban"></i>
+                </a>
+            </div>
+            <div ng-show="laborClicked2" class="action negated">
+              Clover does not read his private messages
+            </div>
+          </td>
+
+          <tr>
+            <td class="center-me"> ▼ </td>
+          </tr>
+
+          <td>
+            <div ng-hide="laborClicked3">
+                Clover found out that Sam was secretly gay and was dating Jerry.
+                <a class="negate center-me" ng-click="tutLaborClick(3)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+                  <i class="fa fa-ban"></i>
+                </a>
+            </div>
+            <div ng-show="laborClicked3" class="action negated">
+                Clover does not find out that Sam was secretly gay and was dating Jerry.
+            </div>
+          </td>
+
+          <tr>
+            <td class="center-me"> ▼ </td>
+          </tr>
+
+          <td>
+            <div ng-hide="laborClicked4">
+                Rumor Spread about Sam and Jerry dating and they were mocked by other students.
+                <a class="negate center-me" ng-click="tutLaborClick(4)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+                  <i class="fa fa-ban"></i>
+                </a>
+            </div>
+            <div ng-show="laborClicked4" class="action negated">
+                Rumor does not spread about Sam and Jerry dating and they were mocked by other students.
+            </div>
+          </td>
+
+          <tr>
+            <td class="center-me"> ▼ </td>
+          </tr>
+
+          <td>
+            <div ng-hide="laborClicked5">
+              Sam and Jerry stopped going to school.
+                <a class="negate center-me" ng-click="tutLaborClick(5)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+                  <i class="fa fa-ban"></i>
+                </a>
+            </div>
+            <div ng-show="laborClicked5" class="action negated">
+                Sam and Jerry do not stop going to school.
+            </div>
+          </td>
+        </table>
+        <br>
+      </div>
+
+      <div class="tutorial-steps" ng-click="step5 = !step5">
+        <span ng-show="!step5"> Show <b>Step 5</b> Solution </span>
+        <span ng-show="step5"> <b>Step 5:</b> Objective Solution <br>
+          Negate the causes from bottom to top. You stop negating the events when all actions do not violate the rule.
+          The solution to the problem will be identified, by clicking on the show solution, once you negate all actions that violate the rule.<br>
+          When clicking the "Show Solution" button, the solution will be shown beneath it.
+        </span>
+      </div>
+
+      <div ng-show="step5">
+        <br>
+        <a ng-click="showSolution = !showSolution">
+          <div class="check-button">
+            <span ng-show="!showSolution"> Show Solution </span>
+            <span ng-show="showSolution"> Hide Solution </span>
+          </div>
+        </a>
+
+        <div ng-show="showSolution">
+          <br>
+          <table class="core-table" style="width: 95%">
+            <tr>
+              <th style="width: 20%">Solution</th>
+              <td style="width: 80%">Clover should not have read Sam's private messages</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

@@ -4,7 +4,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
   $scope.answered = false;
   $scope.custom = false;
 
-  var symptom_filter = [0, 0, 0, 0, 0, 0, 0];
+  var symptom_filter = [ 0, 0, 0, 0, 0, 0, 0];
                         // virus, trojan, worms, adware, spyware, keylogger, ransomware
   var symptom_counter = 0;
 
@@ -363,7 +363,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
   };
 
   $scope.clearSymptom = function(){
-    symptom_filter = [0, 0, 0, 0, 0, 0, 0];
+    symptom_filter = [ 0, 0, 0, 0, 0, 0, 0 ];
     symptom_counter = 0;
 
     tf_blue_screen = false;
@@ -434,6 +434,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
     var possible = "Possible malware/s may be: ";
     var builder = "";
+    var all_match_builder = "";
 
     if(tf_slow_computer){
       symptom_filter[0]++;
@@ -524,11 +525,32 @@ angular.module('Netsafe').controller('activityController', function($scope) {
       symptom_filter[0]++;
     }
 
-    var check_for_match = false;
+    var check_for_match = [];
+    console.log(check_for_match);
 
     for (var i = 0; i < symptom_filter.length; i++){
+      check_for_match[i] = false;
+      console.log(check_for_match);
+      if(symptom_filter[i] != 0){
+        if(i === 0){
+          all_match_builder = all_match_builder + "Virus ";
+        } else if (i === 1){
+          all_match_builder = all_match_builder + "Trojan Horse ";
+        } else if (i === 2){
+          all_match_builder = all_match_builder + "Worms ";
+        } else if (i === 3){
+          all_match_builder = all_match_builder + "Adware ";
+        } else if (i === 4){
+          all_match_builder = all_match_builder + "Spyware ";
+        } else if (i === 5){
+          all_match_builder = all_match_builder + "Keylogger ";
+        } else {
+          all_match_builder = all_match_builder + "Ransomware ";
+        }
+      }
+
       if(symptom_filter[i] === symptom_counter){
-        check_for_match = true;
+        check_for_match[i] = true;    // says if there's a complete match, if there is a single true, then print builder
         if(i === 0){
           builder = builder + "Virus ";
         } else if (i === 1){
@@ -541,21 +563,33 @@ angular.module('Netsafe').controller('activityController', function($scope) {
           builder = builder + "Spyware ";
         } else if (i === 5){
           builder = builder + "Keylogger ";
-        } else if (i === 6){
+        } else {
           builder = builder + "Ransomware ";
         }
       }
     }
+    console.log("builder", builder);
+    console.log("all_match", all_match_builder);
+    console.log(check_for_match);
 
-    if(check_for_match === false){
-      possible = "No specific malware can be found given symptom combination";
+    if(symptom_counter === 0){ // no symptoms have been selected
+      possible = "No symptoms selected!";
+      $scope.answer = possible;
+    } else {
+      possible = "No specific malware can be found given symptom combination. However, the selected symptoms show the following malwares: ";
+      $scope.answer = possible + all_match_builder;
+
+      for(var n = 0; n < check_for_match.length; n++){
+        if(check_for_match[n] === true){
+          console.log(possible);
+          possible = "Possible malware/s may be: ";
+          $scope.answer = possible + builder;
+          n = check_for_match.length;
+        }
+      }
     }
 
-    console.log(symptom_filter);
-    console.log(builder);
-
-    $scope.answer = possible + builder;
-    symptom_filter = [0, 0, 0, 0, 0, 0, 0];
+    symptom_filter = [ 0, 0, 0, 0, 0, 0, 0];
   };
 
   // limit checkbox selection to maximum of 5
