@@ -172,8 +172,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       scenario: "Bob emailed his co-worker asking for details about a project " +
                 "they are working on. Bob waited for his co-worker’s reply for 5 minutes but he did " +
                 "not receive any reply. Because of this, Bob sent 12 consecutive messages within 10 " +
-                "minutes to his co-worker with the same content saying that “Hi, please send me the " +
-                "details of the project ASAP.” Bob’s co-worker got annoyed of Bob’s actions because " +
+                "minutes to his co-worker with the same content saying that ",
+      italic: " “Hi, please send me the details of the project ASAP.” ",
+      scenariocont: "Bob’s co-worker got annoyed of Bob’s actions because " +
                 "Bob could not wait for his reply while he was in a meeting. This caused a tension between " +
                 "their working relationship. Bob’s co-worker quit from the project and this left Bob to work " +
                 "on the project on his own.",
@@ -346,8 +347,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     },
     {
       scenario: "Jaime was amused by a dank meme in a website and forwarded it on CONNEX. " +
-                "The meme contains a picture of Donald Trump signing a document that simply " +
-                "says “covfefe”. CONNEX is a learning platform intended to provide students a " +
+                "The meme contains a picture of Donald Trump signing a document that simply says ",
+      italic: " “covfefe”. ",
+      scenariocont:
+                "CONNEX is a learning platform intended to provide students a " +
                 "way to discuss topics relevant to the course, which is chemistry, when they " +
                 "are outside the classroom. Their teacher is also a part of the CONNEX as the " +
                 "administrator. Unfortunately, everyone in his class found Jaime’s post inappropriate " +
@@ -431,11 +434,11 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "Peter’s post and shared his insights. Abner commented that the United Nations Organization is " +
                 "working as hard as they can, and are already setting up meetings with different organizations, " +
                 "the Syrian government, and other governments involved to try and alleviate the situation in Syria. " +
-                "Peter responded to oppose Abner’s comment in a calm manner, “People are dying. Why can’t they act " +
-                "sooner? I don’t care what you say. I think that they should be working harder.” Abner deemed Peter’s " +
-                "reply unwise so he haughtily responded, “Quit acting like you know what you’re talking about, Peter. " +
-                "You’re not even working for the United Nations Organization so just shut up.“ Abner strongly insisted " +
-                "that Peter’s opinions were thoughtless and pointless.",
+                "Peter responded to oppose Abner’s comment in a calm manner,",
+      italic: "“People are dying. Why can’t they act sooner? I don’t care what you say. I think that they should be working harder.”",
+      scenariocont: "Abner deemed Peter’s reply unwise so he haughtily responded, ",
+      italiccont: "“Quit acting like you know what you’re talking about, Peter. You’re not even working for the United Nations Organization so just shut up.“ ",
+      scenariofinal: "Abner strongly insisted that Peter’s opinions were thoughtless and pointless.",
       answers: [
         [[ // 4
           "Peter",
@@ -733,8 +736,11 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     },
     {
      scenario: "After the terrorist attack in their town, many students and teachers from a " +
-               "school in that town sent related email to the “all-student” and “all-faculty” mailing " +
-               "lists. It is implied that the messages contain only helpful information about the status " +
+               "school in that town sent related email to the ",
+     italic: "“all-student”",
+     scenariocont: "and",
+     italiccont: "“all-faculty”",
+     scenariofinal: "mailing lists. It is implied that the messages contain only helpful information about the status " +
                "of faculty and students who were injured from the attack, and about ways the student body " +
                "and the faculty can help in the crisis. But Penelope sends a long email to the mailing list " +
                "about how she feels regarding the situation which would have been more appropriate in a blog " +
@@ -854,8 +860,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "go outside to walk the dog and leave the phone at home. While you’re out, your phone " +
                 "receives messages sent by your friend. Your classmate, who is your pair and stays at your " +
                 "place to work on your homework,  gets curious from the constant buzzing and looks through " +
-                "your phone. She sees your friend’s message that says “That’s nice! What are you gonna wear " +
-                "when you meet Jack on your date this Friday?” When you get back, your classmate tells you that " +
+                "your phone. She sees your friend’s message that says",
+      italic: " “That’s nice! What are you gonna wear when you meet Jack on your date this Friday?” ",
+      scenariocont: " When you get back, your classmate tells you that " +
                 "she is a close friend of Jack and started teasing you about your upcoming date.",
       answers: [
         [[ // 3
@@ -1034,14 +1041,17 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     },
     {
       scenario: "Jake the youtuber uploaded a video on Youtube about the new trend in social media where " +
-                "people do the “ice bucket challenge” to raise awareness on disease known as Amyotrophic " +
-                "Lateral Sclerosis (ALS). The video contained Jake simply discussing what the  “Ice Bucket " +
-                "Challenge” is a challenge where a person can either opt to pour ice on themselves or to donate " +
+                "people do the ",
+      italic: "“Ice Bucket Challenge”",
+      scenariocont: " to raise awareness on disease known as Amyotrophic " +
+                "Lateral Sclerosis (ALS). The video contained Jake simply discussing what the",
+      italiccont: " “Ice Bucket Challenge” ",
+      scenariofinal: " is a challenge where a person can either opt to pour ice on themselves or to donate " +
                 "money to ALS Associations. He opted to not do the challenge but he ended his video by donating to " +
                 "his local ALS Association. His followers got mad at him because they felt like he was ruining the " +
                 "fun of the ice bucket challenge by not choosing to pour ice on himself. They started leaving toxic " +
                 "comments in his video like calling him a coward and telling him that he should take down his video. " +
-                "He took down his video and never talked about the “ice bucket challenge” again.",
+                "He took down his video and never talked about the challenge again.",
       answers: [
         [[     // 3
           "Jake’s Followers",

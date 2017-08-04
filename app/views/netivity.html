@@ -5,15 +5,11 @@
 
 <div id="netivity-scenario-nav">
   <p>
-    <button class="tutorial-button" ng-click="tutorialContent = !tutorialContent">
-      <span ng-show="!tutorialContent"> Show <b>Tutorial</b> </span>
-      <span ng-show="tutorialContent"> Hide <b>Tutorial</b> </span>
-    </button>
     <button ng-repeat="scenario in contentScenarios track by $index"
             ng-click="showScenario($index)"
             id="button-num-($index)"
             class="button-num"
-            ng-class="{active: !tutorialContent && $parent.currentScenario === $index }">
+            ng-class="{active: $parent.currentScenario === $index }">
       {{$index+1}}
     </button>
   </p>
@@ -21,7 +17,7 @@
 
 <div class="scenario-content"
      ng-repeat="scenario in contentScenarios track by $index"
-     ng-show="!tutorialContent && $parent.currentScenario === $index">
+     ng-show="$parent.currentScenario === $index">
 
   <div class="center-me">
     <button class="tables-button" ng-click="scenarioContent = !scenarioContent">
@@ -31,7 +27,8 @@
   </div>
 
   <div class="core-scenario" style="text-align: center;" ng-show="scenarioContent">
-    {{scenario.scenario}}
+    {{scenario.scenario}} <div style="font-style:italic; display: inline;"> {{scenario.italic}} </div> {{scenario.scenariocont}}
+    <div style="font-style:italic; display: inline;"> {{scenario.italiccont}} </div> {{scenario.scenariofinal}}
   </div>
 
   <div class="center-me">
@@ -219,238 +216,7 @@
 </div>
 
 <div ng-show="tutorialContent">
-  <div class="core-scenario" style="text-align: center;">
-    The scenario is presented at the top of the screen. Below it, are three buttons where the teacher can click
-    which table she can hide and show. The first table is the elements table, the following tables cannot be accessed
-    or shown unless all the answers are correct for the elements table.
 
-    <div class="tutorial-steps" ng-click="step1 = !step1" style="margin-top: 10px;">
-      <span ng-show="!step1"> Show <b>Step 1</b> Scenario</span>
-      <span ng-show="step1"> <b>Step 1:</b> Read and understand the scenario <br>
-        This will be your basis for dissecting the scenario so you have to be
-        aware on how you will identify each element. Here is a sample scenario.
-      </span>
-    </div>
-
-  </div>
-  <div class="center-me">
-    <button class="tables-button" ng-click="tutElementsTable = !tutElementsTable" ng-class="{ active: tutElementsTable }"><b>①</b> Elements Table</button>
-    <button class="tables-button" ng-click="tutCauseEffectTable =!tutCauseEffectTable" ng-class="{ active: tutCauseEffectTable }"><b>②</b> Cause and Effect Table</button>
-    <button class="tables-button" ng-click="tutComparisonTable =!tutComparisonTable" ng-class="{ active: tutComparisonTable }"><b>③</b> Comparison Table</button>
-  </div>
-
-  <div ng-show="tutElementsTable">
-
-    <div class="tutorial-steps" ng-click="step2 = !step2" style="margin-top: 10px;">
-      <span ng-show="!step2"> Show <b>Step 2</b> Dropdown</span>
-      <span ng-show="step2"> <b>Step 2:</b> Cross-referencing rules <br>
-        When a rule is selected from the dropdown, it will appear uner the the guideline elements. You can
-        cross-reference your answers for the scenario elements to the guidelines elements if it fits. This also
-        serves as the basis for answering the rule violated.
-      </span>
-    </div>
-    <br>
-    <div class="dropdown">
-      <select ng-model="guideline">
-        <option ng-repeat="element in elements" value="{{element.value}}">
-          {{element.name}}
-        </option>
-      </select>
-    </div>
-
-    <table class="core-table" style="width: 90%">
-      <tr>
-        <th style="width: 20%">Element</th>
-        <th style="width: 30%">Guideline Elements</th>
-        <th style="width: 50%">Scenario Elements</th>
-      </tr>
-      <tr ng-repeat="question in questions">
-        <td class="core-question" style="text-align: left;"> {{question}} </td>
-
-        <td>
-          <div ng-show="guideline=='1'" ng-repeat="guide in guidelines1[$index] track by $index">
-            {{guide}}
-          </div>
-          <div ng-show="guideline=='2'" ng-repeat="guide in guidelines2[$index] track by $index">
-            {{guide}}
-          </div>
-          <div ng-show="guideline=='3'" ng-repeat="guide in guidelines3[$index] track by $index">
-            {{guide}}
-          </div>
-          <div ng-show="guideline=='4'" ng-repeat="guide in guidelines4[$index] track by $index">
-            {{guide}}
-          </div>
-          <div ng-show="guideline=='5'" ng-repeat="guide in guidelines5[$index] track by $index">
-            {{guide}}
-          </div>
-          <div ng-show="guideline=='6'" ng-repeat="guide in guidelines6[$index] track by $index">
-            {{guide}}
-          </div>
-          <div ng-show="guideline=='7'" ng-repeat="guide in guidelines7[$index] track by $index">
-            {{guide}}
-          </div>
-          <div ng-show="guideline=='8'" ng-repeat="guide in guidelines8[$index] track by $index">
-            {{guide}}
-          </div>
-          <div ng-show="guideline=='9'" ng-repeat="guide in guidelines9[$index] track by $index">
-            {{guide}}
-          </div>
-          <div ng-show="guideline=='10'" ng-repeat="guide in guidelines10[$index] track by $index">
-            {{guide}}
-          </div>
-        </td>
-
-        <td ng-repeat="guide in elementsGuide[$index] track by $index">
-          <div class="tutorial-steps" style="width: 100%">
-            {{guide}}
-          </div>
-        </td>
-
-      </tr>
-    </table>
-  </div>
-
-  <div ng-show="tutCauseEffectTable">
-    <div class="tutorial-steps" ng-click="step3 = !step3">
-      <span ng-show="!step3"> Show <b>Step 3</b> Cause and Effect Table </span>
-      <span ng-show="step3"> <b>Step 3:</b> Putting the actions in order <br>
-        Every event, besides the first event, is caused by another event. Note that the objective is
-        usually the first event that happens. Reading the table goes from <b>top to bottom</b>.
-      </span>
-    </div>
-
-    <br>
-    <table class="core-table" style="width: 80%">
-      <tr>
-        <th>Cause and Effect Table</th>
-      </tr>
-
-      <tr>
-        <td>
-          <div ng-hide="laborClicked1">
-              First action
-          </div>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="center-me"> ▼ </td>
-      </tr>
-
-      <tr>
-        <td>
-          <div ng-hide="laborClicked1">
-              Second action
-          </div>
-        </td>
-      </tr>
-
-      <tr>
-        <td class="center-me"> ▼ </td>
-      </tr>
-
-      <tr>
-        <td>
-          <div ng-hide="laborClicked1">
-              Third action
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
-
-  <div ng-show="tutComparisonTable">
-    <div class="tutorial-steps" ng-click="step4 = !step4">
-      <span ng-show="!step4"> Show <b>Step 4</b> Comparison Table </span>
-      <span ng-show="step4"> <b>Step 4:</b> Reverse Attribution Theory <br>
-        Compare the guidelines applied to the scenario with the cause and effect table. Some scenarios will have more than
-        one rule applied. Click the “Highlight violating actions” button to identify what part of the system does the rule
-        apply to. The activity’s goal is to see if the scenario follows the guidelines applied. Negate the actions from bottom
-        to top and click the "highlight violating actions" to see if an action still violates a rule.
-      </span>
-    </div>
-
-    <br>
-    <div class="col-sm-5">
-      <table class="core-table" style="width: 95%">
-        <tr>
-          <th style="width: 30%">Rule Involved</th>
-          <th style="width: 70%">Description</th>
-        </tr>
-        <tr>
-          <td class="core-question" style="text-align: left;">
-            Correct rule violated name
-          </td>
-
-           <td>
-            Correct rule violated description button in here will highlight the corresponding actions in the table on the right.
-            <a class="negate highlight center-me" ng-click="tutorialHighlight = !tutorialHighlight" style="float: right;" title="Highlight the corresponding actions that violate rule">
-              <i class="fa fa-exclamation-triangle" style="font-size: 12px"></i> <p style="font-weight: lighter; font-size: 10px; display: inline; text-transform: uppercase;"> highlight violating actions</p>
-            </a>
-          </td>
-
-        </tr>
-      </table>
-    </div>
-
-    <div class="col-sm-7">
-      <table class="core-table" style="width: 95%">
-        <tr>
-          <th>Cause and Effect Table</th>
-        </tr>
-
-        <tr class="action">
-          <td>
-            <div ng-hide="firstAction">
-                First action
-                <a class="negate center-me" style="float: right;" title="Negate the corresponding action">
-                  <i class="fa fa-ban"></i>
-                </a>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="center-me"> ▼ </td>
-        </tr>
-
-        <tr class="action">
-          <td>
-            <div ng-hide="secondAction">
-                <span ng-show="tutorialHighlight" class="action highlighted"> Second action (violating action) </span>
-                <span ng-show="!tutorialHighlight" class="action"> Second action (violating action) </span>
-                <a class="negate center-me" ng-click="tutLaborClick(2)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
-                  <i class="fa fa-ban"></i>
-                </a>
-            </div>
-            <div ng-show="secondAction" class="action negated">
-              Second action (negated, does not violate rule anymore)
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="center-me"> ▼ </td>
-        </tr>
-
-        <tr class="action">
-          <td>
-            <div ng-hide="thirdAction">
-                Third action
-                <a class="negate center-me" ng-click="tutLaborClick(3)" style="float: right;" title="Negate the corresponding action">
-                  <i class="fa fa-ban"></i>
-                </a>
-            </div>
-            <div ng-show="thirdAction" class="action negated">
-                Third action (negated)
-            </div>
-          </td>
-        </tr>
-
-      </table>
-      <br><br><br>
-    </div>
-  </div>
 </div>
 
 <div id="footer">
@@ -974,13 +740,238 @@
       </a>
     </div>
     <div class="help-content">
-      Choose the difficulty level for the scenario you wish to tackle and then choose which scenario
-      specifically to do. Read the scenario then answer the questions that follow by clicking on the
-      orange pencil icon on the right most of each row. Then check your answers by clicking on Check Answer
-      at the bottom of each scenario.
-      <br><br>
+      <div class="core-scenario" style="text-align: center; width: 100%; font-size: 17px; margin-top: -20px;">
+        <b> Understanding the Netiquette Activity </b><br>
+        The scenario is presented at the top of the screen. Below it, are three buttons where the teacher can click
+        which table she can hide and show. The first table is the elements table, the following tables cannot be accessed
+        or shown unless all the answers are correct for the elements table.
 
-      Next suggested place to go to would be Online Safety and Security for the next topic to be discussed!
+        <div class="tutorial-steps" ng-click="step1 = !step1" style="margin-top: 10px;">
+          <span ng-show="!step1"> Show <b>Step 1</b> Scenario</span>
+          <span ng-show="step1"> <b>Step 1:</b> Read and understand the scenario <br>
+            This will be your basis for dissecting the scenario so you have to be
+            aware on how you will identify each element. Here is a sample scenario.
+          </span>
+        </div>
+
+      </div>
+      <div class="center-me">
+        <button class="tables-button" ng-click="tutElementsTable = !tutElementsTable" ng-class="{ active: tutElementsTable }"><b>①</b> Elements Table</button>
+        <button class="tables-button" ng-click="tutCauseEffectTable =!tutCauseEffectTable" ng-class="{ active: tutCauseEffectTable }"><b>②</b> Cause and Effect Table</button>
+        <button class="tables-button" ng-click="tutComparisonTable =!tutComparisonTable" ng-class="{ active: tutComparisonTable }"><b>③</b> Comparison Table</button>
+      </div>
+
+      <div ng-show="tutElementsTable">
+
+        <div class="tutorial-steps" ng-click="step2 = !step2" style="margin-top: 10px;">
+          <span ng-show="!step2"> Show <b>Step 2</b> Dropdown</span>
+          <span ng-show="step2"> <b>Step 2:</b> Cross-referencing rules <br>
+            When a rule is selected from the dropdown, it will appear uner the the guideline elements. You can
+            cross-reference your answers for the scenario elements to the guidelines elements if it fits. This also
+            serves as the basis for answering the rule violated.
+          </span>
+        </div>
+        <br>
+        <div class="dropdown">
+          <select ng-model="guideline">
+            <option ng-repeat="element in elements" value="{{element.value}}">
+              {{element.name}}
+            </option>
+          </select>
+        </div>
+
+        <table class="core-table" style="width: 100%">
+          <tr>
+            <th style="width: 20%">Element</th>
+            <th style="width: 30%">Guideline Elements</th>
+            <th style="width: 50%">Scenario Elements</th>
+          </tr>
+          <tr ng-repeat="question in questions">
+            <td class="core-question" style="text-align: left;"> {{question}} </td>
+
+            <td>
+              <div ng-show="guideline=='1'" ng-repeat="guide in guidelines1[$index] track by $index">
+                {{guide}}
+              </div>
+              <div ng-show="guideline=='2'" ng-repeat="guide in guidelines2[$index] track by $index">
+                {{guide}}
+              </div>
+              <div ng-show="guideline=='3'" ng-repeat="guide in guidelines3[$index] track by $index">
+                {{guide}}
+              </div>
+              <div ng-show="guideline=='4'" ng-repeat="guide in guidelines4[$index] track by $index">
+                {{guide}}
+              </div>
+              <div ng-show="guideline=='5'" ng-repeat="guide in guidelines5[$index] track by $index">
+                {{guide}}
+              </div>
+              <div ng-show="guideline=='6'" ng-repeat="guide in guidelines6[$index] track by $index">
+                {{guide}}
+              </div>
+              <div ng-show="guideline=='7'" ng-repeat="guide in guidelines7[$index] track by $index">
+                {{guide}}
+              </div>
+              <div ng-show="guideline=='8'" ng-repeat="guide in guidelines8[$index] track by $index">
+                {{guide}}
+              </div>
+              <div ng-show="guideline=='9'" ng-repeat="guide in guidelines9[$index] track by $index">
+                {{guide}}
+              </div>
+              <div ng-show="guideline=='10'" ng-repeat="guide in guidelines10[$index] track by $index">
+                {{guide}}
+              </div>
+            </td>
+
+            <td ng-repeat="guide in elementsGuide[$index] track by $index">
+              <div class="tutorial-steps" style="width: 100%">
+                {{guide}}
+              </div>
+            </td>
+
+          </tr>
+        </table>
+      </div>
+
+      <div ng-show="tutCauseEffectTable">
+        <div class="tutorial-steps" ng-click="step3 = !step3">
+          <span ng-show="!step3"> Show <b>Step 3</b> Cause and Effect Table </span>
+          <span ng-show="step3"> <b>Step 3:</b> Putting the actions in order <br>
+            Every event, besides the first event, is caused by another event. Note that the objective is
+            usually the first event that happens. Reading the table goes from <b>top to bottom</b>.
+          </span>
+        </div>
+
+        <br>
+        <table class="core-table" style="width: 100%">
+          <tr>
+            <th>Cause and Effect Table</th>
+          </tr>
+
+          <tr>
+            <td>
+              <div ng-hide="laborClicked1">
+                  First action
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center-me"> ▼ </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div ng-hide="laborClicked1">
+                  Second action
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="center-me"> ▼ </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div ng-hide="laborClicked1">
+                  Third action
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div ng-show="tutComparisonTable">
+        <div class="tutorial-steps" ng-click="step4 = !step4">
+          <span ng-show="!step4"> Show <b>Step 4</b> Comparison Table </span>
+          <span ng-show="step4"> <b>Step 4:</b> Reverse Attribution Theory <br>
+            Compare the guidelines applied to the scenario with the cause and effect table. Some scenarios will have more than
+            one rule applied. Click the “Highlight violating actions” button to identify what part of the system does the rule
+            apply to. The activity’s goal is to see if the scenario follows the guidelines applied. Negate the actions from bottom
+            to top and click the "highlight violating actions" to see if an action still violates a rule.
+          </span>
+        </div>
+
+        <br>
+        <div class="col-sm-5">
+          <table class="core-table" style="width: 95%">
+            <tr>
+              <th style="width: 30%">Rule Involved</th>
+              <th style="width: 70%">Description</th>
+            </tr>
+            <tr>
+              <td class="core-question" style="text-align: left;">
+                Correct rule violated name
+              </td>
+
+               <td>
+                Correct rule violated description button in here will highlight the corresponding actions in the table on the right.
+                <a class="negate highlight center-me" ng-click="tutorialHighlight = !tutorialHighlight" style="float: right;" title="Highlight the corresponding actions that violate rule">
+                  <i class="fa fa-exclamation-triangle" style="font-size: 12px"></i> <p style="font-weight: lighter; font-size: 10px; display: inline; text-transform: uppercase;"> highlight violating actions</p>
+                </a>
+              </td>
+
+            </tr>
+          </table>
+        </div>
+
+        <div class="col-sm-7">
+          <table class="core-table" style="width: 95%">
+            <tr>
+              <th>Cause and Effect Table</th>
+            </tr>
+
+            <tr class="action">
+              <td>
+                <div ng-hide="firstAction">
+                    First action
+                    <a class="negate center-me" style="float: right;" title="Negate the corresponding action">
+                      <i class="fa fa-ban"></i>
+                    </a>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="center-me"> ▼ </td>
+            </tr>
+
+            <tr class="action">
+              <td>
+                <div ng-hide="secondAction">
+                    <span ng-show="tutorialHighlight" class="action highlighted"> Second action (violating action) </span>
+                    <span ng-show="!tutorialHighlight" class="action"> Second action (violating action) </span>
+                    <a class="negate center-me" ng-click="tutLaborClick(2)" style="float: right;" title="Negate the corresponding action"> <!-- checkAnswer($index, $parent.$index, 'easy') -->
+                      <i class="fa fa-ban"></i>
+                    </a>
+                </div>
+                <div ng-show="secondAction" class="action negated">
+                  Second action (negated, does not violate rule anymore)
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="center-me"> ▼ </td>
+            </tr>
+
+            <tr class="action">
+              <td>
+                <div ng-hide="thirdAction">
+                    Third action
+                    <a class="negate center-me" ng-click="tutLaborClick(3)" style="float: right;" title="Negate the corresponding action">
+                      <i class="fa fa-ban"></i>
+                    </a>
+                </div>
+                <div ng-show="thirdAction" class="action negated">
+                    Third action (negated)
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div style="color: #F1FBEE;">.</div>
+      </div>
     </div>
   </div>
 </div>
