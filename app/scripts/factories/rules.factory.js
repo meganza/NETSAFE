@@ -9,7 +9,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Before you say something, always ask: “Would you say this to the other person’s face?\" "
       ],
       donts: [
-        "Don’t forget that the recipient of your words is a human too.",
+        "Forget that the recipient of your words is a human too.",
         "Say something that could be considered mean or rude without thinking about it first. ",
         "Say anything that could be saved and used against you."
       ],
@@ -62,7 +62,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       scenario: "The class submits their assignment online through Yahoo groups. Benedict saw that his " +
                 "classmate has already submitted and he downloaded his classmate’s file. He copy-pasted some " +
                 "of the content that his classmate wrote. When the results came back, they were both accused of " +
-                "cheating or plagiarism and were both given zeros for the assignment. ",
+                "cheating or plagiarism and were both given zeros for the assignment by the teacher. ",
       elements: [
         {name: "Netizen/s"},
         {name: "When the netizen posts online"},
@@ -72,7 +72,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       selements: [
         "Benedict (Netizen)",
         "Submitting the assignment online",
-        "Benedict and his classmate (Netizens)",
+        "Benedict and his classmate (Netizens), and the teacher",
         "Yahoo Groups"
       ],
       labors: [
@@ -159,11 +159,12 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Waste people’s time and bandwidth.",
         "Expect that others will instantaneously respond to your questions and concerns."
       ],
-      scenario: "Trixie posted her problem with her code on an online discussion group, she did it several " +
-                "times thinking that she could get answers right away in doing so. The other people in the " +
-                "discussion group got irritated by Trixie’s same multiple posts because those covered up most " +
-                "of the discussion page of the group. Because of this, one of the people in the community " +
-                "reported her account to the admin and then, Trixie got blocked by the admin from the online discussion group.",
+      scenario: "Trixie posted her problem with her code on an online discussion group, she made 10 posts " +
+                "containing the same code in the span of 10 minutes so that people in the community would " +
+                "notice her question. The other people in the discussion group got irritated by Trixie’s same " +
+                "multiple posts because those covered up most of the discussion page of the group. Because of " +
+                "this, one of the people in the community reported her account to the admin and then, Trixie got " +
+                "blocked by the admin from the online discussion group.",
       elements: [
         {name: "Sender and/or receiver"},
         {name: "When you are sending information on the online platform"},
@@ -172,14 +173,14 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       ],
       selements: [
         "Trixie (sender), person in the discussion group, and admin (receivers)",
-        "Trixie posted her problem with her code on an online discussion group several times",
+        "Trixie made 10 posts containing the same code in the span of 10 minutes on an online discussion group",
         "Trixie (sender), people in the discussion group, and admin (receivers)",
         "Online discussion group"
       ],
       labors: [
             {
-              old: "Trixie posted her problem with her code on an online discussion group several times",
-              new: "Trixie did not post her problem with her code on an online discussion group several times"
+              old: "Trixie made 10 posts containing the same code in the span of 10 minutes on an online discussion group",
+              new: "Trixie did not make 10 posts containing the same code in the span of 10 minutes on an online discussion group"
             }, {
               old: "Other people got irritated of Trixie’s multiple same posts.",
               new: "Other people did not get irritated of Trixie’s multiple same posts."
@@ -209,10 +210,10 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Use offensive language.",
         "Make overly complicated posts that don’t make any sense."
       ],
-      scenario: "George writes an online diary through a blog. He usually writes about things that interest him " +
-                "or what is interesting about his day. However, people who read his blog left comments saying " +
-                "that his posts are incoherent, grammatically incorrect, and some of his blog posts contain " +
-                "offensive words towards other people. This made him mad, embarrassed, and made him delete his blog.",
+      scenario: "George writes incoherent, grammatically incorrect, and offensively written " +
+                "(due to swear words) diary entries on his blog. Other people have visited his blog " +
+                "and have commented that his posts are indeed incoherent, grammatically incorrect, and " +
+                "offensively written. This made George embarrassed. George deleted his blog.",
       elements: [
         {name: "Netizen/s"},
         {name: "When you are posting your own content on the online platform"},
@@ -221,7 +222,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       ],
       selements: [
         "George and other people commenting on his blog (Netizens)",
-        "George writing an online diary through a blog",
+        "George writing diary entries on his blog",
         "George and other people commenting on his blog (Netizens)",
         "Blog"
       ],
@@ -248,7 +249,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       negateStop: -1
     }, {
       rule: "№6: Share Expert Knowledge",
-      description: "Share helpful information from credible sources.",
+      description: "Do not share false information.",
       dos: [
         "Share information that you have to help others.",
         "Share results of answered questions to help people that might need the information.",
@@ -259,12 +260,14 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Post sources that could be considered unreliable.",
         "Be compliant in the spread of erroneous information online."
       ],
-      scenario: "Justin posted a question on Stack Overflow, a programming forum, about a programming problem " +
-                "for his project. Another user, Josh, who is a novice programmer, answered his question quite " +
-                "confidently. However, Marc, an experienced computer programmer, noticed that Josh’s answer to " +
-                "Justin’s question has a minor error. Josh was not aware that his answer has a minor error. Despite " +
-                "knowing the correct solution, Marc did not bother to share the correct answer. Justin’s program did " +
-                "not run properly and got a low mark in his project.",
+      scenario: "Justin posted a question on Stack Overflow, a programming forum, about a programming " +
+                "problem for his project. Another user, Josh, who is a novice programmer, answered his " +
+                "question quite confidently. However, Marc, an experienced computer programmer, passed " +
+                "by Justin’s post and noticed that Josh’s answer to Justin’s question has a minor error. " +
+                "Josh was not aware that his answer has a minor error. Despite knowing the correct solution, " +
+                "Marc replied by intentionally adding more errors to the code such as removing a semicolon and " +
+                "adding unused variables. Justin’s program did not run properly and got a low mark in his project.",
+
       elements: [
         {name: "Sender and/or receiver"},
         {name: "When you’re asking for or exchanging expert information"},
@@ -288,15 +291,14 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               old: "Marc noticed that Josh’s answer was erroneous.",
               new: "-"
             }, {
-              old: "Marc did not bother to share his correct answer.",
-              new: "Marc shared the correct answer."
+              old: "Marc replied by intentionally adding more errors to the code.",
+              new: "Marc did not intentionally add more errors to the code."
             }, {
               old: "Justin’s program did not run properly and got a low mark for his project. ",
               new: "Justin’s program ran properly and he did not get a low mark for his project."
             }
       ],
-      solution: "Marc should have taken full notice of Josh’s erroneous answer and shared the correct answer. " +
-                "Do not be compliant in the spread of erroneous information online.",
+      solution: "Marc shouldn’t have intentionally add more errors to the code. Do not share false information.",
       highlights: [ 3 ],
       negateStop: 2
     }, {
@@ -360,10 +362,10 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Read other people’s personal messages or emails.",
         "Access information that is not meant to be public or not meant for them to be read."
       ],
-      scenario: "Wayne hacked one of his friends’ account to practice his newly acquired skill which " +
-                "is hacking. He successfully gained access to his friend’s account. Out of curiosity, " +
-                "he read some of his friend’s personal messages to other people. Wayne’s friend found out " +
-                "what happened and got mad at Wayne for invading his privacy.",
+      scenario: "Wayne hacked one of his friends’ account to practice his newly acquired skill " +
+                "which is hacking. He successfully gained access to his friend’s account. While he " +
+                "had access to his friend’s account, he read some of his friend’s personal messages " +
+                "to other people. Wayne’s friend found out what happened and got mad at Wayne for invading his privacy.",
       elements: [
         {name: "Owner and infiltrator"},
         {name: "When you access other people’s information"},
@@ -405,7 +407,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       donts: [
         "Abuse your power to access your subordinate’s accounts.",
         "Read private emails of employees.",
-        "Use your skills or privileges as an admin or a developer for personal gain."
+        "Use your skills or privileges as an admin or a developer for personal gain or interest."
       ],
       scenario: "Justin works on the IT department of his company. He works as a system admin " +
                 "in their company. Justin’s boss allowed Justin’s computer to access the company database " +

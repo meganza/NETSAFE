@@ -2,7 +2,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
   return {
     content: [
     {
-      scenario: "While you were in Middle School, you often use swear words on twitter. " +
+      scenario: "While you were in Middle School, you often use swear words on Twitter. " +
                 "Whenever you tweet, there were always swear words included. Most of your " +
                 "followers got put off because of your behavior online and even your cousins, " +
                 "who follows you, saw your tweets full of curse words. Your cousins sent a " +
@@ -346,15 +346,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "respect the person’s privacy in real life."
     },
     {
-      scenario: "Jaime was amused by a dank meme in a website and forwarded it on CONNEX. " +
-                "The meme contains a picture of Donald Trump signing a document that simply says ",
-      italic: " “covfefe”. ",
-      scenariocont:
-                "CONNEX is a learning platform intended to provide students a " +
-                "way to discuss topics relevant to the course, which is chemistry, when they " +
-                "are outside the classroom. Their teacher is also a part of the CONNEX as the " +
-                "administrator. Unfortunately, everyone in his class found Jaime’s post inappropriate " +
-                "and irrelevant to CONNEX.  They brought this to the attention of the teacher.",
+      scenario: "Jaime was amused by a GIF (Graphic Interchange Format) of a jumpscare where a " +
+                "Chuckie doll pops out. Jaime forwarded it on CONNEX. CONNEX is a learning platform " +
+                "intended to provide students a way to discuss topics relevant to the course, which is " +
+                "chemistry, when they are outside the classroom. Their teacher is also a part of the " +
+                "CONNEX as the administrator. Unfortunately, everyone in his class found Jaime’s post " +
+                "inappropriate and irrelevant to CONNEX. They brought this to the attention of the teacher.",
       answers: [
         [[ // 1
           "Jamie, people in CONNEX",
@@ -397,13 +394,13 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       labors: [
             "Everyone in his class found Jaime’s post inappropriate and irrelevant to CONNEX.",
             "The students brought this to the attention of the teacher.",
-            "Jaime was amused by a dank meme in a website and forwarded it on CONNEX."
+            "Jaime was amused by a GIF containing a jumpscare and forwarded it to CONNEX."
       ],
       laborsOrder: [2, 0, 1],
       correctLabors: [
             {
-              old: "Jaime was amused by a dank meme in a website and forwarded it on CONNEX.",
-              new: "Jaime was amused by a dank meme in a website and did not forward it on CONNEX."
+              old: "Jaime was amused by a GIF containing a jumpscare and forwarded it to CONNEX.",
+              new: "Jaime was amused by a GIF containing a jumpscare but did not forward it to CONNEX."
             }, {
               old: "Everyone in his class found Jaime’s post inappropriate and irrelevant to CONNEX.",
               new: "Everyone in his class did not find Jaime’s post inappropriate and irrelevant to CONNEX."
@@ -421,9 +418,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         }
       ],
       negateStop: -1,
-      solution: "Jaime should have not forwarded the site to CONNEX. Always be mindful where you " +
-                "are in the cyberspace and adapt to the surroundings. Do not post content that is " +
-                "not appropriate to the domain."
+      solution: "Jaime shouldn’t have forwarded the jumpscare GIF to CONNEX. Always be mindful where " +
+                "you are in the cyberspace and adapt to the surroundings. Do not post content that " +
+                "is not appropriate to the domain."
     },
     {
       scenario: "Abner is part of the debate team in his school. He is a good speaker or debater " +
@@ -524,38 +521,35 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "disagree on one’s opinion or statement, do it in a calm and polite way."
     },
     {
-      scenario: "The university’s supervisor has a lot of work to do for an upcoming project. " +
-                "The supervisor accessed her secretary’s e-mail using the admin password to see if " +
-                "departmental-related mail is coming in without the secretary’s knowledge because " +
-                "the secretary was on sick leave. Accidentally, the supervisor clicked on an e-mail " +
-                "from a university. The supervisor mistakenly clicked on the delete button instead of " +
-                "the back button. The following day, the secretary couldn’t find an e-mail from the " +
-                "university regarding her application for masters studies and thought that the university " +
-                "hasn’t e-mailed her. A few more weeks passed by and the secretary received an e-mail from " +
-                "the university that they already gave her slot to another applicant because she wasn’t " +
-                "able to confirm her application before the deadline.",
+      scenario: "Hans is one of the developers and system admin of their company’s Human Resources " +
+                "Management System. Hans accessed the system’s database to fix a bug report found in " +
+                "the attendance tracking feature. Upon fixing the system, Hans saw that Luke’s attendance " +
+                "logs we’re mostly tardy for the past few months. If this continues, Luke, one of Han’s " +
+                "closest friends at work, will be under probation. Not wanting his friend to be under " +
+                "probation, Hans changed some of Luke’s attendance logs to on-time. The HR chairperson " +
+                "found out what Hans did and sanctioned him a 2-week suspension for his misconduct. ",
       answers: [
         [[ // 2
-          "University",
-          "Secretary and supervisor",
-          "Supervisor",
-          "Secretary and university"
+          "Luke",
+          "Hans and HR chairperson",
+          "HR chairperson",
+          "Client"
         ]],
         [[ // 2
           "When the supervisor accidentally clicked on an e-mail from a university.",
-          "When the supervisor accessed the secretary’s e-mail account using the admin password.",
+          "Hans accessed the system’s database to fix a bug report. ",
           "When the supervisor didn’t bother to read the e-mail she accidentally clicked.",
           "When the secretary was not able to confirm to through e-mail"
         ]],
         [[ // 1
-          "Secretary and supervisor",
-          "The other applicant",
-          "Supervisor",
-          "Secretary"
+          "Hans, Luke, and HR chairperson",
+          "HR chairperson and client",
+          "Luke and Hans",
+          "Client"
         ]],
         [[ // 2
           "Admin password",
-          "E-mail account",
+          "Human resource Management System",
           "Secretary's password",
           "Department e-mails"
         ]],
@@ -568,7 +562,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[1], [1], [0], [1], [0]],
       additionalDetails: [
-        {name: "Subordinate: secretary; Admin: supervisor"},
+        {name: "Hans and HR chairperson (subordinate)"},
         {name: ""},
         {name: "Subordinate: secretary; Admin: supervisor"},
         {name: ""}
@@ -1040,7 +1034,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       solution: "George should not have accessed Elijah’s company email account. George should not have used it to send spam messages to their co-workmates to get back at Elijah."
     },
     {
-      scenario: "Jake the youtuber uploaded a video on Youtube about the new trend in social media where " +
+      scenario: "Jake, a vlogger, uploaded a video on YouTube about the new trend in social media where " +
                 "people do the ",
       italic: "“Ice Bucket Challenge”",
       scenariocont: " to raise awareness on disease known as Amyotrophic " +
