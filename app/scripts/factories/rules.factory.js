@@ -312,43 +312,45 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Express opinions without holding back your emotions.",
         "Destroy the camaraderie within the discussion group."
       ],
-      scenario: "You are a very outspoken person when it comes to your beliefs and it shows on your posts on " +
-                "Facebook. You recently posted your opinions against the current president and his administration. " +
-                "A lot of people in facebook has seen your post. A supporter of the current president started bashing " +
-                "you through your posts. You remain firm about your stand and you start retaliating. The conversation " +
-                "starts to get heated and it has turned into a senseless exchange.",
+      scenario: "Scarlet was browsing through the Facebook comments section of a post containing a " +
+                "picture of Jacob and Edward from Twilight. She saw a thread where people were arguing " +
+                "whether Jacob or Edward was the better male lead. A member of Team Jacob left a comment " +
+                "saying that Team Jacob is way better than Team Edward because Edward only sparkles in the " +
+                "sun and is not a true vampire. Scarlet, being a fan of Edward, got mad and bashed the " +
+                "commentor by saying curse words and threats stating that their comment was invalid and that " +
+                "the commenter was not a true fan of the movie. Scarlet checked her phone an hour later and saw " +
+                "that she was receiving non stop messages from Team Jacob containing curse words and threats. ",
       elements: [
-        {name: "Sender and/or receiver"},
+        {name: "Sender and receiver"},
         {name: "Posting or making a statement online"},
         {name: "Sender and receiver"},
         {name: "Online platform"}
       ],
       selements: [
-        "You (sender) and the supporter (receiver)",
-        "You posted your opinions against the current president and his administration",
-        "You (sender), the supporter, and friends/people in Facebook (receivers)",
-        "Facebook"
+        "Scarlet (sender & receiver), Team Jacob (sender), commenter (receiver)",
+        "A member of Team Jacob left a comment saying that Team Jacob is way better than Team Edward",
+        "Scarlet (sender & receiver), Team Jacob (sender), commenter (receiver)",
+        "Facebook Comments Section"
       ],
       labors: [
             {
-              old: "You posted about your opinions against the current president and administration on Facebook.",
+              old: "Scarlet was browsing through the Facebook comments section of a post containing a picture of Jacob and Edward from Twilight.",
               new: "-"
             }, {
-              old: "A lot of people in facebook has seen your post",
+              old: "She saw a thread where people were arguing whether Jacob or Edward was the better male lead.",
               new: "-"
             },{
-              old: "A supporter started bashing you on your posts.",
+              old: "A member of Team Jacob left a comment saying that Team Jacob is way better than Team Edward.",
               new: "-"
             }, {
-              old: "You start retaliating.",
-              new: "You did not retaliate."
+              old: "Scarlet, being a fan of Edward, got mad and bashed the commentor by saying curse words and threats.",
+              new: "Scarlet, being a fan of Edward, got mad but did not bash the commentor by saying curse words and threats."
             }, {
-              old: "The conversation starts to get heated and it turns into a senseless conversation.",
-              new: "The conversation did not start to get heated and it did not turn into a senseless conversation."
+              old: "Scarlet checked her phone an hour later and saw that she was receiving non stop messages from Team Jacob.",
+              new: "Scarlet checked her phone an hour later and saw that she did not receive non stop messages from Team Jacob."
             }
       ],
-      solution: "You should not have started retaliating. Do not express opinions without holding back your " +
-                "emotions. Do not destroy the camaraderie in the discussion group",
+      solution: "Scarlet should not bash the commenter. Do not express your opinions without holding back your emotions.",
       highlights: [ 3 ],
       negateStop: 2
     }, {

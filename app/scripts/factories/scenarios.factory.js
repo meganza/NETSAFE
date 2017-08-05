@@ -522,30 +522,30 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
     },
     {
       scenario: "Hans is one of the developers and system admin of their company’s Human Resources " +
-                "Management System. Hans accessed the system’s database to fix a bug report found in " +
-                "the attendance tracking feature. Upon fixing the system, Hans saw that Luke’s attendance " +
-                "logs we’re mostly tardy for the past few months. If this continues, Luke, one of Han’s " +
-                "closest friends at work, will be under probation. Not wanting his friend to be under " +
-                "probation, Hans changed some of Luke’s attendance logs to on-time. The HR chairperson " +
-                "found out what Hans did and sanctioned him a 2-week suspension for his misconduct. ",
+                "Management System (HRMS). Hans accessed the system’s database to fix a bug report " +
+                "found in the attendance tracking feature. Upon fixing the system, Hans saw that Luke’s " +
+                "attendance logs we’re mostly tardy for the past few months. If this continues, Luke, one of " +
+                "Han’s closest friends at work, will be under probation. Not wanting his friend to be under " +
+                "probation, Hans changed some of Luke’s attendance logs to on-time. The HR personnel, who uses " +
+                "the HRMS, found out what Hans did and reported it to the HR chairperson.",
       answers: [
         [[ // 2
-          "Luke",
-          "Hans and HR chairperson",
-          "HR chairperson",
-          "Client"
+          "Luke and HR chairperson",
+          "Hans and HR personnel",
+          "Luke and Hans",
+          "Hans and HR chairperson"
         ]],
         [[ // 2
-          "When the supervisor accidentally clicked on an e-mail from a university.",
+          "Hans saw that Luke’s attendance logs we’re mostly tardy for the past few months.",
           "Hans accessed the system’s database to fix a bug report. ",
-          "When the supervisor didn’t bother to read the e-mail she accidentally clicked.",
-          "When the secretary was not able to confirm to through e-mail"
+          "Hans changed some of Luke’s attendance logs to on-time.",
+          "The HR personnel finds out what Hans did and reported it to the HR chairperson."
         ]],
         [[ // 1
-          "Hans, Luke, and HR chairperson",
-          "HR chairperson and client",
-          "Luke and Hans",
-          "Client"
+          "Hans, Luke, HR personnel, and HR chairperon",
+          "Hans, Luke and HR personnel",
+          "Luke and HR Chairperson",
+          "HR Chairperson and HR personnel"
         ]],
         [[ // 2
           "Admin password",
@@ -562,7 +562,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
       ],
       answersOrder: [[1], [1], [0], [1], [0]],
       additionalDetails: [
-        {name: "Hans and HR chairperson (subordinate)"},
+        {name: "Admin: Hans; Luke, HR personnel, and HR chairperon"},
         {name: ""},
         {name: "Subordinate: secretary; Admin: supervisor"},
         {name: ""}
