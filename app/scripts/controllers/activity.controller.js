@@ -601,6 +601,7 @@ angular.module('Netsafe').controller('activityController', function($scope) {
 
   // open / close the modal
   $scope.openCustom = function(){
+    $scope.answer = "";
     $scope.custom = !$scope.custom;
   };
 
@@ -734,7 +735,9 @@ angular.module('Netsafe').controller('activityController', function($scope) {
   };
 
   $scope.clearCustom = function(num){
-    $scope.clearSymptom();
+    //$scope.clearSymptom();
+    symptom_filter = [ 0, 0, 0, 0, 0, 0, 0 ];
+    symptom_counter = 0;
 
     //localStorage.removeItem($scope.data[num]);
     var data = JSON.parse(localStorage.getItem('data'));
