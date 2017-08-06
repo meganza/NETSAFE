@@ -42,8 +42,8 @@ angular.module('Netsafe').factory('RulesFactory', function() {
             }
       ],
       solution: "The anonymous fellow should have not sent an email to Thomas that contained a message saying that " +
-                "“Your art is trash and you should quit.” The message in the email is something that you would not " +
-                "want to say to  another person’s face because it will hurt his/her feelings or it is offending.",
+                "“Your art is trash and you should quit.”. The message in the email is something that you would not want " +
+                "to say to another person’s face because it will hurt his/her feelings or it could be considered offensive to them.",
       highlights: [ 1 ],
       negateStop: 0
     }, {
@@ -96,12 +96,12 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       negateStop: 1
     }, {
       rule: "№3: Know where you are in cyberspace",
-      description: "Follow the rules of the domain and act accordingly to those rules while in that domain.",
+      description: "Follow the rules of the domain and act according to those rules while in that domain.",
       dos: [
         "Be mindful of where you are on the internet.",
         "Adapt to your surroundings.",
         "Adhere to the behavior acceptable on the domain you are in.",
-        "If you are new in that domain, observe the behavior of the netizens there."
+        "If you are new to that domain, observe the behavior of the netizens there."
       ],
       donts: [
         "Post rumors on news forums.",
@@ -111,9 +111,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       scenario: "Martin is a current highschool student. He likes to use millennial words and phrases when texting " +
                 "or chatting with his friends. He sends an email to his teacher asking about their class project " +
                 "using the school email account issued to them. In his email, he used the words and phrases, “TBH”, " +
-                "“on fleek”, “lit”, and “jk.” His teacher, a person who is fairly new to the internet,  replied to " +
-                "his email telling him that he cannot understand some of his terms and to be more professional and " +
-                "use proper words when writing emails.",
+                "“on fleek”, “lit”, and “jk.” His teacher, a person who is fairly new to the internet, replied to his " +
+                "email telling him that he cannot understand some of his terms and that he should be more professional " +
+                "by using proper words when writing emails.",
       elements: [
         {name: "Netizen/s"},
         {name: "When you start participating in a new community online"},
@@ -140,9 +140,9 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       ],
       solution: "Martin should have not used millennial slang when writing an email to his teacher/s using " +
                 "his school email account. Be mindful where you are on the internet and adhere to the acceptable " +
-                "behavior in the domain. In this case, you are using a school  email account to inquire about your " +
-                "homework and it is expected that you shall use proper sentences and phrases when corresponding to " +
-                "a faculty or staff in an academic institution.",
+                "behavior in the domain. In this case, you are using a school email account to inquire " +
+                "about your homework and it is expected that you shall use proper sentences and phrases when " +
+                "corresponding with a faculty or staff in an academic institution.",
       highlights: [ 1 ],
       negateStop: 0
     }, {
@@ -185,14 +185,14 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               old: "Other people got irritated of Trixie’s multiple same posts.",
               new: "Other people did not get irritated of Trixie’s multiple same posts."
             }, {
-              old: "One of the people in the community reported Trixie’s account to the admin.",
-              new: "Trixie did not get reported by one of the people in the community."
+              old: "Other people got irritated by Trixie’s multiple same posts.",
+              new: "Other people did not get irritated by Trixie’s multiple same posts."
             }, {
               old: "Trixie got blocked by the admin from the online discussion group.",
               new: "Trixie got blocked by the admin from the online discussion group."
             }
       ],
-      solution: "Trixie should have not posted her problem with her code several times, one could be enough. " +
+      solution: "Trixie should have not posted her problem with her code several times since posting it once would already be enough. " +
                 "Do not post similar content multiple times because it tends to waste other people’s time and " +
                 "bandwidth when loading the content. ",
       highlights: [ 0 ],
@@ -294,11 +294,11 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               old: "Marc replied by intentionally adding more errors to the code.",
               new: "Marc did not intentionally add more errors to the code."
             }, {
-              old: "Justin’s program did not run properly and got a low mark for his project. ",
+              old: "Justin’s program did not run properly and he got a low mark for his project.",
               new: "Justin’s program ran properly and he did not get a low mark for his project."
             }
       ],
-      solution: "Marc shouldn’t have intentionally add more errors to the code. Do not share false information.",
+      solution: "Marc shouldn’t have intentionally added more errors to the code. Do not share false information.",
       highlights: [ 3 ],
       negateStop: 2
     }, {
@@ -314,7 +314,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       ],
       scenario: "Scarlet was browsing through the Facebook comments section of a post containing a " +
                 "picture of Jacob and Edward from Twilight. She saw a thread where people were arguing " +
-                "whether Jacob or Edward was the better male lead. A member of Team Jacob left a comment " +
+                "about whether Jacob or Edward was the better male lead. A member of Team Jacob left a comment " +
                 "saying that Team Jacob is way better than Team Edward because Edward only sparkles in the " +
                 "sun and is not a true vampire. Scarlet, being a fan of Edward, got mad and bashed the " +
                 "commentor by saying curse words and threats stating that their comment was invalid and that " +
@@ -355,8 +355,8 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       negateStop: 2
     }, {
       rule: "№8: Respect Other People’s Privacy",
-      description: "Never ask someone's information that you are not comfortable giving out yourself " +
-                    "and do not get someone's private information without permission",
+      description: "Never ask for someone else's information when you are not comfortable giving out " +
+                   "that kind of information yourself, and do not get someone's private information without permission",
       dos: [
         "Respect the person’s online privacy as you would respect the person’s privacy in real life."
       ],
@@ -367,7 +367,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       scenario: "Wayne hacked one of his friends’ account to practice his newly acquired skill " +
                 "which is hacking. He successfully gained access to his friend’s account. While he " +
                 "had access to his friend’s account, he read some of his friend’s personal messages " +
-                "to other people. Wayne’s friend found out what happened and got mad at Wayne for invading his privacy.",
+                "to other people. Wayne’s friend found out about what happened and got mad at Wayne for invading his privacy.",
       elements: [
         {name: "Owner and infiltrator"},
         {name: "When you access other people’s information"},
@@ -401,7 +401,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
       negateStop: -1
     }, {
       rule: "№9: Don’t Abuse Your Power",
-      description: "Respect your subordinate’s online privacy",
+      description: "Do not use your skills or privileges as an admin or developer for personal gain or interest. ",
       dos: [
         "Respect your subordinate’s privacy.",
         "Know your boundaries."
@@ -457,7 +457,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
         "Think twice before reacting."
       ],
       donts: [
-        "React without thinking critically about your reaction first.",
+        "Respond without thinking critically about your reaction first.",
         "Humiliate someone publicly instead of correcting them or humiliate them while correcting them.",
         "Being untoward to them when correcting them."
       ],
@@ -494,8 +494,8 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               old: "Cassie got embarrassed and deleted the post immediately afterwards.",
               new: "Cassie did not get embarrassed and did not delete the post immediately afterwards."
             }, {
-              old: "Sophiya only realized later on the consequences of her actions and now feels bad about what she did.",
-              new: "Sophiya did not only realized later on the consequences of her actions and now does not feel bad about what she did."
+              old: "Sophiya only realized the consequences of her actions later on and now feels bad about what she did.",
+              new: "Sophiya did not only realize the consequences of her actions later on."
             }
       ],
       solution: "Sophiya should not have bluntly commented that her post had a lot of errors and should not have rudely " +
