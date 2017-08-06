@@ -137,7 +137,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
             "Because he was curious about Adam’s email and password, Christian looked through Adam’s phone.",
             "He is suddenly called to the guidance counsellor’s office so he rushes there.",
             "Adam saves his password and email given to him by the school on his phone because he is forgetful. ",
-            "When Adam gets back, his phone is lighted up and facing up the table."
+            "When Adam gets back, his phone is lit up and facing up the table."
       ],
       laborsOrder: [2, 1, 0, 3],
       correctLabors: [
@@ -152,7 +152,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
               new: "Christian doesn’t look through Adam’s phone out of his curiosity in Adam’s e-mail and password."
             }, {
               old: "When Adam gets back, his phone is lit up and facing up the table.",
-              new: "When Adam gets back, his phone is not lighted up and not facing up the table."
+              new: "When Adam gets back, his phone is not lit up and facing up the table."
             }
       ],
       correctRules: [
@@ -160,10 +160,10 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           id: 0,
           title: "Respect other people's privacy",
           description: "Don't access information that is not meant to be public or not meant for them to be read",
-          highlights: [3]
+          highlights: [2]
         }
       ],
-      negateStop: 2,
+      negateStop: 1,
       solution: "Christian should have not looked through Adam’s phone out of his curiosity without the knowledge " +
                 "of Adam. Personal devices tend to contain information that are not meant to be accessed by the public " +
                 "or other people. "
@@ -509,7 +509,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         }
       ],
       negateStop: 3,
-      solution: "Abner should have responded in a haughty manner to counter Peter’s reply " +
+      solution: "Abner shouldn’t have responded in a haughty manner to counter Peter’s reply " +
                 "and calmly insisted that Peter’s opinions were wrong and lack evidence." +
                 "If you are the one being flamed, always reply in a mature manner and do not " +
                 "destroy the camaraderie in the discussion by adding fuel to the fire. If you " +
@@ -563,14 +563,12 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         {name: ""}
       ],
       labors: [
-            "The secretary’s supervisor has a lot of work to do for their upcoming project. ",
-            "Accidentally, the supervisor clicked on an e-mail from a university. ",
-            "The secretary received an e-mail from the university that they already gave her slot to another applicant because she wasn’t able to confirm her application before the deadline. ",
-            "The supervisor accessed the secretary’s e-mail using the admin password to see if departmental-related mail is coming in without the secretary’s knowledge. ",
-            "The following day, the secretary did not see the e-mail from the university regarding her application for masters studies. ",
-            "The supervisor mistakenly clicked on the delete button instead of the back button."
+            "The HR personnel found out what Han’s did and reported it to the HR chairperson.",
+            "Hans changed some of Luke’s attendance logs to on-time. ",
+            "Upon fixing the system, Hans saw Luke’s attendance logs which are mostly tardy for the past few months.",
+            "Hans accessed the system’s database to fix a bug report found in the attendance tracking function."
       ],
-      laborsOrder: [ 0, 3, 1, 5, 4, 2 ],
+      laborsOrder: [ 3, 2, 1, 0 ],
       correctLabors: [
             {
               old: "Hans accessed the system’s database to fix a bug report found in the attendance tracking function.",
@@ -842,8 +840,9 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
                 "go outside to walk the dog and leave the phone at home. While you’re out, your phone " +
                 "receives messages sent by your friend. Your classmate, who you were paired with for " +
                 "the day’s homework, is staying at your place so you could work on the homework together. " +
-                "The constant buzzing of your phone started to make her curious which made her look through " +
-                "your phone. She sees your friend’s message that says",
+                "The constant buzzing of your phone bothered her a little. She opened your phone’s front " +
+                "screen so she could inform you when you get back who’s been texting you. She sees a " +
+                "little of your friend’s message and it piqued her curiosity. She reads your friend’s message that says",
       italic: " “That’s nice! What are you gonna wear when you meet Jack on your date this Friday?” ",
       scenariocont: " When you get back, your classmate tells you that " +
                 "she is a close friend of Jack and started teasing you about your upcoming date.",
@@ -929,8 +928,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
         }
       ],
       negateStop: 4,
-      solution: "Your mom should not have looked through your phone and should not have read " +
-                "your friend’s message to you. Do not read other people’s personal messages or emails."
+      solution: "Your classmate shouldn’t have read your messages. Do not read other people’s personal messages or emails."
     },
     {
       scenario: "George and Elijah are working together on a project and are communicating through email. " +

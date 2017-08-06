@@ -189,7 +189,7 @@ angular.module('Netsafe').factory('RulesFactory', function() {
               new: "Other people did not get irritated by Trixie’s multiple same posts."
             }, {
               old: "Trixie got blocked by the admin from the online discussion group.",
-              new: "Trixie got blocked by the admin from the online discussion group."
+              new: "Trixie did not get blocked by the admin from the online discussion group."
             }
       ],
       solution: "Trixie should have not posted her problem with her code several times since posting it once would already be enough. " +
