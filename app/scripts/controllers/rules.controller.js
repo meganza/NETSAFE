@@ -1,5 +1,5 @@
 angular.module('Netsafe').controller('rulesController', function($scope, $timeout, RulesFactory) {
-	console.log('you are in rulesController');
+  console.log('you are in rulesController');
   $scope.rules = RulesFactory;
   $scope.contentRules = $scope.rules.content;
   $scope.doDontTable = true;
@@ -14,6 +14,12 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
   $scope.ruleDescription = true;
 
   $scope.scenarioDetails = false;
+
+  $scope.tutorialHighlight = false;
+
+  $scope.tutHighlight = function(){
+    $scope.tutorialHighlight = !$scope.tutorialHighlight;
+  };
 
   $scope.clickHelp = function(){
     $scope.clicked = !$scope.clicked;
@@ -91,6 +97,7 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
   }, 1);
 
   $scope.showRule = function(index) {
+    $scope.tutorialHighlight = false;
     $scope.currentRule = index;
 
     if($scope.highlightToggle){
