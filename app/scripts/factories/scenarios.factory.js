@@ -358,7 +358,7 @@ angular.module('Netsafe').factory('ScenariosFactory', function() {
           "The students brought it to the attention of the teacher and the dean",
           "Jaime surfed the Net",
           "Jaime came across a funny site",
-          "Jamie forwarded a site to CONNEX"
+          "Jamie forwarded a GIF CONNEX"
         ]],
         [[ // 3
           "Jaime",

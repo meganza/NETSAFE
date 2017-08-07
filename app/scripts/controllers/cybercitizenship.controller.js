@@ -1,7 +1,14 @@
-angular.module('Netsafe').controller('cybercitizenshipController', function($scope) {
+angular.module('Netsafe').controller('cybercitizenshipController', function($scope, $rootScope) {
 	console.log('you are in cybercitizenshipController');
 
+  $scope.ppdVal = $rootScope.predefinedPauses;
   var pauseCount = 0;
+
+  $scope.suggested = [
+    "Suggested Discussion: Explain that Cyber citizenship equates to Digital citizenship which also equates to how netizens present themselves and interact with others online",
+    "Suggested Discussion: Emphasize that there are do’s and don’ts on the internet",
+    "Suggested Discussion: State that these are some things on the Good Netizen to-do list"
+  ];
 
   $scope.playerVars = {
     controls: 1,
@@ -13,26 +20,29 @@ angular.module('Netsafe').controller('cybercitizenshipController', function($sco
   $scope.$on('youtube.player.playing', function($event, player){
     console.log(pauseCount);
 
-    if (pauseCount === 0){ // pause at first pause time
-      setTimeout($scope.pauseVideo = function(){
-                  player.pauseVideo();
-                }, 15000);   // 0:14
-      pauseCount++;
-    } else if (pauseCount === 1){ // second pause time
-      setTimeout($scope.pauseVideo = function(){
-                  player.pauseVideo();
-                }, 8800);   // 0:23
-      pauseCount++;
+    if($scope.ppdVal){
+      if (pauseCount === 0){ // pause at first pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 15000);   // 0:14
+        pauseCount++;
+      } else if (pauseCount === 1){ // second pause time
+        setTimeout($scope.pauseVideo = function(){
+                    player.pauseVideo();
+                  }, 8800);   // 0:23
+        pauseCount++;
+      }
+      $('#suggestedDiscussion').text($scope.suggested[pauseCount-1]);
     }
-
-    // problem: its not at a SPECIFIC time, pause @ ___ seconds, play, pauses @ ___ seconds
-    // if the pause is by the teacher, then it will work up everything
     console.log(pauseCount);
   });
 
   $scope.$on('youtube.player.ended', function($event, player){
-    pauseCount = 0;
-    console.log(pauseCount);
+    if($scope.ppdVal){
+      pauseCount = 0;
+      console.log(pauseCount);
+    }
   });
 
 });
+

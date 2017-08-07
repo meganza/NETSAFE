@@ -1,26 +1,23 @@
 <div class="header">
   Cyberattack Prevention
+  <div class="space" ng-show="ppdVal"></div>
 </div>
 
 <div class="center">
-  <div class="container">
-    <!-- FOR NATIVE APP -->
-    <!-- <video controls="controls">
-      <source src="videos/Pharming.mp4" type="video/mp4">
-    </video> -->
+  <div class="container" style="padding-top: 30px;">
 
     <div class="embed-responsive embed-responsive-16by9">
       <youtube-video class="embed-responsive-item" video-url="preventionVid" player-vars="playerVars"></youtube-video>
     </div>
 
-    <!-- <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/S3-GvYfb2cI?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-    </div> -->
+    <div class="space" ng-show="ppdVal"></div>
+    <div id="suggestedDiscussion" ng-show="ppdVal"> Suggested Discussion </div>
 
     <div id="footer">
       <button class="prev" ui-sref="netsafe.rogue"> ◀︎ Rogue Security Software </button>
       <button class="next" ui-sref="netsafe.activity"> Safety and Security Acitivty ▶︎ </button>
     </div>
+    <div class="space"></div>
 
   </div>
 </div>
