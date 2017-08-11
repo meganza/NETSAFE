@@ -2,14 +2,6 @@ angular.module('Netsafe').controller('definitionController', function($scope, $r
   console.log('you are in definitionController');
   $scope.ppdVal = $rootScope.predefinedPauses;
 
-  if($scope.clickedTool){
-    $scope.clickedTool = !$scope.clickedTool;
-  }
-
-  if($scope.clicked){
-    $scope.clicked = !$scope.clicked;
-  }
-
   $scope.suggested = [
     "Suggested Discussion: Reveal that there are elements not present when interacting online compared to interacting in real life. Illustrate that these elements not being present could lead to misunderstandings then blow up to moral, legal, and social issues if guidelines, or netiquette, are not followed.",
     "Suggested Discussion: Elaborate on how netiquette tackles the moral, legal and social issues, and uses ethics to resolve them to better the netizen experience.",

@@ -1,13 +1,6 @@
 angular.module('Netsafe').controller('cybercitizenshipController', function($scope, $rootScope) {
 	console.log('you are in cybercitizenshipController');
 
-  if($scope.clickedTool){
-    $scope.clickedTool = !$scope.clickedTool;
-  }
-
-  if($scope.clicked){
-    $scope.clicked = !$scope.clicked;
-  }
 
   $scope.ppdVal = $rootScope.predefinedPauses;
   var pauseCount = 0;

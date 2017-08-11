@@ -1,14 +1,6 @@
 angular.module('Netsafe').controller('netivityController',
   function($scope, $timeout, ScenariosFactory) {
 
-  if($scope.clickedTool){
-    $scope.clickedTool = !$scope.clickedTool;
-  }
-
-  if($scope.clicked){
-    $scope.clicked = !$scope.clicked;
-  }
-
   $scope.scenarios = ScenariosFactory;
   $scope.contentScenarios = $scope.scenarios.content;
   $scope.solutionModal = false;

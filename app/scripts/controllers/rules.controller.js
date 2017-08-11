@@ -1,14 +1,6 @@
 angular.module('Netsafe').controller('rulesController', function($scope, $timeout, RulesFactory) {
   console.log('you are in rulesController');
 
-  if($scope.clickedTool){
-    $scope.clickedTool = !$scope.clickedTool;
-  }
-
-  if($scope.clicked){
-    $scope.clicked = !$scope.clicked;
-  }
-
   $scope.rules = RulesFactory;
   $scope.contentRules = $scope.rules.content;
   $scope.doDontTable = true;
