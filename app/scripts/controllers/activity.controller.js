@@ -1,6 +1,14 @@
 angular.module('Netsafe').controller('activityController', function($scope) {
   console.log('you are in activityController');
 
+  if($scope.clickedTool){
+    $scope.clickedTool = !$scope.clickedTool;
+  }
+
+  if($scope.clicked){
+    $scope.clicked = !$scope.clicked;
+  }
+
   $scope.answered = false;
   $scope.custom = false;
 

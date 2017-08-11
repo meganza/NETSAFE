@@ -1,5 +1,14 @@
 angular.module('Netsafe').controller('techniquesController', function($scope, $rootScope) {
   console.log('you are in techniquesController');
+
+  if($scope.clickedTool){
+    $scope.clickedTool = !$scope.clickedTool;
+  }
+
+  if($scope.clicked){
+    $scope.clicked = !$scope.clicked;
+  }
+
   $scope.ppdVal = $rootScope.predefinedPauses;
 
   $scope.suggestedIdentity = [

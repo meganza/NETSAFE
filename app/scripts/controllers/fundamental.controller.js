@@ -2,6 +2,14 @@ angular.module('Netsafe').controller('fundamentalController', function($scope, $
 	console.log('you are in fundamentalController');
   $scope.ppdVal = $rootScope.predefinedPauses;
 
+  if($scope.clickedTool){
+    $scope.clickedTool = !$scope.clickedTool;
+  }
+
+  if($scope.clicked){
+    $scope.clicked = !$scope.clicked;
+  }
+
   $scope.suggestedDT = [
     "Suggested Discussion: Discuss the consequences of posting online.",
     "Suggested Discussion: Notify the students to consider what their posts look like from an outer perspective.",
