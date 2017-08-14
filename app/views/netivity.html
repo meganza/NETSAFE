@@ -35,8 +35,8 @@
     <button id="tables-button-1" class="tables-button" ng-class="{ active: elementsTable }" ng-click="openTable(1)">
       <b>①</b> Elements Table
     </button>
-    <button id="tables-button-2" class="tables-button" ng-click="openTable(2)" ng-model="isCEDisabled" ng-disabled="isCEDisabled" ng-class="{ active: causeEffectTable }"><b>②</b> Cause and Effect Table</button>
-    <button id="tables-button-3" class="tables-button" ng-click="openTable(3)" ng-model="isCisabled" ng-disabled="isCDisabled" ng-class="{ active: comparisonTable }"><b>③</b> Comparison Table</button>
+    <button id="tables-button-2" class="tables-button" ng-click="openTable(2)" ng-model="isCEDisabled" ng-disabled="isCEDisabled" ng-class="{ active: causeEffectTable, inactive:  isCEDisabled }"><b>②</b> Cause and Effect Table</button>
+    <button id="tables-button-3" class="tables-button" ng-click="openTable(3)" ng-model="isCisabled" ng-disabled="isCDisabled" ng-class="{ active: comparisonTable, inactive: isCDisabled }"><b>③</b> Comparison Table</button>
   </div>
 
   <div ng-show="elementsTable">
@@ -766,9 +766,9 @@
         <div class="tutorial-steps" ng-click="step2 = !step2" style="margin-top: 10px;">
           <span ng-show="!step2"> Show <b>Step 2</b> Dropdown</span>
           <span ng-show="step2"> <b>Step 2:</b> Cross-referencing rules <br>
-            When a rule is selected from the dropdown, it will appear uner the the guideline elements. You can
-            cross-reference your answers for the scenario elements to the guidelines elements if it fits. This also
-            serves as the basis for answering the rule violated.
+            When a rule is selected from the dropdown, it will appear under the guideline elements.
+            You can cross-reference your answers for the scenario elements to the guidelines
+            elements if it fits. This also serves as the basis for answering the rule violated.
           </span>
         </div>
         <br>

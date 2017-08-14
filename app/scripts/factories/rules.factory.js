@@ -265,8 +265,8 @@ angular.module('Netsafe').factory('RulesFactory', function() {
                 "question quite confidently. However, Marc, an experienced computer programmer, passed " +
                 "by Justin’s post and noticed that Josh’s answer to Justin’s question has a minor error. " +
                 "Josh was not aware that his answer has a minor error. Despite knowing the correct solution, " +
-                "Marc replied by intentionally adding more errors to the code such as removing a semicolon and " +
-                "adding unused variables. Justin’s program did not run properly and got a low mark in his project.",
+                "Marc replied by intentionally adding more errors to the code. " +
+                "Justin’s program did not run properly and got a low mark in his project.",
 
       elements: [
         {name: "Sender and/or receiver"},

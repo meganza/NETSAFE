@@ -77,7 +77,7 @@
 
     <div class="center-me">
       <button id="tables-button-1" class="tables-button" ng-click="openTable(1)" ng-class="{ active: elementsTable }"><b>①</b> Elements Table</button>
-      <button id="tables-button-2" class="tables-button" ng-click="openTable(2)" ng-model="isDisabled" ng-disabled="isDisabled" ng-class="{ active: causeEffectTable }"><b>②</b> Cause and Effect Table</button>
+      <button id="tables-button-2" class="tables-button" ng-click="openTable(2)" ng-model="isDisabled" ng-disabled="isDisabled" ng-class="{ active: causeEffectTable, inactive: isDisabled }"><b>②</b> Cause and Effect Table</button>
     </div>
 
     <div ng-show="elementsTable">

@@ -22,10 +22,6 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
     $scope.tutorialHighlight = !$scope.tutorialHighlight;
   };
 
-  $scope.clickHelp = function(){
-    $scope.clicked = !$scope.clicked;
-  };
-
   $scope.openTable = function (num){
     if(num === 1){
       $scope.elementsTable = !$scope.elementsTable;
