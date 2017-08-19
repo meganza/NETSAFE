@@ -144,8 +144,8 @@ angular.module('Netsafe').controller('rulesController', function($scope, $timeou
   $scope.questions = [
       "Subject (people active in the scenario)",
       "Objective (what is the first action that triggered the chain of events?)",
-      "Community (Who are involved whether active or inactive)",
-      "Tools (what tools explicitly used in the scenario)"
+      "Community (Who are the people, whether active or inactive, involved in the scenario?)",
+      "Tools (What tools are explicitly used in the scenario?)"
   ];
 
   $scope.showAll = function(){

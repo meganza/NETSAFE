@@ -389,10 +389,10 @@ angular.module('Netsafe').controller('netivityController',
   ];
 
   $scope.questions = [
-    "Subject (internal factors / people active in the scenario)",
+    "Subject (who are the people active in the scenario?)",
     "Objective (what is the first action that triggered the chain of events?)",
-    "Community (who are involved whether active or inactive)",
-    "Tools (what tools explicitly used in the scenario)",
+    "Community ((Who are the people, whether active or inactive, involved in the scenario?)",
+    "Tools (Who are the people, whether active or inactive, involved in the scenario?)",
     "Rules / Guidelines Applied (based on the element of comparison, what rules apply)"
   ];
 
